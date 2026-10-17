@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corporate WordPress redesign – demo concept</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1b2e;--ink:#132238;--mut:#5b6678;--line:#e3e7ee;--bg:#f6f8fb;--ac:#1f6feb;--ac2:#14b8a6;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{overflow-x:clip}body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--w);line-height:1.6}a{color:inherit;text-decoration:none}.w{width:min(1200px,92%);margin:auto}
+.flag{background:#fde68a;color:#3b2f00;text-align:center;font-size:.8rem;font-weight:600;padding:.45rem 1rem}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .3s}header.sc{box-shadow:0 8px 30px rgba(13,27,46,.08)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem}.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;display:flex;align-items:center;gap:.55rem}.logo span{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--ac),var(--ac2))}
+.nav{display:flex;gap:.3rem;align-items:center}.nav>li{list-style:none;position:relative}.nav>li>a,.nav>li>button{font:inherit;font-size:.92rem;font-weight:600;color:var(--ink);background:none;border:0;padding:.7rem .9rem;border-radius:10px;cursor:pointer;display:flex;gap:.35rem;align-items:center}.nav>li>button:hover,.nav>li>a:hover,.nav>li.open>button{background:var(--bg)}
+.nav>li>button i{display:inline-block;transition:transform .25s;font-style:normal;font-size:.7rem}.nav>li.open>button i{transform:rotate(180deg)}
+.mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(8px);width:min(680px,90vw);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px rgba(13,27,46,.14);padding:1.4rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;opacity:0;visibility:hidden;transition:.25s}
+.nav>li.open .mega{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mega a{display:block;padding:.7rem .8rem;border-radius:12px}.mega a:hover{background:var(--bg)}.mega b{display:block;font-size:.9rem}.mega small{color:var(--mut);font-size:.78rem;line-height:1.4;display:block}
+.mega .feat{grid-row:span 2;background:var(--navy);color:#fff;border-radius:14px;padding:1rem}.mega .feat small{color:#b9c4d6}
+.cta{background:var(--ac);color:#fff;padding:.75rem 1.25rem;border-radius:12px;font-weight:700;font-size:.9rem;border:0;cursor:pointer;transition:transform .2s,background .2s;display:inline-block}.cta:hover{background:#1959c2;transform:translateY(-2px)}.cta.o{background:none;color:var(--ink);border:1.5px solid var(--line)}.cta.o:hover{border-color:var(--ink)}
+.burger{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:44px;height:44px;font-size:1.2rem;cursor:pointer}
+.drawer{position:fixed;inset:0;z-index:80;background:rgba(13,27,46,.45);opacity:0;visibility:hidden;transition:.3s}.drawer.on{opacity:1;visibility:visible}.drawer .pnl{position:absolute;right:0;top:0;bottom:0;width:min(360px,88vw);background:#fff;padding:1.4rem;overflow:auto;transform:translateX(100%);transition:transform .35s}.drawer.on .pnl{transform:none}
+.acc{border-bottom:1px solid var(--line)}.acc button{width:100%;text-align:left;font:inherit;font-weight:700;background:none;border:0;padding:1rem 0;display:flex;justify-content:space-between;cursor:pointer}.acc div{display:none;padding-bottom:.8rem}.acc.on div{display:block}.acc div a{display:block;padding:.45rem 0;color:var(--mut)}
+.hero{position:relative;padding:5.5rem 0 4rem;background:radial-gradient(1000px 500px at 85% -10%,rgba(31,111,235,.14),transparent),radial-gradient(700px 400px at 0% 100%,rgba(20,184,166,.12),transparent)}
+.hero .g{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}.eyebrow{display:inline-flex;gap:.5rem;align-items:center;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);background:rgba(31,111,235,.08);padding:.4rem .8rem;border-radius:999px}
+h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.05;letter-spacing:-.035em;margin:1rem 0}h1 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.12rem;color:var(--mut);max-width:34rem}.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:1.4rem;box-shadow:0 30px 60px rgba(13,27,46,.08)}.panel h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin-bottom:.8rem}
+.kpi{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.kpi div{background:var(--bg);border-radius:14px;padding:1rem}.kpi b{font-size:1.5rem;display:block}.kpi small{color:var(--mut);font-size:.78rem}
+.bars{display:flex;align-items:flex-end;gap:.4rem;height:90px;margin-top:1rem}.bars span{flex:1;background:linear-gradient(var(--ac),var(--ac2));border-radius:6px 6px 2px 2px;transform-origin:bottom}
+.ph-note{font-size:.72rem;color:var(--mut);margin-top:.6rem}
+section{padding:5rem 0}.sh{max-width:40rem;margin-bottom:2.5rem}.sh small{font-weight:700;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}.sh h2{font-size:clamp(1.8rem,3.4vw,2.7rem);letter-spacing:-.03em;line-height:1.1;margin-top:.5rem}.sh p{color:var(--mut);margin-top:.6rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.card{border:1px solid var(--line);border-radius:18px;padding:1.6rem;background:#fff;transition:transform .3s,box-shadow .3s}.card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(13,27,46,.08)}.ic{width:44px;height:44px;border-radius:12px;background:var(--bg);display:grid;place-items:center;font-size:1.2rem;margin-bottom:1rem}.card h3{font-size:1.1rem}.card p{color:var(--mut);font-size:.93rem;margin-top:.4rem}.card a.more{display:inline-block;margin-top:.9rem;font-weight:700;font-size:.88rem;color:var(--ac)}
+.alt{background:var(--bg)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.list li{list-style:none;padding:.8rem 0;border-bottom:1px solid var(--line);display:flex;gap:.8rem}.list li b{color:var(--ac)}
+.img{border-radius:22px;aspect-ratio:4/3;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=70') center/cover;position:relative;overflow:hidden}
+.blog{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.post{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff}.post .t{aspect-ratio:16/9;background:linear-gradient(135deg,#dbe7ff,#d5f5ef)}.post div.b{padding:1.2rem}.post small{color:var(--mut);font-size:.78rem}.post h3{font-size:1.02rem;margin-top:.3rem}
+.band{background:var(--navy);color:#fff;border-radius:26px;padding:3rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}.band h2{font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.03em;max-width:30rem;line-height:1.15}.band p{color:#b9c4d6}
+.notes{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.notes div{border:1px dashed #b8c3d6;border-radius:16px;padding:1.1rem;font-size:.88rem;color:var(--mut)}.notes b{display:block;color:var(--ink);margin-bottom:.3rem}
+footer{background:var(--navy);color:#c9d3e3;padding:4rem 0 1.5rem;margin-top:4rem}.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}footer h5{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.9rem}footer a{display:block;padding:.25rem 0;font-size:.92rem}footer a:hover{color:#fff}
+.soc{display:flex;gap:.5rem;margin-top:1rem}.soc a{width:38px;height:38px;border-radius:10px;border:1px solid #2a3c57;display:grid;place-items:center;font-size:.8rem;font-weight:700}
+.legal{border-top:1px solid #22344f;margin-top:2.5rem;padding-top:1.2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem}.legal nav{display:flex;gap:1.2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:99}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+@media(max-width:960px){.nav,.bar .cta.hide-m{display:none}.burger{display:block}.hero .g,.split{grid-template-columns:1fr}.g3,.blog{grid-template-columns:1fr}.notes{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}.band{padding:2rem}}
+@media(max-width:560px){.notes,.fg{grid-template-columns:1fr}section{padding:3.5rem 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="flag">Demo concept – non-binding draft · placeholder brand, texts and figures · prepared by Mohammad (web designer)</div>
+<header id="hd"><div class="w bar">
+<a href="#" class="logo" aria-label="Home"><span></span>YourCompany</a>
+<ul class="nav" id="nav">
+<li><button aria-expanded="false">Solutions <i>▾</i></button><div class="mega">
+<a class="feat" href="#s"><b>Overview</b><small>One page that explains your value proposition and routes every visitor type to the right place.</small></a>
+<a href="#s"><b>Service line A</b><small>Existing page – URL unchanged</small></a><a href="#s"><b>Service line B</b><small>Existing page – URL unchanged</small></a>
+<a href="#s"><b>Service line C</b><small>Existing page – URL unchanged</small></a><a href="#s"><b>Industries</b><small>Grouped landing pages</small></a></div></li>
+<li><button aria-expanded="false">Company <i>▾</i></button><div class="mega">
+<a class="feat" href="#about"><b>About us</b><small>Story, leadership and values – content kept, layout refreshed.</small></a>
+<a href="#about"><b>Leadership</b><small>Team profiles</small></a><a href="#about"><b>Careers</b><small>Open roles</small></a><a href="#about"><b>News</b><small>Press & announcements</small></a><a href="#about"><b>Locations</b><small>Offices & map</small></a></div></li>
+<li><button aria-expanded="false">Insights <i>▾</i></button><div class="mega">
+<a class="feat" href="#blog"><b>Blog</b><small>All existing posts stay at their current URLs – internal links untouched.</small></a>
+<a href="#blog"><b>Case studies</b><small>Category archive</small></a><a href="#blog"><b>Guides</b><small>Category archive</small></a><a href="#blog"><b>Webinars</b><small>Category archive</small></a><a href="#blog"><b>Downloads</b><small>Resources</small></a></div></li>
+<li><a href="#contact">Contact</a></li></ul>
+<div style="display:flex;gap:.6rem;align-items:center"><a href="#contact" class="cta hide-m">Book a consultation</a><button class="burger" id="bg" aria-label="Open menu">☰</button></div>
+</div></header>
+<div class="drawer" id="dr"><div class="pnl"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><b class="logo"><span></span>YourCompany</b><button class="burger" style="display:block" id="cl" aria-label="Close menu">✕</button></div>
+<div class="acc"><button>Solutions <span>+</span></button><div><a href="#s">Overview</a><a href="#s">Service line A</a><a href="#s">Service line B</a><a href="#s">Service line C</a></div></div>
+<div class="acc"><button>Company <span>+</span></button><div><a href="#about">About us</a><a href="#about">Leadership</a><a href="#about">Careers</a></div></div>
+<div class="acc"><button>Insights <span>+</span></button><div><a href="#blog">Blog</a><a href="#blog">Case studies</a><a href="#blog">Guides</a></div></div>
+<a href="#contact" class="cta" style="width:100%;text-align:center;margin-top:1.4rem">Book a consultation</a></div></div>
+<main id="main">
+<section class="hero"><div class="w g">
+<div><span class="eyebrow">● Corporate redesign concept</span>
+<h1 class="rv">Your value proposition, <em>clear in five seconds.</em></h1>
+<p class="lead rv">Placeholder headline area: one sentence that says what you do, for whom, and why it matters – followed by two clear calls-to-action instead of a crowded slider.</p>
+<div class="btns rv"><a href="#contact" class="cta">Book a consultation</a><a href="#s" class="cta o">Explore solutions</a></div></div>
+<div class="panel rv"><h4>Content block · key facts</h4><div class="kpi"><div><b>[00]</b><small>Years in business</small></div><div><b>[000+]</b><small>Clients served</small></div><div><b>[00]</b><small>Countries</small></div><div><b>[0.0]</b><small>Your own metric</small></div></div>
+<div class="bars" id="bars"><span style="height:35%"></span><span style="height:52%"></span><span style="height:44%"></span><span style="height:68%"></span><span style="height:60%"></span><span style="height:82%"></span><span style="height:95%"></span></div>
+<p class="ph-note">Placeholders only – real figures come from your existing content.</p></div>
+</div></section>
+<section id="s"><div class="w"><div class="sh rv"><small>Solutions</small><h2>Clearer content blocks, one job each.</h2><p>Every block leads to an existing page, so your URLs and internal links stay exactly as they are.</p></div>
+<div class="g3"><div class="card rv"><div class="ic">◆</div><h3>Service line A</h3><p>Short benefit-led summary pulled from the existing service page.</p><a class="more" href="#">Learn more →</a></div>
+<div class="card rv"><div class="ic">▲</div><h3>Service line B</h3><p>Short benefit-led summary pulled from the existing service page.</p><a class="more" href="#">Learn more →</a></div>
+<div class="card rv"><div class="ic">●</div><h3>Service line C</h3><p>Short benefit-led summary pulled from the existing service page.</p><a class="more" href="#">Learn more →</a></div></div></div></section>
+<section class="alt" id="about"><div class="w split"><div class="img rv" role="img" aria-label="Office placeholder image"></div>
+<div class="rv"><div class="sh"><small>Why us</small><h2>A calmer, more corporate layout – same content.</h2></div>
+<ul class="list"><li><b>01</b><span>Hero that states the value proposition and two primary actions.</span></li><li><b>02</b><span>Simplified navigation: 4 top items, grouped drop-downs, mobile accordion.</span></li><li><b>03</b><span>Stronger, repeated calls-to-action at natural decision points.</span></li><li><b>04</b><span>Organised footer with legal notices, without clutter.</span></li></ul></div></div></section>
+<section id="blog"><div class="w"><div class="sh rv"><small>Insights</small><h2>Your blog, presented better.</h2><p>Existing posts are restyled through the theme – no slug changes, no broken internal links.</p></div>
+<div class="blog"><article class="post rv"><div class="t"></div><div class="b"><small>Category · date</small><h3>Existing blog post title</h3></div></article><article class="post rv"><div class="t" style="background:linear-gradient(135deg,#e3e9f5,#dbe7ff)"></div><div class="b"><small>Category · date</small><h3>Existing blog post title</h3></div></article><article class="post rv"><div class="t" style="background:linear-gradient(135deg,#d5f5ef,#eef3fb)"></div><div class="b"><small>Category · date</small><h3>Existing blog post title</h3></div></article></div></div></section>
+<section style="padding-top:0"><div class="w"><div class="sh rv"><small>Build notes</small><h2>How it would be built in WordPress</h2></div>
+<div class="notes"><div class="rv"><b>Child theme / light theme</b>Custom child theme (or a lightweight premium base) – no page-builder bloat.</div><div class="rv"><b>SEO preserved</b>Same permalinks, menus re-mapped, redirects only if you approve a change.</div><div class="rv"><b>Core Web Vitals</b>Lazy images, minimal JS, fonts self-hosted, measured before/after.</div><div class="rv"><b>WCAG 2.1 AA</b>Keyboard nav, focus states, contrast, skip link, reduced-motion support.</div></div></div></section>
+<section id="contact" style="padding-top:0"><div class="w"><div class="band rv"><div><h2>Strong call-to-action band before the footer.</h2><p>Placeholder copy – e.g. "Talk to our team about your project."</p></div><a href="#" class="cta">Book a consultation</a></div></div></section>
+</main>
+<footer><div class="w"><div class="fg"><div><b class="logo" style="color:#fff"><span></span>YourCompany</b><p style="margin-top:.8rem;font-size:.9rem;max-width:22rem">Short company descriptor (placeholder).</p><p style="margin-top:.8rem;font-size:.9rem">info@yourcompany.example<br>+00 0000 000 000</p><div class="soc"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="YouTube">▶</a></div></div>
+<div><h5>Solutions</h5><a href="#">Service line A</a><a href="#">Service line B</a><a href="#">Service line C</a><a href="#">Industries</a></div>
+<div><h5>Company</h5><a href="#">About us</a><a href="#">Leadership</a><a href="#">Careers</a><a href="#">News</a></div>
+<div><h5>Insights</h5><a href="#">Blog</a><a href="#">Case studies</a><a href="#">Guides</a><a href="#">Contact</a></div></div>
+<div class="legal"><span>© 2026 YourCompany (placeholder) · ABN 00 000 000 000</span><nav><a href="#">Privacy policy</a><a href="#">Terms</a><a href="#">Accessibility</a><a href="#">Sitemap</a></nav></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);gsap.registerPlugin(ScrollTrigger);lenis.on('scroll',ScrollTrigger.update);
+document.querySelectorAll('.rv').forEach(el=>gsap.from(el,{y:30,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+gsap.from('#bars span',{scaleY:0,stagger:.08,duration:1,ease:'power3.out',delay:.4});
+const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('sc',scrollY>10));
+document.querySelectorAll('#nav>li>button').forEach(b=>{const li=b.parentElement;const open=v=>{document.querySelectorAll('#nav>li').forEach(x=>{if(x!==li){x.classList.remove('open');x.querySelector('button')&&x.querySelector('button').setAttribute('aria-expanded','false')}});li.classList.toggle('open',v);b.setAttribute('aria-expanded',v)};
+b.addEventListener('click',e=>{e.stopPropagation();open(!li.classList.contains('open'))});li.addEventListener('mouseenter',()=>matchMedia('(hover:hover)').matches&&open(true));li.addEventListener('mouseleave',()=>matchMedia('(hover:hover)').matches&&open(false))});
+document.addEventListener('click',()=>document.querySelectorAll('#nav>li').forEach(x=>x.classList.remove('open')));document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('#nav>li').forEach(x=>x.classList.remove('open'));dr.classList.remove('on')}});
+const dr=document.getElementById('dr');bg.onclick=()=>dr.classList.add('on');cl.onclick=()=>dr.classList.remove('on');dr.onclick=e=>{if(e.target===dr)dr.classList.remove('on')};dr.querySelectorAll('a').forEach(a=>a.onclick=()=>dr.classList.remove('on'));
+document.querySelectorAll('.acc button').forEach(b=>b.onclick=()=>{b.parentElement.classList.toggle('on');b.querySelector('span').textContent=b.parentElement.classList.contains('on')?'–':'+'});
+</script></body></html>
