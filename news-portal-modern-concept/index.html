@@ -1,0 +1,74 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portal Berita – modern news portal concept</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#d7262e;--ink:#111418;--mut:#636b75;--line:#e7e9ec;--bg:#fff;--soft:#f5f6f8}
+body.dark{--ink:#eef0f3;--mut:#9aa3ad;--line:#2a2f36;--bg:#0f1216;--soft:#171b21}
+*{box-sizing:border-box;margin:0;padding:0}html{overflow-x:clip}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}.w{width:min(1240px,94%);margin:auto}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;line-height:1.18}
+.flag{background:#111;color:#fff;text-align:center;font-size:.76rem;padding:.4rem}
+.top{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;font-size:.78rem;color:var(--mut);border-bottom:1px solid var(--line)}
+.top button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.25rem .7rem;cursor:pointer;font:inherit}
+.mast{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0}
+.logo{font-weight:800;font-size:1.9rem;letter-spacing:-.04em}.logo span{color:var(--red)}
+.search{display:flex;align-items:center;gap:.5rem;border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem;color:var(--mut);font-size:.88rem;min-width:240px}
+.search input{border:0;outline:0;background:transparent;color:var(--ink);font:inherit;width:100%}
+.nav{position:sticky;top:0;z-index:30;background:var(--bg);border-top:3px solid var(--ink);border-bottom:1px solid var(--line)}
+.nav .w{display:flex;gap:1.6rem;overflow-x:auto;scrollbar-width:none;font-weight:600;font-size:.9rem}.nav a{padding:.85rem 0;white-space:nowrap;border-bottom:2px solid transparent}.nav a.on,.nav a:hover{border-color:var(--red);color:var(--red)}
+.ticker{display:flex;align-items:center;gap:1rem;background:var(--soft);padding:.6rem 0;font-size:.86rem;overflow:hidden}
+.ticker b{background:var(--red);color:#fff;padding:.25rem .65rem;border-radius:4px;font-size:.72rem;letter-spacing:.06em;flex:none;margin-left:3%}
+.tk{white-space:nowrap;animation:tk 40s linear infinite}.tk span{margin-right:3rem}@keyframes tk{from{transform:translateX(30%)}to{transform:translateX(-100%)}}
+.hero{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;padding:1.6rem 0}
+.lead{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/10;color:#fff}
+.lead:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.85))}
+.lead .tx{position:absolute;left:0;right:0;bottom:0;padding:1.8rem;z-index:2}.lead h1{font-size:clamp(1.5rem,3vw,2.4rem)}
+.cat{display:inline-block;color:var(--red);font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem}.lead .cat{background:var(--red);color:#fff;padding:.2rem .5rem;border-radius:4px}
+.meta{font-size:.78rem;color:var(--mut);margin-top:.5rem}.lead .meta{color:#ddd}
+.side{display:grid;gap:1rem}.si{display:grid;grid-template-columns:120px 1fr;gap:.9rem;align-items:start;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.si .im{aspect-ratio:4/3;border-radius:10px;overflow:hidden}.si h3{font-size:1.02rem}
+.zoom img{transition:transform .5s}.zoom:hover img{transform:scale(1.06)}
+.grid{display:grid;grid-template-columns:2.2fr 1fr;gap:2.2rem;padding:1.5rem 0 3rem}
+.sec h2{font-family:Inter;font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;gap:.7rem;margin:1.5rem 0 1rem}.sec h2:before{content:"";width:6px;height:22px;background:var(--red);border-radius:2px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}.card .im{aspect-ratio:16/10;border-radius:12px;overflow:hidden;margin-bottom:.7rem}.card h3{font-size:1.05rem}
+.list .li{display:grid;grid-template-columns:200px 1fr;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}.list .im{aspect-ratio:16/10;border-radius:10px;overflow:hidden}.list h3{font-size:1.2rem}.list p{color:var(--mut);font-size:.9rem;margin-top:.35rem}
+aside .box{background:var(--soft);border-radius:14px;padding:1.3rem;margin-bottom:1.4rem}
+.pop{counter-reset:p;display:grid;gap:.9rem}.pop a{display:grid;grid-template-columns:34px 1fr;gap:.6rem;font-weight:600;font-size:.93rem;line-height:1.35}.pop a:before{counter-increment:p;content:counter(p);font-family:"Source Serif 4";font-size:1.7rem;color:var(--red);line-height:1}
+.ad{border:1px dashed var(--line);border-radius:12px;display:grid;place-items:center;height:250px;color:var(--mut);font-size:.8rem}
+.nl input{width:100%;padding:.75rem;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);margin:.7rem 0;font:inherit}
+.btn{background:var(--red);color:#fff;border:0;border-radius:8px;padding:.75rem 1rem;font-weight:700;cursor:pointer;width:100%;font:inherit;font-weight:700}
+.video{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.vid{position:relative;aspect-ratio:9/14;border-radius:14px;overflow:hidden;color:#fff}.vid:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.8))}.vid .p{position:absolute;top:.7rem;left:.7rem;z-index:2;background:rgba(0,0,0,.5);border-radius:999px;padding:.2rem .6rem;font-size:.75rem}.vid h3{position:absolute;bottom:.8rem;left:.8rem;right:.8rem;z-index:2;font-size:.95rem}
+.tech{background:var(--soft);border-radius:16px;padding:1.6rem;margin:2rem 0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;font-size:.88rem}.tech b{display:block;font-size:1rem;margin-bottom:.25rem}
+footer{background:#111418;color:#aeb5bd;padding:2.5rem 0;font-size:.85rem}footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}footer .logo{color:#fff;font-size:1.5rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111;color:#fff;padding:.8rem 1.2rem;border-radius:10px;z-index:99;max-width:90vw;text-align:center;font-size:.9rem}
+@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.video{grid-template-columns:1fr 1fr}.tech{grid-template-columns:1fr 1fr}.search{display:none}.list .li{grid-template-columns:120px 1fr}.list p{display:none}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}.si{grid-template-columns:96px 1fr}.lead .tx{padding:1.1rem}}
+</style></head><body>
+<div class="flag">News portal concept (not WordPress) · demo content · design sample by Mohammad Saleh Alahmad</div>
+<div class="w top"><span id="dt"></span><span><button onclick="document.body.classList.toggle('dark')">◐ Mode gelap</button></span></div>
+<div class="w mast"><a class="logo" href="#">KABAR<span>KINI</span></a><label class="search">🔍<input id="q" placeholder="Cari berita..."></label></div>
+<div class="nav"><div class="w" id="nav"><a class="on" href="#">Terkini</a><a href="#">Nasional</a><a href="#">Daerah</a><a href="#">Ekonomi</a><a href="#">Politik</a><a href="#">Olahraga</a><a href="#">Teknologi</a><a href="#">Hiburan</a><a href="#">Gaya Hidup</a><a href="#">Video</a></div></div>
+<div class="ticker"><b>BREAKING</b><div class="tk"><span>• Harga beras stabil menjelang akhir bulan</span><span>• Timnas lolos ke babak berikutnya</span><span>• Hujan lebat diprediksi di sejumlah wilayah pekan ini</span><span>• Startup lokal raih pendanaan seri A</span></div></div>
+<div class="w hero"><a class="lead zoom" href="#"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1400&q=65" alt=""><div class="tx"><span class="cat">Nasional</span><h1>DPR Sahkan Anggaran Baru, Fokus pada Pendidikan dan Infrastruktur Daerah</h1><div class="meta">Redaksi · 12 menit lalu · 4 menit baca</div></div></a>
+<div class="side" id="side"></div></div>
+<div class="w grid"><main class="sec"><h2>Pilihan Redaksi</h2><div class="cards" id="cards"></div>
+<h2>Video Pendek</h2><div class="video" id="video"></div>
+<h2>Berita Terbaru</h2><div class="list" id="list"></div>
+<div class="tech"><div><b>⚡ Super cepat</b>Next.js / Astro, halaman statis + cache, skor Lighthouse 90+</div><div><b>✍️ CMS redaksi</b>Headless CMS (mis. Strapi / Sanity): penulis, editor, jadwal terbit</div><div><b>📈 SEO berita</b>Google News sitemap, AMP-free, schema NewsArticle</div><div><b>💰 Monetisasi</b>Slot iklan AdSense / native, tanpa memperlambat situs</div></div></main>
+<aside><div class="box"><h2 style="font-family:Inter;font-size:1rem;font-weight:800;margin-bottom:1rem">TERPOPULER</h2><div class="pop" id="pop"></div></div><div class="ad box">Slot iklan 300×250</div>
+<div class="box nl"><b>Newsletter pagi</b><p style="color:var(--mut);font-size:.86rem;margin-top:.3rem">Ringkasan berita penting setiap pukul 06.00.</p><input placeholder="Email kamu"><button class="btn" onclick="toast('Demo: berlangganan newsletter')">Berlangganan</button></div></aside></div>
+<footer><div class="w"><span class="logo">KABAR<span style="color:var(--red)">KINI</span></span><span>Tentang · Redaksi · Pedoman Media Siber · Kontak · Iklan</span><span>© 2026 Concept demo</span></div></footer>
+<script>
+function toast(x){const d=document.createElement('div');d.className='toast';d.textContent=x;document.body.appendChild(d);setTimeout(()=>d.remove(),2800)}
+document.getElementById('dt').textContent=new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const I=['1504711434969-e33886168f5c','1495020689067-958852a7765e','1585829365295-ab7cd400c167','1497366811353-6870744d04b2','1522071820081-009f0129c71c','1556761175-5973dc0f32e7','1507525428034-b723cf961d3e','1505228395891-9a51e7e86bf6','1541888946425-d81bb19240f5','1519046904884-53103b34b206','1600880292203-757bb62b4baf','1573496359142-b8d87734a5a2'];
+const im=(i,w=600)=>`https://images.unsplash.com/photo-${I[i%I.length]}?auto=format&fit=crop&w=${w}&q=60`;
+const T=[['Ekonomi','Rupiah Menguat Tipis, Investor Tunggu Data Inflasi'],['Olahraga','Pelatih Umumkan 26 Pemain untuk Laga Persahabatan'],['Teknologi','Pemerintah Uji Coba Layanan Publik Berbasis AI'],['Daerah','Festival Budaya Tahunan Kembali Digelar Akhir Pekan Ini'],['Gaya Hidup','5 Kebiasaan Pagi yang Bikin Produktif Seharian'],['Hiburan','Film Lokal Tembus 2 Juta Penonton dalam Sepekan'],['Politik','Koalisi Baru Terbentuk Jelang Pilkada Serentak'],['Nasional','Musim Hujan Tiba, BMKG Imbau Warga Waspada Banjir']];
+document.getElementById('side').innerHTML=T.slice(0,4).map((t,i)=>`<a class="si zoom" href="#"><div class="im"><img src="${im(i,300)}" alt=""></div><div><span class="cat">${t[0]}</span><h3>${t[1]}</h3><div class="meta">${(i+1)*7} menit lalu</div></div></a>`).join('');
+document.getElementById('cards').innerHTML=T.slice(2,8).map((t,i)=>`<a class="card zoom" href="#"><div class="im"><img src="${im(i+4)}" alt=""></div><span class="cat">${t[0]}</span><h3>${t[1]}</h3><div class="meta">${i+1} jam lalu</div></a>`).join('');
+document.getElementById('video').innerHTML=T.slice(0,4).map((t,i)=>`<a class="vid zoom" href="#"><img src="${im(i+6,400)}" alt=""><span class="p">▶ 0:${30+i*7}</span><h3>${t[1]}</h3></a>`).join('');
+document.getElementById('list').innerHTML=T.map((t,i)=>`<a class="li zoom" href="#"><div class="im"><img src="${im(i+2,400)}" alt=""></div><div><span class="cat">${t[0]}</span><h3>${t[1]}</h3><p>Ringkasan singkat berita ditampilkan di sini agar pembaca langsung paham inti informasinya sebelum membuka artikel.</p><div class="meta">Redaksi · ${i+2} jam lalu</div></div></a>`).join('');
+document.getElementById('pop').innerHTML=T.slice(0,5).map(t=>`<a href="#">${t[1]}</a>`).join('');
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=e=>{e.preventDefault();document.querySelectorAll('#nav a').forEach(x=>x.classList.remove('on'));a.classList.add('on')});
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key=='Enter')toast('Demo: pencarian instan untuk "'+e.target.value+'"')});
+</script></body></html>

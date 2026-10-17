@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Consiliae – landing page concept</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4efe4;--ink:#1d1a16;--mut:#6d665b;--fox:#e0662f;--moss:#3f6b4f;--sky:#2f5d8a;--line:#d9d0bf}
+*{box-sizing:border-box;margin:0;padding:0}html{overflow-x:clip;scroll-behavior:smooth}
+body{font-family:"Instrument Sans",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;background-image:radial-gradient(circle at 1px 1px,rgba(29,26,22,.08) 1px,transparent 0);background-size:22px 22px}
+a{color:inherit;text-decoration:none}.w{width:min(1180px,92%);margin:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.02em}
+.mono{font-family:"JetBrains Mono",monospace;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.flag{background:var(--ink);color:var(--paper);text-align:center;padding:.45rem;font-size:.78rem}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0}
+.logo{font-family:Fraunces;font-size:1.5rem;display:flex;align-items:center;gap:.5rem}.logo span{font-size:1.4rem}
+nav{display:flex;gap:2rem;font-size:.95rem}nav a:hover{color:var(--fox)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--ink);color:var(--paper);padding:.85rem 1.4rem;border-radius:4px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;transition:transform .2s,background .2s}.btn:hover{background:var(--fox);transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.l{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:3rem 0 5rem;min-height:78vh}
+.hero h1{font-size:clamp(3rem,7vw,6.2rem)}.hero h1 i{color:var(--fox)}
+.hero p{font-size:1.2rem;color:var(--mut);max-width:30rem;margin:1.5rem 0 2rem}
+.map{position:relative;aspect-ratio:1/1;border:1.5px solid var(--ink);background:#fbf8f1;border-radius:6px;box-shadow:10px 10px 0 var(--ink)}
+.map svg{width:100%;height:100%}
+.node circle{fill:#fbf8f1;stroke:var(--ink);stroke-width:1.5;cursor:pointer;transition:fill .3s}
+.node text{font:500 11px "Instrument Sans";text-anchor:middle;pointer-events:none}
+.node.known circle{fill:var(--moss)}.node.known text{fill:#fff}
+.node.gap circle{fill:var(--fox)}.node.gap text{fill:#fff}
+.node.goal circle{fill:var(--sky)}.node.goal text{fill:#fff}
+.edge{stroke:var(--ink);stroke-width:1.2;opacity:.35;fill:none}.edge.route{stroke:var(--fox);opacity:1;stroke-width:2.5;stroke-dasharray:6 5;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.legend{position:absolute;left:1rem;bottom:1rem;display:flex;gap:.9rem;flex-wrap:wrap}.legend span{display:flex;gap:.35rem;align-items:center;font-size:.72rem}.legend i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--ink)}
+.hint{position:absolute;right:1rem;top:1rem;background:var(--ink);color:var(--paper);padding:.4rem .7rem;border-radius:3px}
+.fox{position:absolute;font-size:28px;transition:all 1s cubic-bezier(.6,0,.2,1);transform:translate(-50%,-110%)}
+.strip{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);overflow:hidden;white-space:nowrap;padding:.9rem 0;background:var(--ink);color:var(--paper)}
+.strip div{display:inline-block;animation:mq 30s linear infinite;font-family:Fraunces;font-size:1.5rem;font-style:italic}.strip b{color:var(--fox);font-style:normal;margin:0 1.5rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:6rem 0}
+.three{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);background:#fbf8f1}
+.three>div{padding:2.2rem;border-right:1.5px solid var(--ink)}.three>div:last-child{border:0}
+.three .n{font-family:Fraunces;font-size:4.5rem;color:var(--fox);line-height:1}.three h3{font-size:1.8rem;margin:.8rem 0 .6rem}.three p{color:var(--mut)}
+.story{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}
+.story h2{font-size:clamp(2.2rem,4.5vw,3.8rem);position:sticky;top:2rem}
+.chap{border-left:1.5px solid var(--ink);padding:0 0 3rem 2rem;position:relative}.chap:before{content:"";position:absolute;left:-7px;top:.3rem;width:12px;height:12px;border-radius:50%;background:var(--fox);border:1.5px solid var(--ink)}
+.chap h3{font-size:1.7rem;margin:.4rem 0 .6rem}.chap p{color:var(--mut);max-width:34rem}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.card{background:#fbf8f1;border:1.5px solid var(--ink);padding:1.8rem;border-radius:6px;transition:transform .25s,box-shadow .25s}.card:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--ink)}
+.card .e{font-size:2rem}.card h3{font-size:1.5rem;margin:.6rem 0 .4rem}.card p{color:var(--mut);font-size:.96rem}
+.quote{text-align:center;max-width:52rem;margin:auto}.quote p{font-family:Fraunces;font-size:clamp(1.7rem,3.4vw,2.8rem);font-style:italic;line-height:1.25}.quote small{display:block;margin-top:1.4rem;color:var(--mut)}
+.end{background:var(--ink);color:var(--paper);border-radius:8px;padding:4rem;text-align:center}
+.end h2{font-size:clamp(2.4rem,5vw,4.4rem)}.end p{color:#bfb6a5;margin:1rem auto 2rem;max-width:32rem}
+.end form{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}.end input{padding:.9rem 1.1rem;border-radius:4px;border:1.5px solid var(--paper);background:transparent;color:var(--paper);font:inherit;min-width:260px}
+.end .btn{background:var(--fox)}
+footer{padding:2.5rem 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:var(--mut);font-size:.88rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.85rem 1.2rem;border-radius:4px;z-index:99;max-width:90vw;text-align:center}
+@media(max-width:900px){nav{display:none}.hero,.story{grid-template-columns:1fr}.three,.who{grid-template-columns:1fr}.three>div{border-right:0;border-bottom:1.5px solid var(--ink)}.story h2{position:static}.end{padding:2.5rem 1.3rem}section{padding:4rem 0}.map{box-shadow:6px 6px 0 var(--ink)}}
+</style></head><body>
+<div class="flag">Landing page concept for Consiliae · unsolicited design sample · placeholder copy</div>
+<div class="w"><header><a class="logo" href="#"><span>🦊</span>Consiliae</a><nav><a href="#how">How it works</a><a href="#who">Who it's for</a><a href="#story">Why</a></nav><a class="btn" href="#start">Map my maths</a></header>
+<div class="hero"><div><div class="mono" style="color:var(--fox)">● A route through maths, not a syllabus</div>
+<h1>You don't need <i>all</i> of maths. Just the right path.</h1>
+<p>Consiliae maps what you already know, finds the one prerequisite that's holding you back, and builds a route through only what you actually need.</p>
+<a class="btn" href="#start">Start mapping →</a> &nbsp; <a class="btn l" href="#how">See how</a></div>
+<div class="map" id="map"><span class="hint mono">Click a node to set your goal</span><svg viewBox="0 0 500 500" id="svg"></svg><span class="fox" id="fox">🦊</span>
+<div class="legend"><span><i style="background:var(--moss)"></i>Known</span><span><i style="background:var(--fox)"></i>Gap</span><span><i style="background:var(--sky)"></i>Goal</span><span><i></i>Not needed</span></div></div></div></div>
+<div class="strip"><div>Map what you know <b>✦</b> Find the gap <b>✦</b> Build your route <b>✦</b> Skip the rest <b>✦</b> Map what you know <b>✦</b> Find the gap <b>✦</b> Build your route <b>✦</b> Skip the rest <b>✦</b> </div></div>
+<section id="how"><div class="w"><div class="mono" style="margin-bottom:1.2rem">How it works</div><div class="three">
+<div class="rv"><div class="n">01</div><h3>Map what you know</h3><p>A short, adaptive check places you on the map of maths – topic by topic, not grade by grade.</p></div>
+<div class="rv"><div class="n">02</div><h3>Find the gap</h3><p>Stuck on integration? Often it's really fractions or algebraic manipulation. We find the real blocker.</p></div>
+<div class="rv"><div class="n">03</div><h3>Build your route</h3><p>A personal path through only the prerequisites you need – nothing you already know, nothing you don't.</p></div></div></div></section>
+<section id="story" style="padding-top:0"><div class="w story"><h2>Maths isn't a ladder. <i style="color:var(--fox)">It's a map.</i></h2><div>
+<div class="chap rv"><div class="mono">Chapter 1</div><h3>Syllabuses are linear. Understanding isn't.</h3><p>Courses march everyone through the same sequence. But every learner arrives with a different shape of knowledge – and different holes.</p></div>
+<div class="chap rv"><div class="mono">Chapter 2</div><h3>One missing piece blocks everything after it.</h3><p>Most "I'm bad at maths" moments trace back to a single prerequisite that was never quite secure.</p></div>
+<div class="chap rv"><div class="mono">Chapter 3</div><h3>So we drew the map.</h3><p>Every concept, linked to what it depends on. Consiliae shows you where you stand – and the shortest honest route to where you want to go.</p></div></div></div></section>
+<section id="who" style="padding-top:0"><div class="w"><div class="mono" style="margin-bottom:1.2rem">Who it's for</div><div class="who">
+<div class="card rv"><div class="e">🎓</div><h3>Students</h3><p>Preparing for an exam and want to fix the foundations fast, not redo three years of school.</p></div>
+<div class="card rv"><div class="e">🔁</div><h3>Returners</h3><p>Coming back to maths for a degree, a career change, data science or ML.</p></div>
+<div class="card rv"><div class="e">🧑‍🏫</div><h3>Tutors &amp; parents</h3><p>See exactly which gaps to work on – and prove progress on the map.</p></div></div></div></section>
+<section style="padding-top:0"><div class="w quote rv"><p>"For the first time I could see <span style="color:var(--fox)">why</span> I was stuck – and it was one topic from Year 9."</p><small>— Placeholder testimonial</small></div></section>
+<section id="start" style="padding-top:0"><div class="w"><div class="end rv"><div class="mono" style="color:var(--fox)">Early access</div><h2>Find your route through maths.</h2><p>Join the waitlist and be among the first to map what you know.</p>
+<form onsubmit="event.preventDefault();t('Concept demo – this would add you to the waitlist.')"><input type="email" placeholder="you@example.com" required><button class="btn">Join waitlist</button></form></div></div></section>
+<div class="w"><footer><span>🦊 Consiliae – concept by Mohammad Saleh Alahmad (web designer, Germany)</span><span>Hand-coded · GSAP · no template</span></footer></div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+function t(x){const d=document.createElement('div');d.className='toast';d.textContent=x;document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}
+const N={ar:[70,420,'Arithmetic'],fr:[190,440,'Fractions'],ng:[80,300,'Negatives'],al:[220,330,'Algebra'],eq:[340,400,'Equations'],fn:[300,240,'Functions'],gr:[440,300,'Graphs'],tr:[120,180,'Trig'],lm:[400,170,'Limits'],df:[300,110,'Derivatives'],in:[420,60,'Integrals'],pr:[160,70,'Probability']};
+const E=[['ar','fr'],['ar','ng'],['fr','al'],['ng','al'],['al','eq'],['al','fn'],['eq','gr'],['fn','gr'],['fn','tr'],['fn','lm'],['lm','df'],['df','in'],['fr','pr'],['tr','df']];
+const known=new Set(['ar','ng','eq']);const svg=document.getElementById('svg');
+let h='';E.forEach(([a,b])=>h+=`<line class="edge" id="e-${a}-${b}" x1="${N[a][0]}" y1="${N[a][1]}" x2="${N[b][0]}" y2="${N[b][1]}"/>`);
+for(const k in N)h+=`<g class="node" data-k="${k}"><circle cx="${N[k][0]}" cy="${N[k][1]}" r="34"/><text x="${N[k][0]}" y="${N[k][1]+4}">${N[k][2]}</text></g>`;svg.innerHTML=h;
+function pre(k,s=new Set()){E.filter(e=>e[1]==k).forEach(e=>{if(!s.has(e[0])){s.add(e[0]);pre(e[0],s)}});return s}
+function setGoal(g){const need=pre(g);document.querySelectorAll('.node').forEach(n=>{const k=n.dataset.k;n.setAttribute('class','node'+(k==g?' goal':known.has(k)?' known':need.has(k)?' gap':''))});
+document.querySelectorAll('.edge').forEach(l=>{const[,a,b]=l.id.split('-');l.setAttribute('class','edge'+(((need.has(a)||a==g)&&(need.has(b)||b==g))&&!known.has(b)?' route':''))});
+const gaps=[...need].filter(k=>!known.has(k));const first=gaps.find(k=>pre(k).size==0||[...pre(k)].every(p=>known.has(p)))||g;const m=document.getElementById('map').getBoundingClientRect();const f=document.getElementById('fox');f.style.left=(N[first][0]/500*100)+'%';f.style.top=(N[first][1]/500*100)+'%'}
+document.querySelectorAll('.node').forEach(n=>n.onclick=()=>setGoal(n.dataset.k));setGoal('df');
+if(window.gsap){gsap.registerPlugin(ScrollTrigger);gsap.from('.hero>div:first-child>*',{y:40,opacity:0,stagger:.1,duration:.9,ease:'power3.out'});gsap.from('.node',{scale:0,transformOrigin:'center',stagger:.05,duration:.5,delay:.3,ease:'back.out(2)'});document.querySelectorAll('.rv').forEach(e=>gsap.from(e,{y:36,opacity:0,duration:.8,scrollTrigger:{trigger:e,start:'top 88%'}}))}
+</script></body></html>

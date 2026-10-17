@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waterproofing company – website concept</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0c2340;--blue:#1673d1;--sky:#e8f2fc;--yel:#ffc928;--ink:#13202f;--mut:#5f6d7c;--line:#dfe6ee}
+*{box-sizing:border-box;margin:0;padding:0}html{overflow-x:clip;scroll-behavior:smooth}body{font-family:Barlow,system-ui,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}.w{width:min(1180px,92%);margin:auto}
+h1,h2,h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;line-height:1;letter-spacing:.01em}
+.flag{background:var(--yel);color:#2a2000;text-align:center;font-size:.8rem;padding:.4rem;font-weight:600}
+.top{background:var(--navy);color:#cbd8e8;font-size:.86rem}.top .w{display:flex;justify-content:space-between;padding:.5rem 0;flex-wrap:wrap;gap:.5rem}
+header{position:sticky;top:0;z-index:30;background:#fff;box-shadow:0 2px 14px rgba(12,35,64,.08)}.bar{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font-family:"Barlow Condensed";font-weight:800;font-size:1.6rem;color:var(--navy);display:flex;align-items:center;gap:.5rem}.logo i{font-style:normal;font-size:1.5rem}
+nav{display:flex;gap:1.6rem;font-weight:600}nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--yel);color:#2a2000;padding:.9rem 1.4rem;border-radius:8px;font-weight:700;border:0;cursor:pointer;font:inherit;font-weight:700;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.btn.b{background:var(--blue);color:#fff}
+.hero{position:relative;color:#fff;background:var(--navy);overflow:hidden}
+.hero>img{position:absolute;inset:0;opacity:.35}.hero .w{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:5rem 0}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem)}.hero h1 span{color:var(--yel)}.hero p{font-size:1.15rem;color:#d6e2f0;margin:1.2rem 0 1.8rem;max-width:34rem}
+.badges{display:flex;gap:1.4rem;margin-top:1.8rem;flex-wrap:wrap;font-weight:600;font-size:.92rem}.badges span:before{content:"✔ ";color:var(--yel)}
+.drops{position:absolute;inset:0;pointer-events:none}.drop{position:absolute;top:-20px;width:2px;height:18px;background:linear-gradient(transparent,rgba(160,205,255,.7));animation:fall linear infinite}@keyframes fall{to{transform:translateY(110vh)}}
+.quote{background:#fff;color:var(--ink);border-radius:16px;padding:1.6rem;box-shadow:0 30px 60px -25px rgba(0,0,0,.5)}.quote h3{font-size:1.8rem;color:var(--navy)}.quote p{color:var(--mut);font-size:.9rem;margin:.2rem 0 1rem}
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.8rem}.qs button{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:.7rem .5rem;font:600 .9rem Barlow;cursor:pointer;display:flex;gap:.4rem;align-items:center;justify-content:center}.qs button.on{border-color:var(--blue);background:var(--sky);color:var(--blue)}
+.quote input,.quote select{width:100%;padding:.8rem;border-radius:10px;border:1.5px solid var(--line);font:inherit;margin-bottom:.6rem}
+.prog{height:6px;background:var(--line);border-radius:9px;margin-bottom:1rem;overflow:hidden}.prog i{display:block;height:100%;background:var(--blue);width:33%;transition:width .4s}
+.step{display:none}.step.on{display:block}
+section{padding:5rem 0}.ey{color:var(--blue);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}.sh{max-width:40rem;margin-bottom:2.4rem}.sh h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin-top:.3rem;color:var(--navy)}
+.sv{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}.s{border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s}.s:hover{transform:translateY(-6px);box-shadow:0 20px 40px -25px rgba(12,35,64,.5)}
+.s .im{aspect-ratio:4/3;background:var(--sky);display:grid;place-items:center;font-size:3.2rem}.s .b{padding:1.2rem}.s h3{font-size:1.45rem;color:var(--navy)}.s p{color:var(--mut);font-size:.92rem;margin-top:.3rem}
+.why{background:var(--sky)}.wg{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.wg .im{border-radius:20px;overflow:hidden;aspect-ratio:5/4}
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.6rem}.nums div{background:#fff;border-radius:14px;padding:1.2rem}.nums b{font-family:"Barlow Condensed";font-size:2.6rem;color:var(--blue);display:block;line-height:1}
+.tst{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.t{border:1px solid var(--line);border-radius:16px;padding:1.5rem}.t .st{color:#f4b400;letter-spacing:.12em}.t p{margin:.6rem 0 1rem}.t small{color:var(--mut);font-weight:600}
+.cta{background:var(--navy);color:#fff;border-radius:22px;padding:3rem;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}.cta h2{font-size:clamp(2rem,4vw,3rem)}.cta p{color:#c4d3e5;margin-top:.6rem}
+footer{padding:2.5rem 0;color:var(--mut);font-size:.88rem}footer .w{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.call{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;grid-template-columns:1fr 1fr;box-shadow:0 -6px 20px rgba(0,0,0,.12)}.call a{padding:1rem;text-align:center;font-weight:700}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:#111;color:#fff;padding:.85rem 1.2rem;border-radius:10px;z-index:99;max-width:90vw;text-align:center}
+@media(max-width:900px){nav,.bar .btn{display:none}.hero .w,.wg,.cta{grid-template-columns:1fr}.sv{grid-template-columns:1fr 1fr}.tst{grid-template-columns:1fr}.call{display:grid}body{padding-bottom:56px}.cta{padding:2rem 1.3rem}section{padding:3.5rem 0}.hero .w{padding:3rem 0}}
+@media(max-width:520px){.sv{grid-template-columns:1fr}}
+</style></head><body>
+<div class="flag">Website concept for a waterproofing company · sample content · built to turn visitors into quote requests</div>
+<div class="top"><div class="w"><span>⏱ Free inspection within 48 hours</span><span>📞 (555) 010-2030 · Mon–Sat 7am–7pm</span></div></div>
+<header><div class="w bar"><a class="logo" href="#"><i>💧</i>DRYSHIELD</a><nav><a href="#services">Services</a><a href="#why">Why us</a><a href="#reviews">Testimonials</a><a href="#contact">Contact</a></nav><a class="btn b" href="tel:5550102030">📞 Call now</a></div></header>
+<section class="hero" style="padding:0"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=60" alt=""><div class="drops" id="drops"></div><div class="w"><div>
+<h1>Stop leaks <span>for good.</span></h1><p>Basement, roof and foundation waterproofing with a written warranty. Licensed, insured and trusted by 1,200+ homeowners.</p>
+<a class="btn" href="#q">Get my free quote</a> &nbsp;<a class="btn b" href="tel:5550102030">📞 (555) 010-2030</a><div class="badges"><span>10-year warranty</span><span>Licensed &amp; insured</span><span>Financing available</span></div></div>
+<div class="quote" id="q"><div class="prog"><i id="pg"></i></div>
+<div class="step on" id="s1"><h3>Free quote in 60 sec</h3><p>Step 1 of 3 – Where is the problem?</p><div class="qs" id="qa"><button>🏠 Basement</button><button>🏚 Roof</button><button>🧱 Foundation</button><button>🛁 Bathroom</button></div><button class="btn b" style="width:100%;justify-content:center" onclick="go(2)">Next →</button></div>
+<div class="step" id="s2"><h3>How urgent?</h3><p>Step 2 of 3</p><div class="qs" id="qb"><button>🚨 Active leak</button><button>💧 Damp / mould</button><button>📅 Prevention</button><button>❓ Not sure</button></div><button class="btn b" style="width:100%;justify-content:center" onclick="go(3)">Next →</button></div>
+<div class="step" id="s3"><h3>Where do we send it?</h3><p>Step 3 of 3 – no spam, just your quote.</p><input placeholder="Name"><input placeholder="Phone"><input placeholder="ZIP code"><button class="btn" style="width:100%;justify-content:center" onclick="toast('Demo: quote request emailed to you + conversion tracked');go(1)">Send my free quote</button></div></div></div></section>
+<section id="services"><div class="w"><div class="sh"><div class="ey">Service overview</div><h2>Waterproofing services</h2></div><div class="sv">
+<div class="s"><div class="im">🏠</div><div class="b"><h3>Basement</h3><p>Interior &amp; exterior systems, sump pumps, drainage.</p></div></div>
+<div class="s"><div class="im">🏚</div><div class="b"><h3>Roof &amp; terrace</h3><p>Liquid membranes and flat-roof sealing.</p></div></div>
+<div class="s"><div class="im">🧱</div><div class="b"><h3>Foundation</h3><p>Crack injection and foundation sealing.</p></div></div>
+<div class="s"><div class="im">🧪</div><div class="b"><h3>Mould &amp; damp</h3><p>Moisture testing, treatment and prevention.</p></div></div></div></div></section>
+<section class="why" id="why"><div class="w wg"><div class="im"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=60" alt=""></div><div><div class="ey">Why homeowners choose us</div><h2 style="font-size:clamp(2.2rem,4.5vw,3.2rem);color:var(--navy);margin-top:.3rem">Done right the first time.</h2><p style="color:var(--mut);margin-top:.8rem">Every job starts with a free moisture inspection and a clear, fixed-price quote. No surprises, no upselling.</p>
+<div class="nums"><div><b data-n="1200">0</b>homes protected</div><div><b data-n="15">0</b>years experience</div><div><b data-n="10">0</b>-year warranty</div><div><b data-n="48">0</b>h to inspection</div></div></div></div></section>
+<section id="reviews"><div class="w"><div class="sh"><div class="ey">Testimonials</div><h2>What customers say</h2></div><div class="tst">
+<div class="t"><div class="st">★★★★★</div><p>"Our basement flooded every spring. Since DryShield came, it's bone dry – two years now."</p><small>Mark T. · placeholder</small></div>
+<div class="t"><div class="st">★★★★★</div><p>"Clear quote, on time, clean work. They even explained everything with photos."</p><small>Linda R. · placeholder</small></div>
+<div class="t"><div class="st">★★★★★</div><p>"Fixed a roof leak two other companies couldn't find. Highly recommended."</p><small>James P. · placeholder</small></div></div></div></section>
+<section id="contact" style="padding-top:0"><div class="w"><div class="cta"><div><h2>Leak? Damp? Call us today.</h2><p>Free inspection · written quote · 10-year warranty</p></div><div style="display:grid;gap:.7rem"><a class="btn" href="#q">Get my free quote</a><a class="btn b" href="tel:5550102030">📞 (555) 010-2030</a></div></div></div></section>
+<footer><div class="w"><span>© 2026 DryShield Waterproofing – concept by Mohammad Saleh Alahmad</span><span>Privacy · Terms</span></div></footer>
+<div class="call"><a href="tel:5550102030" style="background:var(--blue);color:#fff">📞 Call</a><a href="#q" style="background:var(--yel)">Free quote</a></div>
+<script>
+function toast(x){const d=document.createElement('div');d.className='toast';d.textContent=x;document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}
+function go(n){document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));document.getElementById('s'+n).classList.add('on');pg.style.width=(n*33.4)+'%'}
+document.querySelectorAll('.qs').forEach(g=>g.querySelectorAll('button').forEach(b=>b.onclick=()=>{g.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on')}));
+for(let i=0;i<40;i++){const d=document.createElement('i');d.className='drop';d.style.cssText=`left:${Math.random()*100}%;animation-duration:${.8+Math.random()*1.2}s;animation-delay:${-Math.random()*2}s`;drops.appendChild(d)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,n=+el.dataset.n;let c=0;const st=Math.max(1,Math.ceil(n/50));const t=setInterval(()=>{c=Math.min(n,c+st);el.textContent=c.toLocaleString()+(n>=1000?'+':'');if(c>=n)clearInterval(t)},25);io.unobserve(el)}}));document.querySelectorAll('[data-n]').forEach(e=>io.observe(e));
+</script></body></html>
