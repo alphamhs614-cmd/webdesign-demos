@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>QR code generator – QR Menu</title>
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<style>
+:root{--primary:#1f4d3a;--accent:#e07a3f;--bg:#faf6ef;--line:rgba(0,0,0,.12)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#1e1b16;font:16px/1.5 Cairo,system-ui,sans-serif}
+.wrap{max-width:980px;margin:auto;padding:24px 16px}
+h1{margin:0 0 4px;font-size:1.6rem}.muted{color:#6f675c;margin:0 0 18px}
+.grid{display:grid;gap:20px}@media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+label{display:block;font-weight:700;font-size:.9rem;margin:10px 0 4px}
+input,select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+input[type=color]{height:44px;padding:4px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:10px 16px;cursor:pointer;background:var(--primary);color:#fff}
+button.alt{background:#fff;color:var(--primary);border:1.5px solid var(--primary)}
+.warn{background:#fff4e5;border:1px solid #f3c58a;border-radius:10px;padding:8px 12px;font-size:.88rem;display:none}
+/* printable table card */
+.tent{background:#fff;border-radius:18px;border:1px solid var(--line);padding:26px 20px;text-align:center;max-width:360px;margin:auto}
+.tent img.lg{width:56px;height:56px;margin:auto}
+.tent h2{margin:6px 0 0;font-size:1.5rem;color:var(--primary)}
+.tent .cv{display:block;margin:14px auto;width:220px;height:220px;image-rendering:pixelated}
+.tent .s{font-weight:900;font-size:1.05rem;margin:2px 0}
+.tent .s.ar{font-size:1.15rem}
+.tent small{color:#6f675c}
+@media print{body{background:#fff}.no-print{display:none!important}.wrap{padding:0}.grid{display:block}.card{border:0;padding:0}.tent{border:1px dashed #bbb;margin-top:20mm}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="no-print">
+    <h1>QR code for your menu</h1>
+    <p class="muted">QR-Code für Ihre Speisekarte · رمز QR لقائمة الطعام – generated 100% locally in your browser, nothing is uploaded.</p>
+  </div>
+  <div class="grid">
+    <div class="card no-print">
+      <label for="url">Menu URL (your live website address)</label>
+      <input id="url" type="url" placeholder="https://your-restaurant.netlify.app/" autocomplete="url">
+      <p class="warn" id="warn">Tip: enter your public https:// address. A QR code that points to a file on your computer will not work on guests' phones.</p>
+      <div class="row">
+        <div><label for="fg">QR colour</label><input id="fg" type="color" value="#1f4d3a"></div>
+        <div><label for="bgc">Background</label><input id="bgc" type="color" value="#ffffff"></div>
+      </div>
+      <div class="row">
+        <div><label for="ec">Error correction</label><select id="ec"><option value="L">L – smallest</option><option value="M" selected>M – recommended</option><option value="Q">Q</option><option value="H">H – most robust</option></select></div>
+        <div><label for="px">PNG size</label><select id="px"><option>512</option><option selected>1024</option><option>2048</option></select></div>
+      </div>
+      <label for="title">Name on the table card</label>
+      <input id="title" placeholder="Restaurant name">
+      <div class="btns">
+        <button id="png" type="button">Download PNG</button>
+        <button id="svg" type="button" class="alt">Download SVG</button>
+        <button id="print" type="button" class="alt">Print table card</button>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:.85rem">Always test the printed code with 2–3 different phones before printing many copies. Keep dark modules on a light background for best scanning.</p>
+    </div>
+    <div class="card">
+      <div class="tent">
+        <img class="lg" id="lg" src="assets/img/logo.svg" alt="">
+        <h2 id="tName">Restaurant</h2>
+        <canvas class="cv" id="cv" width="220" height="220" aria-label="QR code"></canvas>
+        <p class="s">Speisekarte scannen</p>
+        <p class="s ar" dir="rtl" lang="ar">امسح الرمز لعرض القائمة</p>
+        <small>Scan for menu · WhatsApp-Bestellung · اطلب عبر واتساب</small>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="assets/vendor/qrcode-generator.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  qrcode.stringToBytes = qrcode.stringToBytesFuncs['UTF-8'];
+  var qr = null;
+  function guessUrl() { if (/^https?:$/.test(location.protocol)) return location.href.replace(/qr\.html.*$/, ''); return ''; }
+  function build() {
+    var url = $('url').value.trim() || 'https://example.com/';
+    $('warn').style.display = /^https:\/\//i.test($('url').value.trim()) || !$('url').value.trim() ? 'none' : 'block';
+    qr = qrcode(0, $('ec').value); qr.addData(url); qr.make();
+    draw($('cv'), 220 * 2); $('cv').style.width = $('cv').style.height = '220px';
+  }
+  function draw(cv, size) {
+    var n = qr.getModuleCount(), quiet = 4, cell = size / (n + quiet * 2), ctx = cv.getContext('2d');
+    cv.width = cv.height = size; ctx.fillStyle = $('bgc').value; ctx.fillRect(0, 0, size, size); ctx.fillStyle = $('fg').value;
+    for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (qr.isDark(r, c)) ctx.fillRect(Math.floor((c + quiet) * cell), Math.floor((r + quiet) * cell), Math.ceil(cell), Math.ceil(cell));
+  }
+  function svgText() {
+    var n = qr.getModuleCount(), q = 4, s = n + q * 2, d = '';
+    for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (qr.isDark(r, c)) d += 'M' + (c + q) + ' ' + (r + q) + 'h1v1h-1z';
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + s + ' ' + s + '" shape-rendering="crispEdges"><rect width="' + s + '" height="' + s + '" fill="' + $('bgc').value + '"/><path d="' + d + '" fill="' + $('fg').value + '"/></svg>';
+  }
+  function dl(href, name) { var a = document.createElement('a'); a.href = href; a.download = name; document.body.appendChild(a); a.click(); a.remove(); }
+  $('png').onclick = function () { var cv = document.createElement('canvas'); draw(cv, +$('px').value); dl(cv.toDataURL('image/png'), 'menu-qr.png'); };
+  $('svg').onclick = function () { var u = URL.createObjectURL(new Blob([svgText()], { type: 'image/svg+xml' })); dl(u, 'menu-qr.svg'); setTimeout(function () { URL.revokeObjectURL(u); }, 2000); };
+  $('print').onclick = function () { window.print(); };
+  ['url', 'fg', 'bgc', 'ec'].forEach(function (id) { $(id).addEventListener('input', build); });
+  $('title').addEventListener('input', function () { $('tName').textContent = $('title').value || 'Restaurant'; });
+  function useData(D) {
+    if (!D || !D.restaurant) return; var n = D.restaurant.name || {}; var name = typeof n === 'string' ? n : (n.de || n.ar || '');
+    if (n.ar && n.de && n.ar !== n.de) name = n.de + ' · ' + n.ar;
+    $('title').value = name; $('tName').textContent = name;
+    if (D.restaurant.logo) $('lg').src = D.restaurant.logo; else $('lg').hidden = true;
+    if (D.theme && D.theme.primary) { $('fg').value = D.theme.primary; document.documentElement.style.setProperty('--primary', D.theme.primary); build(); }
+  }
+  $('url').value = guessUrl(); build();
+  if (location.protocol === 'file:') { var s = document.createElement('script'); s.src = 'menu.js'; s.onload = function () { useData(window.MENU_DATA); }; document.head.appendChild(s); }
+  else fetch('menu.json').then(function (r) { return r.json(); }).then(useData).catch(function () {});
+})();
+</script>
+</body>
+</html>

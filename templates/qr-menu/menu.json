@@ -1,0 +1,481 @@
+{
+  "restaurant": {
+    "name": {
+      "de": "Zaytoun",
+      "ar": "زيتون"
+    },
+    "tagline": {
+      "de": "Levantinische Küche · frisch & hausgemacht",
+      "ar": "مطبخ شامي · طازج وبيتي"
+    },
+    "logo": "assets/img/logo.svg",
+    "address": {
+      "de": "Musterstraße 12, 10115 Berlin",
+      "ar": "Musterstraße 12, 10115 Berlin"
+    },
+    "hours": {
+      "de": "Mo–So 11:30–22:30",
+      "ar": "يومياً 11:30 – 22:30"
+    },
+    "phone": "+49 30 1234567",
+    "whatsapp": "491701234567",
+    "mapsUrl": "",
+    "instagram": "",
+    "imprintUrl": "",
+    "privacyUrl": ""
+  },
+  "settings": {
+    "defaultLanguage": "de",
+    "languages": [
+      "de",
+      "ar"
+    ],
+    "currency": "EUR",
+    "arabicDigits": false,
+    "ordering": true,
+    "askTable": true,
+    "askName": true
+  },
+  "theme": {
+    "primary": "#1f4d3a",
+    "accent": "#e07a3f",
+    "background": "#faf6ef",
+    "surface": "#ffffff",
+    "text": "#1e1b16",
+    "muted": "#6f675c"
+  },
+  "tags": {
+    "vegan": {
+      "de": "Vegan",
+      "ar": "نباتي صرف",
+      "color": "#2e7d32"
+    },
+    "veggie": {
+      "de": "Vegetarisch",
+      "ar": "نباتي",
+      "color": "#558b2f"
+    },
+    "spicy": {
+      "de": "Scharf",
+      "ar": "حار",
+      "color": "#c62828"
+    },
+    "gf": {
+      "de": "Glutenfrei",
+      "ar": "خالٍ من الغلوتين",
+      "color": "#8d6e00"
+    },
+    "nuts": {
+      "de": "Enthält Nüsse",
+      "ar": "يحتوي مكسرات",
+      "color": "#795548"
+    },
+    "popular": {
+      "de": "Beliebt",
+      "ar": "الأكثر طلباً",
+      "color": "#e07a3f"
+    }
+  },
+  "text": {
+    "de": {
+      "langName": "Deutsch",
+      "switchTo": "عربي",
+      "intro": "Scannen, stöbern, bestellen: Wählen Sie Ihre Gerichte und senden Sie die Bestellung direkt per WhatsApp.",
+      "filterAll": "Alle",
+      "add": "Hinzufügen",
+      "remove": "Entfernen",
+      "items": "Artikel",
+      "viewOrder": "Bestellung ansehen",
+      "yourOrder": "Ihre Bestellung",
+      "empty": "Noch nichts ausgewählt.",
+      "total": "Summe",
+      "name": "Ihr Name (optional)",
+      "table": "Tisch-Nr. oder Abholzeit (optional)",
+      "note": "Anmerkung (z. B. ohne Zwiebeln)",
+      "send": "Per WhatsApp bestellen",
+      "close": "Schließen",
+      "msgHello": "Hallo! Neue Bestellung bei",
+      "msgName": "Name",
+      "msgTable": "Tisch / Abholung",
+      "msgNote": "Anmerkung",
+      "msgTotal": "Summe",
+      "soldOut": "Ausverkauft",
+      "openHours": "Öffnungszeiten",
+      "address": "Adresse",
+      "call": "Anrufen",
+      "footer": "Alle Preise inkl. MwSt. Informationen zu Allergenen erhalten Sie gerne bei unserem Personal.",
+      "noResults": "Keine Gerichte für diesen Filter.",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz"
+    },
+    "ar": {
+      "langName": "العربية",
+      "switchTo": "Deutsch",
+      "intro": "امسح، تصفّح، واطلب: اختر أطباقك وأرسل طلبك مباشرة عبر واتساب.",
+      "filterAll": "الكل",
+      "add": "إضافة",
+      "remove": "حذف",
+      "items": "عناصر",
+      "viewOrder": "عرض الطلب",
+      "yourOrder": "طلبك",
+      "empty": "لم تختر أي شيء بعد.",
+      "total": "المجموع",
+      "name": "اسمك (اختياري)",
+      "table": "رقم الطاولة أو وقت الاستلام (اختياري)",
+      "note": "ملاحظة (مثلاً: بدون بصل)",
+      "send": "اطلب عبر واتساب",
+      "close": "إغلاق",
+      "msgHello": "مرحباً! طلب جديد من",
+      "msgName": "الاسم",
+      "msgTable": "الطاولة / الاستلام",
+      "msgNote": "ملاحظة",
+      "msgTotal": "المجموع",
+      "soldOut": "نفدت الكمية",
+      "openHours": "أوقات الدوام",
+      "address": "العنوان",
+      "call": "اتصال",
+      "footer": "جميع الأسعار شاملة الضريبة. للاستفسار عن مسببات الحساسية يرجى سؤال فريق العمل.",
+      "noResults": "لا توجد أطباق لهذا الفلتر.",
+      "imprint": "بيانات الناشر (Impressum)",
+      "privacy": "سياسة الخصوصية"
+    }
+  },
+  "categories": [
+    {
+      "id": "mezze",
+      "name": {
+        "de": "Vorspeisen",
+        "ar": "مقبلات"
+      },
+      "description": {
+        "de": "Zum Teilen – mit warmem Fladenbrot",
+        "ar": "للمشاركة – تُقدّم مع خبز طازج"
+      },
+      "items": [
+        {
+          "id": "hummus",
+          "name": {
+            "de": "Hummus",
+            "ar": "حمص بطحينة"
+          },
+          "description": {
+            "de": "Cremiges Kichererbsenpüree mit Tahini, Olivenöl und Paprika",
+            "ar": "حمص كريمي بالطحينة وزيت الزيتون والبابريكا"
+          },
+          "price": 6.5,
+          "image": "assets/img/hummus.svg",
+          "tags": [
+            "vegan",
+            "gf",
+            "popular"
+          ]
+        },
+        {
+          "id": "baba",
+          "name": {
+            "de": "Baba Ghanoush",
+            "ar": "بابا غنوج"
+          },
+          "description": {
+            "de": "Rauchige Auberginencreme mit Granatapfel und Petersilie",
+            "ar": "متبل باذنجان مشوي مع رمان وبقدونس"
+          },
+          "price": 6.9,
+          "image": "assets/img/baba-ghanoush.svg",
+          "tags": [
+            "vegan",
+            "gf"
+          ]
+        },
+        {
+          "id": "falafel",
+          "name": {
+            "de": "Falafel (6 Stück)",
+            "ar": "فلافل (6 قطع)"
+          },
+          "description": {
+            "de": "Knusprig frittiert, mit Tahini-Sauce",
+            "ar": "مقرمشة ومقلية طازجة مع صلصة الطحينة"
+          },
+          "price": 5.9,
+          "image": "assets/img/falafel.svg",
+          "tags": [
+            "vegan"
+          ]
+        },
+        {
+          "id": "tabbouleh",
+          "name": {
+            "de": "Taboulé",
+            "ar": "تبولة"
+          },
+          "description": {
+            "de": "Petersilie, Bulgur, Tomate, Minze, Zitrone",
+            "ar": "بقدونس وبرغل وبندورة ونعناع وليمون"
+          },
+          "price": 6.5,
+          "image": "assets/img/tabbouleh.svg",
+          "tags": [
+            "vegan"
+          ]
+        },
+        {
+          "id": "soup",
+          "name": {
+            "de": "Linsensuppe",
+            "ar": "شوربة عدس"
+          },
+          "description": {
+            "de": "Rote Linsen, Kreuzkümmel, Zitrone",
+            "ar": "عدس أحمر بالكمون والليمون"
+          },
+          "price": 4.9,
+          "image": "assets/img/lentil-soup.svg",
+          "tags": [
+            "vegan",
+            "gf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mains",
+      "name": {
+        "de": "Hauptgerichte",
+        "ar": "أطباق رئيسية"
+      },
+      "description": {
+        "de": "Mit Reis oder Pommes und Salat",
+        "ar": "مع أرز أو بطاطا وسلطة"
+      },
+      "items": [
+        {
+          "id": "shawarma-plate",
+          "name": {
+            "de": "Shawarma-Teller",
+            "ar": "صحن شاورما"
+          },
+          "description": {
+            "de": "Mariniertes Hähnchen, Knoblauchcreme, Reis, Salat",
+            "ar": "دجاج متبّل مع ثوم وأرز وسلطة"
+          },
+          "price": 13.9,
+          "image": "assets/img/shawarma-plate.svg",
+          "tags": [
+            "popular"
+          ]
+        },
+        {
+          "id": "grill",
+          "name": {
+            "de": "Gemischter Grill",
+            "ar": "مشاوي مشكلة"
+          },
+          "description": {
+            "de": "Kebab, Shish Taouk und Lamm vom Holzkohlegrill",
+            "ar": "كباب وشيش طاووق ولحم غنم على الفحم"
+          },
+          "price": 18.5,
+          "image": "assets/img/mixed-grill.svg",
+          "tags": [
+            "gf",
+            "spicy"
+          ]
+        },
+        {
+          "id": "maqluba",
+          "name": {
+            "de": "Maqluba",
+            "ar": "مقلوبة"
+          },
+          "description": {
+            "de": "Gestürzter Reis mit Aubergine, Hähnchen und Mandeln",
+            "ar": "أرز مقلوب بالباذنجان والدجاج واللوز"
+          },
+          "price": 15.9,
+          "image": "assets/img/maqluba.svg",
+          "tags": [
+            "nuts",
+            "gf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wraps",
+      "name": {
+        "de": "Wraps",
+        "ar": "سندويشات"
+      },
+      "description": {
+        "de": "Im frischen Saj-Brot",
+        "ar": "بخبز الصاج الطازج"
+      },
+      "items": [
+        {
+          "id": "falafel-wrap",
+          "name": {
+            "de": "Falafel-Wrap",
+            "ar": "سندويش فلافل"
+          },
+          "description": {
+            "de": "Falafel, Tahini, Gurke, Tomate, Minze",
+            "ar": "فلافل وطحينة وخيار وبندورة ونعناع"
+          },
+          "price": 6.9,
+          "image": "assets/img/falafel-wrap.svg",
+          "tags": [
+            "vegan"
+          ]
+        },
+        {
+          "id": "shawarma-wrap",
+          "name": {
+            "de": "Shawarma-Wrap",
+            "ar": "سندويش شاورما"
+          },
+          "description": {
+            "de": "Hähnchen, Knoblauchcreme, eingelegtes Gemüse",
+            "ar": "دجاج وثوم ومخلل"
+          },
+          "price": 7.9,
+          "image": "assets/img/shawarma-wrap.svg",
+          "tags": [
+            "popular",
+            "spicy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": {
+        "de": "Desserts",
+        "ar": "حلويات"
+      },
+      "description": {
+        "de": "Süßer Abschluss",
+        "ar": "ختامها حلو"
+      },
+      "items": [
+        {
+          "id": "baklava",
+          "name": {
+            "de": "Baklava (4 Stück)",
+            "ar": "بقلاوة (4 قطع)"
+          },
+          "description": {
+            "de": "Blätterteig mit Pistazien und Sirup",
+            "ar": "عجينة رقيقة بالفستق الحلبي والقطر"
+          },
+          "price": 4.9,
+          "image": "assets/img/baklava.svg",
+          "tags": [
+            "veggie",
+            "nuts"
+          ]
+        },
+        {
+          "id": "kunafa",
+          "name": {
+            "de": "Kunafa",
+            "ar": "كنافة"
+          },
+          "description": {
+            "de": "Warm, mit Käse, Sirup und Pistazien",
+            "ar": "ساخنة بالجبنة والقطر والفستق"
+          },
+          "price": 6.5,
+          "image": "assets/img/kunafa.svg",
+          "tags": [
+            "veggie",
+            "nuts",
+            "popular"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": {
+        "de": "Getränke",
+        "ar": "مشروبات"
+      },
+      "description": {
+        "de": "Heiß und kalt",
+        "ar": "ساخنة وباردة"
+      },
+      "items": [
+        {
+          "id": "mint-tea",
+          "name": {
+            "de": "Frischer Minztee",
+            "ar": "شاي بالنعناع"
+          },
+          "description": {
+            "de": "Mit frischer Minze, im Glas",
+            "ar": "بالنعناع الطازج"
+          },
+          "price": 3.2,
+          "image": "assets/img/mint-tea.svg",
+          "tags": [
+            "vegan",
+            "gf"
+          ]
+        },
+        {
+          "id": "coffee",
+          "name": {
+            "de": "Arabischer Kaffee",
+            "ar": "قهوة عربية"
+          },
+          "description": {
+            "de": "Mit Kardamom",
+            "ar": "بالهيل"
+          },
+          "price": 2.9,
+          "image": "assets/img/arabic-coffee.svg",
+          "tags": [
+            "vegan",
+            "gf"
+          ]
+        },
+        {
+          "id": "lemonade",
+          "name": {
+            "de": "Zitronen-Minz-Limonade",
+            "ar": "ليمون بالنعناع"
+          },
+          "description": {
+            "de": "Hausgemacht, 0,4 l",
+            "ar": "محضّر في المطعم، 0.4 لتر"
+          },
+          "price": 4.5,
+          "image": "assets/img/lemon-mint.svg",
+          "tags": [
+            "vegan",
+            "gf"
+          ]
+        },
+        {
+          "id": "ayran",
+          "name": {
+            "de": "Ayran",
+            "ar": "عيران"
+          },
+          "description": {
+            "de": "Joghurtgetränk, leicht gesalzen",
+            "ar": "لبن مملّح خفيف"
+          },
+          "price": 2.9,
+          "image": "assets/img/ayran.svg",
+          "tags": [
+            "veggie",
+            "gf"
+          ],
+          "available": false
+        }
+      ]
+    }
+  ]
+}
