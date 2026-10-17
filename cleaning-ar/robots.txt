@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alphamhs614-cmd.github.io/webdesign-demos/cleaning-ar/sitemap.xml
