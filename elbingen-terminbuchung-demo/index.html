@@ -1,0 +1,74 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio Lina – Termin online buchen (Demo)</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#c0786a;--rose2:#f6e9e4;--ink:#2a2220;--mut:#7a6d69;--bg:#fffaf7;--line:#eddcd5}
+*{box-sizing:border-box;margin:0;padding:0}html{overflow-x:clip}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:inherit;text-decoration:none}.w{width:min(1120px,92%);margin:auto}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1}
+.flag{background:var(--ink);color:#f1e4df;text-align:center;font-size:.78rem;padding:.4rem}
+header{position:sticky;top:0;z-index:40;background:rgba(255,250,247,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.bar{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font-family:'Playfair Display';font-size:1.45rem;font-weight:700}.logo em{color:var(--rose)}
+nav{display:flex;gap:1.6rem;font-size:.93rem;color:var(--mut)}nav a:hover{color:var(--rose)}
+.btn{background:var(--rose);color:#fff;border:0;padding:.8rem 1.4rem;border-radius:999px;font:700 .92rem 'DM Sans';cursor:pointer;display:inline-block;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.btn.o{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.menu-btn{display:none;background:none;border:0;font-size:1.5rem}
+.hero{position:relative;min-height:84vh;display:grid;align-items:center;overflow:hidden}.hero img{position:absolute;inset:0;width:100%;height:115%;object-fit:cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,34,32,.78),rgba(42,34,32,.25))}
+.hc{position:relative;z-index:2;color:#fff;max-width:36rem}.hc small{letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;color:#f2c9bf}.hc h1{font-size:clamp(2.5rem,6vw,4.4rem);margin:.7rem 0 1rem}.hc h1 em{color:#f2c9bf}.hc p{color:#eadad5;font-size:1.08rem}.hc .cta{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap}
+.chips{display:flex;gap:.6rem;margin-top:2rem;flex-wrap:wrap}.chips span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:.4rem .85rem;border-radius:999px;font-size:.82rem}
+section{padding:5rem 0}.sh{text-align:center;max-width:36rem;margin:0 auto 2.6rem}.sh small{color:var(--rose);letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.76rem}.sh h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-top:.4rem}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.sv{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .3s}.sv:hover{transform:translateY(-6px)}.sv img{width:100%;aspect-ratio:4/3;object-fit:cover}.sv div{padding:1.3rem}.sv h3{font-size:1.25rem}.sv p{color:var(--mut);font-size:.92rem}.sv b{color:var(--rose);display:block;margin-top:.5rem}
+.book{background:var(--rose2)}.bk{display:grid;grid-template-columns:.8fr 1.2fr;gap:2rem;align-items:start}
+.panel{background:#fff;border-radius:26px;padding:1.8rem;box-shadow:0 30px 60px -40px rgba(120,60,50,.5)}
+.lbl{font-weight:700;font-size:.85rem;margin:1rem 0 .55rem;display:block}.lbl:first-child{margin-top:0}
+.opts{display:flex;flex-wrap:wrap;gap:.5rem}.opt{border:1px solid var(--line);background:#fff;border-radius:12px;padding:.55rem .85rem;font:500 .87rem 'DM Sans';cursor:pointer;transition:.2s}.opt:hover{border-color:var(--rose)}.opt.on{background:var(--rose);border-color:var(--rose);color:#fff}.opt[disabled]{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:.4rem}.day{border:1px solid var(--line);background:#fff;border-radius:12px;padding:.5rem 0;text-align:center;cursor:pointer;font:500 .8rem 'DM Sans'}.day b{display:block;font-size:1.05rem}.day.on{background:var(--ink);color:#fff;border-color:var(--ink)}.day.x{opacity:.35;cursor:not-allowed}
+.sum{margin-top:1.3rem;padding:1rem;border-radius:14px;background:var(--bg);font-size:.9rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
+input{width:100%;padding:.8rem 1rem;border:1px solid var(--line);border-radius:12px;font:inherit;margin-bottom:.5rem}
+.info h2{font-size:2.3rem;margin:.4rem 0 1rem}.info p{color:var(--mut)}.info ul{list-style:none;margin-top:1.4rem;display:grid;gap:.8rem}.info li{display:flex;gap:.7rem;align-items:center}.info li span{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.note{font-size:.78rem;color:var(--mut);margin-top:1rem}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.q{border-left:3px solid var(--rose);padding:.4rem 1.2rem}.q p{font-family:'Playfair Display';font-style:italic;font-size:1.1rem}.q small{color:var(--mut)}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}.hours table{width:100%;border-collapse:collapse}.hours td{padding:.65rem 0;border-bottom:1px solid var(--line)}.hours td:last-child{text-align:right;color:var(--mut)}.map{border-radius:22px;background:linear-gradient(135deg,#efe1da,#f8f0ec);aspect-ratio:4/3;display:grid;place-items:center;color:var(--mut);text-align:center;padding:1rem;font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:2rem 0;font-size:.86rem;color:var(--mut)}.fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+@media(max-width:860px){nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;padding:1rem 4%}.nav-open nav{display:flex}.menu-btn{display:block}.bar .btn{display:none}.svc,.quotes,.bk,.hours{grid-template-columns:1fr}section{padding:3.5rem 0}.panel{padding:1.2rem}.day{font-size:.7rem}.day b{font-size:.95rem}}
+</style></head><body>
+<div class="flag">Demo · fiktiver Salon · Buchungs-Widget zum Ausprobieren</div>
+<header><div class="w bar"><a class="logo" href="#">Studio <em>Lina</em></a><nav><a href="#s-leistungen">Leistungen</a><a href="#s-termin">Termin buchen</a><a href="#s-stimmen">Bewertungen</a><a href="#s-kontakt">Kontakt</a></nav><a class="btn" href="#s-termin">Jetzt buchen</a><button class="menu-btn" aria-label="Menü">☰</button></div></header>
+<section class="hero" style="padding:0"><img id="hi" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=70" alt="Platzhalterbild Salon"><div class="w hc"><small>Friseur &amp; Kosmetik · Westerwald</small><h1>Ihr Termin.<br>In <em>30 Sekunden</em>.</h1><p>Wählen Sie Leistung, Tag und Uhrzeit – und erhalten Sie sofort eine Bestätigung per E-Mail. Rund um die Uhr, ganz ohne Anruf.</p><div class="cta"><a class="btn" href="#s-termin">Termin online buchen</a><a class="btn o" href="#s-leistungen">Preise ansehen</a></div><div class="chips"><span>✓ 24/7 online</span><span>✓ Erinnerung per E-Mail</span><span>✓ Kostenlos stornieren</span></div></div></section>
+<section id="s-leistungen"><div class="w"><div class="sh rv"><small>Leistungen</small><h2>Beliebte Behandlungen</h2></div><div class="svc">
+<div class="sv rv"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=70" alt=""><div><h3>Schnitt &amp; Styling</h3><p>Beratung, Waschen, Schneiden, Föhnen.</p><b>ab 39 € · 45 Min.</b></div></div>
+<div class="sv rv"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=70" alt=""><div><h3>Farbe &amp; Strähnen</h3><p>Balayage, Highlights oder Neufärbung.</p><b>ab 69 € · 90 Min.</b></div></div>
+<div class="sv rv"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=70" alt=""><div><h3>Kosmetik</h3><p>Gesichtspflege, Augenbrauen, Wimpern.</p><b>ab 29 € · 30 Min.</b></div></div></div></div></section>
+<section class="book" id="s-termin"><div class="w bk"><div class="info rv"><small style="color:var(--rose);letter-spacing:.18em;font-weight:700;font-size:.76rem;text-transform:uppercase">Online-Terminbuchung</small><h2>Freie Termine sofort sehen.</h2><p>So funktioniert die Buchung auf Ihrer neuen Website. Im echten Projekt binde ich ein bewährtes Buchungstool wie <b>Calendly</b> oder <b>SimplyBook.me</b> ein – inkl. Bestätigungs- und Erinnerungsmails.</p><ul><li><span>📅</span>Live-Kalender mit Ihren Öffnungszeiten</li><li><span>✉️</span>Automatische Bestätigung &amp; Erinnerung</li><li><span>📱</span>Perfekt auf dem Handy</li></ul></div>
+<div class="panel rv"><span class="lbl">1. Leistung wählen</span><div class="opts" id="svc"></div><span class="lbl">2. Tag wählen</span><div class="days" id="days"></div><span class="lbl">3. Uhrzeit wählen</span><div class="opts" id="times"></div><span class="lbl">4. Ihre Daten</span><input id="nm" placeholder="Name"><input id="em" type="email" placeholder="E-Mail"><div class="sum"><span id="sum">Bitte Leistung, Tag und Uhrzeit wählen.</span><button class="btn" id="bk">Verbindlich buchen</button></div><p class="note">Demo – es wird nichts gespeichert oder versendet.</p></div></div></section>
+<section id="s-stimmen"><div class="w"><div class="sh rv"><small>Bewertungen</small><h2>Kundinnen &amp; Kunden sagen</h2></div><div class="quotes"><div class="q rv"><p>„Termin abends vom Sofa gebucht – genial!"</p><small>Julia M.</small></div><div class="q rv"><p>„Super Beratung und ein toller Schnitt."</p><small>Marco S.</small></div><div class="q rv"><p>„Endlich nicht mehr in der Warteschleife."</p><small>Anja K.</small></div></div></div></section>
+<section id="s-kontakt" style="padding-top:0"><div class="w hours"><div class="rv"><div class="sh" style="text-align:left;margin:0 0 1.2rem"><small>Kontakt</small><h2>Öffnungszeiten</h2></div><table><tr><td>Mo</td><td>geschlossen</td></tr><tr><td>Di – Fr</td><td>9:00 – 18:30</td></tr><tr><td>Sa</td><td>8:30 – 14:00</td></tr><tr><td>Adresse</td><td>Musterweg 3, 56459 Elbingen</td></tr></table></div><div class="map rv">Karte (Google Maps erst nach Einwilligung – DSGVO-konform)</div></div></section>
+<footer><div class="w fb"><span>© 2026 Studio Lina · Demo</span><span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span></div></footer>
+<style>.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111;color:#fff;padding:.85rem 1.2rem;border-radius:12px;font:500 .92rem system-ui,sans-serif;z-index:999;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:90vw;text-align:center}</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+gsap.registerPlugin(ScrollTrigger);lenis.on('scroll',ScrollTrigger.update);
+function reveal(root){(root||document).querySelectorAll('.rv').forEach(el=>{if(el._rv)return;el._rv=1;gsap.from(el,{y:36,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}})});}
+reveal();
+document.querySelectorAll('[data-count]').forEach(el=>{const n=+el.dataset.count,o={v:0};ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter:()=>gsap.to(o,{v:n,duration:1.6,ease:'power2.out',onUpdate:()=>el.textContent=(Number.isInteger(n)?Math.round(o.v):o.v.toFixed(1))+(el.dataset.suf||'')})})});
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#s-"]');if(!a)return;const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();document.body.classList.remove('nav-open');lenis.scrollTo(t,{offset:-72})}});
+const mb=document.querySelector('.menu-btn');if(mb)mb.addEventListener('click',()=>document.body.classList.toggle('nav-open'));
+function toast(msg){let t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);gsap.fromTo(t,{y:30,opacity:0},{y:0,opacity:1,duration:.4});setTimeout(()=>gsap.to(t,{opacity:0,duration:.4,onComplete:()=>t.remove()}),3200)}
+document.querySelectorAll('form[data-demo]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();toast(f.dataset.demo);f.reset()}));
+</script>
+
+<script>
+const S=[['Schnitt & Styling',39,45],['Farbe & Strähnen',69,90],['Kosmetik',29,30],['Herrenschnitt',25,30]];let st={s:null,d:null,t:null};
+const svc=document.getElementById('svc'),days=document.getElementById('days'),times=document.getElementById('times'),sum=document.getElementById('sum');
+svc.innerHTML=S.map((s,i)=>`<button class="opt" data-i="${i}">${s[0]} · ${s[1]} €</button>`).join('');
+const W=['So','Mo','Di','Mi','Do','Fr','Sa'],now=new Date();let dh='';for(let i=1;i<=7;i++){const d=new Date(now);d.setDate(now.getDate()+i);const x=d.getDay()===0||d.getDay()===1;dh+=`<div class="day${x?' x':''}" data-d="${d.toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit'})}">${W[d.getDay()]}<b>${d.getDate()}</b></div>`}days.innerHTML=dh;
+function renderTimes(){const base=['09:00','09:45','10:30','11:15','13:00','14:00','15:30','16:15','17:00'];let seed=(st.d||'').length+(st.s||0);times.innerHTML=base.map((t,i)=>`<button class="opt" ${((i*7+seed)%4===0)?'disabled':''} data-t="${t}">${t}</button>`).join('');gsap.from('#times .opt',{opacity:0,y:8,stagger:.03,duration:.3})}
+function upd(){if(st.s!==null&&st.d&&st.t){const s=S[st.s];sum.innerHTML=`<b>${s[0]}</b> · ${st.d} · ${st.t} Uhr · ${s[2]} Min. · ${s[1]} €`}}
+svc.onclick=e=>{const b=e.target.closest('.opt');if(!b)return;svc.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));b.classList.add('on');st.s=+b.dataset.i;renderTimes();upd()};
+days.onclick=e=>{const b=e.target.closest('.day');if(!b||b.classList.contains('x'))return;days.querySelectorAll('.day').forEach(x=>x.classList.remove('on'));b.classList.add('on');st.d=b.dataset.d;st.t=null;renderTimes();upd()};
+times.onclick=e=>{const b=e.target.closest('.opt');if(!b||b.disabled)return;times.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));b.classList.add('on');st.t=b.dataset.t;upd()};
+renderTimes();
+document.getElementById('bk').onclick=()=>{if(st.s===null||!st.d||!st.t){toast('Bitte zuerst Leistung, Tag und Uhrzeit wählen.');return}toast('Demo: Termin am '+st.d+' um '+st.t+' Uhr wäre jetzt gebucht – Bestätigung per E-Mail.')};
+gsap.from('.hc>*',{y:40,opacity:0,duration:1,stagger:.12,ease:'power3.out'});gsap.to('#hi',{yPercent:-10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+</script></body></html>
