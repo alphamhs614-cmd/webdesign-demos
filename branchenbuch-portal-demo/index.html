@@ -34,14 +34,14 @@ section{padding:5rem 0}
 .sh{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.2rem;flex-wrap:wrap}.sh h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}.sh p{color:var(--mut);max-width:440px}
 .kick{color:var(--p);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
 .cats{display:grid;grid-template-columns:repeat(6,1fr);gap:.9rem}
-.cat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem;text-align:center;cursor:pointer;transition:.25s}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem;text-align:center;cursor:pointer;transition:transform .25s,border-color .25s,box-shadow .25s}
 .cat:hover,.cat.on{border-color:var(--p2);transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,118,110,.12)}
 .cat .e{font-size:1.8rem}.cat b{display:block;margin-top:.4rem;font-size:.92rem}.cat small{color:var(--mut)}
 .res{display:grid;grid-template-columns:1fr 380px;gap:1.6rem;align-items:start}
 .rhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;gap:1rem;flex-wrap:wrap}.rhead b{font-size:1.1rem}
 .rhead select{border:1px solid var(--line);border-radius:10px;padding:.5rem .8rem;background:#fff}
 .list{display:flex;flex-direction:column;gap:.9rem}
-.biz{display:grid;grid-template-columns:76px 1fr auto;gap:1.1rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem;cursor:pointer;transition:.25s;align-items:center}
+.biz{display:grid;grid-template-columns:76px 1fr auto;gap:1.1rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem;cursor:pointer;transition:border-color .25s,box-shadow .25s;align-items:center}
 .biz:hover{border-color:var(--p2);box-shadow:0 12px 28px rgba(15,23,42,.06)}
 .biz.prem{border-color:#fcd34d;background:linear-gradient(90deg,#fffbeb,#fff 40%)}
 .lg{width:76px;height:76px;border-radius:16px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.4rem}
@@ -95,7 +95,7 @@ body.open nav{display:flex;flex-direction:column;position:absolute;top:68px;left
 
 <section id="kategorien"><div class="wrap">
 <div class="sh rv"><div><span class="kick">Kategorien</span><h2>Wonach suchen Sie?</h2></div><p>Kategorien und Unterkategorien sind im WordPress-Backend frei erweiterbar – das Portal wächst mit.</p></div>
-<div class="cats" id="cats"></div>
+<div class="cats rv" id="cats"></div>
 </div></section>
 
 <section id="suche" style="padding-top:0"><div class="wrap">
@@ -143,14 +143,14 @@ const B=[
 const col=c=>C.find(x=>x[0]==c)[2];const ini=n=>n.split(/\s+/).filter(w=>/^[A-ZÄÖÜ]/.test(w)).slice(0,2).map(w=>w[0]).join('');
 let cat='';const $=s=>document.querySelector(s);
 $('#cats').innerHTML=C.map(c=>`<div class="cat" data-c="${c[0]}"><div class="e">${c[1]}</div><b>${c[0]}</b><small>${B.filter(b=>b.c==c[0]).length} Firmen</small></div>`).join('');
-function render(){const q=$('#qs').value.toLowerCase().trim(),o=$('#qo').value;
+let first=true;function render(){const q=$('#qs').value.toLowerCase().trim(),o=$('#qo').value;
 let r=B.filter(b=>(!cat||b.c==cat)&&(!o||b.o==o)&&(!q||(b.n+b.s+b.c+b.d).toLowerCase().includes(q)));
 r.sort($('#sort').value=='n'?(a,b)=>a.n.localeCompare(b.n):(a,b)=>(b.prem-a.prem)||(b.r-a.r));
 $('#rc').textContent=`${r.length} Firmen${cat?' · '+cat:''}${o?' in '+o:' in der Region'}${q?' · „'+q+'"':''}`;
 $('#list').innerHTML=r.map(b=>`<div class="biz ${b.prem?'prem':''}" data-i="${b.i}"><div class="lg" style="background:${col(b.c)}">${ini(b.n)}</div><div><h3>${b.n}${b.ver?'<span class="ver">✓ geprüft</span>':''}${b.prem?'<span class="pr">Premium</span>':''}</h3><div class="meta">${b.s} · 📍 ${b.o}</div><div class="stars">${'★'.repeat(Math.round(b.r))}<span style="color:var(--mut)"> ${b.r.toFixed(1)} (${b.cnt})</span></div></div><span class="go">Profil →</span></div>`).join('');
 $('#empty').style.display=r.length?'none':'block';
 $('#pins').innerHTML=r.map(b=>`<g class="pin" data-i="${b.i}" transform="translate(${b.xy[0]},${b.xy[1]})"><circle r="9" fill="${col(b.c)}" stroke="#fff" stroke-width="3"/></g>`).join('');
-if(window.gsap){gsap.from('#list .biz',{y:20,opacity:0,stagger:.05,duration:.45});gsap.from('#pins .pin circle',{attr:{r:0},stagger:.04,duration:.5,ease:'back.out(3)'})}}
+if(window.gsap&&!first){gsap.fromTo('#list .biz',{y:20,opacity:0},{y:0,opacity:1,stagger:.05,duration:.45,clearProps:'opacity,transform'})}first=false}
 function show(i){const b=B[i];$('#resultsView').style.display='none';const p=$('#profile');p.classList.add('on');
 p.innerHTML=`<button class="btn l back" onclick="hideP()">← Zurück zur Suche</button><div class="pcover" style="background:linear-gradient(135deg,${col(b.c)},#0f172a);margin-top:1rem"><div class="lg" style="background:${col(b.c)}">${ini(b.n)}</div></div><div class="pbody"><div><h2>${b.n}</h2><div class="stars" style="font-size:1rem">${'★'.repeat(Math.round(b.r))} <span style="color:var(--mut)">${b.r.toFixed(1)} aus ${b.cnt} Bewertungen</span></div><div class="tags"><span>${b.s}</span><span>${b.c}</span><span>📍 ${b.o}</span>${b.ver?'<span>✓ geprüfter Betrieb</span>':''}</div><p style="color:var(--mut)">${b.d}. Familiengeführter Betrieb mit über 15 Jahren Erfahrung in ${b.o} und Umgebung. (Beispieltext – die Firma pflegt ihr Profil selbst.)</p><div class="gal"><i style="background:linear-gradient(135deg,#ccfbf1,${col(b.c)})"></i><i style="background:linear-gradient(135deg,#e0e7ff,${col(b.c)})"></i><i style="background:linear-gradient(135deg,#fef3c7,${col(b.c)})"></i></div><h3 style="margin-top:1.6rem">Bewertungen</h3><div class="review"><b>★★★★★ Sabine M.</b><br>Schnell, sauber und freundlich – gerne wieder.</div><div class="review"><b>★★★★☆ Thomas K.</b><br>Termin kurzfristig bekommen, faire Preise.</div></div><div class="side"><div><b>Adresse</b><br>Musterstraße 12, ${b.o}</div><div><b>Öffnungszeiten</b><br>Mo–Fr 8–18 Uhr · Sa 9–13 Uhr</div><div><b>Einsatzgebiet</b><br>${b.o}, Weinheim, Schriesheim</div><div><b>Kontakt</b><br>Telefon &amp; Website (im Live-Portal sichtbar)</div><div><a class="btn" style="width:100%;justify-content:center" href="#">Anfrage senden</a></div></div></div>`;
 if(window.gsap)gsap.from('#profile',{y:30,opacity:0,duration:.6});scrollToEl('#suche')}
@@ -169,7 +169,7 @@ if(window.gsap){gsap.registerPlugin(ScrollTrigger);lenis=new Lenis({lerp:.1});fu
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t&&a.getAttribute('href').length>1){e.preventDefault();lenis.scrollTo(t,{offset:-80})}}));
 gsap.from(['.tagline','.h1','.hero p','.search','.pop'],{y:30,opacity:0,stagger:.12,duration:.9,ease:'power3.out'});
 gsap.to('.hero .blob',{y:30,x:20,duration:6,yoyo:true,repeat:-1,ease:'sine.inOut',stagger:1});
-gsap.from('.cat',{y:30,opacity:0,stagger:.06,duration:.6,scrollTrigger:{trigger:'#cats',start:'top 90%'}});
+
 document.querySelectorAll('.rv').forEach(el=>gsap.from(el,{y:36,opacity:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%'}}));}
 </script>
 </body></html>

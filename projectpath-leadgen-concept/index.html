@@ -226,8 +226,8 @@ body.open nav{display:flex;position:absolute;top:70px;left:0;right:0;flex-direct
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 const ideas=[["web","Smart campus event platform","React · Node · MongoDB","Intermediate"],["web","Clinic appointment system with SMS reminders","Laravel · MySQL","Beginner+"],["mobile","Expense-sharing app for flatmates","Flutter · Firebase","Intermediate"],["mobile","Offline-first field survey app","Kotlin · Room","Advanced"],["ml","Plant disease detection from leaf photos","Python · TensorFlow","Advanced"],["ml","Fake review detector for e-commerce","Python · scikit-learn","Intermediate"],["iot","Smart parking with live occupancy map","ESP32 · MQTT · React","Intermediate"],["iot","Energy monitor for student housing","Arduino · Grafana","Beginner+"]];
-const grid=document.getElementById('ideasGrid');
-function render(f){grid.innerHTML=ideas.filter(i=>f=='all'||i[0]==f).map(i=>`<div class="idea"><h3>${i[1]}</h3><p>Includes scope template, milestones & reading list.</p><div class="m"><span>${i[2]}</span><span>${i[3]}</span></div></div>`).join('');if(window.gsap)gsap.from('#ideasGrid .idea',{y:24,opacity:0,stagger:.06,duration:.5,ease:'power2.out'})}
+const grid=document.getElementById('ideasGrid');let first=true;
+function render(f){grid.innerHTML=ideas.filter(i=>f=='all'||i[0]==f).map(i=>`<div class="idea"><h3>${i[1]}</h3><p>Includes scope template, milestones & reading list.</p><div class="m"><span>${i[2]}</span><span>${i[3]}</span></div></div>`).join('');if(window.gsap&&!first)gsap.fromTo('#ideasGrid .idea',{y:24,opacity:0},{y:0,opacity:1,stagger:.06,duration:.5,ease:'power2.out',clearProps:'opacity,transform'});first=false}
 render('all');
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c==b));render(b.dataset.f)});
 let q=0;const steps=[...document.querySelectorAll('.qs')],bars=[...document.querySelectorAll('.qbar i')];
@@ -248,7 +248,7 @@ gsap.to('.g1',{x:80,y:60,duration:8,yoyo:true,repeat:-1,ease:'sine.inOut'});gsap
 const mq=document.getElementById('mq');mq.innerHTML+=mq.innerHTML;gsap.to(mq,{xPercent:-50,duration:22,repeat:-1,ease:'none'});
 document.querySelectorAll('.rv').forEach(el=>gsap.from(el,{y:40,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
 gsap.utils.toArray('.how .line').forEach((l,i)=>gsap.to(l,{width:'100%',duration:.8,delay:i*.25,scrollTrigger:{trigger:'.how',start:'top 80%'}}));
-document.querySelectorAll('[data-count]').forEach(el=>{const n=+el.dataset.count,o={v:0};ScrollTrigger.create({trigger:el,start:'top 95%',once:true,onEnter:()=>gsap.to(o,{v:n,duration:1.6,ease:'power2.out',onUpdate:()=>el.textContent=(Number.isInteger(n)?Math.round(o.v).toLocaleString('en'):o.v.toFixed(1))+(el.dataset.suf||'')})})});
+document.querySelectorAll('[data-count]').forEach(el=>{const n=+el.dataset.count,o={v:0},fmt=()=>el.textContent=(Number.isInteger(n)?Math.round(o.v).toLocaleString('en'):o.v.toFixed(1))+(el.dataset.suf||''),run=()=>gsap.to(o,{v:n,duration:1.6,ease:'power2.out',onUpdate:fmt,onComplete:()=>{o.v=n;fmt()}});if(el.closest('.hero'))gsap.delayedCall(.8,run);else ScrollTrigger.create({trigger:el,start:'top 95%',once:true,onEnter:run})});
 }else{document.querySelectorAll('[data-count]').forEach(el=>el.textContent=el.dataset.count+(el.dataset.suf||''))}
 </script>
 </body></html>

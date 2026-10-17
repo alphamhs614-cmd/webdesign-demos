@@ -161,13 +161,13 @@ const items=[
 {k:"projects",n:"Poblenou Studios",c:"Barcelona",t:"Office",y:"2025",s:"7,200 m²",v:"€24m",i:"In progress",d:"Creative office campus with rooftop terraces."},
 {k:"projects",n:"Chamberí Collection",c:"Madrid",t:"Residential",y:"2025",s:"30 units",v:"€27m",i:"In progress",d:"Heritage façade retention, delivery 2027."}];
 items.forEach((it,j)=>it.p=P[j%P.length]);
-let tab="deals";const $=s=>document.querySelector(s);
+let tab="deals",first=true;const $=s=>document.querySelector(s);
 function img(p,j){return `<i style="background:linear-gradient(160deg,${p[0]},${p[1]})"><svg viewBox="0 0 320 200" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="xMidYMax slice"><g fill="rgba(255,255,255,.18)"><rect x="${40+j*7%60}" y="60" width="90" height="140"/><rect x="150" y="${30+j*9%40}" width="70" height="170"/><rect x="235" y="90" width="60" height="110"/></g><g fill="rgba(255,255,255,.35)">${Array.from({length:12},(_,k)=>`<rect x="${160+(k%3)*18}" y="${50+Math.floor(k/3)*30}" width="10" height="16"/>`).join('')}</g></svg></i>`}
 function render(){const q=$('#q').value.toLowerCase(),c=$('#fc').value,t=$('#ft').value,y=$('#fy').value;
 const r=items.filter(i=>i.k==tab&&(!c||i.c==c)&&(!t||i.t==t)&&(!y||i.y==y)&&(!q||(i.n+i.c+i.t+i.d).toLowerCase().includes(q)));
 $('#deals').innerHTML=r.map(i=>`<article class="deal" data-i="${items.indexOf(i)}"><div class="im"><span class="badge ${i.k=='deals'?'c':''}">${i.k=='deals'?'Closed '+i.y:'Ongoing'}</span>${img(i.p,items.indexOf(i))}</div><div class="bd"><h3>${i.n}</h3><span class="loc">${i.c} · ${i.t}</span><div class="meta"><span>Size <b>${i.s}</b></span><span>Volume <b>${i.v}</b></span></div></div></article>`).join('');
 $('#cnt').textContent=r.length+' '+(tab=='deals'?'closed deals':'ongoing projects');$('#empty').style.display=r.length?'none':'block';
-if(window.gsap)gsap.from('#deals .deal',{y:30,opacity:0,stagger:.07,duration:.6,ease:'power3.out'})}
+if(window.gsap&&!first)gsap.fromTo('#deals .deal',{y:30,opacity:0},{y:0,opacity:1,stagger:.07,duration:.6,ease:'power3.out',clearProps:'opacity,transform'});first=false}
 ['#q','#fc','#ft','#fy'].forEach(s=>$(s).addEventListener('input',render));
 function setTab(t){tab=t;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t==t));
 $('#gridWrap').style.display=(t=='deals'||t=='projects')?'block':'none';$('#press').style.display=t=='press'?'block':'none';$('#docs').style.display=t=='docs'?'block':'none';if(t=='deals'||t=='projects')render();else if(window.gsap)gsap.from('#'+t+' .row,#'+t+' .lock',{y:20,opacity:0,stagger:.06})}
