@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aurelia Capital – Real estate investment portfolio (concept demo)</title>
+<meta name="description" content="Concept demo of a real-estate investment firm website: searchable content bank of closed deals, ongoing projects, press releases and investor documents. Fictional firm."><meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ea;--ink:#141414;--mut:#6c6a64;--line:#dcd6c8;--dark:#101418;--gold:#b08d57;--card:#fbfaf6}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+.wrap{width:min(1240px,92%);margin:auto}
+.flag{background:var(--gold);color:#fff;text-align:center;font-size:.78rem;padding:.4rem 1rem;letter-spacing:.02em}
+header{position:fixed;top:30px;left:0;right:0;z-index:50;transition:background .4s,top .3s;color:#fff}
+header.s{background:rgba(16,20,24,.92);backdrop-filter:blur(10px);top:0}
+.bar{display:flex;justify-content:space-between;align-items:center;height:76px}
+.logo{font:600 1.5rem 'Cormorant Garamond';letter-spacing:.18em;text-transform:uppercase}.logo span{color:var(--gold)}
+nav{display:flex;gap:2rem;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}nav a{opacity:.8}nav a:hover{opacity:1;color:var(--gold)}
+.lnk{border:1px solid rgba(255,255,255,.4);padding:.6rem 1.1rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.burger{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;width:42px;height:42px;cursor:pointer}
+.hero{height:100vh;min-height:640px;position:relative;color:#fff;overflow:hidden;background:var(--dark)}
+.sky{position:absolute;inset:0;background:linear-gradient(180deg,#1c2630 0%,#3b4650 45%,#a88a62 100%)}
+.city{position:absolute;left:0;right:0;bottom:0;height:70%}
+.hero .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:5rem}
+.eyebrow{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-size:clamp(3rem,8vw,7.2rem);margin:1rem 0;max-width:1000px}
+.hero h1 .l{display:block;overflow:hidden}.hero h1 .l span{display:block}
+.hero p{max-width:520px;color:rgba(255,255,255,.8);font-weight:300;font-size:1.1rem}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.2);margin-top:3rem;padding-top:1.6rem}
+.kpis b{font:500 2.6rem 'Cormorant Garamond';display:block}.kpis span{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+section{padding:7rem 0}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3.5rem;align-items:end}
+.sh h2{font-size:clamp(2.4rem,4.5vw,4rem)}.sh p{color:var(--mut);max-width:480px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about .pic{aspect-ratio:4/5;background:linear-gradient(160deg,#cdbb9b,#7b6a52);position:relative;overflow:hidden}
+.about .pic svg{position:absolute;inset:0;width:100%;height:100%}
+.pillars{margin-top:2rem;border-top:1px solid var(--line)}.pillars div{display:flex;gap:1.5rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}.pillars b{font:500 1.4rem 'Cormorant Garamond';color:var(--gold);min-width:40px}
+/* content bank */
+.bank{background:var(--dark);color:#eee}
+.bank .sh p{color:#9a9a9a}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.tab{background:transparent;border:1px solid #333a42;color:#bbb;padding:.65rem 1.2rem;cursor:pointer;font-size:.85rem;letter-spacing:.06em}
+.tab.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.tab small{opacity:.7;margin-left:.3rem}
+.fbar{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:.6rem;margin-bottom:2rem}
+.fbar input,.fbar select{background:#181e24;border:1px solid #333a42;color:#eee;padding:.85rem 1rem;width:100%}
+.cnt{color:#888;font-size:.85rem;margin-bottom:1rem}
+.deals{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.deal{background:#161c22;border:1px solid #262d35;cursor:pointer;transition:transform .4s,border-color .4s;overflow:hidden}
+.deal:hover{transform:translateY(-6px);border-color:var(--gold)}
+.deal .im{aspect-ratio:16/10;position:relative;overflow:hidden}
+.deal .im i{position:absolute;inset:0;transition:transform .8s}.deal:hover .im i{transform:scale(1.06)}
+.badge{position:absolute;top:12px;left:12px;background:rgba(16,20,24,.85);color:#fff;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;z-index:2}
+.badge.c{background:var(--gold)}
+.deal .bd{padding:1.3rem}.deal h3{font-size:1.6rem;color:#fff}.deal .loc{color:#999;font-size:.85rem}
+.deal .meta{display:flex;justify-content:space-between;border-top:1px solid #262d35;margin-top:1rem;padding-top:.9rem;font-size:.82rem;color:#aaa}.deal .meta b{color:#fff;font-weight:500}
+.empty{color:#888;padding:2rem 0;display:none}
+.docs,.press{display:none}
+.row{display:grid;grid-template-columns:120px 1fr 140px 120px;gap:1rem;align-items:center;padding:1.2rem 0;border-bottom:1px solid #262d35}
+.row .d{color:var(--gold);font-size:.85rem}.row h4{font:500 1.35rem 'Cormorant Garamond';color:#fff}.row .t{font-size:.8rem;color:#999}
+.row a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid #444;padding:.5rem .8rem;text-align:center}
+.lock{display:flex;gap:1rem;align-items:center;background:#181e24;border:1px dashed #444;padding:1.2rem;margin-bottom:1rem;color:#bbb;font-size:.9rem}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal.on{display:flex}
+.mbox{background:var(--card);color:var(--ink);max-width:760px;width:100%;max-height:90vh;overflow:auto}
+.mbox .im{height:240px}.mbox .bd{padding:2rem}.mbox h3{font-size:2.4rem}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.4rem 0;border-block:1px solid var(--line);padding:1rem 0}.mgrid b{display:block;font:500 1.5rem 'Cormorant Garamond'}.mgrid span{font-size:.75rem;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.x{float:right;background:none;border:0;font-size:1.6rem;cursor:pointer;padding:.5rem 1rem}
+/* cms */
+.cms{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center}
+.wp{background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px rgba(0,0,0,.08);font-size:.85rem}
+.wp .top{background:#1d2327;color:#fff;padding:.6rem 1rem;display:flex;gap:1rem}
+.wp .b{display:grid;grid-template-columns:150px 1fr}
+.wp .side{background:#2c3338;color:#c3c4c7;padding:1rem;display:flex;flex-direction:column;gap:.5rem}.wp .side .on{color:#fff;background:#2271b1;margin:0 -1rem;padding:.2rem 1rem}
+.wp .main{padding:1.2rem}.wp .f{border:1px solid #ddd;padding:.55rem;margin:.4rem 0 .8rem;color:#555}
+.wp .pub{background:#2271b1;color:#fff;display:inline-block;padding:.5rem 1rem;border-radius:3px}
+.checks li{list-style:none;padding:.7rem 0;border-bottom:1px solid var(--line);display:flex;gap:.8rem}.checks li::before{content:"—";color:var(--gold)}
+.cta{background:var(--dark);color:#fff;text-align:center}
+.cta h2{font-size:clamp(2.4rem,5vw,4.4rem);max-width:820px;margin:1rem auto 2rem}
+.btn{display:inline-block;background:var(--gold);color:#fff;padding:1rem 2rem;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;border:0;cursor:pointer}
+footer{background:#0b0e11;color:#888;padding:2.5rem 0;font-size:.82rem}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+@media(max-width:980px){nav,.lnk{display:none}.burger{display:block}.sh,.about,.cms{grid-template-columns:1fr;gap:2rem}.deals{grid-template-columns:1fr 1fr}.fbar{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr;gap:1rem}
+body.open nav{display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:#101418;padding:1.5rem 4%}}
+@media(max-width:600px){.deals{grid-template-columns:1fr}.fbar{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:.3rem}.mgrid{grid-template-columns:1fr 1fr}section{padding:4.5rem 0}.wp .b{grid-template-columns:1fr}.wp .side{display:none}.hero .in{padding-bottom:3rem}}
+</style>
+</head>
+<body>
+<div class="flag">Concept demo by Mohammad – fictional firm "Aurelia Capital", all deals and figures are placeholders</div>
+<header id="hd"><div class="wrap bar"><a class="logo" href="#top">Aurelia<span>·</span>Capital</a>
+<nav><a href="#firm">The firm</a><a href="#portfolio">Portfolio</a><a href="#portfolio" data-tab="press">Press</a><a href="#portfolio" data-tab="docs">Investors</a><a href="#contact">Contact</a></nav>
+<a class="lnk" href="#portfolio" data-tab="docs">Investor login</a><button class="burger" onclick="document.body.classList.toggle('open')" aria-label="Menu">☰</button></div></header>
+
+<div class="hero" id="top"><div class="sky"></div><div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,13,16,.75),rgba(10,13,16,.2) 60%,transparent),linear-gradient(0deg,rgba(10,13,16,.7),transparent 45%)"></div>
+<svg class="city" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" id="city"><g fill="#0f1418" opacity=".55" class="b2"><rect x="0" y="300" width="90" height="300"/><rect x="100" y="240" width="70" height="360"/><rect x="190" y="320" width="110" height="280"/><rect x="330" y="200" width="80" height="400"/><rect x="430" y="280" width="120" height="320"/><rect x="580" y="160" width="70" height="440"/><rect x="680" y="260" width="140" height="340"/><rect x="850" y="220" width="90" height="380"/><rect x="960" y="300" width="120" height="300"/><rect x="1100" y="180" width="80" height="420"/><rect x="1200" y="270" width="110" height="330"/><rect x="1330" y="230" width="110" height="370"/></g>
+<g fill="#0b0f13" class="b1"><rect x="40" y="380" width="140" height="220"/><rect x="210" y="300" width="90" height="300"/><rect x="320" y="360" width="160" height="240"/><rect x="510" y="250" width="100" height="350"/><polygon points="640,600 640,220 700,170 760,220 760,600"/><rect x="790" y="340" width="150" height="260"/><rect x="970" y="270" width="110" height="330"/><rect x="1110" y="380" width="160" height="220"/><rect x="1290" y="310" width="120" height="290"/></g>
+<g fill="#d8b36a" opacity=".8" id="wins"></g></svg>
+<div class="wrap in">
+<span class="eyebrow">Real estate investment · Since 2009</span>
+<h1><span class="l"><span>Patient capital.</span></span><span class="l"><span>Lasting places.</span></span></h1>
+<p>We acquire, reposition and develop residential and mixed-use assets across Spain and Portugal on behalf of private and institutional investors.</p>
+<div class="kpis"><div><b data-count="1.2" data-pre="€" data-suf="bn">0</b><span>Assets under management</span></div><div><b data-count="64">0</b><span>Closed transactions</span></div><div><b data-count="11">0</b><span>Ongoing developments</span></div><div><b data-count="14.8" data-suf="%">0</b><span>Avg. realised IRR*</span></div></div>
+</div></div>
+
+<section id="firm"><div class="wrap about">
+<div class="pic rv"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#b9a382"/><rect x="60" y="120" width="280" height="380" fill="#efe6d6"/><g fill="#8b7656">
+<rect x="90" y="160" width="50" height="70"/><rect x="175" y="160" width="50" height="70"/><rect x="260" y="160" width="50" height="70"/><rect x="90" y="260" width="50" height="70"/><rect x="175" y="260" width="50" height="70"/><rect x="260" y="260" width="50" height="70"/><rect x="170" y="380" width="60" height="120"/></g><rect x="40" y="100" width="320" height="24" fill="#d9ccb4"/></svg></div>
+<div class="rv"><span class="eyebrow">The firm</span><h2 style="font-size:clamp(2.4rem,4.5vw,4rem);margin:1rem 0">Value through careful, hands-on asset management.</h2><p style="color:var(--mut)">This section is managed as a simple page in the CMS: text, team members and pillars can be changed by any staff member.</p>
+<div class="pillars"><div><b>01</b><span>Off-market acquisitions sourced through local networks</span></div><div><b>02</b><span>Repositioning with sustainable, energy-efficient refurbishment</span></div><div><b>03</b><span>Transparent quarterly reporting for every investor</span></div></div></div>
+</div></section>
+
+<section class="bank" id="portfolio"><div class="wrap">
+<div class="sh rv"><div><span class="eyebrow">Content bank</span><h2>Deals, projects, press &amp; investor documents</h2></div><p>Every entry is a custom post type in WordPress with fields for location, asset type, year, size and PDF attachments – searchable and filterable instantly.</p></div>
+<div class="tabs" id="tabs"><button class="tab on" data-t="deals">Closed deals <small>(6)</small></button><button class="tab" data-t="projects">Ongoing projects <small>(4)</small></button><button class="tab" data-t="press">Press releases</button><button class="tab" data-t="docs">Investor documents</button></div>
+<div id="gridWrap">
+<div class="fbar"><input id="q" placeholder="Search by name, city or keyword…"><select id="fc"><option value="">All cities</option><option>Madrid</option><option>Barcelona</option><option>Lisbon</option><option>Valencia</option><option>Porto</option></select><select id="ft"><option value="">All asset types</option><option>Residential</option><option>Mixed-use</option><option>Office</option><option>Hospitality</option></select><select id="fy"><option value="">All years</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option></select></div>
+<div class="cnt" id="cnt"></div><div class="deals" id="deals"></div><div class="empty" id="empty">No entries match your filters.</div>
+</div>
+<div class="press" id="press">
+<div class="row"><span class="d">12 Sep 2026</span><div><h4>Aurelia Capital closes €48m residential portfolio in Valencia</h4><span class="t">Transaction · 312 units</span></div><span class="t">Expansión</span><a href="#">Read PDF</a></div>
+<div class="row"><span class="d">03 Jul 2026</span><div><h4>Lisbon mixed-use scheme receives building permit</h4><span class="t">Development update</span></div><span class="t">Idealista News</span><a href="#">Read PDF</a></div>
+<div class="row"><span class="d">18 Mar 2026</span><div><h4>Fund III reaches final close at €210m</h4><span class="t">Fundraising</span></div><span class="t">Press release</span><a href="#">Read PDF</a></div>
+<div class="row"><span class="d">29 Nov 2025</span><div><h4>ESG report 2025 published</h4><span class="t">Sustainability</span></div><span class="t">Press release</span><a href="#">Read PDF</a></div>
+</div>
+<div class="docs" id="docs">
+<div class="lock">🔒 <span>Investor area – documents are visible after login (WordPress user roles: Investor / Admin). Public preview below.</span></div>
+<div class="row"><span class="d">Q3 2026</span><div><h4>Quarterly investor letter</h4><span class="t">Fund II &amp; III · PDF · 2.4 MB</span></div><span class="t">Investors only</span><a href="#">Download</a></div>
+<div class="row"><span class="d">2025</span><div><h4>Annual report &amp; audited accounts</h4><span class="t">PDF · 6.1 MB</span></div><span class="t">Investors only</span><a href="#">Download</a></div>
+<div class="row"><span class="d">2026</span><div><h4>Fund IV teaser</h4><span class="t">PDF · 1.2 MB</span></div><span class="t">Public</span><a href="#">Download</a></div>
+</div>
+</div></section>
+
+<section id="cms"><div class="wrap cms">
+<div class="rv"><span class="eyebrow">Built for your team</span><h2 style="font-size:clamp(2.2rem,4vw,3.6rem);margin:1rem 0">Add a new project in under two minutes – no code.</h2>
+<ul class="checks"><li>Log in → "Projects" → "Add new"</li><li>Fill in title, city, asset type, year, key figures</li><li>Upload images and PDFs (brochure, press, reports)</li><li>Click "Publish" – it appears live in the grid and filters immediately</li><li>Hand-off: short video + PDF guide for your staff</li></ul></div>
+<div class="wp rv"><div class="top">⌂ Aurelia Capital <span style="opacity:.6">+ New</span></div><div class="b"><div class="side"><span>Dashboard</span><span class="on">Projects</span><span>Closed deals</span><span>Press</span><span>Investor docs</span><span>Media</span></div><div class="main"><b style="font-size:1.1rem">Add new project</b><div class="f">Residencial Ribera – Valencia</div><small>City</small><div class="f">Valencia</div><small>Asset type · Year</small><div class="f">Residential · 2026</div><small>Attachments</small><div class="f">📎 brochure.pdf &nbsp; 🖼 facade.jpg</div><span class="pub">Publish</span></div></div></div>
+</div></section>
+
+<section class="cta" id="contact"><div class="wrap"><span class="eyebrow">Contact</span><h2 class="rv">Discuss an investment or co-investment opportunity.</h2><a class="btn" href="#contact">Get in touch</a><p style="margin-top:2rem;color:#888;font-size:.8rem">*Illustrative figures. Past performance is not a reliable indicator of future results.</p></div></section>
+<footer><div class="wrap"><span>© 2026 Aurelia Capital (fictional) · Concept demo</span><span>Legal notice · Privacy · Cookies</span></div></footer>
+
+<div class="modal" id="modal"><div class="mbox"><div class="im" id="mim"></div><div class="bd"><button class="x" onclick="closeM()">×</button><span class="eyebrow" id="mst"></span><h3 id="mt"></h3><p style="color:var(--mut)" id="ml"></p><div class="mgrid" id="mg"></div><p id="md" style="color:var(--mut)"></p><p style="margin-top:1.2rem"><a class="btn" href="#">Download case study (PDF)</a></p></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const P=[["#c9b48f","#6f5d44"],["#9fb3bf","#3f5260"],["#d1a98a","#7d4f3a"],["#b7b49a","#5c5a43"],["#a9a2c4","#4c4668"],["#c2c7b5","#5b6450"]];
+const items=[
+{k:"deals",n:"Residencial Ribera",c:"Valencia",t:"Residential",y:"2026",s:"312 units",v:"€48m",i:"17.2%",d:"Acquisition of a stabilised build-to-rent portfolio, energy upgrade and refinancing."},
+{k:"deals",n:"Casa Alfama",c:"Lisbon",t:"Hospitality",y:"2025",s:"64 keys",v:"€21m",i:"15.4%",d:"Conversion of a historic building into a boutique hotel, sold to an operator."},
+{k:"deals",n:"Edificio Castellana 81",c:"Madrid",t:"Office",y:"2024",s:"9,400 m²",v:"€36m",i:"13.1%",d:"Repositioning of a grade-B office into LEED Gold certified space."},
+{k:"deals",n:"Gràcia Lofts",c:"Barcelona",t:"Residential",y:"2024",s:"48 units",v:"€14m",i:"18.0%",d:"Refurbishment of a former textile factory into loft apartments."},
+{k:"deals",n:"Boavista Square",c:"Porto",t:"Mixed-use",y:"2023",s:"12,000 m²",v:"€29m",i:"12.6%",d:"Retail ground floor with residential above, sold to an institutional buyer."},
+{k:"deals",n:"Salamanca Residences",c:"Madrid",t:"Residential",y:"2023",s:"22 units",v:"€19m",i:"14.9%",d:"Prime residential refurbishment and unit-by-unit sale."},
+{k:"projects",n:"Marvila Riverside",c:"Lisbon",t:"Mixed-use",y:"2026",s:"18,500 m²",v:"€62m",i:"In progress",d:"Permit granted, construction start Q1 2027."},
+{k:"projects",n:"Ruzafa Living",c:"Valencia",t:"Residential",y:"2026",s:"140 units",v:"€33m",i:"In progress",d:"Build-to-rent development, 40% complete."},
+{k:"projects",n:"Poblenou Studios",c:"Barcelona",t:"Office",y:"2025",s:"7,200 m²",v:"€24m",i:"In progress",d:"Creative office campus with rooftop terraces."},
+{k:"projects",n:"Chamberí Collection",c:"Madrid",t:"Residential",y:"2025",s:"30 units",v:"€27m",i:"In progress",d:"Heritage façade retention, delivery 2027."}];
+items.forEach((it,j)=>it.p=P[j%P.length]);
+let tab="deals";const $=s=>document.querySelector(s);
+function img(p,j){return `<i style="background:linear-gradient(160deg,${p[0]},${p[1]})"><svg viewBox="0 0 320 200" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="xMidYMax slice"><g fill="rgba(255,255,255,.18)"><rect x="${40+j*7%60}" y="60" width="90" height="140"/><rect x="150" y="${30+j*9%40}" width="70" height="170"/><rect x="235" y="90" width="60" height="110"/></g><g fill="rgba(255,255,255,.35)">${Array.from({length:12},(_,k)=>`<rect x="${160+(k%3)*18}" y="${50+Math.floor(k/3)*30}" width="10" height="16"/>`).join('')}</g></svg></i>`}
+function render(){const q=$('#q').value.toLowerCase(),c=$('#fc').value,t=$('#ft').value,y=$('#fy').value;
+const r=items.filter(i=>i.k==tab&&(!c||i.c==c)&&(!t||i.t==t)&&(!y||i.y==y)&&(!q||(i.n+i.c+i.t+i.d).toLowerCase().includes(q)));
+$('#deals').innerHTML=r.map(i=>`<article class="deal" data-i="${items.indexOf(i)}"><div class="im"><span class="badge ${i.k=='deals'?'c':''}">${i.k=='deals'?'Closed '+i.y:'Ongoing'}</span>${img(i.p,items.indexOf(i))}</div><div class="bd"><h3>${i.n}</h3><span class="loc">${i.c} · ${i.t}</span><div class="meta"><span>Size <b>${i.s}</b></span><span>Volume <b>${i.v}</b></span></div></div></article>`).join('');
+$('#cnt').textContent=r.length+' '+(tab=='deals'?'closed deals':'ongoing projects');$('#empty').style.display=r.length?'none':'block';
+if(window.gsap)gsap.from('#deals .deal',{y:30,opacity:0,stagger:.07,duration:.6,ease:'power3.out'})}
+['#q','#fc','#ft','#fy'].forEach(s=>$(s).addEventListener('input',render));
+function setTab(t){tab=t;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t==t));
+$('#gridWrap').style.display=(t=='deals'||t=='projects')?'block':'none';$('#press').style.display=t=='press'?'block':'none';$('#docs').style.display=t=='docs'?'block':'none';if(t=='deals'||t=='projects')render();else if(window.gsap)gsap.from('#'+t+' .row,#'+t+' .lock',{y:20,opacity:0,stagger:.06})}
+$('#tabs').onclick=e=>{const b=e.target.closest('.tab');if(b)setTab(b.dataset.t)};
+document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',()=>setTab(a.dataset.tab)));
+$('#deals').onclick=e=>{const d=e.target.closest('.deal');if(!d)return;const i=items[d.dataset.i];
+$('#mim').innerHTML=`<div style="position:relative;height:100%">${img(i.p,+d.dataset.i)}</div>`;$('#mst').textContent=i.k=='deals'?'Closed deal · '+i.y:'Ongoing project';$('#mt').textContent=i.n;$('#ml').textContent=i.c+' · '+i.t;$('#md').textContent=i.d;
+$('#mg').innerHTML=`<div><b>${i.s}</b><span>Size</span></div><div><b>${i.v}</b><span>Volume</span></div><div><b>${i.i}</b><span>${i.k=='deals'?'Realised IRR':'Status'}</span></div>`;$('#modal').classList.add('on')};
+function closeM(){$('#modal').classList.remove('on')}$('#modal').onclick=e=>{if(e.target.id=='modal')closeM()};
+const w=$('#wins');let h='';for(let k=0;k<70;k++){const x=50+Math.random()*1340,y=260+Math.random()*320;h+=`<rect x="${x|0}" y="${y|0}" width="6" height="9" opacity="${(.3+Math.random()*.7).toFixed(2)}"/>`}w.innerHTML=h;
+render();
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('open')));
+addEventListener('scroll',()=>$('#hd').classList.toggle('s',scrollY>60));
+if(window.gsap){gsap.registerPlugin(ScrollTrigger);
+const lenis=new Lenis({lerp:.09});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);lenis.on('scroll',ScrollTrigger.update);
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();lenis.scrollTo(t,{offset:-70})}}));
+gsap.from('.hero h1 .l span',{yPercent:110,duration:1.2,stagger:.15,ease:'power4.out',delay:.2});
+gsap.from(['.eyebrow','.hero p','.kpis'],{opacity:0,y:20,stagger:.15,delay:.7,duration:.9});
+gsap.from('#city .b1',{y:120,duration:1.6,ease:'power3.out'});gsap.from('#city .b2',{y:200,duration:2,ease:'power3.out'});
+gsap.to('#city .b1',{y:-60,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});gsap.to('#city .b2',{y:-20,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.to('#wins rect',{opacity:()=>Math.random(),duration:()=>1+Math.random()*2,repeat:-1,yoyo:true,stagger:{each:.05,from:'random'}});
+document.querySelectorAll('.rv').forEach(el=>gsap.from(el,{y:50,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
+gsap.from('.about .pic svg',{scale:1.2,scrollTrigger:{trigger:'.about',start:'top bottom',end:'bottom top',scrub:true}});
+document.querySelectorAll('[data-count]').forEach(el=>{const n=+el.dataset.count,o={v:0};gsap.to(o,{v:n,duration:2,delay:.9,ease:'power2.out',onUpdate:()=>el.textContent=(el.dataset.pre||'')+(Number.isInteger(n)?Math.round(o.v):o.v.toFixed(1))+(el.dataset.suf||'')})});
+}else document.querySelectorAll('[data-count]').forEach(el=>el.textContent=(el.dataset.pre||'')+el.dataset.count+(el.dataset.suf||''));
+</script>
+</body></html>

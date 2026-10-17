@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProjectPath – Mentoring & guidance for student tech projects (concept demo)</title>
+<meta name="description" content="Concept demo of a lead-generating website for a student project mentoring service: guided project planning, code reviews, tutoring and final-year project guidance. Fictional brand.">
+<meta property="og:title" content="ProjectPath – lead-gen website concept"><meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","name":"ProjectPath (demo)","description":"Fictional mentoring service for student software projects"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you write my project for me?","acceptedAnswer":{"@type":"Answer","text":"No. We mentor you: planning, architecture reviews, debugging sessions and feedback, so the work and the learning stay yours."}},{"@type":"Question","name":"Which technologies do you cover?","acceptedAnswer":{"@type":"Answer","text":"Web (React, Node, Laravel, Django), mobile (Flutter, Kotlin), data science/ML with Python, IoT/Arduino and databases."}}]}]}</script>
+<style>
+:root{--bg:#07080f;--bg2:#0d1020;--card:#121630;--line:#232a52;--ink:#eef1ff;--mut:#9aa3c7;--a:#7c5cff;--b:#22d3ee;--c:#a3e635;--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit}
+h1,h2,h3{font-family:'Space Grotesk',Inter,sans-serif;line-height:1.08;letter-spacing:-.02em}
+.wrap{width:min(1200px,92%);margin:auto}
+.flag{background:linear-gradient(90deg,var(--a),var(--b));color:#06070d;text-align:center;font-size:.8rem;font-weight:600;padding:.45rem 1rem}
+header{position:sticky;top:0;z-index:60;background:rgba(7,8,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:70px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;font:700 1.2rem 'Space Grotesk'}
+.logo svg{width:30px;height:30px}
+nav{display:flex;gap:1.7rem;font-size:.93rem;color:var(--mut)}nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;border-radius:999px;padding:.85rem 1.4rem;font-weight:700;font-size:.95rem;background:var(--ink);color:#07080f;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(124,92,255,.35)}
+.btn.g{background:linear-gradient(120deg,var(--a),var(--b));color:#fff}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;width:42px;height:42px;cursor:pointer}
+/* hero */
+.hero{position:relative;padding:6.5rem 0 5rem;overflow:hidden}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}
+.g1{width:520px;height:520px;background:var(--a);top:-160px;left:-140px}.g2{width:420px;height:420px;background:var(--b);top:80px;right:-120px;opacity:.35}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.pill{display:inline-flex;gap:.5rem;align-items:center;border:1px solid var(--line);background:rgba(18,22,48,.6);border-radius:999px;padding:.35rem .9rem;font-size:.82rem;color:var(--mut)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.6rem);margin:1.2rem 0 1.2rem}
+.hero h1 .w{display:inline-block}
+.grad{background:linear-gradient(100deg,var(--a),var(--b) 60%,var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.15rem;color:var(--mut);max-width:560px}
+.ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin:2rem 0 1.6rem}
+.trust{display:flex;gap:1.6rem;flex-wrap:wrap;color:var(--mut);font-size:.88rem}.trust b{color:var(--ink);font-size:1.25rem;display:block;font-family:'Space Grotesk'}
+/* roadmap card */
+.road{background:linear-gradient(160deg,rgba(18,22,48,.95),rgba(13,16,32,.95));border:1px solid var(--line);border-radius:26px;padding:1.6rem;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.road h4{font:600 .8rem Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:1rem;display:flex;justify-content:space-between}
+.step{display:flex;gap:.9rem;align-items:flex-start;padding:.85rem;border-radius:14px;margin-bottom:.5rem;background:rgba(255,255,255,.02);border:1px solid transparent}
+.step.on{border-color:rgba(124,92,255,.5);background:rgba(124,92,255,.08)}
+.step .d{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-weight:700;font-size:.8rem;background:var(--bg2);border:1px solid var(--line)}
+.step.done .d{background:var(--c);color:#07080f;border:0}
+.step b{display:block;font-size:.95rem}.step span{font-size:.82rem;color:var(--mut)}
+.prog{height:8px;border-radius:9px;background:var(--bg2);overflow:hidden;margin-top:1rem}.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b))}
+.mentor{display:flex;align-items:center;gap:.7rem;margin-top:1rem;font-size:.85rem;color:var(--mut)}
+.av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f472b6,var(--a));display:grid;place-items:center;font-weight:700;color:#fff}
+/* marquee */
+.marq{border-block:1px solid var(--line);padding:1.1rem 0;overflow:hidden;white-space:nowrap;color:var(--mut);font:600 1rem 'Space Grotesk'}
+.marq div{display:inline-flex;gap:3rem;padding-right:3rem}
+section{padding:6rem 0}
+.kick{color:var(--b);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.sh h2{font-size:clamp(2rem,4vw,3.1rem);max-width:640px;margin-top:.6rem}.sh p{color:var(--mut);max-width:420px}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;position:relative;overflow:hidden;transition:transform .35s,border-color .35s}
+.card:hover{transform:translateY(-6px);border-color:rgba(124,92,255,.6)}
+.card .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(124,92,255,.15);margin-bottom:1.2rem;font-size:1.4rem}
+.card h3{font-size:1.2rem;margin-bottom:.5rem}.card p{color:var(--mut);font-size:.93rem}
+.card .tag{display:inline-block;margin-top:1rem;font-size:.78rem;color:var(--c)}
+/* integrity */
+.integ{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.integ div{border-radius:var(--r);padding:1.4rem;border:1px solid var(--line)}
+.integ .y{background:rgba(163,230,53,.06);border-color:rgba(163,230,53,.3)}.integ .n{background:rgba(244,63,94,.05);border-color:rgba(244,63,94,.25)}
+.integ h4{margin-bottom:.6rem;font-family:'Space Grotesk'}.integ li{list-style:none;color:var(--mut);font-size:.93rem;padding:.25rem 0}
+/* finder */
+.finder{display:grid;grid-template-columns:280px 1fr;gap:2rem}
+.filters{display:flex;flex-direction:column;gap:.5rem}
+.chip{border:1px solid var(--line);background:var(--bg2);color:var(--mut);padding:.7rem 1rem;border-radius:12px;cursor:pointer;text-align:left;transition:.2s}
+.chip.on{background:linear-gradient(120deg,rgba(124,92,255,.25),rgba(34,211,238,.15));color:var(--ink);border-color:rgba(124,92,255,.6)}
+.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.idea{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.3rem}
+.idea .m{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}.idea .m span{font-size:.75rem;border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem;color:var(--mut)}
+.idea h3{font-size:1.05rem}.idea p{font-size:.88rem;color:var(--mut);margin-top:.3rem}
+/* how */
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:s}
+.how div{padding:1.6rem;border-top:2px solid var(--line);position:relative}
+.how div::before{counter-increment:s;content:"0" counter(s);font:700 2.6rem 'Space Grotesk';color:transparent;-webkit-text-stroke:1px var(--a);display:block;margin-bottom:.6rem}
+.how h3{font-size:1.15rem;margin-bottom:.4rem}.how p{color:var(--mut);font-size:.92rem}
+.how .line{position:absolute;top:-2px;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--a),var(--b))}
+/* quiz */
+.quiz{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:linear-gradient(140deg,#151a3a,#0b0e1f);border:1px solid var(--line);border-radius:32px;padding:3rem}
+.qbox{background:rgba(7,8,15,.6);border:1px solid var(--line);border-radius:22px;padding:1.6rem;min-height:360px}
+.qbar{display:flex;gap:.4rem;margin-bottom:1.4rem}.qbar i{flex:1;height:5px;border-radius:5px;background:var(--line)}.qbar i.on{background:linear-gradient(90deg,var(--a),var(--b))}
+.qs{display:none}.qs.on{display:block}
+.qs h3{font-size:1.25rem;margin-bottom:1rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.opt{padding:.9rem;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);cursor:pointer;text-align:left;font-size:.92rem}
+.opt:hover{border-color:var(--a)}
+.qs input,.qs select{width:100%;padding:.85rem 1rem;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);margin-bottom:.7rem;font:inherit}
+.consent{font-size:.78rem;color:var(--mut);display:flex;gap:.5rem;margin:.3rem 0 1rem}
+.ok{text-align:center;padding-top:2rem}.ok .big{font-size:3rem}
+/* results */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.stat{padding:2rem;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
+.stat b{font:700 2.8rem 'Space Grotesk';display:block}.stat span{color:var(--mut);font-size:.9rem}
+.tst{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.tst blockquote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;font-size:.96rem}
+.tst cite{display:block;margin-top:1rem;color:var(--mut);font-size:.85rem;font-style:normal}
+/* blog/seo */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.post{border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.post .th{height:150px;position:relative}
+.post .bd{padding:1.3rem}.post small{color:var(--b);font-weight:600}.post h3{font-size:1.08rem;margin:.4rem 0}.post p{color:var(--mut);font-size:.88rem}
+.faq details{border-bottom:1px solid var(--line);padding:1.2rem 0}.faq summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between}
+.faq summary::after{content:"+";color:var(--b);font-size:1.4rem}.faq details[open] summary::after{content:"–"}.faq p{color:var(--mut);margin-top:.6rem;max-width:760px}
+footer{border-top:1px solid var(--line);padding:3rem 0;color:var(--mut);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.sticky{position:fixed;right:20px;bottom:20px;z-index:70}
+@media(max-width:980px){.hero .wrap,.quiz,.finder{grid-template-columns:1fr}.svc,.how,.stats{grid-template-columns:1fr 1fr}.tst,.posts{grid-template-columns:1fr}nav{display:none}.burger{display:block}.hdr-cta{display:none}
+body.open nav{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:#0b0d1a;padding:1.4rem 4%;border-bottom:1px solid var(--line)}}
+@media(max-width:600px){.svc,.how,.stats,.ideas,.integ,.opts{grid-template-columns:1fr}.quiz{padding:1.4rem}section{padding:4.2rem 0}.hero{padding:4rem 0 3rem}.filters{flex-direction:row;flex-wrap:wrap}.chip{padding:.5rem .8rem;font-size:.85rem}}
+</style>
+</head>
+<body>
+<div class="flag">Concept demo by Mohammad – fictional brand "ProjectPath", built to show design, animation &amp; lead-generation ideas</div>
+<header><div class="wrap bar">
+<a class="logo" href="#top"><svg viewBox="0 0 32 32"><defs><linearGradient id="lg" x1="0" x2="1"><stop stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M8 22 L14 14 L18 18 L24 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="9" r="2.4" fill="#a3e635"/></svg>ProjectPath</a>
+<nav><a href="#services">Services</a><a href="#ideas">Project ideas</a><a href="#how">How it works</a><a href="#results">Results</a><a href="#guides">Guides</a><a href="#faq">FAQ</a></nav>
+<a class="btn g hdr-cta" href="#start">Book a free session</a>
+<button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('open')">☰</button>
+</div></header>
+
+<div class="hero" id="top"><div class="glow g1"></div><div class="glow g2"></div><div class="grid-bg"></div>
+<div class="wrap">
+<div>
+<span class="pill"><i></i> Mentors online now · replies in under 2 hours</span>
+<h1><span class="w">Ship</span> <span class="w">your</span> <span class="w">final-year</span> <span class="w">project</span> <span class="w grad">with a mentor</span> <span class="w">beside you.</span></h1>
+<p class="lead">1:1 guidance from senior developers for web, software, mobile and ML projects – from choosing a topic to your final presentation. You build it, we make sure you never get stuck.</p>
+<div class="ctas"><a class="btn g" href="#start">Get my free project plan →</a><a class="btn o" href="#ideas">Browse 120+ project ideas</a></div>
+<div class="trust"><div><b data-count="1400" data-suf="+">0</b>students mentored</div><div><b data-count="4.9" data-suf="/5">0</b>average rating</div><div><b data-count="38">0</b>universities</div></div>
+</div>
+<div class="road" id="road">
+<h4><span>Your project roadmap</span><span style="color:var(--c)">Week 6 / 12</span></h4>
+<div class="step done"><div class="d">✓</div><div><b>Topic & scope agreed</b><span>Smart parking system · IoT + React dashboard</span></div></div>
+<div class="step done"><div class="d">✓</div><div><b>Architecture review</b><span>ER diagram & API design feedback</span></div></div>
+<div class="step on"><div class="d">3</div><div><b>Live debugging session</b><span>Thu 18:00 · MQTT connection issues</span></div></div>
+<div class="step"><div class="d">4</div><div><b>Report & viva rehearsal</b><span>Mock presentation with Q&amp;A</span></div></div>
+<div class="prog"><i id="progbar"></i></div>
+<div class="mentor"><div class="av">SA</div>Your mentor: <b style="color:var(--ink)">Sara A.</b> · Senior full-stack engineer</div>
+</div>
+</div></div>
+
+<div class="marq"><div id="mq"><span>React</span><span>Node.js</span><span>Laravel</span><span>Django</span><span>Flutter</span><span>Python · ML</span><span>Arduino · IoT</span><span>MySQL</span><span>Firebase</span><span>Java · Spring</span><span>UI/UX in Figma</span></div></div>
+
+<section id="services"><div class="wrap">
+<div class="sh rv"><div><span class="kick">What we help with</span><h2>Guidance for every stage of a student tech project</h2></div><p>Each service page targets one search intent ("final year project guidance", "react project mentor", …) and ends in a lead form.</p></div>
+<div class="svc">
+<div class="card rv"><div class="ic">🧭</div><h3>Final-year project guidance</h3><p>Topic selection, scope, milestones and weekly check-ins until submission.</p><span class="tag">From $49 / session</span></div>
+<div class="card rv"><div class="ic">💻</div><h3>Web & app development mentoring</h3><p>Pair-programming sessions on React, Laravel, Flutter and more – you write the code.</p><span class="tag">Hourly or packages</span></div>
+<div class="card rv"><div class="ic">🔍</div><h3>Code & architecture reviews</h3><p>Written feedback on structure, security and best practices before you submit.</p><span class="tag">48h turnaround</span></div>
+<div class="card rv"><div class="ic">🎤</div><h3>Report & viva preparation</h3><p>Documentation structure, diagrams and mock presentations with tough questions.</p><span class="tag">Popular before deadlines</span></div>
+</div>
+<div class="integ">
+<div class="y rv"><h4>✓ What we do</h4><ul><li>Explain concepts and review your approach</li><li>Debug together in live sessions</li><li>Give feedback on your code, report and slides</li></ul></div>
+<div class="n rv"><h4>✕ What we don't do</h4><ul><li>Write or submit assignments for you</li><li>Ghost-write reports or theses</li><li>Anything against your university's integrity policy</li></ul></div>
+</div>
+</div></section>
+
+<section id="ideas" style="background:var(--bg2)"><div class="wrap">
+<div class="sh rv"><div><span class="kick">SEO magnet</span><h2>Project idea finder</h2></div><p>A filterable library of project ideas – each idea is its own indexable page that ranks on Google and invites a free consultation.</p></div>
+<div class="finder">
+<div class="filters" id="filters"><button class="chip on" data-f="all">All fields</button><button class="chip" data-f="web">Web development</button><button class="chip" data-f="mobile">Mobile apps</button><button class="chip" data-f="ml">AI / Machine learning</button><button class="chip" data-f="iot">IoT & embedded</button></div>
+<div class="ideas" id="ideasGrid"></div>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<div class="sh rv"><div><span class="kick">How it works</span><h2>From "I have no idea" to a confident presentation</h2></div></div>
+<div class="how">
+<div class="rv"><span class="line"></span><h3>Free 20-min call</h3><p>Tell us your course, deadline and idea (or lack of one).</p></div>
+<div class="rv"><span class="line"></span><h3>Personal roadmap</h3><p>Milestones, tech stack and reading list matched to your level.</p></div>
+<div class="rv"><span class="line"></span><h3>Weekly mentoring</h3><p>Live sessions, reviews and chat support while you build.</p></div>
+<div class="rv"><span class="line"></span><h3>Submit with confidence</h3><p>Final review and viva rehearsal – you understand every line.</p></div>
+</div>
+</div></section>
+
+<section id="start"><div class="wrap">
+<div class="quiz rv">
+<div><span class="kick">Lead capture</span><h2 style="font-size:clamp(2rem,4vw,3rem);margin:.6rem 0 1rem">Get a free project plan in 60 seconds</h2><p style="color:var(--mut)">A 3-step quiz qualifies each lead (field, deadline, type of help) and sends it straight to your CRM / email with UTM source – so you know which Google keyword brought the student.</p>
+<div class="trust" style="margin-top:1.6rem"><div><b>3×</b>more leads vs. a plain contact form*</div><div><b>&lt;2h</b>response promise</div></div><p style="font-size:.75rem;color:var(--mut);margin-top:1rem">*typical benchmark for multi-step forms, illustrative</p></div>
+<div class="qbox">
+<div class="qbar"><i class="on"></i><i></i><i></i></div>
+<div class="qs on" data-q="0"><h3>What is your project about?</h3><div class="opts"><button class="opt">🌐 Web app</button><button class="opt">📱 Mobile app</button><button class="opt">🤖 AI / ML</button><button class="opt">🔌 IoT / Hardware</button></div></div>
+<div class="qs" data-q="1"><h3>When is your deadline?</h3><div class="opts"><button class="opt">⏱ Under 2 weeks</button><button class="opt">📅 1–2 months</button><button class="opt">🗓 3+ months</button><button class="opt">🤔 Not sure yet</button></div></div>
+<div class="qs" data-q="2"><h3>Where should we send your plan?</h3><form id="lf"><input required placeholder="First name"><input required type="email" placeholder="Email address"><select><option>Preferred contact: Email</option><option>Video call</option></select><label class="consent"><input type="checkbox" required style="width:auto;margin:0"> I agree to the privacy policy (GDPR). No spam.</label><button class="btn g" style="width:100%;justify-content:center">Send my free plan →</button></form></div>
+<div class="qs ok" data-q="3"><div class="big">🎉</div><h3>Thanks! Your plan is on its way.</h3><p style="color:var(--mut)">(Demo only – no data is sent.)</p></div>
+</div>
+</div>
+</div></section>
+
+<section id="results" style="background:var(--bg2)"><div class="wrap">
+<div class="sh rv"><div><span class="kick">Social proof</span><h2>Students who stayed in control of their work</h2></div><p>Sample figures and quotes for the concept.</p></div>
+<div class="stats"><div class="stat rv"><b data-count="94" data-suf="%">0</b><span>submitted on time</span></div><div class="stat rv"><b data-count="1400" data-suf="+">0</b><span>mentoring sessions / year</span></div><div class="stat rv"><b data-count="62">0</b><span>senior mentors</span></div><div class="stat rv"><b data-count="4.9">0</b><span>Google rating</span></div></div>
+<div class="tst"><blockquote class="rv">"My mentor never wrote my code – he asked the right questions until I found the bug myself. Best grade of my degree."<cite>— Ali R., Computer Science, BSc</cite></blockquote><blockquote class="rv">"The architecture review saved me weeks. My supervisor said the database design was the cleanest in the class."<cite>— Mei L., Software Engineering</cite></blockquote><blockquote class="rv">"The mock viva was harder than the real one. I walked in relaxed."<cite>— Daniel K., Information Systems</cite></blockquote></div>
+</div></section>
+
+<section id="guides"><div class="wrap">
+<div class="sh rv"><div><span class="kick">Content hub</span><h2>Guides that rank – and convert</h2></div><p>A blog of long-tail articles, each with an inline call-to-action and internal links to service pages.</p></div>
+<div class="posts">
+<article class="post rv"><div class="th" style="background:radial-gradient(circle at 30% 40%,#7c5cff,transparent 60%),linear-gradient(135deg,#1a1f45,#0d1020)"></div><div class="bd"><small>Planning · 8 min</small><h3>How to choose a final-year project topic your supervisor will approve</h3><p>A 5-step checklist with 30 example topics.</p></div></article>
+<article class="post rv"><div class="th" style="background:radial-gradient(circle at 70% 40%,#22d3ee,transparent 60%),linear-gradient(135deg,#102a3a,#0d1020)"></div><div class="bd"><small>Web · 11 min</small><h3>MERN vs. Laravel for student projects in 2026</h3><p>Pros, cons and what examiners look for.</p></div></article>
+<article class="post rv"><div class="th" style="background:radial-gradient(circle at 50% 60%,#a3e635,transparent 55%),linear-gradient(135deg,#1c2a12,#0d1020)"></div><div class="bd"><small>Viva · 6 min</small><h3>20 viva questions you will probably be asked</h3><p>And how to answer them with confidence.</p></div></article>
+</div>
+</div></section>
+
+<section id="faq" style="padding-top:2rem"><div class="wrap faq">
+<div class="sh rv"><div><span class="kick">FAQ</span><h2>Questions students ask</h2></div></div>
+<details class="rv" open><summary>Do you write my project for me?</summary><p>No. We mentor you: planning, architecture reviews, debugging sessions and feedback, so the work and the learning stay yours. That keeps you safe with your university's academic integrity rules.</p></details>
+<details class="rv"><summary>Which technologies do you cover?</summary><p>Web (React, Node, Laravel, Django), mobile (Flutter, Kotlin), data science/ML with Python, IoT/Arduino and databases.</p></details>
+<details class="rv"><summary>How much does mentoring cost?</summary><p>Single sessions start at $49. Project packages with weekly sessions are quoted after the free call.</p></details>
+<details class="rv"><summary>Can I talk to a mentor before paying?</summary><p>Yes – the first 20-minute call is free and without obligation.</p></details>
+</div></section>
+
+<footer><div class="wrap"><div><b style="color:var(--ink)">ProjectPath</b> · fictional concept · © 2026</div><div>Privacy · Terms · Academic integrity policy</div></div></footer>
+<a class="btn g sticky" href="#start">Free plan →</a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const ideas=[["web","Smart campus event platform","React · Node · MongoDB","Intermediate"],["web","Clinic appointment system with SMS reminders","Laravel · MySQL","Beginner+"],["mobile","Expense-sharing app for flatmates","Flutter · Firebase","Intermediate"],["mobile","Offline-first field survey app","Kotlin · Room","Advanced"],["ml","Plant disease detection from leaf photos","Python · TensorFlow","Advanced"],["ml","Fake review detector for e-commerce","Python · scikit-learn","Intermediate"],["iot","Smart parking with live occupancy map","ESP32 · MQTT · React","Intermediate"],["iot","Energy monitor for student housing","Arduino · Grafana","Beginner+"]];
+const grid=document.getElementById('ideasGrid');
+function render(f){grid.innerHTML=ideas.filter(i=>f=='all'||i[0]==f).map(i=>`<div class="idea"><h3>${i[1]}</h3><p>Includes scope template, milestones & reading list.</p><div class="m"><span>${i[2]}</span><span>${i[3]}</span></div></div>`).join('');if(window.gsap)gsap.from('#ideasGrid .idea',{y:24,opacity:0,stagger:.06,duration:.5,ease:'power2.out'})}
+render('all');
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c==b));render(b.dataset.f)});
+let q=0;const steps=[...document.querySelectorAll('.qs')],bars=[...document.querySelectorAll('.qbar i')];
+function go(n){q=n;steps.forEach((s,i)=>s.classList.toggle('on',i==n));bars.forEach((b,i)=>b.classList.toggle('on',i<=Math.min(n,2)));if(window.gsap)gsap.from(steps[n],{x:30,opacity:0,duration:.45})}
+document.querySelectorAll('.opt').forEach(o=>o.onclick=()=>go(q+1));
+document.getElementById('lf').onsubmit=e=>{e.preventDefault();go(3)};
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('open'));
+if(window.gsap){
+gsap.registerPlugin(ScrollTrigger);
+const lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);lenis.on('scroll',ScrollTrigger.update);
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();lenis.scrollTo(t,{offset:-70})}}));
+gsap.from('.hero h1 .w',{y:60,opacity:0,rotate:3,stagger:.07,duration:.9,ease:'power4.out',delay:.1});
+gsap.from(['.pill','.hero p.lead','.ctas','.trust'],{y:24,opacity:0,stagger:.1,duration:.8,delay:.5});
+gsap.from('#road',{y:60,opacity:0,rotateX:12,duration:1.1,delay:.4,ease:'power3.out'});
+gsap.from('#road .step',{x:30,opacity:0,stagger:.12,delay:.8});
+gsap.to('#progbar',{width:'58%',duration:1.6,delay:1.2,ease:'power2.inOut'});
+gsap.to('.g1',{x:80,y:60,duration:8,yoyo:true,repeat:-1,ease:'sine.inOut'});gsap.to('.g2',{x:-60,y:40,duration:7,yoyo:true,repeat:-1,ease:'sine.inOut'});
+const mq=document.getElementById('mq');mq.innerHTML+=mq.innerHTML;gsap.to(mq,{xPercent:-50,duration:22,repeat:-1,ease:'none'});
+document.querySelectorAll('.rv').forEach(el=>gsap.from(el,{y:40,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+gsap.utils.toArray('.how .line').forEach((l,i)=>gsap.to(l,{width:'100%',duration:.8,delay:i*.25,scrollTrigger:{trigger:'.how',start:'top 80%'}}));
+document.querySelectorAll('[data-count]').forEach(el=>{const n=+el.dataset.count,o={v:0};ScrollTrigger.create({trigger:el,start:'top 95%',once:true,onEnter:()=>gsap.to(o,{v:n,duration:1.6,ease:'power2.out',onUpdate:()=>el.textContent=(Number.isInteger(n)?Math.round(o.v).toLocaleString('en'):o.v.toFixed(1))+(el.dataset.suf||'')})})});
+}else{document.querySelectorAll('[data-count]').forEach(el=>el.textContent=el.dataset.count+(el.dataset.suf||''))}
+</script>
+</body></html>
