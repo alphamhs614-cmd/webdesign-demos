@@ -1,0 +1,86 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WordPress-Webauftritt mit Katalog – Konzept für Mühltal</title><meta name="robots" content="noindex,nofollow"><meta name="description" content="WordPress-Webauftritt mit Katalog – Konzept für Mühltal"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--ac:#3f6b3a;--ac2:#e6efe3;--ink:#15201c;--mut:#5f6b67;--bg:#f9faf6;--line:#e5e1d9;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}.w{width:min(1160px,92%);margin:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;letter-spacing:-.01em}
+.flag{background:var(--ink);color:#dfe6e3;text-align:center;font-size:.78rem;padding:.45rem 1rem}
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
+.logo{font-weight:800;font-size:1.1rem;display:flex;gap:.55rem;align-items:center}
+.logo i{width:32px;height:32px;border-radius:10px;background:var(--ac);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.9rem}
+nav{display:flex;gap:1.5rem;font-weight:600;font-size:.92rem;color:var(--mut)}nav a:hover,nav a.on{color:var(--ac)}
+.btn{display:inline-flex;gap:.5rem;align-items:center;justify-content:center;background:var(--ac);color:#fff;padding:.8rem 1.35rem;border-radius:999px;font:700 .92rem Manrope,sans-serif;border:0;cursor:pointer;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.btn.o{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.sm{padding:.5rem .9rem;font-size:.82rem}
+.mb{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}
+.hero{padding:4.5rem 0 3.5rem}.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.eb{font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);margin:.7rem 0 1.1rem}.lead{font-size:1.08rem;color:var(--mut);max-width:36rem}
+.cta{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap}
+.art{border-radius:28px;aspect-ratio:1/1.05;background:radial-gradient(circle at 25% 20%,var(--ac2),transparent 55%),linear-gradient(140deg,var(--ac),color-mix(in srgb,var(--ac) 45%,#000));position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.art .chip{position:absolute;background:#fff;color:var(--ink);border-radius:16px;padding:.75rem 1rem;font-size:.85rem;font-weight:700;box-shadow:0 12px 30px -12px rgba(0,0,0,.35);display:flex;gap:.6rem;align-items:center}
+.art .chip small{display:block;font-weight:500;color:var(--mut);font-size:.75rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#22c55e;flex:none}
+section{padding:4.5rem 0}.sh{max-width:40rem;margin-bottom:2.2rem}.sh h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin:.5rem 0 .6rem}.sh p{color:var(--mut)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}.g2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.5rem;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(0,0,0,.3)}.card h3{font-size:1.2rem;margin:.7rem 0 .35rem}.card p{color:var(--mut);font-size:.94rem}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--ac2);color:var(--ac);display:grid;place-items:center;font-weight:800}
+.alt{background:color-mix(in srgb,var(--ac2) 45%,var(--bg))}
+.dark{background:var(--ink);color:#e9efec}.dark .sh p,.dark p{color:#b7c3be}
+input,select,textarea{width:100%;padding:.8rem 1rem;border:1.5px solid var(--line);border-radius:12px;font:500 .95rem Manrope,sans-serif;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ac)}
+label{font-weight:700;font-size:.85rem;display:block;margin:.8rem 0 .3rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);background:var(--ink);color:#fff;padding:.85rem 1.3rem;border-radius:14px;font-weight:600;transition:transform .35s;z-index:99;max-width:92%}.toast.on{transform:translate(-50%,0)}
+footer{background:var(--ink);color:#b8c4bf;padding:3rem 0 2rem;font-size:.9rem}footer .fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}footer h4{color:#fff;margin-bottom:.6rem}footer a{display:block;margin:.2rem 0}
+.disc{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1rem;font-size:.8rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;padding:.25rem .6rem;border-radius:999px;background:var(--ac2);color:var(--ac)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hg,.g2{grid-template-columns:1fr}.g3,.g4{grid-template-columns:1fr 1fr}nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:1rem 4%;border-bottom:1px solid var(--line)}nav.open{display:flex}.mb{display:block}footer .fg{grid-template-columns:1fr}.art{aspect-ratio:16/11}}
+@media(max-width:560px){.g3,.g4{grid-template-columns:1fr}section{padding:3.2rem 0}}
+.five{grid-template-columns:repeat(5,1fr)}@media(max-width:900px){.five{grid-template-columns:1fr 1fr}}
+.share{display:flex;gap:.4rem;align-items:center;margin-top:1.3rem;font-size:.85rem;color:var(--mut);font-weight:700}.share button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font:800 .75rem Manrope;cursor:pointer}
+.kb{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:1.3rem}.kb input{max-width:260px}.flt{display:flex;gap:.4rem;flex-wrap:wrap}.flt button{border:1.5px solid var(--line);background:#fff;padding:.45rem 1rem;border-radius:999px;font:700 .85rem Manrope;cursor:pointer}.flt button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.ck{position:fixed;left:16px;right:16px;bottom:16px;max-width:620px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:1rem 1.2rem;box-shadow:0 20px 50px -20px rgba(0,0,0,.45);display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;z-index:90;font-size:.88rem}.ck div{display:flex;gap:.5rem}.ck.off{display:none}
+.lang{position:fixed;top:82px;right:16px;z-index:50;border:0;background:var(--ink);color:#fff;border-radius:999px;padding:.5rem .9rem;font:800 .8rem Manrope;cursor:pointer}</style></head><body>
+<div class="flag">Unverbindlicher Konzept-Entwurf · fiktive Inhalte und Platzhalter-Kontaktdaten</div>
+<header><div class="w bar"><a class="logo" href="#top"><i>W</i>Ihr Webauftritt</a><nav><a href="#seiten">Seiten</a><a href="#katalog">Katalog</a><a href="#plugins">Plugins</a><a href="#kontakt">Kontakt</a></nav><button class="mb" aria-label="Menü">☰</button></div></header>
+<main id="top">
+<section class="hero"><div class="w hg"><div class="rv"><span class="eb" data-i="eb">WordPress · 5 Seiten · Katalog ohne Shop</span>
+<h1 data-i="h1">Ihr Webauftritt mit Katalog-Funktion – im Theme Ihrer Hauptseite.</h1>
+<p class="lead" data-i="lead">Textblöcke, Listen und ein Kategorie-Katalog. Besucher stöbern und schicken bei Bedarf eine Nachricht – kein Shop. Die Inhalte pflegen Sie selbst.</p>
+<div class="cta"><a class="btn" href="#katalog" data-i="b1">Katalog ansehen</a><a class="btn o" href="#plugins" data-i="b2">Plugins</a></div>
+<div class="share"><span data-i="sh">Teilen:</span><button onclick="toast('Demo: Teilen auf Facebook')">f</button><button onclick="toast('Demo: Teilen per WhatsApp')">WA</button><button onclick="toast('Demo: Teilen auf X')">X</button><button onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);toast('Link kopiert')">🔗</button></div></div>
+<div class="art rv"><div class="chip" style="left:8%;top:12%">🧩 Theme übernommen<small>von Ihrer Hauptseite</small></div><div class="chip" style="right:7%;top:46%">🌍 DE / EN<small>Übersetzer-Plugin</small></div><div class="chip" style="left:10%;bottom:10%">✉️ Mitteilung<small>Kontaktformular</small></div></div></div></section>
+<section class="alt" id="seiten"><div class="w"><div class="sh rv"><span class="eb" data-i="s1e">Seitenstruktur</span><h2 data-i="s1h">5 statische Seiten</h2></div>
+<div class="g4 five"><div class="card"><div class="ic">1</div><h3>Start</h3><p>Einleitung, Textblöcke, Highlights</p></div><div class="card"><div class="ic">2</div><h3>Katalog</h3><p>Listen nach Kategorien, Suche</p></div><div class="card"><div class="ic">3</div><h3>Über uns</h3><p>Textblöcke & Bilder</p></div><div class="card"><div class="ic">4</div><h3>Infos / FAQ</h3><p>Listen, Aufklappelemente</p></div><div class="card"><div class="ic">5</div><h3>Kontakt</h3><p>Formular, Impressum, Datenschutz</p></div></div></div></section>
+<section id="katalog"><div class="w"><div class="sh rv"><span class="eb">Katalog</span><h2 data-i="kh">Nach Kategorie stöbern</h2><p data-i="kp">Beispiel-Einträge – Sie legen Kategorien und Einträge im WordPress-Backend selbst an.</p></div>
+<div class="kb"><input id="q" placeholder="Suchen …"><div class="flt" id="flt"></div></div><div class="g3" id="list"></div></div></section>
+<section class="alt" id="plugins"><div class="w"><div class="sh rv"><span class="eb">Plugins</span><h2 data-i="ph">Alles eingerichtet, was Sie brauchen</h2></div>
+<div class="g3"><div class="card"><div class="ic">✉️</div><h3>Kontaktformular</h3><p>z. B. Contact Form 7 / WPForms, Spam-Schutz</p></div><div class="card"><div class="ic">🔎</div><h3>SEO</h3><p>Yoast oder Rank Math – Titel, Beschreibungen, Sitemap</p></div><div class="card"><div class="ic">🍪</div><h3>Cookie-Hinweis</h3><p>DSGVO-konformes Banner (siehe unten)</p></div><div class="card"><div class="ic">↗️</div><h3>Social Share</h3><p>Novashare oder leichtgewichtige Alternative</p></div><div class="card"><div class="ic">🌍</div><h3>Übersetzung</h3><p>Polylang / TranslatePress – Umschalter oben rechts</p></div><div class="card"><div class="ic">🧩</div><h3>Ihr Theme</h3><p>Von der Hauptseite übernommen, Child-Theme für Updates</p></div></div></div></section>
+<section id="kontakt"><div class="w g2"><div class="rv"><span class="eb">Kontakt</span><h2 style="font-size:2.2rem;margin:.5rem 0 1rem" data-i="ch">Mitteilung senden</h2><p class="lead" data-i="cp">Besucher wählen optional den Katalog-Eintrag, um den es geht.</p></div>
+<form class="card rv" data-demo="Demo: Mitteilung würde versendet."><label>Name</label><input required><label>E-Mail</label><input type="email" required><label>Eintrag</label><select id="sel"><option>– bitte wählen –</option></select><label>Nachricht</label><textarea rows="3"></textarea><button class="btn" style="margin-top:1rem">Senden</button></form></div></section>
+<div class="ck" id="ck"><p><b>Cookies</b> – Wir nutzen nur notwendige Cookies. Optionale Dienste (z. B. Statistik) nur mit Ihrer Zustimmung.</p><div><button class="btn sm o" onclick="ckc()">Nur notwendige</button><button class="btn sm" onclick="ckc()">Alle akzeptieren</button></div></div>
+<button class="lang" id="lang">EN</button></main>
+<footer><div class="w"><div class="fg"><div><h4>Ihr Webauftritt</h4><p>Musterstraße 1 · 00000 Musterstadt<br>Tel. +49 000 0000000 · info@beispiel.de</p></div><div><h4>Seiten</h4><a href="#seiten">Seiten</a><a href="#katalog">Katalog</a><a href="#plugins">Plugins</a><a href="#kontakt">Kontakt</a></div><div><h4>Rechtliches</h4><a href="#" onclick="toast('Impressum – wird mit Ihren Daten befüllt');return false">Impressum</a><a href="#" onclick="toast('Datenschutzerklärung – DSGVO-konform');return false">Datenschutz</a></div></div>
+<div class="disc">Konzept-Entwurf von Mohammad (Webdesign, Saarbrücken) – kein Kundenprojekt. Alle Namen, Texte, Preise und Kontaktdaten sind Platzhalter.</div></div></footer>
+<div class="toast" id="toast"></div><script>
+const T=document.getElementById('toast');function toast(m){T.textContent=m;T.classList.add('on');clearTimeout(window._t);window._t=setTimeout(()=>T.classList.remove('on'),2600)}
+document.querySelector('.mb')?.addEventListener('click',()=>document.querySelector('nav').classList.toggle('open'));
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('form[data-demo]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();toast(f.dataset.demo||'Demo: Nachricht würde jetzt versendet.');f.reset()}));
+
+const K=[['Eintrag A1','Kategorie 1','Kurzbeschreibung mit Textblock und Liste.'],['Eintrag A2','Kategorie 1','Mit Bild, Merkmalen und Hinweis.'],['Eintrag B1','Kategorie 2','Beispielinhalt für die Liste.'],['Eintrag B2','Kategorie 2','Weitere Details auf Anfrage.'],['Eintrag C1','Kategorie 3','Text, Bild, Download möglich.'],['Eintrag C2','Kategorie 3','Kurzbeschreibung.'],['Eintrag C3','Kategorie 3','Beispiel für längere Listen.'],['Eintrag D1','Kategorie 4','Saisonaler Eintrag.']];
+let cat='Alle';const cats=['Alle',...new Set(K.map(k=>k[1]))];
+function draw(){const q=document.getElementById('q').value.toLowerCase();document.getElementById('flt').innerHTML=cats.map(c=>`<button class="${c==cat?'on':''}" onclick="cat='${c}';draw()">${c}</button>`).join('');
+document.getElementById('list').innerHTML=K.filter(k=>(cat=='Alle'||k[1]==cat)&&(k[0]+k[2]).toLowerCase().includes(q)).map(k=>`<div class="card"><span class="tag">${k[1]}</span><h3>${k[0]}</h3><p>${k[2]}</p><button class="btn sm o" style="margin-top:.8rem" onclick="ask('${k[0]}')">Anfrage zu diesem Eintrag</button></div>`).join('')||'<p>Keine Treffer.</p>'}
+function ask(n){document.getElementById('sel').value=n;location.hash='kontakt';toast('„'+n+'“ im Formular ausgewählt')}
+document.getElementById('q').oninput=draw;document.getElementById('sel').innerHTML+=K.map(k=>`<option>${k[0]}</option>`).join('');draw();
+function ckc(){document.getElementById('ck').classList.add('off');toast('Cookie-Auswahl gespeichert')}
+const EN={eb:'WordPress · 5 pages · catalogue, no shop',h1:'Your website with a catalogue – in the theme of your main site.',lead:'Text blocks, lists and a category catalogue. Visitors browse and send a message if needed – no shop. You manage the content yourself.',b1:'View catalogue',b2:'Plugins',sh:'Share:',s1e:'Structure',s1h:'5 static pages',kh:'Browse by category',kp:'Sample entries – you create categories and entries in the WordPress backend.',ph:'Everything you need, set up',ch:'Send a message',cp:'Visitors can pick the catalogue entry they are asking about.'};
+const DE={};document.querySelectorAll('[data-i]').forEach(e=>DE[e.dataset.i]=e.textContent);let en=false;
+document.getElementById('lang').onclick=e=>{en=!en;document.querySelectorAll('[data-i]').forEach(x=>x.textContent=(en?EN:DE)[x.dataset.i]);e.target.textContent=en?'DE':'EN';document.documentElement.lang=en?'en':'de';toast(en?'English (Übersetzer-Plugin)':'Deutsch')};</script></body></html>

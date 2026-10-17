@@ -1,0 +1,86 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zentrale Auftragsverwaltung eBay · Etsy · WooCommerce – Konzept</title><meta name="robots" content="noindex,nofollow"><meta name="description" content="Zentrale Auftragsverwaltung eBay · Etsy · WooCommerce – Konzept"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--ac:#8a5a2b;--ac2:#f3e9de;--ink:#221a14;--mut:#5f6b67;--bg:#faf7f3;--line:#e5e1d9;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}.w{width:min(1160px,92%);margin:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;letter-spacing:-.01em}
+.flag{background:var(--ink);color:#dfe6e3;text-align:center;font-size:.78rem;padding:.45rem 1rem}
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
+.logo{font-weight:800;font-size:1.1rem;display:flex;gap:.55rem;align-items:center}
+.logo i{width:32px;height:32px;border-radius:10px;background:var(--ac);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.9rem}
+nav{display:flex;gap:1.5rem;font-weight:600;font-size:.92rem;color:var(--mut)}nav a:hover,nav a.on{color:var(--ac)}
+.btn{display:inline-flex;gap:.5rem;align-items:center;justify-content:center;background:var(--ac);color:#fff;padding:.8rem 1.35rem;border-radius:999px;font:700 .92rem Manrope,sans-serif;border:0;cursor:pointer;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.btn.o{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.sm{padding:.5rem .9rem;font-size:.82rem}
+.mb{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}
+.hero{padding:4.5rem 0 3.5rem}.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.eb{font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);margin:.7rem 0 1.1rem}.lead{font-size:1.08rem;color:var(--mut);max-width:36rem}
+.cta{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap}
+.art{border-radius:28px;aspect-ratio:1/1.05;background:radial-gradient(circle at 25% 20%,var(--ac2),transparent 55%),linear-gradient(140deg,var(--ac),color-mix(in srgb,var(--ac) 45%,#000));position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.art .chip{position:absolute;background:#fff;color:var(--ink);border-radius:16px;padding:.75rem 1rem;font-size:.85rem;font-weight:700;box-shadow:0 12px 30px -12px rgba(0,0,0,.35);display:flex;gap:.6rem;align-items:center}
+.art .chip small{display:block;font-weight:500;color:var(--mut);font-size:.75rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#22c55e;flex:none}
+section{padding:4.5rem 0}.sh{max-width:40rem;margin-bottom:2.2rem}.sh h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin:.5rem 0 .6rem}.sh p{color:var(--mut)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}.g2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.5rem;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(0,0,0,.3)}.card h3{font-size:1.2rem;margin:.7rem 0 .35rem}.card p{color:var(--mut);font-size:.94rem}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--ac2);color:var(--ac);display:grid;place-items:center;font-weight:800}
+.alt{background:color-mix(in srgb,var(--ac2) 45%,var(--bg))}
+.dark{background:var(--ink);color:#e9efec}.dark .sh p,.dark p{color:#b7c3be}
+input,select,textarea{width:100%;padding:.8rem 1rem;border:1.5px solid var(--line);border-radius:12px;font:500 .95rem Manrope,sans-serif;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ac)}
+label{font-weight:700;font-size:.85rem;display:block;margin:.8rem 0 .3rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);background:var(--ink);color:#fff;padding:.85rem 1.3rem;border-radius:14px;font-weight:600;transition:transform .35s;z-index:99;max-width:92%}.toast.on{transform:translate(-50%,0)}
+footer{background:var(--ink);color:#b8c4bf;padding:3rem 0 2rem;font-size:.9rem}footer .fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}footer h4{color:#fff;margin-bottom:.6rem}footer a{display:block;margin:.2rem 0}
+.disc{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1rem;font-size:.8rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;padding:.25rem .6rem;border-radius:999px;background:var(--ac2);color:var(--ac)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hg,.g2{grid-template-columns:1fr}.g3,.g4{grid-template-columns:1fr 1fr}nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:1rem 4%;border-bottom:1px solid var(--line)}nav.open{display:flex}.mb{display:block}footer .fg{grid-template-columns:1fr}.art{aspect-ratio:16/11}}
+@media(max-width:560px){.g3,.g4{grid-template-columns:1fr}section{padding:3.2rem 0}}
+.dash{display:grid;grid-template-columns:1.6fr 1fr;gap:1.2rem}@media(max-width:900px){.dash{grid-template-columns:1fr}}.dl{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.2rem;overflow:auto}.dr{display:grid;gap:1.2rem;align-content:start}
+.flt{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.8rem}.flt button{border:1.5px solid var(--line);background:#fff;padding:.4rem .9rem;border-radius:999px;font:700 .8rem Manrope;cursor:pointer}.flt button.on{background:var(--ink);color:#fff}
+table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.88rem;min-width:520px}th{text-align:left;color:var(--mut);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;padding:.5rem}td{padding:.6rem .5rem;border-top:1px solid var(--line)}td .btn{margin-right:.3rem}
+.ch{font-weight:800;font-size:.72rem;padding:.2rem .55rem;border-radius:999px}.eBay{background:#e3f0fb;color:#0b5cad}.Etsy{background:#fdebe1;color:#c2490f}.Shop{background:#e8f3e5;color:#2f6b2a}
+.sr{display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid var(--line);font-size:.9rem}.sr b.low{color:#c0392b}.sw2{display:flex;gap:.5rem;align-items:center;font-weight:600}.sw2 input{width:auto}
+.phone{position:fixed;top:90px;right:16px;background:#111;color:#fff;border-radius:18px;padding:.9rem 1.1rem;display:flex;flex-direction:column;font-size:.85rem;transform:translateX(130%);transition:transform .4s;z-index:95;max-width:260px}.phone.on{transform:none}</style></head><body>
+<div class="flag">Unverbindlicher Konzept-Entwurf · fiktive Inhalte und Platzhalter-Kontaktdaten</div>
+<header><div class="w bar"><a class="logo" href="#top"><i>H</i>Ihre Holzmanufaktur</a><nav><a href="#dash">Dashboard</a><a href="#ablauf">Ablauf</a><a href="#kontakt">Kontakt</a></nav><button class="mb" aria-label="Menü">☰</button></div></header>
+<main id="top">
+<section class="hero"><div class="w hg"><div class="rv"><span class="eb">Konzept · zentrale Auftragsverwaltung für Holzprodukte</span>
+<h1>eBay, Etsy und Ihr WooCommerce-Shop – alles in einer Übersicht.</h1>
+<p class="lead">Bestellungen, Lagerbestand, Rechnungen und Hermes-Etiketten zentral verwalten, mit Push-Nachricht aufs Handy. Umsetzbar z. B. mit Billbee, JTL-Wawi oder Plentymarkets – die Wahl hängt von Ihren Mengen und Ihrem Budget ab.</p>
+<div class="cta"><a class="btn" href="#dash">Demo-Dashboard</a><a class="btn o" href="#ablauf">Ablauf</a></div></div>
+<div class="art rv"><div class="chip" style="left:8%;top:12%">🔔 Neue Etsy-Bestellung<small>Schneidebrett Eiche · 49,00 €</small></div><div class="chip" style="right:7%;top:46%">🔄 Bestand synchron<small>eBay · Etsy · Shop</small></div><div class="chip" style="left:10%;bottom:10%">📦 Hermes<small>Etikett + Sendungsnr. übermittelt</small></div></div></div></section>
+<section class="alt" id="dash"><div class="w"><div class="sh rv"><span class="eb">Demo-Dashboard</span><h2>So sieht Ihr Arbeitstag aus</h2><p>Klicken Sie „Neue Bestellung simulieren“, „Etikett“ und „Rechnung“ – der Bestand wird auf allen Kanälen gleichzeitig angepasst.</p></div>
+<div class="dash"><div class="dl"><div class="flt" id="flt"></div><button class="btn sm" onclick="sim()">+ Neue Bestellung simulieren</button>
+<table><thead><tr><th>#</th><th>Kanal</th><th>Artikel</th><th>Betrag</th><th>Aktionen</th></tr></thead><tbody id="ord"></tbody></table></div>
+<div class="dr"><div class="card"><h3>Lagerbestand (alle Kanäle)</h3><div id="stk"></div></div><div class="card"><h3>Automatik</h3><label class="sw2"><input type="checkbox" checked> Rechnung automatisch per E-Mail</label><label class="sw2"><input type="checkbox" checked> Sendungsnummer an Marktplatz melden</label><label class="sw2"><input type="checkbox"> Direktversand über Lieferant</label></div></div></div></div></section>
+<section id="ablauf"><div class="w"><div class="sh rv"><span class="eb">Ablauf</span><h2>Einrichtung in 4 Schritten</h2></div><div class="g4">
+<div class="card"><div class="ic">1</div><h3>Analyse</h3><p>Bestellmengen, Kanäle, Versand – passendes System auswählen.</p></div><div class="card"><div class="ic">2</div><h3>Anbindung</h3><p>eBay, Etsy und WooCommerce verbinden, Bestände abgleichen.</p></div><div class="card"><div class="ic">3</div><h3>Automatik</h3><p>Rechnungsvorlage, E-Mail-Versand, Hermes-Etiketten, Push-Nachrichten.</p></div><div class="card"><div class="ic">4</div><h3>Einweisung</h3><p>Testbestellungen und kurze Schulung – auch per Handy-App.</p></div></div></div></section>
+<section class="alt" id="kontakt"><div class="w g2"><div class="rv"><h2 style="font-size:2.2rem;margin-bottom:1rem">Kein Artikel-Import nötig</h2><p class="lead">Ihre Artikel bleiben, wie sie sind – es geht nur um die Verbindung und Automatisierung im Hintergrund.</p></div>
+<form class="card rv" data-demo="Demo: Anfrage würde versendet."><label>Bestellungen pro Monat (ca.)</label><select><option>unter 50</option><option>50–200</option><option>über 200</option></select><label>E-Mail</label><input type="email" required><button class="btn" style="margin-top:1rem">Anfrage senden</button></form></div></section>
+<div class="phone" id="ph"><b>🔔 Neue Bestellung</b><span id="pht"></span></div></main>
+<footer><div class="w"><div class="fg"><div><h4>Ihre Holzmanufaktur</h4><p>Musterstraße 1 · 00000 Musterstadt<br>Tel. +49 000 0000000 · info@beispiel.de</p></div><div><h4>Seiten</h4><a href="#dash">Dashboard</a><a href="#ablauf">Ablauf</a><a href="#kontakt">Kontakt</a></div><div><h4>Rechtliches</h4><a href="#" onclick="toast('Impressum – wird mit Ihren Daten befüllt');return false">Impressum</a><a href="#" onclick="toast('Datenschutzerklärung – DSGVO-konform');return false">Datenschutz</a></div></div>
+<div class="disc">Konzept-Entwurf von Mohammad (Webdesign, Saarbrücken) – kein Kundenprojekt. Alle Namen, Texte, Preise und Kontaktdaten sind Platzhalter.</div></div></footer>
+<div class="toast" id="toast"></div><script>
+const T=document.getElementById('toast');function toast(m){T.textContent=m;T.classList.add('on');clearTimeout(window._t);window._t=setTimeout(()=>T.classList.remove('on'),2600)}
+document.querySelector('.mb')?.addEventListener('click',()=>document.querySelector('nav').classList.toggle('open'));
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('form[data-demo]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();toast(f.dataset.demo||'Demo: Nachricht würde jetzt versendet.');f.reset()}));
+
+const ST={'Schneidebrett Eiche':12,'Servierbrett Nussbaum':5,'Holz-Untersetzer (4er)':20,'Gewürzregal Buche':3};
+const items=Object.keys(ST),price={'Schneidebrett Eiche':49,'Servierbrett Nussbaum':69,'Holz-Untersetzer (4er)':24,'Gewürzregal Buche':59};
+let O=[[1041,'Etsy','Schneidebrett Eiche',0],[1042,'eBay','Holz-Untersetzer (4er)',0],[1043,'Shop','Gewürzregal Buche',0]],f='Alle',n=1044;
+const eur=x=>x.toFixed(2).replace('.',',')+' €';
+function draw(){document.getElementById('flt').innerHTML=['Alle','eBay','Etsy','Shop'].map(c=>`<button class="${c==f?'on':''}" onclick="f='${c}';draw()">${c}</button>`).join('');
+document.getElementById('ord').innerHTML=O.filter(o=>f=='Alle'||o[1]==f).map(o=>`<tr><td>${o[0]}</td><td><span class="ch ${o[1]}">${o[1]}</span></td><td>${o[2]}</td><td>${eur(price[o[2]])}</td><td>${o[3]>=1?'✅ Rechnung':`<button class="btn sm o" onclick="inv(${o[0]})">Rechnung</button>`}${o[4]?' 📦 '+o[4]:`<button class="btn sm" onclick="lab(${o[0]})">Hermes-Etikett</button>`}</td></tr>`).join('');
+document.getElementById('stk').innerHTML=items.map(i=>`<div class="sr"><span>${i}</span><b class="${ST[i]<=3?'low':''}">${ST[i]} Stk.</b></div>`).join('')}
+function sim(){const ch=['eBay','Etsy','Shop'][Math.floor(Math.random()*3)],it=items[Math.floor(Math.random()*items.length)];if(ST[it]<=0){toast(it+' ausverkauft – auf allen Kanälen automatisch deaktiviert');return}ST[it]--;O.unshift([n++,ch,it,0]);draw();const ph=document.getElementById('ph');document.getElementById('pht').textContent=ch+' · '+it+' · '+eur(price[it]);ph.classList.add('on');setTimeout(()=>ph.classList.remove('on'),2800);toast('Bestand auf eBay, Etsy und im Shop angepasst')}
+function inv(id){O.find(o=>o[0]==id)[3]=1;draw();toast('Rechnung erstellt und per E-Mail an den Kunden gesendet')}
+function lab(id){const o=O.find(o=>o[0]==id);o[4]='H'+Math.floor(1e9+Math.random()*9e9);draw();toast('Hermes-Etikett erstellt, Sendungsnummer an '+o[1]+' übermittelt')}
+draw();</script></body></html>
