@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>صفقة – منصة بيع وشراء المشاريع والشركات القائمة (نموذج MVP)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1110;--panel:#141a19;--ink:#eef3f1;--mut:#8c9a96;--acc:#3ddc97;--acc2:#1fae72;--line:#24302d;--warn:#ffcf5c}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:'Readex Pro',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}
+.wrap{width:min(1220px,92%);margin:auto}
+.flag{background:var(--acc);color:#04130c;text-align:center;font-size:.8rem;padding:.35rem}
+header{position:sticky;top:0;z-index:30;background:rgba(13,17,16,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{font-weight:700;font-size:1.4rem;display:flex;gap:.5rem;align-items:center}.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--acc),#0f7a52);display:block}
+nav{display:flex;gap:1.6rem;color:var(--mut)}nav a:hover{color:var(--ink)}
+.btn{border:0;border-radius:12px;padding:.7rem 1.3rem;font-weight:600;background:var(--acc);color:#04130c}.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{padding:6rem 0 4rem;position:relative;overflow:hidden}
+.glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,#3ddc9733,transparent 60%);top:-250px;left:-200px;pointer-events:none}
+.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;position:relative}
+.eyebrow{color:var(--acc);font-size:.9rem}
+h1{font-size:clamp(2.3rem,5.5vw,4.4rem);line-height:1.15;font-weight:700;margin:.8rem 0 1rem}
+h1 .w{display:inline-block}
+.hero p{color:var(--mut);font-size:1.1rem;max-width:540px}
+.cta{display:flex;gap:.7rem;margin-top:1.6rem}
+.ticker{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:1.2rem;position:relative}
+.ticker h4{font-weight:500;color:var(--mut);font-size:.9rem;margin-bottom:.6rem}
+.deal{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.deal:last-child{border:0}.deal b{display:block}.deal small{color:var(--mut)}
+.badge{font-size:.75rem;border-radius:99px;padding:.15rem .65rem;background:#173a2b;color:var(--acc)}.badge.y{background:#3a3217;color:var(--warn)}
+.trust{display:flex;gap:2.5rem;margin-top:2.4rem;color:var(--mut);font-size:.9rem}.trust b{display:block;color:var(--ink);font-size:1.7rem}
+section{padding:4.5rem 0}
+h2{font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:600}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:.6rem;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:.6rem;margin-bottom:1.4rem}
+.filters input,.filters select{background:#0f1514;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:.65rem .8rem;outline:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:1.3rem;display:flex;flex-direction:column;gap:.6rem;transition:.3s}
+.card:hover{border-color:var(--acc2);transform:translateY(-4px)}
+.top{display:flex;justify-content:space-between;align-items:center}
+.sec{font-size:.8rem;color:var(--mut)}
+.card h3{font-size:1.1rem;font-weight:600;line-height:1.4}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;background:#0f1514;border-radius:14px;padding:.7rem}
+.nums div{text-align:center}.nums small{display:block;color:var(--mut);font-size:.75rem}.nums b{font-size:.98rem}
+.mult{font-size:.85rem;color:var(--mut)}.mult b{color:var(--acc)}
+.card .btn{margin-top:auto;width:100%}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:2rem}
+.how{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:2rem}
+.col h3{font-weight:600;margin-bottom:1rem}
+.st{display:flex;gap:1rem;padding:.8rem 0;border-top:1px solid var(--line)}.st b{color:var(--acc);min-width:28px}
+.val{background:linear-gradient(135deg,#123526,#0e1a16);border:1px solid #1d4a36;border-radius:28px;padding:2.4rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.val label{display:block;color:var(--mut);margin:.7rem 0 .3rem;font-size:.9rem}
+.val input[type=range]{width:100%;accent-color:var(--acc)}
+.out{background:#0c1512;border-radius:18px;padding:1.3rem;margin-top:1rem}.out b{font-size:1.9rem;color:var(--acc)}
+.later{color:var(--mut);font-size:.88rem;margin-top:.6rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;place-items:center;z-index:60;padding:1rem}.modal.on{display:grid}
+.mbox{background:var(--panel);border:1px solid var(--line);border-radius:22px;max-width:520px;width:100%;padding:1.8rem}
+.prog{display:flex;gap:.4rem;margin:1rem 0}.prog i{flex:1;height:5px;border-radius:9px;background:var(--line)}.prog i.on{background:var(--acc)}
+.mbox input{width:100%;background:#0f1514;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:.65rem .8rem;margin:.3rem 0}
+.mbox .chk{display:flex;gap:.5rem;align-items:flex-start;color:var(--mut);font-size:.9rem;margin:.6rem 0}
+footer{padding:2.5rem 0;text-align:center;color:var(--mut);font-size:.88rem;border-top:1px solid var(--line)}
+@media(max-width:960px){nav{display:none}.hg,.how,.val{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.val{padding:1.4rem}.trust{gap:1.2rem}}
+</style>
+</head>
+<body>
+<div class="flag">نموذج أولي (MVP ديمو) – جميع المشاريع والأرقام وهمية · تصميم: محمد – مصمم مواقع</div>
+<header><div class="wrap bar"><a class="logo" href="#"><i></i>صفقة</a><nav><a href="#list">تصفح الفرص</a><a href="#how">كيف تعمل</a><a href="#val">تقدير القيمة</a></nav><button class="btn" onclick="sell()">اعرض مشروعك للبيع</button></div></header>
+
+<section class="hero"><div class="glow"></div><div class="wrap hg">
+<div>
+<div class="eyebrow rv">السوق العربي للمشاريع القائمة</div>
+<h1 class="rv">اشترِ مشروعاً يعمل<br>بدل أن تبدأ من الصفر.</h1>
+<p class="rv">مطاعم، متاجر إلكترونية، صالونات، مصانع صغيرة وشركات خدمات. أرقام مالية واضحة، هوية البائع موثّقة، وسرّية كاملة قبل كشف التفاصيل.</p>
+<div class="cta rv"><a href="#list" class="btn">تصفح الفرص</a><button class="btn o" onclick="sell()">أريد البيع</button></div>
+<div class="trust rv"><div><b data-n="1240">0</b>فرصة معروضة</div><div><b data-n="86">0</b>صفقة مكتملة</div><div><b data-n="9">0</b>دول عربية</div></div>
+</div>
+<div class="ticker rv"><h4>أحدث النشاط</h4>
+<div class="deal"><div><b>مقهى مختص – الرياض</b><small>تم إرسال 4 طلبات اطلاع اليوم</small></div><span class="badge">نشط</span></div>
+<div class="deal"><div><b>متجر عطور إلكتروني – الكويت</b><small>بانتظار توقيع اتفاقية السرية</small></div><span class="badge y">قيد التفاوض</span></div>
+<div class="deal"><div><b>مغسلة سيارات – دبي</b><small>تمت الصفقة خلال 21 يوماً</small></div><span class="badge">مُباع</span></div>
+<div class="deal"><div><b>مركز تدريب – عمّان</b><small>تحديث القوائم المالية 2025</small></div><span class="badge">نشط</span></div>
+</div>
+</div></section>
+
+<section id="list"><div class="wrap">
+<div class="sh"><h2>الفرص المتاحة</h2><span class="sec" id="cnt"></span></div>
+<div class="filters"><input id="q" placeholder="ابحث: مطعم، متجر، صالون…"><select id="sector"><option value="">كل القطاعات</option><option>مطاعم ومقاهي</option><option>تجارة إلكترونية</option><option>خدمات</option><option>تجزئة</option><option>صناعة</option></select><select id="country"><option value="">كل الدول</option><option>السعودية</option><option>الإمارات</option><option>الكويت</option><option>قطر</option><option>الأردن</option></select><select id="price"><option value="">أي سعر</option><option value="100000">حتى 100 ألف $</option><option value="300000">حتى 300 ألف $</option><option value="1000000">حتى مليون $</option></select></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="how"><div class="wrap"><div class="sh"><h2>كيف تعمل صفقة</h2></div>
+<div class="how">
+<div class="col"><h3>للبائع</h3><div class="st"><b>1</b><div>أنشئ حساباً ووثّق هويتك وسجلك التجاري.</div></div><div class="st"><b>2</b><div>أضف بيانات المشروع: الإيرادات، الأرباح، الأصول، سبب البيع.</div></div><div class="st"><b>3</b><div>إعلانك يظهر بدون اسم المشروع حتى يوقّع المشتري اتفاقية السرية.</div></div><div class="st"><b>4</b><div>تفاوض عبر الرسائل الداخلية وأغلق الصفقة.</div></div></div>
+<div class="col"><h3>للمشتري</h3><div class="st"><b>1</b><div>تصفّح وفلتر حسب القطاع والدولة والسعر.</div></div><div class="st"><b>2</b><div>احفظ الفرص وفعّل تنبيهات للفرص الجديدة.</div></div><div class="st"><b>3</b><div>اطلب الاطلاع ووقّع اتفاقية السرية إلكترونياً.</div></div><div class="st"><b>4</b><div>راجع المستندات وتواصل مع البائع مباشرة.</div></div></div>
+</div></div></section>
+
+<section id="val"><div class="wrap"><div class="val">
+<div><h2>تقدير مبدئي لقيمة مشروعك</h2><p style="color:var(--mut)">طريقة مبسّطة تعتمد على مضاعف صافي الربح حسب القطاع. للمرحلة الأولى فقط.</p><p class="later">التقييم المالي المتقدم والاستثمار والشراكات: مراحل لاحقة كما في خطة المشروع.</p></div>
+<div><label>القطاع</label><select id="vs" style="width:100%;background:#0f1514;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:.6rem"><option value="2.4">مطاعم ومقاهي</option><option value="3.2">تجارة إلكترونية</option><option value="2.8">خدمات</option><option value="2.2">تجزئة</option><option value="3.6">صناعة</option></select>
+<label>صافي الربح السنوي: <b id="pv">80,000</b> $</label><input type="range" id="profit" min="10000" max="500000" step="5000" value="80000">
+<div class="out">القيمة التقديرية<br><b id="vo">0</b> $</div></div>
+</div></div></section>
+<footer>© صفقة (اسم وهمي) · نموذج MVP للعرض فقط · الشروط · سياسة الخصوصية</footer>
+
+<div class="modal" id="modal" onclick="if(event.target==this)close_()"><div class="mbox" id="mbox"></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const D=[
+{t:'مقهى مختص بموقع حيوي وعملاء ثابتين',s:'مطاعم ومقاهي',c:'السعودية',city:'الرياض',rev:420000,pro:96000,ask:240000,y:4},
+{t:'متجر إلكتروني للعطور مع 18 ألف عميل',s:'تجارة إلكترونية',c:'الكويت',city:'الكويت',rev:310000,pro:88000,ask:270000,y:3},
+{t:'مغسلة سيارات متكاملة مع عقود شركات',s:'خدمات',c:'الإمارات',city:'دبي',rev:520000,pro:140000,ask:390000,y:6},
+{t:'مخبز ومعجنات – فرعين',s:'مطاعم ومقاهي',c:'قطر',city:'الدوحة',rev:610000,pro:120000,ask:300000,y:7},
+{t:'متجر أزياء نسائية أونلاين + إنستغرام',s:'تجارة إلكترونية',c:'السعودية',city:'جدة',rev:190000,pro:52000,ask:150000,y:2},
+{t:'مصنع صغير لتعبئة المياه',s:'صناعة',c:'الأردن',city:'عمّان',rev:880000,pro:210000,ask:750000,y:9},
+{t:'صالون حلاقة رجالي فاخر',s:'خدمات',c:'الإمارات',city:'أبوظبي',rev:240000,pro:70000,ask:160000,y:5},
+{t:'محل إلكترونيات وإكسسوارات جوال',s:'تجزئة',c:'السعودية',city:'الدمام',rev:350000,pro:61000,ask:120000,y:4},
+{t:'مطعم برجر بعلامة تجارية مسجلة',s:'مطاعم ومقاهي',c:'الكويت',city:'حولي',rev:700000,pro:150000,ask:420000,y:5}];
+const k=n=>n>=1e6?(n/1e6).toFixed(1)+'M':Math.round(n/1000)+'K';
+function render(){const q=document.getElementById('q').value.trim(),s=sector.value,c=country.value,p=+price.value||1e12;
+const R=D.map((x,i)=>({x,i})).filter(o=>(!q||o.x.t.includes(q)||o.x.s.includes(q))&&(!s||o.x.s==s)&&(!c||o.x.c==c)&&o.x.ask<=p);
+grid.innerHTML=R.length?R.map(({x,i})=>`<div class="card"><div class="top"><span class="sec">${x.s} · ${x.city}، ${x.c}</span><span class="badge">موثّق</span></div><h3>${x.t}</h3><div class="nums"><div><small>الإيرادات</small><b>$${k(x.rev)}</b></div><div><small>صافي الربح</small><b>$${k(x.pro)}</b></div><div><small>السعر المطلوب</small><b>$${k(x.ask)}</b></div></div><div class="mult">مضاعف الربح: <b>${(x.ask/x.pro).toFixed(1)}x</b> · عمر المشروع ${x.y} سنوات</div><button class="btn" onclick="nda(${i})">طلب الاطلاع على التفاصيل</button></div>`).join(''):'<div class="empty">لا توجد فرص مطابقة حالياً. فعّل تنبيهاً وسنخبرك.</div>';
+cnt.textContent=R.length+' فرصة';gsap.from('#grid .card',{y:24,opacity:0,stagger:.05,duration:.5})}
+['q','sector','country','price'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+let step=0,cur=0;
+function nda(i){cur=i;step=0;drawN();modal.classList.add('on');gsap.from('.mbox',{y:30,opacity:0,duration:.35})}
+function drawN(){const x=D[cur];const pr=`<div class="prog">${[0,1,2].map(j=>`<i class="${j<=step?'on':''}"></i>`).join('')}</div>`;
+mbox.innerHTML=step==0?`<h3>${x.t}</h3>${pr}<p style="color:var(--mut)">الخطوة 1 من 3: بياناتك كمشتري مهتم</p><input placeholder="الاسم الكامل"><input placeholder="البريد الإلكتروني"><input placeholder="الميزانية المتاحة للاستحواذ ($)"><button class="btn" style="width:100%;margin-top:.6rem" onclick="step=1;drawN()">التالي</button>`:
+step==1?`<h3>اتفاقية عدم الإفصاح (NDA)</h3>${pr}<p style="color:var(--mut);font-size:.9rem">أتعهد بعدم مشاركة أي معلومات عن المشروع أو البائع مع أي طرف ثالث، واستخدامها فقط لغرض تقييم الصفقة.</p><label class="chk"><input type="checkbox" id="ag"> أوافق على الاتفاقية وأوقّع إلكترونياً</label><button class="btn" style="width:100%" onclick="if(ag.checked){step=2;drawN()}">توقيع وإرسال</button>`:
+`<h3>تم إرسال طلبك ✓</h3>${pr}<p style="color:var(--mut)">سيصلك إشعار عند موافقة البائع، وبعدها تظهر لك القوائم المالية واسم المشروع والموقع الدقيق. (ديمو)</p><button class="btn o" style="width:100%" onclick="close_()">إغلاق</button>`}
+function sell(){mbox.innerHTML=`<h3>اعرض مشروعك للبيع</h3><p style="color:var(--mut)">نموذج مختصر – في النسخة الفعلية: رفع المستندات، توثيق السجل التجاري، وباقات إعلان مميزة.</p><input placeholder="نوع المشروع"><input placeholder="المدينة والدولة"><input placeholder="صافي الربح السنوي ($)"><input placeholder="السعر المطلوب ($)"><button class="btn" style="width:100%;margin-top:.6rem" onclick="close_()">إرسال للمراجعة</button>`;modal.classList.add('on')}
+function close_(){modal.classList.remove('on')}
+let vv={v:0};function val(){const v=profit.value*vs.value;pv.textContent=(+profit.value).toLocaleString('en');gsap.to(vv,{v,duration:.5,onUpdate(){vo.textContent=Math.round(vv.v/1000)*1000>0?(Math.round(vv.v/1000)*1000).toLocaleString('en'):'0'}})}
+[profit,vs].forEach(e=>e.oninput=val);
+render();val();
+gsap.registerPlugin(ScrollTrigger);const lenis=new Lenis();lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+gsap.from('.hero .rv',{y:40,opacity:0,stagger:.12,duration:.9,ease:'power3.out'});
+gsap.from('.deal',{x:-30,opacity:0,stagger:.15,delay:.6,duration:.6});
+gsap.to('.glow',{x:120,y:80,repeat:-1,yoyo:true,duration:6,ease:'sine.inOut'});
+document.querySelectorAll('[data-n]').forEach(e=>gsap.to({v:0},{v:+e.dataset.n,duration:1.8,delay:.5,onUpdate(){e.textContent=Math.round(this.targets()[0].v).toLocaleString('ar-SA')}}));
+gsap.utils.toArray('.col,.val').forEach(el=>gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},y:40,opacity:0,duration:.8}));
+</script>
+</body></html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>منصة دار العقارية – نموذج منصة عقارية ذكية (ديمو)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f0;--ink:#16181d;--mut:#6b6f78;--pri:#1f6feb;--gold:#c9a24a;--line:#e5e1d8;--card:#fff;--dark:#0e1726}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}
+.wrap{width:min(1280px,94%);margin:auto}
+.flag{background:var(--gold);color:#1b1505;text-align:center;font-size:.8rem;padding:.35rem}
+header{position:absolute;top:30px;left:0;right:0;z-index:20;color:#fff}
+.bar{display:flex;justify-content:space-between;align-items:center;height:76px}
+.logo{font-weight:700;font-size:1.5rem}.logo span{color:var(--gold)}
+nav{display:flex;gap:1.8rem;opacity:.9}
+.add{background:var(--gold);color:#1b1505;border:0;border-radius:12px;padding:.6rem 1.1rem;font-weight:700}
+.hero{min-height:92vh;background:var(--dark);color:#fff;position:relative;overflow:hidden;display:flex;align-items:center}
+.sky{position:absolute;inset:0;background:radial-gradient(1200px 600px at 70% 120%,#c9a24a55,transparent),linear-gradient(180deg,#0e1726,#1b2a44)}
+.skyline{position:absolute;bottom:0;left:0;width:100%;height:55%}
+.hin{position:relative;z-index:2;padding-top:6rem}
+.hin small{color:var(--gold);letter-spacing:.1em}
+h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.15;font-weight:700;margin:.8rem 0 1rem;max-width:850px}
+.hin p{color:#c3cad6;max-width:560px;font-size:1.1rem}
+.finder{margin-top:2.2rem;background:#fff;color:var(--ink);border-radius:20px;padding:.6rem;display:grid;grid-template-columns:auto 1fr 1fr 1fr auto;gap:.5rem;max-width:960px;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.seg{display:flex;background:#f1efe9;border-radius:14px;padding:.25rem}.seg button{border:0;background:none;border-radius:11px;padding:.5rem 1rem}.seg button.on{background:var(--ink);color:#fff}
+.finder select{border:1px solid var(--line);border-radius:14px;padding:.6rem;background:#fff}
+.go{border:0;background:var(--pri);color:#fff;border-radius:14px;padding:0 1.6rem;font-weight:700}
+.stats{display:flex;gap:3rem;margin-top:2.5rem}.stats b{font-size:2rem;display:block}.stats span{color:#9aa6b8;font-size:.9rem}
+section{padding:5rem 0}
+h2{font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:700}
+.sh{display:flex;justify-content:space-between;align-items:end;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+.mut{color:var(--mut)}
+.explore{display:grid;grid-template-columns:1.25fr .75fr;gap:1.4rem;align-items:start}
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s;cursor:pointer}
+.card:hover,.card.hl{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.08);border-color:var(--gold)}
+.ph{height:170px;position:relative;overflow:hidden}
+.ph svg{width:100%;height:100%;display:block}
+.tag{position:absolute;top:10px;right:10px;background:#fff;border-radius:99px;padding:.15rem .7rem;font-size:.8rem;font-weight:600}
+.tag.r{background:var(--pri);color:#fff}
+.verified{position:absolute;bottom:10px;left:10px;background:rgba(14,23,38,.8);color:#fff;font-size:.75rem;border-radius:99px;padding:.15rem .6rem}
+.cb{padding:1rem}.cb h3{font-size:1.05rem;font-weight:600}.cb .pr{font-weight:700;font-size:1.2rem;color:var(--pri)}
+.meta{display:flex;gap:1rem;color:var(--mut);font-size:.88rem;margin-top:.3rem}
+.map{position:sticky;top:20px;background:#e8ecef;border-radius:24px;overflow:hidden;height:620px;border:1px solid var(--line)}
+.map svg{width:100%;height:100%}
+.pin{cursor:pointer;transition:transform .2s;transform-box:fill-box;transform-origin:center bottom}
+.pin rect{fill:#fff;stroke:#16181d22}.pin text{font-size:11px;font-weight:700;fill:#16181d}
+.pin.on rect{fill:var(--ink)}.pin.on text{fill:#fff}.pin.on{transform:scale(1.15)}
+.empty{grid-column:1/-1;padding:2rem;text-align:center;color:var(--mut)}
+.ai{background:var(--dark);color:#fff;border-radius:32px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.ai p{color:#aab4c4}
+.calc label{display:block;margin:.8rem 0 .3rem;color:#aab4c4;font-size:.9rem}
+.calc input[type=range]{width:100%;accent-color:var(--gold)}
+.calc .res{margin-top:1.2rem;background:#18243a;border-radius:18px;padding:1.2rem}.calc .res b{font-size:2rem;color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.4rem}.step b{color:var(--gold);font-size:1.6rem}
+.modal{position:fixed;inset:0;background:rgba(14,23,38,.6);z-index:60;display:none;place-items:center;padding:1rem}.modal.on{display:grid}
+.mbox{background:#fff;border-radius:24px;max-width:640px;width:100%;overflow:hidden}
+.mbox .ph{height:240px}.mbox .cb{padding:1.5rem}
+.mbox .row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:1rem 0}.mbox .row div{background:#f4f2ec;border-radius:12px;padding:.6rem;text-align:center;font-size:.85rem}.mbox .row b{display:block;font-size:1.1rem}
+.btn{border:0;border-radius:12px;padding:.7rem 1.2rem;font-weight:700;background:var(--pri);color:#fff}.btn.o{background:#f1efe9;color:var(--ink)}
+footer{padding:3rem 0;text-align:center;color:var(--mut);font-size:.9rem}
+@media(max-width:960px){nav{display:none}.finder{grid-template-columns:1fr 1fr}.seg{grid-column:1/-1}.go{grid-column:1/-1;padding:.7rem}.explore,.ai{grid-template-columns:1fr}.map{position:relative;height:380px;top:0}.steps{grid-template-columns:repeat(2,1fr)}.ai{padding:1.6rem}}
+@media(max-width:600px){.list{grid-template-columns:1fr}.stats{gap:1.4rem}}
+</style>
+</head>
+<body>
+<div class="flag">نموذج تجريبي (ديمو) – العقارات والأسعار وهمية · تصميم: محمد – مصمم مواقع</div>
+<header><div class="wrap bar"><a class="logo" href="#">دار<span>.</span></a><nav><a href="#explore">استكشف</a><a href="#ai">التقييم الذكي</a><a href="#how">كيف تعمل</a></nav><button class="add" onclick="alert('هنا نموذج إضافة إعلان مع رفع الصور ورقم رخصة فال (ديمو)')">+ أضف إعلانك</button></div></header>
+<section class="hero">
+<div class="sky"></div>
+<svg class="skyline" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" id="sky"></svg>
+<div class="wrap hin">
+<small class="rv">منصة عقارية ذكية · بيع وإيجار</small>
+<h1 class="rv">ابحث عن بيتك القادم<br>بثقة وعلى الخريطة.</h1>
+<p class="rv">إعلانات موثّقة، بحث على الخريطة، تقييم ذكي للسعر، وتواصل مباشر مع المعلن أو المكتب العقاري.</p>
+<div class="finder rv">
+<div class="seg" id="mode"><button class="on" data-m="بيع">للبيع</button><button data-m="إيجار">للإيجار</button></div>
+<select id="city"><option value="">كل المدن</option><option>الرياض</option><option>جدة</option><option>الدمام</option></select>
+<select id="type"><option value="">كل الأنواع</option><option>شقة</option><option>فيلا</option><option>أرض</option><option>دور</option></select>
+<select id="max"><option value="">أي سعر</option><option value="1000000">حتى 1 مليون</option><option value="2000000">حتى 2 مليون</option><option value="80000">إيجار حتى 80 ألف</option></select>
+<button class="go" onclick="render();document.getElementById('explore').scrollIntoView({behavior:'smooth'})">بحث</button>
+</div>
+<div class="stats rv"><div><b data-n="12480">0</b><span>إعلان نشط</span></div><div><b data-n="940">0</b><span>مكتب موثّق</span></div><div><b data-n="38">0</b><span>مدينة</span></div></div>
+</div></section>
+
+<section id="explore"><div class="wrap">
+<div class="sh"><div><h2>استكشف العقارات</h2><p class="mut" id="count"></p></div><div class="seg" id="sort"><button class="on" data-s="">الأحدث</button><button data-s="a">الأقل سعراً</button><button data-s="d">الأعلى سعراً</button></div></div>
+<div class="explore"><div class="list" id="list"></div><div class="map"><svg viewBox="0 0 400 620" id="map"></svg></div></div>
+</div></section>
+
+<section id="ai"><div class="wrap"><div class="ai">
+<div><small style="color:var(--gold)">ميزة ذكية</small><h2>كم يستحق عقارك؟</h2><p>تقدير فوري للسعر حسب المدينة والمساحة وعمر العقار، مبني على أسعار الصفقات المشابهة. (في النسخة الفعلية يُربط ببيانات حقيقية.)</p></div>
+<div class="calc">
+<label>المدينة</label><select id="cc" style="width:100%;padding:.6rem;border-radius:12px;border:0"><option value="5200">الرياض</option><option value="4800">جدة</option><option value="3900">الدمام</option></select>
+<label>المساحة: <b id="av">250</b> م²</label><input type="range" id="area" min="80" max="900" value="250">
+<label>عمر العقار: <b id="gv">5</b> سنوات</label><input type="range" id="age" min="0" max="30" value="5">
+<div class="res">السعر التقديري<br><b id="est">0</b> <span>ر.س</span></div>
+</div></div></div></section>
+
+<section id="how"><div class="wrap"><div class="sh"><h2>كيف تعمل المنصة</h2></div>
+<div class="steps"><div class="step"><b>01</b><h3>سجّل حسابك</h3><p class="mut">فرد أو مكتب عقاري، مع توثيق الهوية.</p></div><div class="step"><b>02</b><h3>أضف إعلانك</h3><p class="mut">صور، موقع على الخريطة، ومواصفات كاملة.</p></div><div class="step"><b>03</b><h3>استقبل الطلبات</h3><p class="mut">رسائل واتصالات مباشرة من المهتمين.</p></div><div class="step"><b>04</b><h3>تابع الأداء</h3><p class="mut">مشاهدات، نقرات، وباقات تمييز مدفوعة.</p></div></div>
+</div></section>
+<footer>© دار (اسم وهمي) · نموذج عرض فقط</footer>
+
+<div class="modal" id="modal" onclick="if(event.target==this)this.classList.remove('on')"><div class="mbox" id="mbox"></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+// skyline
+(function(){let s='',x=0,i=0;const r=n=>Math.abs(Math.sin(n*12.9898)*43758.5453)%1;while(x<1440){const w=40+r(i)*70,h=80+r(i+3)*260;s+=`<rect x="${x}" y="${400-h}" width="${w}" height="${h}" fill="#0b1220" opacity="${.7+r(i+7)*.3}"/>`;for(let wy=400-h+14;wy<390;wy+=22)for(let wx=x+8;wx<x+w-8;wx+=14)if(r(wx*wy)>.62)s+=`<rect x="${wx}" y="${wy}" width="5" height="8" fill="#c9a24a" opacity=".55"/>`;x+=w+4;i++}document.getElementById('sky').innerHTML=s})();
+const L=[
+{t:'شقة 4 غرف – حي النرجس',c:'الرياض',k:'شقة',m:'بيع',p:980000,a:190,b:4,x:120,y:150,h:28},
+{t:'فيلا دورين مع مسبح – حي الملقا',c:'الرياض',k:'فيلا',m:'بيع',p:3450000,a:420,b:6,x:200,y:110,h:40},
+{t:'دور أرضي – حي الياسمين',c:'الرياض',k:'دور',m:'إيجار',p:75000,a:260,b:5,x:260,y:170,h:200},
+{t:'أرض سكنية زاوية – شمال جدة',c:'جدة',k:'أرض',m:'بيع',p:1650000,a:600,b:0,x:90,y:330,h:35},
+{t:'شقة مطلة على البحر – الشاطئ',c:'جدة',k:'شقة',m:'إيجار',p:68000,a:150,b:3,x:60,y:400,h:195},
+{t:'فيلا مودرن – أبحر الشمالية',c:'جدة',k:'فيلا',m:'بيع',p:2900000,a:380,b:5,x:140,y:370,h:15},
+{t:'شقة جديدة – حي الشاطئ الغربي',c:'الدمام',k:'شقة',m:'بيع',p:720000,a:160,b:3,x:300,y:470,h:210},
+{t:'أرض تجارية – طريق الملك فهد',c:'الدمام',k:'أرض',m:'بيع',p:4100000,a:1200,b:0,x:340,y:540,h:45},
+{t:'فيلا مؤثثة للإيجار – الفيصلية',c:'الدمام',k:'فيلا',m:'إيجار',p:120000,a:350,b:5,x:250,y:520,h:20}];
+let mode='بيع',sort='';
+const fmt=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,'')+' مليون':n.toLocaleString('ar-SA');
+const ph=(h,big)=>`<svg viewBox="0 0 300 170" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g${h}${big||''}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="hsl(${h},55%,78%)"/><stop offset="1" stop-color="hsl(${h+20},45%,58%)"/></linearGradient></defs><rect width="300" height="170" fill="url(#g${h}${big||''})"/><circle cx="240" cy="40" r="18" fill="#fff" opacity=".6"/><rect x="70" y="70" width="160" height="100" fill="#fff" opacity=".9"/><polygon points="60,72 150,25 240,72" fill="#fff" opacity=".95"/><rect x="95" y="95" width="30" height="28" fill="hsl(${h},40%,45%)" opacity=".6"/><rect x="175" y="95" width="30" height="28" fill="hsl(${h},40%,45%)" opacity=".6"/><rect x="137" y="115" width="26" height="55" fill="hsl(${h},30%,35%)" opacity=".7"/></svg>`;
+function card(x,i){return `<div class="card" data-i="${i}" onmouseenter="hl(${i},1)" onmouseleave="hl(${i},0)" onclick="openM(${i})"><div class="ph">${ph(x.h)}<span class="tag ${x.m=='إيجار'?'r':''}">${x.m=='إيجار'?'للإيجار':'للبيع'}</span><span class="verified">✓ معلن موثّق</span></div><div class="cb"><div class="pr">${fmt(x.p)} ر.س${x.m=='إيجار'?' / سنة':''}</div><h3>${x.t}</h3><div class="meta"><span>${x.c}</span><span>${x.a} م²</span>${x.b?`<span>${x.b} غرف</span>`:''}</div></div></div>`}
+function render(){const c=city.value,k=type.value,mx=+max.value||1e12;let R=L.map((x,i)=>({x,i})).filter(o=>o.x.m==mode&&(!c||o.x.c==c)&&(!k||o.x.k==k)&&o.x.p<=mx);
+if(sort)R.sort((a,b)=>sort=='a'?a.x.p-b.x.p:b.x.p-a.x.p);
+list.innerHTML=R.length?R.map(o=>card(o.x,o.i)).join(''):'<div class="empty">لا توجد نتائج مطابقة. غيّر الفلاتر.</div>';
+count.textContent=R.length+' عقار مطابق';
+let m='<rect width="400" height="620" fill="#e8ecef"/><path d="M0 300 Q120 260 200 320 T400 290" stroke="#fff" stroke-width="14" fill="none"/><path d="M180 0 Q160 200 230 330 T210 620" stroke="#fff" stroke-width="10" fill="none"/><path d="M0 120 L400 200" stroke="#fff" stroke-width="6"/><path d="M0 500 L400 450" stroke="#fff" stroke-width="6"/><rect x="20" y="20" width="110" height="70" rx="12" fill="#d6e7d1"/><rect x="280" y="360" width="90" height="60" rx="12" fill="#d6e7d1"/><text x="200" y="60" font-size="13" fill="#8a94a3" text-anchor="middle">الرياض</text><text x="80" y="300" font-size="13" fill="#8a94a3">جدة</text><text x="320" y="610" font-size="13" fill="#8a94a3">الدمام</text>';
+R.forEach(o=>{const x=o.x,lbl=x.m=='إيجار'?Math.round(x.p/1000)+' ألف':fmt(x.p);m+=`<g class="pin" id="pin${o.i}" onclick="openM(${o.i})" onmouseenter="hl(${o.i},1)" onmouseleave="hl(${o.i},0)" transform="translate(${x.x} ${x.y})"><rect x="-38" y="-24" width="76" height="22" rx="11"/><text text-anchor="middle" y="-9">${lbl}</text></g>`});
+map.innerHTML=m;gsap.from('#list .card',{y:24,opacity:0,stagger:.05,duration:.5});gsap.from('.pin',{scale:0,opacity:0,stagger:.05,duration:.4,ease:'back.out(2)',transformOrigin:'center bottom'})}
+function hl(i,on){const c=document.querySelector(`.card[data-i="${i}"]`),p=document.getElementById('pin'+i);c&&c.classList.toggle('hl',!!on);p&&p.classList.toggle('on',!!on)}
+function openM(i){const x=L[i];mbox.innerHTML=`<div class="ph">${ph(x.h,'b')}</div><div class="cb"><div class="pr" style="font-size:1.5rem">${fmt(x.p)} ر.س${x.m=='إيجار'?' / سنة':''}</div><h3>${x.t}</h3><div class="row"><div><b>${x.a}</b>م²</div><div><b>${x.b||'–'}</b>غرف</div><div><b>${x.k}</b>النوع</div><div><b>${x.c}</b>المدينة</div></div><p class="mut">وصف تجريبي: عقار بموقع مميز قريب من الخدمات، تشطيب ممتاز، مدخل مستقل، ومواقف سيارات. رقم ترخيص الإعلان: 7200XXXXXX.</p><div style="display:flex;gap:.6rem;margin-top:1rem"><button class="btn">تواصل مع المعلن</button><button class="btn o" onclick="modal.classList.remove('on')">إغلاق</button></div></div>`;modal.classList.add('on');gsap.from('.mbox',{y:40,opacity:0,duration:.4})}
+document.getElementById('mode').onclick=e=>{const b=e.target.closest('button');if(!b)return;mode=b.dataset.m;[...b.parentNode.children].forEach(x=>x.classList.toggle('on',x==b));render()};
+document.getElementById('sort').onclick=e=>{const b=e.target.closest('button');if(!b)return;sort=b.dataset.s;[...b.parentNode.children].forEach(x=>x.classList.toggle('on',x==b));render()};
+[city,type,max].forEach(s=>s.onchange=render);
+let ev={v:0};function est(){const v=+cc.value*area.value*(1-age.value*.012);av.textContent=area.value;gv.textContent=age.value;gsap.to(ev,{v,duration:.5,onUpdate(){est_.textContent=(Math.round(ev.v/1000)*1000).toLocaleString('ar-SA')}})}
+const est_=document.getElementById('est');[cc,area,age].forEach(e=>e.oninput=est);
+render();est();
+gsap.registerPlugin(ScrollTrigger);const lenis=new Lenis();lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+gsap.from('.hin .rv',{y:40,opacity:0,stagger:.12,duration:1,ease:'power3.out'});
+gsap.from('#sky rect',{scaleY:0,transformOrigin:'bottom',stagger:.002,duration:1.2,ease:'power3.out'});
+gsap.to('#sky',{y:80,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+document.querySelectorAll('[data-n]').forEach(e=>gsap.to({v:0},{v:+e.dataset.n,duration:2,delay:.6,ease:'power2.out',onUpdate(){e.textContent=Math.round(this.targets()[0].v).toLocaleString('ar-SA')}}));
+gsap.utils.toArray('.step,.ai').forEach(el=>gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},y:40,opacity:0,duration:.8}));
+</script>
+</body></html>

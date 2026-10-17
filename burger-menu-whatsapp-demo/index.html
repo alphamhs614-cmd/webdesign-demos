@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex">
+<title>SMASH CO. – منيو إلكتروني مع طلب عبر واتساب (ديمو)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121010;--card:#1d1a19;--ink:#fff7ee;--mut:#a79d94;--acc:#ffb703;--red:#e63946;--line:#2c2725;--wa:#25d366}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:Cairo,system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;padding-bottom:90px}
+button{font:inherit;cursor:pointer}
+.flag{background:var(--acc);color:#1a1200;text-align:center;font-size:.78rem;padding:.3rem}
+.wrap{width:min(1100px,94%);margin:auto}
+.hero{position:relative;padding:2.2rem 0 1.6rem;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Bebas Neue';font-size:2.2rem;letter-spacing:.04em}.logo span{color:var(--acc)}
+.open{background:#173d27;color:#6ff0a0;border-radius:99px;padding:.25rem .8rem;font-size:.85rem;font-weight:700}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:1rem;margin-top:1.2rem}
+h1{font-family:'Bebas Neue',Cairo;font-size:clamp(3rem,10vw,6.5rem);line-height:.9}
+h1 b{color:var(--acc);font-weight:400}
+.sub{color:var(--mut);margin-top:.8rem;font-size:1.05rem}
+.info{display:flex;gap:1rem;margin-top:1rem;color:var(--mut);font-size:.9rem;flex-wrap:wrap}
+.burger{width:100%;max-width:380px;margin:auto;display:block}
+.cats{position:sticky;top:0;z-index:20;background:rgba(18,16,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.cats .wrap{display:flex;gap:.5rem;overflow-x:auto;padding:.8rem 0;scrollbar-width:none}
+.cat{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:.45rem 1.1rem;font-weight:700}
+.cat.on{background:var(--acc);color:#1a1200;border-color:var(--acc)}
+h2{font-size:1.5rem;font-weight:900;margin:2rem 0 1rem;display:flex;align-items:center;gap:.6rem}
+h2 small{font-family:'Bebas Neue';color:var(--mut);font-weight:400;font-size:1.1rem;letter-spacing:.05em}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.item{display:flex;gap:1rem;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:.9rem;align-items:center;transition:.25s}
+.item:hover{border-color:var(--acc);transform:translateY(-2px)}
+.pic{width:96px;height:96px;flex:none;border-radius:16px;background:radial-gradient(circle at 50% 60%,#3a2a1f,#1a1412);display:grid;place-items:center}
+.pic svg{width:80%}
+.item h3{font-size:1.05rem}.item .en{font-family:'Bebas Neue';color:var(--mut);letter-spacing:.05em}
+.item p{color:var(--mut);font-size:.85rem;line-height:1.5;margin:.2rem 0}
+.item .row{display:flex;justify-content:space-between;align-items:center}
+.pr{font-weight:900;color:var(--acc)}
+.plus{border:0;width:36px;height:36px;border-radius:12px;background:var(--acc);color:#1a1200;font-weight:900;font-size:1.2rem}
+.hot{background:var(--red);font-size:.7rem;border-radius:99px;padding:.05rem .5rem;margin-inline-start:.3rem;vertical-align:middle}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#1b1817;border-radius:26px 26px 0 0;max-height:88vh;overflow:auto;transform:translateY(105%);transition:transform .45s cubic-bezier(.7,0,.2,1);padding:1.4rem 1.2rem 2rem;border-top:1px solid var(--line)}
+.sheet.on{transform:none}
+.shade{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:.3s}.shade.on{opacity:1;pointer-events:auto}
+.sheet .in{max-width:560px;margin:auto}
+.grp{margin:1rem 0}.grp h4{margin-bottom:.4rem}
+.op{display:flex;justify-content:space-between;align-items:center;padding:.6rem .8rem;border:1px solid var(--line);border-radius:14px;margin:.35rem 0;cursor:pointer}
+.op input{accent-color:var(--acc);width:18px;height:18px;margin-inline-end:.5rem}
+.qty{display:flex;align-items:center;gap:.8rem}.qty button{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.2rem}
+.big{width:100%;border:0;border-radius:16px;padding:.95rem;font-weight:900;font-size:1.05rem;background:var(--acc);color:#1a1200;margin-top:1rem}
+.big.wa{background:var(--wa);color:#04210f}
+.bar{position:fixed;bottom:0;left:0;right:0;z-index:50;padding:.8rem;padding-bottom:max(.8rem,env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 35%);transform:translateY(120%);transition:transform .4s}
+.bar.on{transform:none}
+.bar button{width:min(560px,100%);margin:auto;display:flex;justify-content:space-between;border:0;border-radius:18px;padding:1rem 1.3rem;background:var(--acc);color:#1a1200;font-weight:900;font-size:1.05rem}
+.line{display:flex;justify-content:space-between;padding:.7rem 0;border-bottom:1px dashed var(--line);gap:1rem}
+.line small{color:var(--mut);display:block}
+.fld{width:100%;background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:14px;padding:.7rem;margin:.3rem 0;font:inherit}
+.seg{display:flex;gap:.4rem;margin:.6rem 0}.seg button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:.55rem}.seg button.on{border-color:var(--acc);color:var(--acc)}
+pre{white-space:pre-wrap;background:#0e1a12;color:#c8f5d6;border-radius:14px;padding:.9rem;font-family:Cairo;font-size:.9rem;margin-top:.6rem;border:1px solid #1f3a28}
+@media(max-width:760px){.hgrid{grid-template-columns:1fr}.burger{max-width:240px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="flag">نموذج تجريبي (ديمو) – اسم المطعم والأسعار وهمية · تصميم: محمد – مصمم مواقع</div>
+<section class="hero"><div class="wrap">
+<div class="top"><div class="logo">SMASH<span>.</span>CO</div><span class="open">● مفتوح الآن · حتى 2 ص</span></div>
+<div class="hgrid">
+<div><h1 class="rv">برجر <b>سماش</b><br>طازج كل يوم</h1><p class="sub rv">اختر وجبتك، أضف ما تحب، وأرسل الطلب مباشرة على واتساب المطعم. بدون تطبيق وبدون تسجيل.</p>
+<div class="info rv"><span>📍 دبي – الجميرا</span><span>🛵 توصيل 25–35 دقيقة</span><span>💳 كاش / بطاقة عند الاستلام</span></div></div>
+<svg class="burger" viewBox="0 0 300 260" id="bg">
+<path class="l1" d="M40 110 Q150 10 260 110 Z" fill="#e9a23b"/><g class="l1" fill="#fff3d6"><ellipse cx="110" cy="70" rx="5" ry="3"/><ellipse cx="150" cy="55" rx="5" ry="3"/><ellipse cx="190" cy="72" rx="5" ry="3"/><ellipse cx="130" cy="88" rx="5" ry="3"/><ellipse cx="175" cy="92" rx="5" ry="3"/></g>
+<path class="l2" d="M35 118 Q60 108 80 122 Q100 108 120 122 Q140 108 160 122 Q180 108 200 122 Q220 108 240 122 Q255 110 268 118 L262 132 L38 132Z" fill="#7ac74f"/>
+<path class="l3" d="M30 132 L270 132 L250 160 L50 160Z" fill="#ffcc33"/>
+<rect class="l4" x="38" y="148" width="224" height="34" rx="17" fill="#5a2e1a"/>
+<rect class="l5" x="44" y="186" width="212" height="12" rx="6" fill="#d94a3a"/>
+<path class="l6" d="M40 200 L260 200 Q260 240 150 240 Q40 240 40 200Z" fill="#e0952f"/>
+</svg>
+</div></div></section>
+
+<nav class="cats"><div class="wrap" id="cats"></div></nav>
+<main class="wrap" id="menu"></main>
+
+<div class="bar" id="bar"><button onclick="openCart()"><span>عرض السلة · <b id="cn">0</b> صنف</span><span id="ct">0 د.إ</span></button></div>
+<div class="shade" id="shade" onclick="closeS()"></div>
+<div class="sheet" id="sheet"><div class="in" id="sin"></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const WA='971500000000'; // رقم المطعم (وهمي)
+const M={'البرجر':{en:'Burgers',it:[
+{n:'كلاسيك سماش',e:'Classic Smash',d:'قطعتين لحم أنغس، جبنة شيدر، صوص البيت، مخلل',p:32,hot:1},
+{n:'دبل تشيز',e:'Double Cheese',d:'لحم مضاعف، جبنة مضاعفة، بصل مكرمل',p:39},
+{n:'سموكي بي بي كيو',e:'Smoky BBQ',d:'صوص باربكيو مدخن، حلقات بصل مقرمشة',p:41},
+{n:'دجاج كرسبي',e:'Crispy Chicken',d:'صدر دجاج مقرمش، خس، مايونيز حار',p:29}]},
+'الوجبات':{en:'Combos',it:[{n:'وجبة كلاسيك',e:'Classic Combo',d:'كلاسيك سماش + بطاطس + مشروب',p:45,hot:1},{n:'وجبة عائلية',e:'Family Box',d:'4 برجر + 2 بطاطس كبيرة + 4 مشروبات',p:149}]},
+'الجانبية':{en:'Sides',it:[{n:'بطاطس بالجبنة',e:'Cheese Fries',d:'بطاطس مقرمشة مع صوص الشيدر',p:16},{n:'حلقات البصل',e:'Onion Rings',d:'8 قطع مع صوص رانش',p:14}]},
+'المشروبات':{en:'Drinks',it:[{n:'ميلك شيك فانيلا',e:'Vanilla Shake',d:'آيس كريم فانيلا طبيعي',p:18},{n:'مشروب غازي',e:'Soft Drink',d:'330 مل',p:7}]}};
+const SIZES=[['عادي',0],['دبل (+قطعة لحم)',9]],ADD=[['جبنة إضافية',4],['بيكون بقري',6],['هالابينو',3],['بدون بصل',0]];
+const ALL=[];Object.entries(M).forEach(([c,v])=>v.it.forEach(x=>{x.c=c;ALL.push(x)}));
+const ico=c=>c=='المشروبات'?'<svg viewBox="0 0 60 60"><path d="M18 14h24l-3 38H21z" fill="#ffb703"/><rect x="16" y="10" width="28" height="6" rx="2" fill="#fff7ee"/><path d="M33 4l-2 10" stroke="#e63946" stroke-width="3"/></svg>':c=='الجانبية'?'<svg viewBox="0 0 60 60"><g fill="#ffcc33"><rect x="18" y="6" width="5" height="30" rx="2"/><rect x="25" y="4" width="5" height="32" rx="2"/><rect x="32" y="7" width="5" height="29" rx="2"/><rect x="39" y="9" width="5" height="27" rx="2"/></g><path d="M14 26h34l-4 28H18z" fill="#e63946"/></svg>':'<svg viewBox="0 0 60 60"><path d="M8 26Q30 2 52 26Z" fill="#e9a23b"/><rect x="7" y="28" width="46" height="5" rx="2" fill="#7ac74f"/><rect x="8" y="33" width="44" height="8" rx="4" fill="#5a2e1a"/><path d="M8 43h44q0 10-22 10T8 43z" fill="#e0952f"/></svg>';
+cats.innerHTML=Object.keys(M).map((c,i)=>`<button class="cat ${i?'':'on'}" data-c="${c}">${c}</button>`).join('');
+menu.innerHTML=Object.entries(M).map(([c,v])=>`<section id="c-${c}" data-c="${c}"><h2>${c} <small>${v.en}</small></h2><div class="grid">${v.it.map(x=>`<div class="item" onclick="pick(${ALL.indexOf(x)})"><div class="pic">${ico(c)}</div><div style="flex:1"><h3>${x.n}${x.hot?'<span class="hot">الأكثر طلباً</span>':''}</h3><div class="en">${x.e}</div><p>${x.d}</p><div class="row"><span class="pr">${x.p} د.إ</span><button class="plus" aria-label="أضف">+</button></div></div></div>`).join('')}</div></section>`).join('');
+let cart=[],cur=null,q=1,mode='توصيل';
+function pick(i){cur=ALL[i];q=1;const burger=cur.c=='البرجر';
+sin.innerHTML=`<h3 style="font-size:1.4rem">${cur.n}</h3><p style="color:var(--mut)">${cur.d}</p>${burger?`<div class="grp"><h4>الحجم</h4>${SIZES.map((s,j)=>`<label class="op"><span><input type="radio" name="sz" value="${j}" ${j?'':'checked'}>${s[0]}</span><span>${s[1]?'+'+s[1]+' د.إ':''}</span></label>`).join('')}</div><div class="grp"><h4>الإضافات</h4>${ADD.map((a,j)=>`<label class="op"><span><input type="checkbox" name="ad" value="${j}">${a[0]}</span><span>${a[1]?'+'+a[1]+' د.إ':''}</span></label>`).join('')}</div>`:''}<div class="grp"><h4>ملاحظة</h4><input class="fld" id="note" placeholder="مثال: الصوص على الجانب"></div><div class="qty"><button onclick="q=Math.max(1,q-1);qv.textContent=q;tot()">−</button><b id="qv">1</b><button onclick="q++;qv.textContent=q;tot()">+</button></div><button class="big" onclick="addC()">أضف للسلة · <span id="pt"></span></button>`;
+sin.querySelectorAll('input').forEach(e=>e.onchange=tot);tot();openS()}
+function sel(){const sz=sin.querySelector('[name=sz]:checked'),ad=[...sin.querySelectorAll('[name=ad]:checked')].map(e=>ADD[e.value]);return{sz:sz?SIZES[sz.value]:null,ad}}
+function unit(){const s=sel();return cur.p+(s.sz?s.sz[1]:0)+s.ad.reduce((a,b)=>a+b[1],0)}
+function tot(){pt.textContent=unit()*q+' د.إ'}
+function addC(){const s=sel();cart.push({n:cur.n,q,u:unit(),opt:[s.sz&&s.sz[1]?s.sz[0]:'',...s.ad.map(a=>a[0])].filter(Boolean).join('، '),note:note.value});closeS();upd();gsap.fromTo('#bar button',{scale:1.06},{scale:1,duration:.4})}
+function upd(){const n=cart.reduce((a,b)=>a+b.q,0),t=cart.reduce((a,b)=>a+b.q*b.u,0);cn.textContent=n;ct.textContent=t+' د.إ';bar.classList.toggle('on',n>0)}
+function msg(){const t=cart.reduce((a,b)=>a+b.q*b.u,0);const name=(document.getElementById('nm')||{}).value||'',addr=(document.getElementById('ad')||{}).value||'';
+return `طلب جديد – SMASH CO.\n`+cart.map(c=>`• ${c.q}× ${c.n}${c.opt?' ('+c.opt+')':''}${c.note?' – '+c.note:''} = ${c.q*c.u} د.إ`).join('\n')+`\n\nالإجمالي: ${t} د.إ\nالطريقة: ${mode}\nالاسم: ${name}\n${mode=='توصيل'?'العنوان: '+addr:''}`}
+function openCart(){sin.innerHTML=`<h3 style="font-size:1.4rem">سلتك</h3>${cart.map((c,i)=>`<div class="line"><div><b>${c.q}× ${c.n}</b><small>${c.opt||''} ${c.note||''}</small></div><div>${c.q*c.u} د.إ <button class="plus" style="width:28px;height:28px;font-size:.9rem;background:var(--line);color:var(--ink)" onclick="cart.splice(${i},1);upd();cart.length?openCart():closeS()">✕</button></div></div>`).join('')}
+<div class="seg"><button class="${mode=='توصيل'?'on':''}" onclick="mode='توصيل';openCart()">🛵 توصيل</button><button class="${mode=='استلام'?'on':''}" onclick="mode='استلام';openCart()">🏃 استلام من الفرع</button></div>
+<input class="fld" id="nm" placeholder="الاسم" oninput="pv.textContent=msg()">${mode=='توصيل'?'<input class="fld" id="ad" placeholder="العنوان: المنطقة، الشارع، رقم الفيلا/الشقة" oninput="pv.textContent=msg()">':''}
+<h4 style="margin-top:.8rem">معاينة رسالة واتساب</h4><pre id="pv"></pre><button class="big wa" onclick="send()">إرسال الطلب عبر واتساب</button>`;pv.textContent=msg();openS()}
+function send(){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg()),'_blank')}
+function openS(){sheet.classList.add('on');shade.classList.add('on');sheet.scrollTop=0}function closeS(){sheet.classList.remove('on');shade.classList.remove('on')}
+gsap.registerPlugin(ScrollTrigger);const lenis=new Lenis();lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+cats.onclick=e=>{const b=e.target.closest('.cat');if(b)lenis.scrollTo('#c-'+b.dataset.c,{offset:-70})};
+document.querySelectorAll('main section').forEach(s=>ScrollTrigger.create({trigger:s,start:'top 120',end:'bottom 120',onToggle:st=>{if(st.isActive)document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('on',b.dataset.c==s.dataset.c))}}));
+gsap.from('.rv',{y:30,opacity:0,stagger:.1,duration:.8,ease:'power3.out'});
+gsap.from('#bg .l1,#bg .l2,#bg .l3,#bg .l4,#bg .l5,#bg .l6',{y:-220,opacity:0,stagger:{each:.12,from:'end'},duration:.7,ease:'bounce.out',delay:.2});
+gsap.to('#bg',{y:-10,repeat:-1,yoyo:true,duration:2,ease:'sine.inOut',delay:1.6});
+gsap.utils.toArray('.item').forEach(el=>gsap.from(el,{scrollTrigger:{trigger:el,start:'top 92%'},y:30,opacity:0,duration:.5}));
+</script>
+</body></html>
