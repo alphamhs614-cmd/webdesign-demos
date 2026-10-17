@@ -1,0 +1,6 @@
+/* Self-hosted fonts (SIL Open Font License 1.1) – no Google Fonts requests, GDPR-friendly */
+@font-face{font-family:'Outfit';font-style:normal;font-weight:300;font-display:swap;src:url(../fonts/outfit-300-normal.woff2) format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/outfit-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/outfit-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/outfit-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/outfit-700-normal.woff2) format('woff2')}
