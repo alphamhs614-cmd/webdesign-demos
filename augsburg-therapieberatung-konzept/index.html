@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruhepunkt – Therapieberatung Augsburg · Demo-Entwurf</title>
+<meta name="description" content="Demo-Entwurf: ruhige, vertrauensvolle Website für eine Praxis für Therapieberatung in Augsburg.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f2ec;--bg2:#ebe4d9;--ink:#2d3a36;--mute:#5f6d68;--sage:#7d9a8b;--sage-d:#4f6f61;--clay:#c9a58a;--white:#fffdf9;--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:300;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit}
+.demo-banner{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--sage-d);color:#fff;text-align:center;font-size:.8rem;padding:.45rem 1rem;letter-spacing:.03em}
+header{position:fixed;top:2.1rem;left:50%;transform:translateX(-50%);z-index:90;width:min(1120px,calc(100% - 2rem));display:flex;justify-content:space-between;align-items:center;padding:.8rem 1.4rem;background:rgba(255,253,249,.78);backdrop-filter:blur(12px);border-radius:999px;box-shadow:0 6px 30px rgba(45,58,54,.06)}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:Fraunces,serif;font-size:1.25rem;text-decoration:none}
+.logo i{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#a9c2b5,var(--sage-d));display:block}
+nav a{margin-left:1.6rem;text-decoration:none;font-size:.92rem;color:var(--mute)}nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--sage-d);color:#fff;text-decoration:none;padding:.85rem 1.6rem;border-radius:999px;font-weight:500;font-size:.95rem;transition:transform .3s,background .3s}
+.btn:hover{background:var(--ink);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid rgba(45,58,54,.25)}
+nav .btn{margin-left:1.6rem;color:#fff;padding:.6rem 1.2rem}
+section{padding:7rem 1.5rem}
+.wrap{max-width:1120px;margin:0 auto}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:9rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--sage-d);font-weight:600;margin-bottom:1.2rem}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.6rem)}
+.hero h1 em{font-style:italic;color:var(--sage-d)}
+.hero p.lead{font-size:1.15rem;color:var(--mute);max-width:34rem;margin:1.6rem 0 2.2rem}
+.hero .actions{display:flex;gap:1rem;flex-wrap:wrap}
+.orb-stage{position:relative;aspect-ratio:1;max-width:460px;width:100%;justify-self:center}
+.orb{position:absolute;border-radius:50%;filter:blur(2px)}
+.orb.o1{inset:8%;background:radial-gradient(circle at 30% 30%,#dfe9e2,#9db7a9 60%,#7d9a8b);}
+.orb.o2{width:38%;height:38%;right:2%;top:4%;background:radial-gradient(circle at 40% 40%,#f3e2d3,var(--clay));opacity:.85}
+.orb.o3{width:24%;height:24%;left:0;bottom:8%;background:radial-gradient(circle,#fff,#e6ddd0);opacity:.9}
+.breath{position:absolute;inset:30%;border-radius:50%;border:1px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Fraunces,serif;font-size:1.1rem;text-align:center}
+.wave{position:absolute;bottom:-1px;left:0;width:100%;height:120px}
+.intro{background:var(--white)}
+.intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.intro h2{font-size:clamp(2rem,3.6vw,3rem)}
+.intro p{color:var(--mute);margin-top:1.2rem}
+.placeholder-photo{aspect-ratio:4/5;border-radius:var(--r);background:linear-gradient(160deg,#dfe6df,#c8d5cc 50%,#e9dccd);display:flex;align-items:flex-end;padding:1.4rem;color:var(--sage-d);font-size:.85rem;position:relative;overflow:hidden}
+.placeholder-photo::before{content:"";position:absolute;width:60%;aspect-ratio:1;border-radius:50%;top:18%;left:20%;background:rgba(255,255,255,.35)}
+.services h2,.process h2,.faq h2,.contact h2{font-size:clamp(2rem,3.6vw,3rem);text-align:center}
+.sub{text-align:center;color:var(--mute);max-width:40rem;margin:1rem auto 3.5rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.card{background:var(--white);border-radius:var(--r);padding:2.2rem;transition:transform .5s,box-shadow .5s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(45,58,54,.08)}
+.card .ic{width:52px;height:52px;border-radius:16px;background:var(--bg2);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem}
+.card h3{font-size:1.4rem;margin-bottom:.6rem}
+.card p{color:var(--mute);font-size:.96rem}
+.process{background:var(--bg2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;position:relative}
+.line{position:absolute;top:28px;left:6%;right:6%;height:2px;background:rgba(79,111,97,.2)}
+.line span{display:block;height:100%;width:0;background:var(--sage-d)}
+.step{text-align:center;position:relative}
+.step .n{width:56px;height:56px;border-radius:50%;background:var(--white);border:2px solid var(--sage);margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-family:Fraunces,serif;font-size:1.3rem;color:var(--sage-d)}
+.step h3{font-size:1.2rem;margin-bottom:.4rem}.step p{color:var(--mute);font-size:.92rem}
+.quote{text-align:center;background:var(--white)}
+.quote blockquote{font-family:Fraunces,serif;font-weight:300;font-size:clamp(1.6rem,3.2vw,2.5rem);max-width:52rem;margin:0 auto;line-height:1.35}
+.quote small{display:block;margin-top:1.4rem;color:var(--mute);font-size:.85rem}
+.faq-list{max-width:760px;margin:0 auto}
+details{background:var(--white);border-radius:16px;padding:1.3rem 1.6rem;margin-bottom:.8rem}
+summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--sage-d);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--mute);margin-top:.8rem}
+.contact .box{background:var(--sage-d);color:#fff;border-radius:32px;padding:4rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact h2{text-align:left;color:#fff}
+.contact p{opacity:.85;margin-top:1rem}
+form{display:grid;gap:.8rem}
+input,textarea,select{width:100%;padding:.9rem 1.1rem;border-radius:14px;border:0;background:rgba(255,255,255,.14);color:#fff;font:inherit}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.7)}
+select option{color:#000}
+label.chk{font-size:.8rem;display:flex;gap:.6rem;align-items:flex-start;opacity:.9}
+label.chk input{width:auto;margin-top:.25rem}
+form .btn{background:#fff;color:var(--sage-d);border:0;cursor:pointer}
+.note{font-size:.78rem;opacity:.75}
+footer{padding:3rem 1.5rem;text-align:center;color:var(--mute);font-size:.88rem}
+footer a{margin:0 .7rem}
+.reveal{opacity:0;transform:translateY(30px)}
+@media(max-width:900px){nav a:not(.btn){display:none}.hero .wrap,.intro .wrap,.contact .box{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr;row-gap:2.5rem}.line{display:none}.orb-stage{max-width:320px}.contact .box{padding:2.5rem 1.5rem}section{padding:5rem 1.2rem}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo-banner">Demo-Entwurf – unverbindliches Konzept · Name, Texte und Bilder sind Platzhalter</div>
+<header>
+  <a class="logo" href="#top"><i></i>Ruhepunkt</a>
+  <nav><a href="#angebot">Angebot</a><a href="#ablauf">Ablauf</a><a href="#faq">Fragen</a><a class="btn" href="#kontakt">Erstgespräch</a></nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Therapieberatung · Augsburg &amp; online</div>
+      <h1 class="split">Ein ruhiger Ort, um <em>wieder klarer</em> zu sehen.</h1>
+      <p class="lead reveal">Vertrauliche Beratung in schwierigen Lebensphasen – persönlich in Augsburg oder per Video. Gemeinsam finden wir heraus, welche Unterstützung zu Ihnen passt.</p>
+      <div class="actions reveal"><a class="btn" href="#kontakt">Kostenloses Erstgespräch anfragen</a><a class="btn ghost" href="#angebot">Angebot ansehen</a></div>
+    </div>
+    <div class="orb-stage" aria-hidden="true">
+      <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+      <div class="breath"><span id="breathTxt">einatmen</span></div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path id="wavePath" fill="#fffdf9" d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,70 1440,60 L1440,120 L0,120 Z"/></svg>
+</section>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="placeholder-photo reveal">[ Ihr Portraitfoto / Praxisraum ]</div>
+    <div>
+      <div class="eyebrow reveal">Über mich</div>
+      <h2 class="reveal">Zuhören, sortieren, nächste Schritte finden.</h2>
+      <p class="reveal">Hier stellen Sie sich persönlich vor: Ihr Weg, Ihre Qualifikationen und wie Sie arbeiten. Ein kurzer, warmer Text schafft Vertrauen, bevor jemand zum ersten Mal Kontakt aufnimmt.</p>
+      <p class="reveal">Platzhalter für Ausbildung, Schwerpunkte und Mitgliedschaften – nur mit Ihren echten Angaben.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="angebot">
+  <div class="wrap">
+    <h2 class="reveal">Wobei ich Sie begleite</h2>
+    <p class="sub reveal">Beispielhafte Schwerpunkte – Ihre tatsächlichen Leistungen tragen wir gemeinsam ein.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="ic"><svg width="24" height="24" fill="none" stroke="#4f6f61" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/></svg></div><h3>Einzelberatung</h3><p>Raum für Ihre Themen: Stress, Krisen, Veränderungen oder Entscheidungen.</p></div>
+      <div class="card reveal"><div class="ic"><svg width="24" height="24" fill="none" stroke="#4f6f61" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 20c0-3 2.5-5 5-5s5 2 5 5M11 20c0-3 2.5-5 5-5s5 2 5 5"/></svg></div><h3>Paar- &amp; Familienthemen</h3><p>Gemeinsam Gesprächswege öffnen und neue Verständigung finden.</p></div>
+      <div class="card reveal"><div class="ic"><svg width="24" height="24" fill="none" stroke="#4f6f61" stroke-width="1.6"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Online-Beratung</h3><p>Flexibel per Video – vertraulich und ohne Anfahrtsweg.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="ablauf">
+  <div class="wrap">
+    <h2 class="reveal">So läuft es ab</h2>
+    <p class="sub reveal">Klar und unkompliziert – vom ersten Kontakt bis zur Begleitung.</p>
+    <div class="steps">
+      <div class="line"><span></span></div>
+      <div class="step reveal"><div class="n">1</div><h3>Anfrage</h3><p>Formular, Telefon oder E-Mail.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Erstgespräch</h3><p>Kennenlernen und Anliegen klären.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Termine</h3><p>In der Praxis oder online.</p></div>
+      <div class="step reveal"><div class="n">4</div><h3>Begleitung</h3><p>In Ihrem Tempo, mit Ziel vor Augen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote class="reveal">„Platz für Ihren Leitsatz – ein Gedanke, der beschreibt, wie Sie arbeiten.“</blockquote>
+    <small class="reveal">Platzhalter · keine Kundenbewertung</small>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2 class="reveal">Häufige Fragen</h2>
+    <p class="sub reveal">Beispielfragen – Antworten werden mit Ihnen abgestimmt.</p>
+    <div class="faq-list reveal">
+      <details><summary>Wie lange dauert ein Termin?</summary><p>Platzhalter, z. B. 50 oder 60 Minuten.</p></details>
+      <details><summary>Was kostet die Beratung?</summary><p>Platzhalter für Ihre Honorare und Hinweise zur Abrechnung.</p></details>
+      <details><summary>Ist das Gespräch vertraulich?</summary><p>Platzhalter für Ihre Hinweise zur Schweigepflicht und zum Datenschutz.</p></details>
+      <details><summary>Bieten Sie auch Online-Termine an?</summary><p>Platzhalter – z. B. über einen datenschutzkonformen Videodienst.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="box reveal">
+      <div>
+        <h2>Erstgespräch anfragen</h2>
+        <p>Schreiben Sie mir unverbindlich. Ich melde mich in der Regel innerhalb von 1–2 Werktagen.</p>
+        <p class="note">[ Adresse in Augsburg · Telefon · E-Mail ]</p>
+      </div>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Demo – kein Versand';">
+        <input type="text" placeholder="Name" aria-label="Name">
+        <input type="email" placeholder="E-Mail" aria-label="E-Mail">
+        <select aria-label="Terminwunsch"><option>Termin in der Praxis</option><option>Online-Termin</option><option>Noch unsicher</option></select>
+        <textarea rows="3" placeholder="Kurze Nachricht (optional)" aria-label="Nachricht"></textarea>
+        <label class="chk"><input type="checkbox"> Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu.</label>
+        <button class="btn" type="submit">Anfrage senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Ruhepunkt (Platzhaltername) · <a href="#">Impressum</a><a href="#">Datenschutz</a><br>
+  <span class="note">Demo-Entwurf von Mohammad, Webdesigner aus Saarbrücken</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (window.gsap && !reduce) {
+  gsap.registerPlugin(ScrollTrigger);
+  const lenis = new Lenis({ duration: 1.3, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: -90 }); } }));
+
+  // hero headline word reveal
+  const h = document.querySelector('.split');
+  h.innerHTML = h.innerHTML.replace(/(<em>.*?<\/em>|[^\s<]+)/g, w => `<span style="display:inline-block;overflow:hidden;vertical-align:top"><span class="w" style="display:inline-block">${w}</span></span>`);
+  gsap.from('.w', { yPercent: 110, opacity: 0, duration: 1.2, ease: 'power3.out', stagger: .07, delay: .2 });
+  gsap.from('header', { y: -30, opacity: 0, duration: 1, ease: 'power2.out' });
+  gsap.from('.orb', { scale: .6, opacity: 0, duration: 1.8, ease: 'power3.out', stagger: .15 });
+
+  // breathing orb (4s in / 4s out)
+  const txt = document.getElementById('breathTxt');
+  gsap.timeline({ repeat: -1 })
+    .to('.breath', { scale: 1.35, duration: 4, ease: 'sine.inOut', onStart: () => txt.textContent = 'einatmen' })
+    .to('.breath', { scale: 1, duration: 4, ease: 'sine.inOut', onStart: () => txt.textContent = 'ausatmen' });
+  gsap.to('.o2', { y: 18, x: -10, duration: 6, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+  gsap.to('.o3', { y: -14, duration: 5, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+  gsap.to('.orb-stage', { yPercent: 15, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+  // gentle wave morph
+  gsap.to('#wavePath', { attr: { d: 'M0,70 C300,10 760,120 1100,50 C1260,20 1380,60 1440,70 L1440,120 L0,120 Z' }, duration: 7, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+
+  gsap.utils.toArray('.reveal').forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: 1.1, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } }));
+  gsap.to('.line span', { width: '100%', ease: 'none', scrollTrigger: { trigger: '.steps', start: 'top 75%', end: 'bottom 55%', scrub: true } });
+} else {
+  document.querySelectorAll('.reveal').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; });
+}
+</script>
+</body>
+</html>
