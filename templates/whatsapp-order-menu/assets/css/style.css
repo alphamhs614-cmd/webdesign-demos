@@ -1,0 +1,56 @@
+/* WhatsApp Order Menu – stylesheet (works LTR and RTL) */
+:root{/* EDIT brand colours */--bg:#121010;--card:#1d1a19;--ink:#fff7ee;--mut:#a79d94;--acc:#ffb703;--red:#e63946;--line:#2c2725;--wa:#25d366}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:Cairo,system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;padding-bottom:90px}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1100px,94%);margin:auto}
+.hero{position:relative;padding:2.2rem 0 1.6rem;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Bebas Neue';font-size:2.2rem;letter-spacing:.04em}.logo span{color:var(--acc)}
+.open{background:#173d27;color:#6ff0a0;border-radius:99px;padding:.25rem .8rem;font-size:.85rem;font-weight:700}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:1rem;margin-top:1.2rem}
+h1{font-family:'Bebas Neue',Cairo,sans-serif;font-size:clamp(3rem,10vw,6.5rem);line-height:.9}
+h1 b{color:var(--acc);font-weight:400}
+.sub{color:var(--mut);margin-top:.8rem;font-size:1.05rem}
+.info{display:flex;gap:1rem;margin-top:1rem;color:var(--mut);font-size:.9rem;flex-wrap:wrap}
+.burger{width:100%;max-width:380px;margin:auto;display:block}
+.cats{position:sticky;top:0;z-index:20;background:rgba(18,16,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.cats .wrap{display:flex;gap:.5rem;overflow-x:auto;padding:.8rem 0;scrollbar-width:none}
+.cat{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:.45rem 1.1rem;font-weight:700}
+.cat.on{background:var(--acc);color:#1a1200;border-color:var(--acc)}
+h2{font-size:1.5rem;font-weight:900;margin:2rem 0 1rem;display:flex;align-items:center;gap:.6rem}
+h2 small{font-family:'Bebas Neue';color:var(--mut);font-weight:400;font-size:1.1rem;letter-spacing:.05em}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.item{display:flex;gap:1rem;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:.9rem;align-items:center;transition:.25s}
+.item:hover{border-color:var(--acc);transform:translateY(-2px)}
+.pic{width:96px;height:96px;flex:none;border-radius:16px;background:radial-gradient(circle at 50% 60%,#3a2a1f,#1a1412);display:grid;place-items:center}
+.pic svg{width:80%}
+.item h3{font-size:1.05rem}.item .en{font-family:'Bebas Neue';color:var(--mut);letter-spacing:.05em}
+.item p{color:var(--mut);font-size:.85rem;line-height:1.5;margin:.2rem 0}
+.item .row{display:flex;justify-content:space-between;align-items:center}
+.pr{font-weight:900;color:var(--acc)}
+.plus{border:0;width:36px;height:36px;border-radius:12px;background:var(--acc);color:#1a1200;font-weight:900;font-size:1.2rem}
+.hot{background:var(--red);font-size:.7rem;border-radius:99px;padding:.05rem .5rem;margin-inline-start:.3rem;vertical-align:middle}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#1b1817;border-radius:26px 26px 0 0;max-height:88vh;overflow:auto;transform:translateY(105%);transition:transform .45s cubic-bezier(.7,0,.2,1);padding:1.4rem 1.2rem 2rem;border-top:1px solid var(--line)}
+.sheet.on{transform:none}
+.shade{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:.3s}.shade.on{opacity:1;pointer-events:auto}
+.sheet .in{max-width:560px;margin:auto}
+.grp{margin:1rem 0}.grp h4{margin-bottom:.4rem}
+.op{display:flex;justify-content:space-between;align-items:center;padding:.6rem .8rem;border:1px solid var(--line);border-radius:14px;margin:.35rem 0;cursor:pointer}
+.op input{accent-color:var(--acc);width:18px;height:18px;margin-inline-end:.5rem}
+.qty{display:flex;align-items:center;gap:.8rem}.qty button{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.2rem}
+.big{width:100%;border:0;border-radius:16px;padding:.95rem;font-weight:900;font-size:1.05rem;background:var(--acc);color:#1a1200;margin-top:1rem}
+.big.wa{background:var(--wa);color:#04210f}
+.bar{position:fixed;bottom:0;left:0;right:0;z-index:50;padding:.8rem;padding-bottom:max(.8rem,env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 35%);transform:translateY(120%);transition:transform .4s}
+.bar.on{transform:none}
+.bar button{width:min(560px,100%);margin:auto;display:flex;justify-content:space-between;border:0;border-radius:18px;padding:1rem 1.3rem;background:var(--acc);color:#1a1200;font-weight:900;font-size:1.05rem}
+.line{display:flex;justify-content:space-between;padding:.7rem 0;border-bottom:1px dashed var(--line);gap:1rem}
+.line small{color:var(--mut);display:block}
+.fld{width:100%;background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:14px;padding:.7rem;margin:.3rem 0;font:inherit}
+.seg{display:flex;gap:.4rem;margin:.6rem 0}.seg button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:.55rem}.seg button.on{border-color:var(--acc);color:var(--acc)}
+pre{white-space:pre-wrap;text-align:start;background:#0e1a12;color:#c8f5d6;border-radius:14px;padding:.9rem;font-family:Cairo;font-size:.9rem;margin-top:.6rem;border:1px solid #1f3a28}
+@media(max-width:760px){.hgrid{grid-template-columns:1fr}.burger{max-width:240px}.grid{grid-template-columns:1fr}}
+
+.lang{color:var(--mut);font-size:.85rem;border:1px solid var(--line);border-radius:99px;padding:.2rem .7rem;text-decoration:none;margin-inline-start:.5rem}.lang:hover{color:var(--acc);border-color:var(--acc)}
+footer{color:var(--mut);font-size:.8rem;text-align:center;padding:2.5rem 0 1rem}
+.logo{direction:ltr;unicode-bidi:isolate}
