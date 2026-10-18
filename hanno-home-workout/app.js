@@ -65,16 +65,31 @@ function body(keys,label){
 }
 const LV=["","مبتدئ","متوسط","متقدم"];
 const data=window.EX.map((e,i)=>({i:i+1,ar:e[0],en:e[1],m:e[2].split(' '),d:e[3],l:e[4],a:e[5],s:!!e[6]}));
+const PH=window.PH||{};
+function pair(n,cls,lazy){const p=PH[n],f=i=>'img/ex/'+String(n).padStart(3,'0')+'-'+i+'.webp';
+ return '<span class="pair '+cls+'"><img class="fa" src="'+f(0)+'" width="'+p[1]+'" height="'+p[2]+'" alt="" '+(lazy?'loading="lazy" decoding="async"':'')+'><img class="fb" src="'+f(1)+'" width="'+p[1]+'" height="'+p[2]+'" alt="" '+(lazy?'loading="lazy" decoding="async"':'')+'></span>';}
+function media(x){
+ if(!PH[x.i]) return girl(x.a,'المدرّبة عم تعمل: '+x.ar);
+ return '<button class="ph" type="button" data-n="'+x.i+'" aria-label="كبّري صورة الحركة: '+x.ar+'">'+pair(x.i,'',true)+'<span class="live">▶ حركة حقيقية</span><span class="zoom" aria-hidden="true">⤢</span></button>';
+}
 window.HANNO={girl:girl,cat:cat};
 const grid=document.getElementById('grid');
 grid.innerHTML=data.map(x=>{
  const names=x.m.map(k=>M[k][0]).join('، ');
  return '<article class="card" data-i="'+x.i+'"><span class="num">'+x.i+'</span><h3>'+x.ar+'</h3><div class="en">'+x.en+'</div>'+
- '<div class="vis">'+girl(x.a,'المدرّبة عم تعمل: '+x.ar)+'<div class="dia">'+body(x.m,names)+cat('mini')+'</div></div><p>'+x.d+'</p>'+
+ '<div class="vis">'+media(x)+'<div class="dia">'+body(x.m,names)+cat('mini')+'</div></div><p>'+x.d+'</p>'+
  '<div class="tags">'+x.m.map(k=>'<span class="tag" title="'+M[k][1]+'">'+M[k][0]+'</span>').join('')+(x.s?'<span class="st">إطالة</span>':'')+'</div>'+
  '<div class="lv">'+[1,2,3].map(n=>'<i class="'+(n<=x.l?'f':'')+'"></i>').join('')+' '+LV[x.l]+'</div></article>';
 }).join('');
 const cards=[...grid.children];
+// run photo loops only while visible
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('run',e.isIntersecting)),{rootMargin:'100px'}):null;
+grid.querySelectorAll('.ph').forEach(b=>io?io.observe(b):b.classList.add('run'));
+// lightbox
+const dlg=document.getElementById('lb');
+grid.addEventListener('click',e=>{const b=e.target.closest('.ph');if(!b)return;const x=data[b.dataset.n-1];
+ dlg.querySelector('.lb-media').innerHTML=pair(x.i,'run big',false);dlg.querySelector('h3').textContent=x.ar;dlg.querySelector('.lb-en').textContent=x.en;dlg.querySelector('.lb-d').textContent=x.d;dlg.showModal();});
+dlg.addEventListener('click',e=>{if(e.target===dlg||e.target.closest('.lb-x'))dlg.close()});
 const cnt={};data.forEach(x=>x.m.forEach(k=>cnt[k]=(cnt[k]||0)+1));
 const chips=document.getElementById('chips');
 chips.innerHTML='<button class="chip on" data-k="">الكل <span>100</span></button>'+ORDER.map(k=>'<button class="chip" data-k="'+k+'">'+M[k][0]+' <span>'+cnt[k]+'</span></button>').join('')+'<button class="chip" data-k="stretch">إطالة <span>'+data.filter(x=>x.s).length+'</span></button>';
