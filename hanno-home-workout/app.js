@@ -68,7 +68,13 @@ const data=window.EX.map((e,i)=>({i:i+1,ar:e[0],en:e[1],m:e[2].split(' '),d:e[3]
 const PH=window.PH||{};
 function pair(n,cls,lazy){const p=PH[n],f=i=>'img/ex/'+String(n).padStart(3,'0')+'-'+i+'.webp';
  return '<span class="pair '+cls+'"><img class="fa" src="'+f(0)+'" width="'+p[1]+'" height="'+p[2]+'" alt="" '+(lazy?'loading="lazy" decoding="async"':'')+'><img class="fb" src="'+f(1)+'" width="'+p[1]+'" height="'+p[2]+'" alt="" '+(lazy?'loading="lazy" decoding="async"':'')+'></span>';}
+const PX=window.PX||{};
+const N3=n=>String(n).padStart(3,'0');
+function pxMedia(n,cls,lazy){const m=PX[n];
+ if(m.t==='v') return '<video class="pv '+(m.p?'port ':'')+cls+'" muted loop playsinline '+(lazy?'preload="none"':'preload="auto" autoplay')+' poster="vid/'+N3(n)+'.webp" src="vid/'+N3(n)+'.mp4" aria-hidden="true"></video>';
+ return '<span class="kbw '+cls+'"><img class="pp '+(m.p?'port':'')+'" src="img/px/'+N3(n)+'.webp" alt="" '+(lazy?'loading="lazy" decoding="async"':'')+'></span>';}
 function media(x){
+ if(PX[x.i]) return '<button class="ph px'+(PX[x.i].t==='v'?' isv':'')+'" type="button" data-n="'+x.i+'" aria-label="كبّري فيديو/صورة الحركة: '+x.ar+'">'+pxMedia(x.i,'',true)+'<span class="live">'+(PX[x.i].t==='v'?'▶ فيديو حقيقي':'📷 صورة حقيقية')+'</span><span class="zoom" aria-hidden="true">⤢</span></button>';
  if(!PH[x.i]) return girl(x.a,'المدرّبة عم تعمل: '+x.ar);
  return '<button class="ph" type="button" data-n="'+x.i+'" aria-label="كبّري صورة الحركة: '+x.ar+'">'+pair(x.i,'',true)+'<span class="live">▶ حركة حقيقية</span><span class="zoom" aria-hidden="true">⤢</span></button>';
 }
@@ -83,13 +89,15 @@ grid.innerHTML=data.map(x=>{
 }).join('');
 const cards=[...grid.children];
 // run photo loops only while visible
-const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('run',e.isIntersecting)),{rootMargin:'100px'}):null;
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{e.target.classList.toggle('run',e.isIntersecting);const v=e.target.querySelector('video');if(v&&!RM){if(e.isIntersecting){v.play().catch(()=>{})}else v.pause()}}),{rootMargin:'80px'}):null;
 grid.querySelectorAll('.ph').forEach(b=>io?io.observe(b):b.classList.add('run'));
 // lightbox
 const dlg=document.getElementById('lb');
 grid.addEventListener('click',e=>{const b=e.target.closest('.ph');if(!b)return;const x=data[b.dataset.n-1];
- dlg.querySelector('.lb-media').innerHTML=pair(x.i,'run big',false);dlg.querySelector('h3').textContent=x.ar;dlg.querySelector('.lb-en').textContent=x.en;dlg.querySelector('.lb-d').textContent=x.d;dlg.showModal();});
+ dlg.querySelector('.lb-media').innerHTML=PX[x.i]?pxMedia(x.i,'run big',false):pair(x.i,'run big',false);dlg.querySelector('h3').textContent=x.ar;dlg.querySelector('.lb-c').innerHTML=PX[x.i]?(PX[x.i].t==='v'?'فيديو':'صورة')+': <a href="https://www.pexels.com/@'+PX[x.i].us+'" target="_blank" rel="noopener">'+PX[x.i].u+'</a> على Pexels':(PH[x.i]?'صورة: free-exercise-db (ملكية عامة)':'');dlg.querySelector('.lb-en').textContent=x.en;dlg.querySelector('.lb-d').textContent=x.d;dlg.showModal();});
 dlg.addEventListener('click',e=>{if(e.target===dlg||e.target.closest('.lb-x'))dlg.close()});
+dlg.addEventListener('close',()=>{dlg.querySelector('.lb-media').innerHTML=''});
 const cnt={};data.forEach(x=>x.m.forEach(k=>cnt[k]=(cnt[k]||0)+1));
 const chips=document.getElementById('chips');
 chips.innerHTML='<button class="chip on" data-k="">الكل <span>100</span></button>'+ORDER.map(k=>'<button class="chip" data-k="'+k+'">'+M[k][0]+' <span>'+cnt[k]+'</span></button>').join('')+'<button class="chip" data-k="stretch">إطالة <span>'+data.filter(x=>x.s).length+'</span></button>';
@@ -119,3 +127,7 @@ let i=0;function show(){g.innerHTML=H.girl(seq[i][0],'المدرّبة عم تع
 show();
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{i=(i+1)%seq.length;show()},6000);
 })();
+
+(function(){const PX=window.PX||{},el=document.getElementById('pxCredits');if(!el)return;const seen={};
+Object.values(PX).forEach(m=>{seen[m.us]=m.u});
+el.innerHTML='فيديوهات وصور النساء: <a href="https://www.pexels.com" rel="noopener">Pexels</a> (رخصة Pexels، استخدام مجاني) بعدسة: '+Object.keys(seen).map(k=>'<a href="https://www.pexels.com/@'+k+'" rel="noopener">'+seen[k]+'</a>').join('، ');})();
