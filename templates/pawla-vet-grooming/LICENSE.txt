@@ -1,0 +1,36 @@
+TEMPLATE LICENSE – Single Site Commercial License
+=================================================
+
+Copyright (c) 2026 Mohammad Alahmad (Webdesign). All rights reserved.
+
+By purchasing and downloading this template ("the Product") you receive a
+non-exclusive, non-transferable license under the following terms:
+
+YOU MAY
+  - Use the Product to build ONE (1) website for yourself or for ONE (1) client
+    (one end product, one domain). Commercial websites are allowed.
+  - Modify the Product in any way (texts, colours, layout, code, images).
+  - Charge your client for your work on the website you build with it.
+
+YOU MAY NOT
+  - Resell, redistribute, sublicense, share or give away the Product or any
+    modified version of it as a template, theme, kit or download – free or paid.
+  - Upload the Product to template marketplaces, file-sharing sites or public
+    repositories in a way that lets others download the source files.
+  - Use the Product for more than one website. For each additional website,
+    purchase an additional license.
+  - Claim the original design of the Product as your own work for resale.
+
+THIRD-PARTY COMPONENTS (separately licensed, see CREDITS.md)
+  - GSAP – GreenSock/Webflow "Standard No-Charge License" (free incl. commercial use)
+  - Lenis – MIT License
+  - Fonts – SIL Open Font License 1.1
+  - Photos – CC0 1.0 (public domain) – free for any use; no endorsement implied
+
+NO WARRANTY
+  The Product is provided "as is", without warranty of any kind. The legal-page
+  texts (imprint / privacy) are placeholders only and are NOT legal advice; you
+  are responsible for the legal compliance of the website you publish.
+
+Questions or extra licenses: contact the seller through the platform where you
+purchased the Product.
