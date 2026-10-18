@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en" data-key="nexora" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- EDIT: page title + description (shown in search results) -->
+    <title>About – Nexora</title>
+    <meta name="description" content="Meet the team behind Nexora and learn why we build AI workflow automation.">
+    <meta property="og:title" content="About – Nexora">
+    <meta
+      property="og:description"
+      content="Meet the team behind Nexora and learn why we build AI workflow automation.">
+    <meta property="og:image" content="assets/img/og.jpg">
+    <meta name="theme-color" content="#111111">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <script>
+      /* theme + animation failsafe */ document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme-nexora");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+      setTimeout(function () {
+        if (!window.__coreReady) document.documentElement.classList.add("reveal-all");
+      }, 2500);
+    </script>
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <!-- SVG ICON SPRITE: every icon used on the page. Reference with <svg viewBox="0 0 24 24"><use href="#i-NAME"></use></svg> -->
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
+      <symbol
+        id="i-arrow-right"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-logo" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M5 19V5l14 14V5"
+          stroke="currentColor"
+          stroke-width="2.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="i-moon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" />
+      </symbol>
+      <symbol
+        id="i-sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+      >
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="logo" href="index.html" aria-label="Nexora – home"
+          ><i
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-logo"></use></svg></i
+          >Nexora</a
+        >
+        <nav class="nav-links" aria-label="Main">
+          <a href="index.html#features">Features</a><a href="index.html#how">How it works</a
+          ><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+            <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun"></use></svg
+            ><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-moon"></use></svg></button
+          ><a class="signin nav-cta-desktop" href="https://app.example.com/signup">Sign in</a
+          ><a class="btn nav-cta-desktop" href="https://app.example.com/signup" data-magnetic>Start for free</a
+          ><button class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <!-- ============ PAGE HEADER ============ -->
+      <section class="page-hero" data-hero>
+        <div class="glow" aria-hidden="true"></div>
+        <div class="container">
+          <span class="eyebrow mono" data-reveal>About us</span>
+          <h1 data-split>We build tools that give teams <span class="grad">their time back.</span></h1>
+          <p class="lead" data-reveal>
+            Nexora started with a simple belief: people should spend their days on creative, meaningful work – and let
+            software handle the rest.
+          </p>
+        </div>
+      </section>
+      <!-- ============ STORY ============ -->
+      <section class="section pt-0">
+        <div class="container story">
+          <div data-reveal>
+            <span class="eyebrow mono">Our story</span>
+            <h2>From 40 scripts to one platform</h2>
+          </div>
+          <div class="story-text" data-reveal>
+            <p>
+              In 2022 our founders were running operations at a fast-growing startup. Every new tool meant another
+              integration, another script and another thing that broke at 2 a.m.
+            </p>
+            <p>
+              They built Nexora to connect everything in one place – and to make automation something anyone on the team
+              can set up, not just engineers. Today more than 12,000 teams use Nexora to automate millions of tasks
+              every week.
+            </p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="stats" data-stagger>
+            <div data-reveal>
+              <b><span data-count="12" data-decimals="0">12</span>k+</b><span>teams on Nexora</span>
+            </div>
+            <div data-reveal>
+              <b><span data-count="9.4" data-decimals="1">9.4</span>h</b><span>saved per person / week</span>
+            </div>
+            <div data-reveal>
+              <b><span data-count="99.99" data-decimals="2">99.99</span>%</b><span>uptime SLA</span>
+            </div>
+            <div data-reveal>
+              <b><span data-count="200" data-decimals="0">200</span>+</b><span>integrations</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============ VALUES ============ -->
+      <section class="section pt-0">
+        <div class="container">
+          <div class="head">
+            <span class="eyebrow mono">Values</span>
+            <h2 data-split>What we believe in</h2>
+          </div>
+          <div class="steps four" data-stagger>
+            <div class="step" data-reveal>
+              <span class="mono n">01</span>
+              <h3>Clarity over complexity</h3>
+              <p>Every feature has to make a workflow easier to understand – not just more powerful.</p>
+            </div>
+            <div class="step" data-reveal>
+              <span class="mono n">02</span>
+              <h3>Humans stay in control</h3>
+              <p>AI suggests, people approve. Every automated step is logged and reversible.</p>
+            </div>
+            <div class="step" data-reveal>
+              <span class="mono n">03</span>
+              <h3>Privacy by default</h3>
+              <p>We never train models on customer data, and data residency is a setting, not a sales call.</p>
+            </div>
+            <div class="step" data-reveal>
+              <span class="mono n">04</span>
+              <h3>Ship small, ship often</h3>
+              <p>We release improvements every week and publish what changed in our changelog.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============ TIMELINE ============ -->
+      <section class="section pt-0">
+        <div class="container">
+          <div class="head">
+            <span class="eyebrow mono">Milestones</span>
+            <h2 data-split>How we got here</h2>
+          </div>
+          <ol class="timeline">
+            <li data-reveal>
+              <span class="mono">2022</span>
+              <div>
+                <h3>The idea</h3>
+                <p>Two operations engineers get tired of maintaining 40 brittle scripts and start building Nexora.</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="mono">2023</span>
+              <div>
+                <h3>First 1,000 teams</h3>
+                <p>Public launch with 50 integrations and a visual workflow editor.</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="mono">2024</span>
+              <div>
+                <h3>AI Agents</h3>
+                <p>Workflows can be described in plain English and built automatically.</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="mono">2025</span>
+              <div>
+                <h3>12,000+ teams</h3>
+                <p>SOC 2 Type II, EU hosting and 200+ integrations.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <!-- ============ TEAM (initials avatars – replace with photos if you like) ============ -->
+      <section class="section pt-0" id="team">
+        <div class="container">
+          <div class="head c">
+            <span class="eyebrow mono">Team</span>
+            <h2 data-split>The people behind Nexora</h2>
+            <p data-reveal>A remote-first team of 48 across 14 countries.</p>
+          </div>
+          <div class="team" data-stagger>
+            <div class="member" data-reveal>
+              <span class="av lg">AR</span><b>Ava Reynolds</b><span>Co-founder & CEO</span>
+            </div>
+            <div class="member" data-reveal>
+              <span class="av lg">JK</span><b>Jonas Kraft</b><span>Co-founder & CTO</span>
+            </div>
+            <div class="member" data-reveal>
+              <span class="av lg">MS</span><b>Mina Sato</b><span>Head of Design</span>
+            </div>
+            <div class="member" data-reveal>
+              <span class="av lg">DO</span><b>Daniel Okafor</b><span>Head of AI</span>
+            </div>
+            <div class="member" data-reveal>
+              <span class="av lg">LB</span><b>Lea Brunner</b><span>Customer Success</span>
+            </div>
+            <div class="member" data-reveal>
+              <span class="av lg">TR</span><b>Tomás Ruiz</b><span>Platform Engineer</span>
+            </div>
+            <div class="member" data-reveal>
+              <span class="av lg">NP</span><b>Nora Petrov</b><span>Product Manager</span>
+            </div>
+            <div class="member" data-reveal>
+              <span class="av lg">SK</span><b>Samir Khan</b><span>Developer Advocate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============ CAREERS ============ -->
+      <section class="section pt-0" id="careers">
+        <div class="container">
+          <div class="final">
+            <div class="glow" aria-hidden="true"></div>
+            <h2 data-split>Join the team.</h2>
+            <p data-reveal>
+              We are hiring engineers, designers and customer-success specialists – remote across Europe and North
+              America.
+            </p>
+            <div class="hero-cta" data-reveal>
+              <a class="btn" href="contact.html"
+                >See open roles <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a
+              ><a class="btn btn-ghost" href="mailto:jobs@example.com">jobs@example.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="foot">
+          <div>
+            <a class="logo" href="index.html"
+              ><i
+                ><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-logo"></use></svg></i
+              >Nexora</a
+            >
+            <p class="muted" style="margin-top: 1rem; max-width: 20rem">AI workflow automation for modern teams.</p>
+            <span class="status mono"><i></i>All systems operational</span>
+          </div>
+          <div>
+            <h2 class="foot-h">Product</h2>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#how">How it works</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="index.html#customers">Customers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="foot-h">Company</h2>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="about.html#careers">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="legal.html">Legal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="foot-h">Pages</h2>
+            <ul>
+              <li><a href="index.html">Home – dark</a></li>
+              <li><a href="index-2.html">Home – light</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="404.html">404 page</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-b">
+          <span>© <span data-year>2026</span> Nexora Technologies Ltd. All rights reserved.</span
+          ><span
+            ><a href="legal.html#terms">Terms</a> · <a href="legal.html#privacy">Privacy policy</a> ·
+            <a href="legal.html#imprint">Legal notice</a></span
+          >
+        </div>
+        <div class="wordmark" aria-hidden="true">Nexora</div>
+      </div>
+    </footer>
+    <div class="mobile-cta">
+      <a class="btn" href="https://app.example.com/signup"
+        >Start for free <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg
+      ></a>
+    </div>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/vendor/lenis.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

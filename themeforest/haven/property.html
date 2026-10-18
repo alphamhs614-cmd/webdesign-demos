@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" data-key="haven" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- EDIT: page title + description (shown in search results) -->
+    <title>Property details – Haven</title>
+    <meta name="description" content="Photos, details, features and viewing requests for this property.">
+    <meta property="og:title" content="Property details – Haven">
+    <meta property="og:description" content="Photos, details, features and viewing requests for this property.">
+    <meta property="og:image" content="assets/img/hero.jpg">
+    <meta name="theme-color" content="#111111">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <script>
+      /* theme + animation failsafe */ document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme-haven");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+      setTimeout(function () {
+        if (!window.__coreReady) document.documentElement.classList.add("reveal-all");
+      }, 2500);
+    </script>
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <!-- SVG ICON SPRITE: every icon used on the page. Reference with <svg viewBox="0 0 24 24"><use href="#i-NAME"></use></svg> -->
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
+      <symbol
+        id="i-arrow-right"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol
+        id="i-bath"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3ZM6 12V5a2 2 0 0 1 3.5-1.3M7 19l-1 2M17 19l1 2" />
+      </symbol>
+      <symbol
+        id="i-bed"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5" />
+        <circle cx="7" cy="11" r="2" />
+      </symbol>
+      <symbol
+        id="i-check"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m5 12.5 4.5 4.5L19 7.5" />
+      </symbol>
+      <symbol
+        id="i-heart"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linejoin="round"
+      >
+        <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" />
+      </symbol>
+      <symbol
+        id="i-home"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      >
+        <path d="M3 11 12 4l9 7" />
+        <path d="M6 10v10h12V10" />
+      </symbol>
+      <symbol
+        id="i-moon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" />
+      </symbol>
+      <symbol
+        id="i-phone"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 4.2 2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L7.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 21 16.9Z"
+        />
+      </symbol>
+      <symbol
+        id="i-pin"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21Z" />
+        <circle cx="12" cy="9.5" r="2.5" />
+      </symbol>
+      <symbol
+        id="i-size"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6" />
+      </symbol>
+      <symbol
+        id="i-sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+      >
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.8.83-3-.2-.31a8.2 8.2 0 1 1 6.97 3.84Zm4.5-6.1c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.16.25-.63.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.43l-.75-1.8c-.2-.47-.4-.4-.55-.41h-.47a.9.9 0 0 0-.65.3 2.75 2.75 0 0 0-.86 2.04 4.8 4.8 0 0 0 1 2.53 10.9 10.9 0 0 0 4.2 3.7c1.56.68 2.17.73 2.95.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.17-.47-.29Z"
+        />
+      </symbol>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="logo" href="index.html" aria-label="Haven – home"
+          ><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <path d="M4 15 16 5l12 10" />
+            <path d="M8 13v14h16V13" />
+            <path d="M13 27v-7h6v7" /></svg
+          >Haven</a
+        >
+        <nav class="nav-links" aria-label="Main">
+          <a href="index.html">Home</a><a href="listings.html">Properties</a><a href="index.html#services">Services</a
+          ><a href="about.html">About</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+            <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun"></use></svg
+            ><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-moon"></use></svg></button
+          ><a class="btn nav-cta-desktop" href="index.html#valuation" data-magnetic>Free valuation</a
+          ><button class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <!-- ============ PROPERTY DETAIL (content is filled from assets/js/listings.js via ?id=) ============ -->
+      <section class="prop" id="property">
+        <div class="container">
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a><span aria-hidden="true">/</span><a href="listings.html">Properties</a
+            ><span aria-hidden="true">/</span><span aria-current="page" id="p-crumb">Property</span>
+          </nav>
+          <div class="prop-head">
+            <div>
+              <span class="badge-status" id="p-status">For sale</span>
+              <h1 id="p-title">Property</h1>
+              <p class="loc" id="p-loc"></p>
+            </div>
+            <div class="prop-price" id="p-price"></div>
+          </div>
+          <div class="prop-gal">
+            <div class="main">
+              <img id="p-img" src="assets/img/h5.jpg" alt="Property photo" width="1600" height="1067">
+            </div>
+            <div class="thumbs" id="p-thumbs"></div>
+          </div>
+          <div class="prop-body">
+            <div class="prop-main">
+              <div class="specs big" id="p-specs"></div>
+              <h2>About this property</h2>
+              <p id="p-desc"></p>
+              <h2>Features</h2>
+              <ul class="feat-list" id="p-feat"></ul>
+              <h2>Location</h2>
+              <div class="map-ph" role="img" aria-label="Map placeholder">
+                <span>Map placeholder – embed your map here (see documentation)</span>
+              </div>
+            </div>
+            <aside class="prop-side">
+              <div class="agent-card">
+                <img src="assets/img/agent.jpg" alt="Alex Example" width="160" height="160" loading="lazy">
+                <div>
+                  <b>Alex Example</b><span>Your agent for this property</span
+                  ><a href="tel:+49000000000">+49 000 000000</a>
+                </div>
+              </div>
+              <form
+                class="vform panel-form"
+                id="p-form"
+                data-viewing
+                data-send="whatsapp"
+                data-custom
+                data-to="491700000000"
+                data-mail="hello@example.com"
+                data-intro="Hello, I am interested in this property:"
+                data-subject="Request a viewing"
+                data-toast-wa="Opening WhatsApp…"
+                data-toast-mail="Opening your e-mail app…"
+                data-l-prop="Property"
+                data-l-price="Price"
+              >
+                <p class="form-title">Request a viewing</p>
+                <div class="two">
+                  <input
+                    class="input"
+                    name="name"
+                    placeholder="Your name"
+                    aria-label="Your name"
+                    data-label="Name"
+                    required><input
+                    class="input"
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone"
+                    aria-label="Phone"
+                    data-label="Phone"
+                    required>
+                </div>
+                <input class="input" name="date" type="date" aria-label="Preferred date" data-label="Date"><input
+                  class="input"
+                  name="msg"
+                  placeholder="Message (optional)"
+                  aria-label="Message (optional)"
+                  data-label="Message">
+                <label class="consent"
+                  ><input type="checkbox" required data-skip name="consent"><span
+                    >I agree that my details are used to process my request (<a href="legal.html#privacy"
+                      >privacy policy</a
+                    >).</span
+                  ></label
+                >
+                <div class="acts">
+                  <button class="btn" type="submit" data-via="whatsapp">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Ask via WhatsApp</button
+                  ><button class="btn btn-ghost" type="submit" data-via="mail">Send e-mail</button>
+                </div>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <!-- ============ SIMILAR PROPERTIES ============ -->
+      <section class="section pt-0">
+        <div class="container">
+          <div class="head">
+            <div>
+              <span class="eyebrow">More homes</span>
+              <h2 data-split>Similar <em>properties</em></h2>
+            </div>
+            <p data-reveal>
+              <a class="btn btn-ghost" href="listings.html"
+                >View all <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg
+              ></a>
+            </p>
+          </div>
+          <div class="grid" id="similar"></div>
+        </div>
+      </section>
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="foot">
+          <div>
+            <a class="logo" href="index.html"
+              ><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                <path d="M4 15 16 5l12 10" />
+                <path d="M8 13v14h16V13" />
+                <path d="M13 27v-7h6v7" /></svg
+              >Haven</a
+            >
+            <p class="muted" style="margin-top: 1rem; max-width: 22rem">
+              Local real-estate agency for buying, selling and renting homes.
+            </p>
+          </div>
+          <div>
+            <h2 class="foot-h">Properties</h2>
+            <ul>
+              <li><a href="listings.html?status=sale">For sale</a></li>
+              <li><a href="listings.html?status=rent">For rent</a></li>
+              <li><a href="property.html">Property details</a></li>
+              <li><a href="index.html#valuation">Free valuation</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="foot-h">Company</h2>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="legal.html">Legal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="foot-h">Pages</h2>
+            <ul>
+              <li><a href="index.html">Home – photo hero</a></li>
+              <li><a href="index-2.html">Home – split hero</a></li>
+              <li><a href="listings.html">Listings</a></li>
+              <li><a href="404.html">404 page</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-b">
+          <span>© <span data-year>2026</span> Haven Real Estate. All rights reserved.</span
+          ><span><a href="legal.html#privacy">Privacy policy</a> · <a href="legal.html#imprint">Legal notice</a></span>
+        </div>
+      </div>
+    </footer>
+    <div class="mobile-cta">
+      <a class="btn btn-ghost" style="background: var(--bg)" href="tel:+49000000000"
+        ><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"></use></svg> Call</a
+      ><a class="btn" href="index.html#valuation">Free valuation</a>
+    </div>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/vendor/lenis.min.js"></script>
+    <script src="assets/js/listings.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

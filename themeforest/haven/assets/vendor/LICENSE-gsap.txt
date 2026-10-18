@@ -1,0 +1,6 @@
+GSAP 3.15.0 + ScrollTrigger (https://gsap.com)
+Copyright GreenSock / Webflow. Licensed under the GSAP Standard License (no charge, commercial use allowed):
+https://gsap.com/standard-license
+
+The GSAP files are included so this template works out of the box. They are subject to their own licence
+(not the Envato item licence) and may be used only as part of this template / your end product.

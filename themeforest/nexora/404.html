@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" data-key="nexora" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- EDIT: page title + description (shown in search results) -->
+    <title>Page not found – Nexora</title>
+    <meta name="description" content="The page you are looking for could not be found.">
+    <meta property="og:title" content="Page not found – Nexora">
+    <meta property="og:description" content="The page you are looking for could not be found.">
+    <meta property="og:image" content="assets/img/og.jpg">
+    <meta name="theme-color" content="#111111">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <script>
+      /* theme + animation failsafe */ document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme-nexora");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+      setTimeout(function () {
+        if (!window.__coreReady) document.documentElement.classList.add("reveal-all");
+      }, 2500);
+    </script>
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body class="is-404">
+    <!-- SVG ICON SPRITE: every icon used on the page. Reference with <svg viewBox="0 0 24 24"><use href="#i-NAME"></use></svg> -->
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
+      <symbol
+        id="i-arrow-right"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-logo" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M5 19V5l14 14V5"
+          stroke="currentColor"
+          stroke-width="2.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="i-moon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" />
+      </symbol>
+      <symbol
+        id="i-sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+      >
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="logo" href="index.html" aria-label="Nexora – home"
+          ><i
+            ><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-logo"></use></svg></i
+          >Nexora</a
+        >
+        <nav class="nav-links" aria-label="Main">
+          <a href="index.html#features">Features</a><a href="index.html#how">How it works</a
+          ><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+            <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun"></use></svg
+            ><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-moon"></use></svg></button
+          ><a class="signin nav-cta-desktop" href="https://app.example.com/signup">Sign in</a
+          ><a class="btn nav-cta-desktop" href="https://app.example.com/signup" data-magnetic>Start for free</a
+          ><button class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <!-- ============ 404 ============ -->
+      <section class="err404" data-hero>
+        <div class="glow" aria-hidden="true"></div>
+        <div class="container">
+          <p class="code mono" data-reveal>Error 404</p>
+          <h1 data-split><span class="grad">Lost in the workflow.</span></h1>
+          <p class="lead" data-reveal>
+            The page you are looking for does not exist or has been moved. Let’s get you back on track.
+          </p>
+          <div class="hero-cta" data-reveal>
+            <a class="btn" href="index.html"
+              >Back to home <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a
+            ><a class="btn btn-ghost" href="contact.html">Contact support</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="foot">
+          <div>
+            <a class="logo" href="index.html"
+              ><i
+                ><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-logo"></use></svg></i
+              >Nexora</a
+            >
+            <p class="muted" style="margin-top: 1rem; max-width: 20rem">AI workflow automation for modern teams.</p>
+            <span class="status mono"><i></i>All systems operational</span>
+          </div>
+          <div>
+            <h2 class="foot-h">Product</h2>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#how">How it works</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="index.html#customers">Customers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="foot-h">Company</h2>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="about.html#careers">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="legal.html">Legal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="foot-h">Pages</h2>
+            <ul>
+              <li><a href="index.html">Home – dark</a></li>
+              <li><a href="index-2.html">Home – light</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="404.html">404 page</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-b">
+          <span>© <span data-year>2026</span> Nexora Technologies Ltd. All rights reserved.</span
+          ><span
+            ><a href="legal.html#terms">Terms</a> · <a href="legal.html#privacy">Privacy policy</a> ·
+            <a href="legal.html#imprint">Legal notice</a></span
+          >
+        </div>
+        <div class="wordmark" aria-hidden="true">Nexora</div>
+      </div>
+    </footer>
+    <div class="mobile-cta">
+      <a class="btn" href="https://app.example.com/signup"
+        >Start for free <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg
+      ></a>
+    </div>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/vendor/lenis.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
