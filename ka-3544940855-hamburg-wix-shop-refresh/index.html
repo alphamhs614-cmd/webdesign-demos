@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop-Refresh Entwurf – 2 Produkte im Fokus</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d1b19;--muted:#6b645c;--bg:#faf7f2;--card:#fff;--acc:#2f6f5e;--acc2:#e9a23b;--line:#e8e1d6}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}img,svg{display:block;max-width:100%}
+.note{background:var(--ink);color:#fff;text-align:center;font-size:.8rem;padding:.45rem 1rem}
+header{position:sticky;top:0;z-index:9;background:rgba(250,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem}
+.logo{font-family:'DM Serif Display',serif;font-size:1.5rem}.logo span{color:var(--acc)}
+.nav ul{display:flex;gap:1.6rem;list-style:none;font-weight:500;font-size:.95rem}
+.cart{display:flex;align-items:center;gap:.5rem;background:var(--acc);color:#fff;padding:.5rem 1rem;border-radius:99px;font-weight:600;font-size:.9rem}
+.cart b{background:#fff;color:var(--acc);border-radius:99px;padding:0 .45rem;font-size:.8rem}
+.hero{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center;padding:4.5rem 1.2rem 3.5rem}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:700;margin-bottom:1rem}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2.3rem,5vw,3.8rem);line-height:1.08;margin-bottom:1.2rem;font-weight:400}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:32rem;margin-bottom:2rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}.btn{padding:.9rem 1.6rem;border-radius:99px;font-weight:600;transition:.2s}
+.btn.p{background:var(--ink);color:#fff}.btn.p:hover{background:var(--acc)}.btn.s{border:1.5px solid var(--ink)}.btn.s:hover{background:var(--ink);color:#fff}
+.trust{display:flex;gap:1.5rem;margin-top:2.2rem;font-size:.88rem;color:var(--muted);flex-wrap:wrap}.trust div::before{content:"✓ ";color:var(--acc);font-weight:700}
+.stage{position:relative;aspect-ratio:1/1;border-radius:2rem;background:radial-gradient(circle at 30% 30%,#fff 0,#f1e7d6 45%,#e3d3b9 100%);display:grid;place-items:center;overflow:hidden}
+.stage .blob{position:absolute;width:70%;height:70%;border-radius:50%;background:var(--acc);opacity:.12;filter:blur(10px);bottom:-10%;right:-10%}
+.prod-ill{width:62%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.18));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.badge{position:absolute;top:1.4rem;left:1.4rem;background:#fff;border-radius:1rem;padding:.7rem 1rem;font-size:.85rem;box-shadow:0 10px 30px rgba(0,0,0,.08)}.badge b{display:block;font-size:1.1rem}
+section{padding:4.5rem 1.2rem}.wrap{max-width:1150px;margin:auto}
+h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(1.9rem,3.5vw,2.7rem);margin-bottom:.6rem}
+.lead{color:var(--muted);max-width:40rem;margin-bottom:2.5rem}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1.6rem;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(0,0,0,.08)}
+.card .img{aspect-ratio:4/3;display:grid;place-items:center}.card .img svg{width:45%}
+.c1 .img{background:linear-gradient(135deg,#e6efe9,#cfe1d8)}.c2 .img{background:linear-gradient(135deg,#f7ead3,#f0d6a8)}
+.card .body{padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.card h3{font-size:1.35rem}.card ul{list-style:none;color:var(--muted);font-size:.95rem}.card li::before{content:"— ";color:var(--acc)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:1rem;border-top:1px solid var(--line)}
+.price{font-weight:700;font-size:1.2rem}.price small{font-weight:400;color:var(--muted);font-size:.8rem}
+.add{background:var(--acc);color:#fff;border:0;padding:.7rem 1.2rem;border-radius:99px;font-weight:600;cursor:pointer;font:inherit}
+.add:hover{background:var(--ink)}
+.compare{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}th,td{padding:1rem;text-align:left;border-bottom:1px solid var(--line)}th{font-weight:600}td:not(:first-child),th:not(:first-child){text-align:center}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}.step{padding:1.6rem;border-radius:1.2rem;background:#fff;border:1px solid var(--line)}
+.step span{display:inline-grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--acc2);color:#fff;font-weight:700;margin-bottom:.8rem}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}.rev{background:#fff;border-radius:1.2rem;padding:1.5rem;border:1px solid var(--line)}.stars{color:var(--acc2);letter-spacing:.1em}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1rem 1.3rem;margin-bottom:.7rem}.faq summary{font-weight:600;cursor:pointer}
+.faq p{color:var(--muted);margin-top:.6rem}
+footer{background:var(--ink);color:#cfc8bd;padding:3rem 1.2rem;font-size:.9rem}footer .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}footer a{color:#fff}
+.toast{position:fixed;bottom:1.2rem;left:50%;transform:translate(-50%,150%);background:var(--ink);color:#fff;padding:.8rem 1.3rem;border-radius:99px;transition:.3s;font-size:.9rem}.toast.show{transform:translate(-50%,0)}
+@media(max-width:860px){.hero,.duo{grid-template-columns:1fr}.steps,.reviews{grid-template-columns:1fr}.nav ul{display:none}.hero{padding-top:2.5rem}}
+</style>
+</head>
+<body>
+<div class="note">Gestaltungs-Entwurf für Ihren Shop-Refresh · Platzhalter-Namen und -Texte · umsetzbar direkt in Wix</div>
+<header><nav class="nav"><a class="logo" href="#">Ihr<span>Shop</span></a>
+<ul><li><a href="#produkte">Produkte</a></li><li><a href="#vergleich">Vergleich</a></li><li><a href="#ablauf">So funktioniert's</a></li><li><a href="#faq">FAQ</a></li></ul>
+<a class="cart" href="#produkte">Warenkorb <b id="cnt">0</b></a></nav></header>
+
+<div class="hero">
+ <div>
+  <span class="eyebrow">Zwei Produkte · klar präsentiert</span>
+  <h1>Weniger Auswahl.<br>Mehr Überzeugung.</h1>
+  <p>Ein ruhiges, modernes Layout, das Ihre zwei Produkte in den Mittelpunkt stellt – mit klaren Vorteilen, Vergleich und einem schnellen Weg zum Kauf.</p>
+  <div class="btns"><a class="btn p" href="#produkte">Produkte ansehen</a><a class="btn s" href="#vergleich">Welches passt zu mir?</a></div>
+  <div class="trust"><div>Versand aus Hamburg</div><div>Sichere Zahlung</div><div>14 Tage Rückgabe</div></div>
+ </div>
+ <div class="stage"><div class="blob"></div>
+  <div class="badge">Bestseller<b>Produkt A</b></div>
+  <svg class="prod-ill" viewBox="0 0 200 240"><rect x="55" y="20" width="90" height="30" rx="8" fill="#2f6f5e"/><rect x="40" y="45" width="120" height="180" rx="22" fill="#fff"/><rect x="40" y="110" width="120" height="70" fill="#e9a23b" opacity=".9"/><text x="100" y="152" text-anchor="middle" font-family="DM Serif Display,serif" font-size="22" fill="#fff">A</text></svg>
+ </div>
+</div>
+
+<section id="produkte"><div class="wrap">
+ <h2>Unsere Produkte</h2><p class="lead">Jedes Produkt bekommt eine eigene, gut lesbare Karte: großes Bild, drei Kernvorteile, Preis und direkter „In den Warenkorb“-Button.</p>
+ <div class="duo">
+  <article class="card c1"><div class="img"><svg viewBox="0 0 200 240"><rect x="55" y="20" width="90" height="30" rx="8" fill="#2f6f5e"/><rect x="40" y="45" width="120" height="180" rx="22" fill="#fff"/><rect x="40" y="110" width="120" height="70" fill="#2f6f5e" opacity=".85"/></svg></div>
+   <div class="body"><h3>Produkt A – Classic</h3><ul><li>Vorteil 1 in einem kurzen Satz</li><li>Vorteil 2 – konkret und messbar</li><li>Vorteil 3 – warum Kunden wiederkommen</li></ul>
+   <div class="row"><div class="price">00,00 € <small>inkl. MwSt.</small></div><button class="add">In den Warenkorb</button></div></div></article>
+  <article class="card c2"><div class="img"><svg viewBox="0 0 200 240"><rect x="55" y="20" width="90" height="30" rx="8" fill="#e9a23b"/><rect x="40" y="45" width="120" height="180" rx="22" fill="#fff"/><rect x="40" y="110" width="120" height="70" fill="#e9a23b" opacity=".9"/></svg></div>
+   <div class="body"><h3>Produkt B – Plus</h3><ul><li>Alles aus „Classic“</li><li>Zusätzliches Merkmal</li><li>Ideal als Geschenk / Vorteilspack</li></ul>
+   <div class="row"><div class="price">00,00 € <small>inkl. MwSt.</small></div><button class="add">In den Warenkorb</button></div></div></article>
+ </div>
+</div></section>
+
+<section id="vergleich" class="compare"><div class="wrap">
+ <h2>Welches Produkt passt zu Ihnen?</h2><p class="lead">Ein kleiner Vergleich nimmt Kunden die Entscheidung ab – besonders auf dem Handy.</p>
+ <table><tr><th></th><th>Classic</th><th>Plus</th></tr>
+ <tr><td>Merkmal 1</td><td>✓</td><td>✓</td></tr><tr><td>Merkmal 2</td><td>✓</td><td>✓</td></tr><tr><td>Merkmal 3</td><td>–</td><td>✓</td></tr><tr><td>Empfohlen für</td><td>Einsteiger</td><td>Vielnutzer / Geschenk</td></tr></table>
+</div></section>
+
+<section id="ablauf"><div class="wrap">
+ <h2>So einfach geht's</h2><p class="lead">Drei Schritte statt langer Texte.</p>
+ <div class="steps"><div class="step"><span>1</span><h3>Produkt wählen</h3><p>Classic oder Plus – der Vergleich hilft.</p></div><div class="step"><span>2</span><h3>Sicher bezahlen</h3><p>PayPal, Karte, Klarna – alles über Wix Payments.</p></div><div class="step"><span>3</span><h3>Schnell erhalten</h3><p>Versand innerhalb von 1–2 Werktagen.</p></div></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <h2>Das sagen Kunden</h2><p class="lead">Echte Bewertungen schaffen Vertrauen – Platzhalter, bis Ihre eigenen eingebunden sind.</p>
+ <div class="reviews"><div class="rev"><div class="stars">★★★★★</div><p>„Platzhalter für eine echte Kundenbewertung.“</p><small>– Kunde, Hamburg</small></div><div class="rev"><div class="stars">★★★★★</div><p>„Platzhalter für eine echte Kundenbewertung.“</p><small>– Kundin, Lübeck</small></div><div class="rev"><div class="stars">★★★★★</div><p>„Platzhalter für eine echte Kundenbewertung.“</p><small>– Kunde, Bremen</small></div></div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap faq">
+ <h2>Häufige Fragen</h2>
+ <details><summary>Wie lange dauert der Versand?</summary><p>Hier steht Ihre Antwort – kurz und klar.</p></details>
+ <details><summary>Kann ich zurückgeben?</summary><p>Hier steht Ihre Antwort – kurz und klar.</p></details>
+ <details><summary>Welche Zahlungsarten gibt es?</summary><p>Hier steht Ihre Antwort – kurz und klar.</p></details>
+</div></section>
+
+<footer><div class="wrap"><div><b style="color:#fff">IhrShop</b><br>Musterstraße 1 · 21029 Hamburg</div><div><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a> · <a href="#">Widerruf</a></div><div>Entwurf von Mohammad Saleh Alahmad · Webdesign</div></div></footer>
+<div class="toast" id="t">Zum Warenkorb hinzugefügt (Demo)</div>
+<script>let n=0;document.querySelectorAll('.add').forEach(b=>b.onclick=()=>{n++;document.getElementById('cnt').textContent=n;const t=document.getElementById('t');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)})</script>
+</body></html>

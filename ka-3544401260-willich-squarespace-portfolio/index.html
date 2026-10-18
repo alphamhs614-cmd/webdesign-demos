@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio-Entwurf – Neuaufbau in Squarespace</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--muted:#777;--bg:#f6f5f2;--line:#dedbd4;--acc:#b5532f}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:inherit;text-decoration:none}
+.note{font-size:.78rem;text-align:center;padding:.45rem;background:#111;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.2rem,4vw,3rem)}
+.name{font-family:Fraunces,serif;font-size:1.35rem;font-weight:500}
+nav{display:flex;gap:2rem;font-size:.92rem}nav a{position:relative}nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;background:var(--ink);transition:.25s}nav a:hover::after{width:100%}
+.intro{padding:5rem clamp(1.2rem,4vw,3rem) 3rem;max-width:1200px}
+.intro h1{font-family:Fraunces,serif;font-weight:300;font-size:clamp(2.4rem,6vw,5rem);line-height:1.05;letter-spacing:-.02em}
+.intro h1 em{color:var(--acc);font-style:italic}
+.intro p{max-width:34rem;color:var(--muted);margin-top:1.5rem;font-size:1.08rem}
+.filters{display:flex;gap:.6rem;flex-wrap:wrap;padding:0 clamp(1.2rem,4vw,3rem) 1.6rem}
+.filters button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:none;padding:.45rem 1rem;border-radius:99px;cursor:pointer}
+.filters button.on,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;padding:0 clamp(1.2rem,4vw,3rem) 5rem}
+.item{grid-column:span 4;position:relative;overflow:hidden;border-radius:4px;cursor:pointer}
+.item.w{grid-column:span 8}.item .ph{aspect-ratio:4/5;transition:transform .6s}.item.w .ph{aspect-ratio:16/10}
+.item:hover .ph{transform:scale(1.04)}
+.item .cap{position:absolute;inset:auto 0 0 0;padding:1.2rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55));opacity:0;transform:translateY(10px);transition:.3s}
+.item:hover .cap{opacity:1;transform:none}.cap b{display:block;font-family:Fraunces,serif;font-weight:500;font-size:1.2rem}
+.g1{background:linear-gradient(160deg,#d9c7b0,#8a6a4f)}.g2{background:linear-gradient(160deg,#c7d3d1,#4c6b6a)}.g3{background:linear-gradient(160deg,#e8d9cf,#b5532f)}.g4{background:linear-gradient(160deg,#ddd,#555)}.g5{background:linear-gradient(160deg,#d6d2c4,#6f6a4f)}.g6{background:linear-gradient(160deg,#cdd6e2,#3e4f6b)}
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;padding:5rem clamp(1.2rem,4vw,3rem);border-top:1px solid var(--line);align-items:center}
+.portrait{aspect-ratio:3/4;background:linear-gradient(160deg,#e5ddd2,#a99a86);border-radius:4px}
+.about h2,.contact h2{font-family:Fraunces,serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem}
+.about p{color:var(--muted);margin-bottom:1rem}.facts{display:flex;gap:2.5rem;margin-top:1.5rem}.facts b{font-family:Fraunces,serif;font-size:2rem;font-weight:500;display:block}
+.why{padding:4rem clamp(1.2rem,4vw,3rem);background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why h2{font-family:Fraunces,serif;font-weight:300;font-size:1.8rem;margin-bottom:1.6rem}
+.why .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.why h3{font-size:1rem;margin-bottom:.4rem}.why p{color:var(--muted);font-size:.95rem}
+.contact{padding:5rem clamp(1.2rem,4vw,3rem);text-align:center}.contact p{color:var(--muted);margin-bottom:2rem}
+.contact form{max-width:520px;margin:auto;display:grid;gap:.8rem;text-align:left}
+input,textarea{font:inherit;padding:.9rem 1rem;border:1px solid var(--line);background:#fff;border-radius:4px}
+.send{font:inherit;background:var(--ink);color:#fff;border:0;padding:1rem;border-radius:4px;cursor:pointer}.send:hover{background:var(--acc)}
+footer{display:flex;justify-content:space-between;padding:1.6rem clamp(1.2rem,4vw,3rem);font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);flex-wrap:wrap;gap:1rem}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;place-items:center;z-index:20}.lb.on{display:grid}.lb div{width:min(80vw,900px);aspect-ratio:16/10;border-radius:4px}
+@media(max-width:800px){.item,.item.w{grid-column:span 12}.about,.why .cols{grid-template-columns:1fr}nav{display:none}}
+</style></head>
+<body>
+<div class="note">Entwurf: so könnte Ihr Portfolio nach dem Umzug von WordPress zu Squarespace aussehen · Platzhalter-Bilder</div>
+<header><div class="name">Vorname Nachname</div><nav><a href="#arbeiten">Arbeiten</a><a href="#about">Über mich</a><a href="#kontakt">Kontakt</a></nav></header>
+<section class="intro"><h1>Arbeiten, die <em>bleiben</em> –<br>ein Portfolio ohne Update-Stress.</h1><p>Klare Galerie, ruhige Typografie, schnelle Ladezeit. Inhalte pflegen Sie danach selbst – ohne Plugins, ohne Sicherheits-Updates.</p></section>
+<div class="filters" id="arbeiten"><button class="on" data-f="all">Alle</button><button data-f="a">Kategorie A</button><button data-f="b">Kategorie B</button><button data-f="c">Kategorie C</button></div>
+<div class="grid">
+ <div class="item w" data-c="a"><div class="ph g1"></div><div class="cap"><b>Projekt Eins</b>Kategorie A · 2026</div></div>
+ <div class="item" data-c="b"><div class="ph g2"></div><div class="cap"><b>Projekt Zwei</b>Kategorie B · 2025</div></div>
+ <div class="item" data-c="c"><div class="ph g3"></div><div class="cap"><b>Projekt Drei</b>Kategorie C · 2025</div></div>
+ <div class="item" data-c="a"><div class="ph g4"></div><div class="cap"><b>Projekt Vier</b>Kategorie A · 2024</div></div>
+ <div class="item" data-c="b"><div class="ph g5"></div><div class="cap"><b>Projekt Fünf</b>Kategorie B · 2024</div></div>
+ <div class="item w" data-c="c"><div class="ph g6"></div><div class="cap"><b>Projekt Sechs</b>Kategorie C · 2023</div></div>
+</div>
+<section class="about" id="about"><div class="portrait"></div><div><h2>Über mich</h2><p>Platz für Ihre Geschichte: Wer Sie sind, wie Sie arbeiten und was Ihre Arbeiten besonders macht.</p><p>Squarespace-Vorteil: Texte und Bilder ändern Sie im Editor per Drag & Drop – Hosting, SSL und Updates laufen automatisch.</p><div class="facts"><div><b>15+</b>Jahre</div><div><b>120</b>Projekte</div><div><b>NRW</b>Willich</div></div></div></section>
+<section class="why"><h2>Was beim Neuaufbau mitkommt</h2><div class="cols"><div><h3>Inhalte 1:1 übernommen</h3><p>Texte, Bilder und Seitenstruktur aus WordPress – dabei gleich optimiert.</p></div><div><h3>SEO bleibt erhalten</h3><p>Weiterleitungen alter URLs, Seitentitel und Beschreibungen, damit Google Sie weiter findet.</p></div><div><h3>Einweisung</h3><p>Kurze Einführung, damit Sie neue Projekte selbst einstellen können.</p></div></div></section>
+<section class="contact" id="kontakt"><h2>Projekt anfragen</h2><p>Kurze Nachricht genügt – ich melde mich innerhalb von 24 Stunden.</p><form onsubmit="event.preventDefault();this.innerHTML='<p style=text-align:center>Danke! (Demo – keine Daten gesendet)</p>'"><input placeholder="Name" required><input type="email" placeholder="E-Mail" required><textarea rows="4" placeholder="Ihre Nachricht"></textarea><button class="send">Senden</button></form></section>
+<footer><span>© 2026 Vorname Nachname</span><span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span><span>Entwurf von Mohammad Saleh Alahmad</span></footer>
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><div id="lbi"></div></div>
+<script>
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.item').forEach(i=>i.style.display=(b.dataset.f=='all'||i.dataset.c==b.dataset.f)?'':'none')});
+document.querySelectorAll('.item').forEach(i=>i.onclick=()=>{document.getElementById('lbi').className=i.querySelector('.ph').className.replace('ph ','');document.getElementById('lb').classList.add('on')});
+</script></body></html>
