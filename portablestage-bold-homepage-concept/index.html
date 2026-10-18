@@ -1,133 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ============================================================
+     NexGen Portable Staging – homepage redesign concept ("Showtime")
+     SEO: title tag, meta description, canonical, H1–H3 wording,
+     image alt texts and internal links are carried over unchanged
+     from the live portablestage.co.uk homepage.
+     Demo only: remove the robots "noindex" line when integrating.
+     ============================================================ -->
 <title>Buy Portable Stages &amp; Staging Platforms from UK Manufacturer</title>
 <meta name="description" content="Experience Lightspeed assembly with NexGen Magnetic stage platforms. Light, strong, &amp; eco-friendly, easy storage. Buy staging from the manufacturer.">
+<link rel="canonical" href="https://www.portablestage.co.uk/">
 <meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0d2223">
+<link rel="icon" type="image/webp" href="img/logo-steelcity.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fonts load without blocking the first paint -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" as="image" href="img/platinum-3x2-steps-handrail.webp">
 <style>
-:root{--ink:#0c0d0f;--ink2:#16191b;--g:#2aa045;--g2:#49d75d;--lime:#c6ff3d;--pink:#ff3d7f;--orange:#ff6a1a;--blue:#1c5fa8;--paper:#f6f7f2}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;background:var(--ink);color:#fff;line-height:1.55}a{color:inherit;text-decoration:none}
-.note{background:var(--lime);color:#000;font-size:.78rem;text-align:center;padding:.4rem;font-weight:600}
-.fund{background:linear-gradient(90deg,var(--pink),var(--orange));text-align:center;font-size:.85rem;padding:.55rem 1rem;font-weight:600}
-.fund a{text-decoration:underline}
-header{position:sticky;top:0;z-index:20;background:rgba(12,13,15,.9);backdrop-filter:blur(10px);border-bottom:1px solid #22262c}
-.nav{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;gap:1rem}
-.logo{font-family:'Archivo Black',sans-serif;font-size:1.35rem;letter-spacing:-.02em}.logo b{color:var(--g2)}
-.nav ul{display:flex;gap:1.5rem;list-style:none;font-size:.9rem;font-weight:500}.nav ul a:hover{color:var(--lime)}
-.call{background:var(--g);padding:.6rem 1rem;border-radius:10px;font-weight:700;font-size:.9rem;white-space:nowrap}.call:hover{background:var(--g2);color:#000}
-.hero{position:relative;overflow:hidden;padding:5rem 1.2rem 4rem}
-.hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 15% 30%,rgba(42,160,69,.45),transparent 40%),radial-gradient(circle at 85% 20%,rgba(255,61,127,.35),transparent 35%),radial-gradient(circle at 70% 90%,rgba(28,95,168,.5),transparent 40%);filter:blur(20px);animation:drift 14s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(3%,-3%) scale(1.05)}}
-.hero .in{position:relative;max-width:1240px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-.kicker{display:inline-flex;gap:.5rem;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.35rem .8rem;border-radius:99px;font-size:.8rem;font-weight:600;margin-bottom:1.3rem}.kicker i{width:8px;height:8px;border-radius:50%;background:var(--lime);font-style:normal}
-h1{font-family:'Archivo Black',sans-serif;font-size:clamp(2.2rem,5.4vw,4.3rem);line-height:1.02;letter-spacing:-.03em;margin-bottom:1.3rem}
-h1 .hl{background:linear-gradient(90deg,var(--lime),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .lead{font-family:Inter,sans-serif;font-size:1.2rem;font-weight:600;color:#fff;letter-spacing:0;line-height:1.4;margin-bottom:.6rem;max-width:36rem}
-.hero p{font-size:1.12rem;color:#cfd3d8;max-width:34rem;margin-bottom:2rem}
-.btns{display:flex;gap:.8rem;flex-wrap:wrap}.btn{padding:1rem 1.5rem;border-radius:12px;font-weight:700;transition:.2s;display:inline-block}
-.btn.a{background:var(--lime);color:#000}.btn.a:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(198,255,61,.35)}
-.btn.b{border:2px solid #fff}.btn.b:hover{background:#fff;color:#000}
-.timer{position:relative;aspect-ratio:1;border-radius:28px;background:linear-gradient(145deg,#1d2127,#0c0d0f);border:1px solid #2d333a;display:grid;place-items:center;overflow:hidden}
-.deck{position:absolute;width:62%;height:16%;border-radius:8px;background:linear-gradient(180deg,#2e2e2e,#111);box-shadow:0 18px 0 -6px #000,0 30px 40px rgba(0,0,0,.6);transform:perspective(600px) rotateX(55deg)}
-.d1{top:30%;left:19%;animation:snap 3s infinite}.d2{top:44%;left:19%;animation:snap 3s .25s infinite}.d3{top:58%;left:19%;animation:snap 3s .5s infinite}
-.deck::after{content:"";position:absolute;inset:6px;border-radius:5px;border:2px dashed rgba(73,215,93,.6)}
-@keyframes snap{0%,10%{transform:perspective(600px) rotateX(55deg) translateY(-40px);opacity:0}25%,90%{transform:perspective(600px) rotateX(55deg) translateY(0);opacity:1}100%{opacity:0}}
-.count{position:absolute;bottom:1.2rem;left:1.2rem;right:1.2rem;display:flex;justify-content:space-between;align-items:end}
-.count b{font-family:'Archivo Black',sans-serif;font-size:3rem;color:var(--lime);line-height:1}.count small{color:#a4a4a4;font-size:.8rem;text-align:right}
-.mag{position:absolute;top:1.2rem;right:1.2rem;background:var(--pink);font-size:.75rem;font-weight:700;padding:.35rem .7rem;border-radius:99px}
-.ticker{background:var(--lime);color:#000;overflow:hidden;white-space:nowrap;font-family:'Archivo Black',sans-serif;font-size:1.05rem;padding:.8rem 0}
-.ticker div{display:inline-block;animation:tick 25s linear infinite}.ticker span{margin:0 1.6rem}
-@keyframes tick{to{transform:translateX(-50%)}}
-section{padding:5rem 1.2rem}.wrap{max-width:1240px;margin:auto}
-h2{font-family:'Archivo Black',sans-serif;font-size:clamp(1.8rem,3.6vw,2.8rem);letter-spacing:-.02em;line-height:1.08;margin-bottom:.8rem}
-.sub{color:#a4a4a4;max-width:42rem;margin-bottom:2.5rem}
-.ranges{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.range{border-radius:24px;padding:2.2rem;position:relative;overflow:hidden;min-height:420px;display:flex;flex-direction:column}
-.plat{background:linear-gradient(150deg,#1b6e24,#0c3010)}.steel{background:linear-gradient(150deg,#1c5fa8,#14146d)}
-.rimg{width:100%;height:240px;object-fit:contain;border-radius:16px;margin-bottom:1.2rem;background:linear-gradient(135deg,#f4f5f0,#e2e6dc)}
-.range .tag{display:inline-block;background:#000;color:var(--lime);font-size:.75rem;font-weight:700;padding:.3rem .7rem;border-radius:99px;margin-bottom:1rem;align-self:flex-start}
-.range h3{font-family:'Archivo Black',sans-serif;font-size:2rem;line-height:1.05;margin-bottom:.6rem}
-.range p{color:rgba(255,255,255,.8);margin-bottom:1.2rem}
-.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:auto 0 1.4rem}.spec div{background:rgba(0,0,0,.25);border-radius:12px;padding:.8rem;text-align:center}.spec b{display:block;font-size:1.3rem}.spec small{font-size:.75rem;color:rgba(255,255,255,.7)}
-.price{display:flex;justify-content:space-between;align-items:center}.price b{font-family:'Archivo Black',sans-serif;font-size:1.8rem}.price small{font-size:.8rem;opacity:.8}
-.cats{background:var(--paper);color:var(--ink)}
-.cats .sub{color:#555}
-.cgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
-.cat{background:#fff;border-radius:18px;padding:1.3rem 1rem;text-align:center;border:2px solid transparent;transition:.2s;font-weight:700}
-.cat:hover{border-color:var(--g);transform:translateY(-4px)}
-.cat .ph{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;border-radius:12px;margin-bottom:.8rem;background:#eef0ea}
-.cat .ic{width:56px;height:56px;margin:0 auto .8rem;border-radius:16px;display:grid;place-items:center;font-size:1.6rem}
-.c1 .ic{background:#dff8e1}.c2 .ic{background:#edf5ff}.c3 .ic{background:#ffe3ec}.c4 .ic{background:#fff3d6}.c5 .ic{background:#e9e4ff}.c6 .ic{background:#dcfaf3}
-.usp{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.u{border:1px solid #2d333a;border-radius:20px;padding:1.6rem;background:var(--ink2)}.u b{font-family:'Archivo Black',sans-serif;font-size:2.2rem;display:block;color:var(--g2)}.u:nth-child(2) b{color:var(--pink)}.u:nth-child(3) b{color:var(--orange)}.u:nth-child(4) b{color:var(--lime)}
-.video{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
-.vid{aspect-ratio:16/9;border-radius:22px;background:linear-gradient(135deg,#1b6e24,#1c5fa8);display:grid;place-items:center;position:relative;cursor:pointer}
-.vid::after{content:"▶";width:84px;height:84px;border-radius:50%;background:var(--lime);color:#000;display:grid;place-items:center;font-size:1.8rem;transition:.2s}.vid:hover::after{transform:scale(1.08)}
-.q blockquote{font-size:.95rem;margin:.3rem 0 .9rem}.q figcaption{font-weight:700;font-size:.88rem;color:#444}.q .s{font-family:'Archivo Black',sans-serif;font-size:2.4rem;line-height:1;color:var(--pink);letter-spacing:0}
-.revslot{margin-top:1.2rem;border:2px dashed #3a4048;border-radius:18px;padding:1.2rem 1.4rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;color:#a4a4a4}.revslot b{color:var(--lime)}
-.credit{margin-top:.8rem;font-size:.78rem;color:#7d838a}
-.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.q{background:#fff;color:var(--ink);border-radius:20px;padding:1.6rem}.q .s{color:var(--orange);letter-spacing:.1em}.q small{color:#666}
-.cta{background:linear-gradient(120deg,var(--g),#1b6e24 50%,var(--blue));border-radius:28px;padding:3.5rem 2rem;text-align:center}
-.cta p{max-width:36rem;margin:0 auto 1.8rem;color:rgba(255,255,255,.85)}
-footer{border-top:1px solid #22262c;padding:2.5rem 1.2rem;color:#a4a4a4;font-size:.88rem}footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}footer b{color:#fff;display:block;margin-bottom:.5rem}
-@media(max-width:960px){.hero .in,.ranges,.video{grid-template-columns:1fr}.cgrid{grid-template-columns:repeat(3,1fr)}.usp,.quotes{grid-template-columns:1fr 1fr}.nav ul{display:none}footer .wrap{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.usp,.quotes{grid-template-columns:1fr}.cgrid{grid-template-columns:1fr 1fr}.spec{grid-template-columns:1fr 1fr 1fr}}
+/* ------------------------------------------------------------
+   1. Design tokens – brand lime + teal from the SteelCity logo,
+      plus three "stage light" accents for a bold, colourful feel
+   ------------------------------------------------------------ */
+:root{
+  --ink:#0d2223;      /* deep teal-black base            */
+  --ink2:#133233;     /* raised panels                   */
+  --teal:#274f4f;     /* logo teal                       */
+  --lime:#dbf450;     /* logo lime – primary action      */
+  --pink:#ff4d8d;     /* stage light 1                   */
+  --blue:#3d8bff;     /* stage light 2                   */
+  --amber:#ffb547;    /* stage light 3                   */
+  --paper:#f5f7ee;    /* light sections                  */
+  --text:#e9f0ee; --mute:#a9bcb9; --line:rgba(255,255,255,.12);
+  --r:22px; --max:1240px;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,sans-serif;background:var(--ink);color:var(--text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:auto;padding:0 1.25rem}
+section{padding:6rem 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:3px;background:currentColor}
+h1,h2,.h2{font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1.02}
+h2,.h2{font-size:clamp(2rem,4.2vw,3.4rem);margin:.6rem 0 1rem}
+.lead-p{color:var(--mute);font-size:1.08rem;max-width:40rem}
+/* Gradient text used for key words */
+.glow{background:linear-gradient(90deg,var(--lime),#8cf5b0 50%,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.5rem;border-radius:14px;font-weight:700;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-lime{background:var(--lime);color:#0d2223}
+.btn-lime:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(219,244,80,.35)}
+.btn-ghost{border:2px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translateY(-2px)}
+
+/* Scroll reveal (only when JS + motion allowed) */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ------------------------------------------------------------
+   2. Concept note, funding bar, top bar, header
+   ------------------------------------------------------------ */
+.note{background:#000;color:#cfd8d6;font-size:.74rem;text-align:center;padding:.35rem 1rem}
+.fund{background:linear-gradient(90deg,var(--pink),var(--amber));color:#1a0b10;font-size:.86rem;font-weight:600;text-align:center;padding:.55rem 1rem}
+.fund strong{font-weight:800}
+.fund a{display:inline-block;margin-left:.6rem;background:#1a0b10;color:#fff;padding:.15rem .7rem;border-radius:99px;font-size:.78rem}
+.topbar{border-bottom:1px solid var(--line);font-size:.8rem;color:var(--mute)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.45rem;padding-bottom:.45rem}
+.topbar h3{font:inherit;display:inline}
+.topbar nav{display:flex;gap:1.2rem}
+.topbar a:hover{color:var(--lime)}
+.topbar .call b{color:#fff}
+header.site{position:sticky;top:0;z-index:50;background:rgba(13,34,35,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:1.5rem;height:74px}
+.brand{display:flex;align-items:center;gap:.7rem;font-family:var(--display);font-weight:800;font-size:1.25rem;line-height:1}
+.brand img{width:46px;height:46px;border-radius:10px}
+.brand small{display:block;font-family:Inter;font-weight:600;font-size:.62rem;letter-spacing:.16em;color:var(--lime);margin-top:.25rem}
+.menu{display:flex;gap:1.6rem;margin-left:auto;list-style:none;font-weight:600;font-size:.94rem}
+.menu a{position:relative;padding:.4rem 0}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--lime);transition:right .25s}
+.menu a:hover::after{right:0}
+.hdr-cta{display:flex;gap:.6rem;align-items:center}
+.hdr-cta .btn{padding:.7rem 1.1rem;font-size:.9rem}
+.basket{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);place-items:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:#fff;position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.open .burger span{background:transparent}.open .burger span::before{top:0;transform:rotate(45deg)}.open .burger span::after{top:0;transform:rotate(-45deg)}
+
+/* ------------------------------------------------------------
+   3. Hero – animated magnetic stage under moving stage lights
+   ------------------------------------------------------------ */
+.hero{padding:4.5rem 0 5rem;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(60% 50% at 12% 20%,rgba(39,79,79,.9),transparent 70%),
+  radial-gradient(40% 40% at 90% 10%,rgba(255,77,141,.22),transparent 70%),
+  radial-gradient(45% 45% at 75% 95%,rgba(61,139,255,.22),transparent 70%)}
+/* subtle grid floor */
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);opacity:.35}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem .9rem .4rem .45rem;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:.84rem;font-weight:600}
+.kicker i{width:26px;height:26px;border-radius:50%;background:var(--lime);display:grid;place-items:center;color:var(--ink);font-style:normal;font-size:.8rem}
+.hero h1{font-size:clamp(2.6rem,6vw,5rem);margin:1.3rem 0 1.2rem}
+.hero h1 .mag{display:inline-block;position:relative;color:var(--ink);background:var(--lime);padding:0 .18em;border-radius:.14em;transform:rotate(-2deg)}
+.hero h2.sub{font-family:Inter;font-weight:500;font-size:clamp(1.02rem,1.5vw,1.2rem);line-height:1.55;letter-spacing:0;color:var(--mute);max-width:36rem;margin:0 0 2rem}
+.hero h2.sub b{color:#fff;font-weight:700}
+.hero .btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:2.4rem;max-width:36rem}
+.fact{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:16px;padding:.85rem .8rem}
+.fact b{display:block;font-family:var(--display);font-size:1.55rem;line-height:1.05}
+.fact small{color:var(--mute);font-size:.74rem;line-height:1.3;display:block}
+.fact:nth-child(1) b{color:var(--lime)}.fact:nth-child(2) b{color:var(--pink)}.fact:nth-child(3) b{color:var(--amber)}.fact:nth-child(4) b{color:#8cc1ff}
+
+/* Stage visual card */
+.stagecard{position:relative;aspect-ratio:1/1;border-radius:32px;background:linear-gradient(180deg,#0a1a1b,#112c2d 60%,#0b1d1e);border:1px solid var(--line);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.45)}
+/* moving light beams */
+.beam{position:absolute;top:-12%;width:38%;height:105%;transform-origin:50% 0;filter:blur(6px);mix-blend-mode:screen;opacity:.55;animation:sweep 7s ease-in-out infinite alternate}
+.beam::before{content:"";position:absolute;inset:0;clip-path:polygon(44% 0,56% 0,100% 100%,0 100%);background:linear-gradient(180deg,var(--c),transparent 85%)}
+.b1{left:2%;--c:var(--pink)}.b2{left:31%;--c:var(--lime);animation-delay:-2.4s;animation-duration:8s}.b3{left:60%;--c:var(--blue);animation-delay:-4s;animation-duration:9s}
+@keyframes sweep{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
+.stagecard svg{position:absolute;inset:8% 4% 6%;width:92%;height:86%}
+/* each deck drops in and "snaps" */
+.deck{animation:drop 1s cubic-bezier(.3,1.4,.5,1) both;transform-box:fill-box}
+@keyframes drop{0%{transform:translateY(-120px);opacity:0}60%{opacity:1}100%{transform:none;opacity:1}}
+.snap{animation:pulse 1s ease-out both;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%{opacity:0}35%{opacity:.95}100%{opacity:0}}
+.badge{position:absolute;display:flex;align-items:center;gap:.6rem;padding:.6rem .9rem;border-radius:14px;background:rgba(10,26,27,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);font-size:.8rem;line-height:1.25}
+.badge b{font-family:var(--display);font-size:1.3rem}
+.badge-timer{left:5%;bottom:5%}
+.badge-timer b{color:var(--lime);font-variant-numeric:tabular-nums;min-width:2.6ch}
+.badge-mag{right:5%;top:5%}
+.badge-mag .dot{width:10px;height:10px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 0 rgba(255,77,141,.7);animation:ping 1.8s infinite}
+@keyframes ping{to{box-shadow:0 0 0 12px rgba(255,77,141,0)}}
+.photo-chip{position:absolute;right:5%;bottom:5%;width:34%;border-radius:18px;background:#fff;padding:.4rem;box-shadow:0 18px 40px rgba(0,0,0,.4);transform:rotate(3deg)}
+.photo-chip img{border-radius:12px}
+.photo-chip span{display:block;color:#0d2223;font-size:.68rem;font-weight:700;text-align:center;padding:.3rem 0 .1rem}
+
+/* ------------------------------------------------------------
+   4. "As used by" – real customer logos from the current site
+   ------------------------------------------------------------ */
+.clients{padding:2.2rem 0;border-block:1px solid var(--line);background:#0a1b1c}
+.clients p{text-align:center;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:1.2rem}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:1.2rem;width:max-content;animation:scroll 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track img{height:58px;width:auto;background:#fff;border-radius:12px;padding:.45rem .9rem;filter:grayscale(1);opacity:.8;transition:.3s}
+.track img:hover{filter:none;opacity:1}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ------------------------------------------------------------
+   5. Two ranges – Platinum vs SteelCity
+   ------------------------------------------------------------ */
+.ranges{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.range{position:relative;border-radius:28px;padding:2rem;overflow:hidden;display:flex;flex-direction:column;isolation:isolate}
+.range::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-160px;top:-180px;z-index:-1;filter:blur(40px);opacity:.22}
+.r-plat{background:linear-gradient(160deg,#1d4747,#0f2a2b)}.r-plat::after{background:var(--lime)}
+.r-steel{background:linear-gradient(160deg,#18305e,#101a3a)}.r-steel::after{background:var(--blue)}
+.range .top{display:flex;gap:1.4rem;align-items:center}
+.range .pic{flex:0 0 44%;border-radius:20px;background:#fff;padding:.5rem;transform:rotate(-2deg);transition:transform .4s}
+.range:hover .pic{transform:rotate(0) scale(1.03)}
+.range .pic img{border-radius:14px}
+.range .lbl{font-size:.8rem;font-weight:700;color:var(--mute)}
+.range h2{font-size:clamp(1.9rem,3vw,2.6rem);margin:.3rem 0 .6rem}
+.r-plat h2{color:var(--lime)}.r-steel h2{color:#8cc1ff}
+.range p{color:#d2dedc;font-size:.95rem}
+.ticks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.5rem .9rem;margin:1.5rem 0;font-size:.9rem}
+.ticks li{display:flex;gap:.5rem;align-items:flex-start}
+.ticks li::before{content:"";flex:0 0 18px;height:18px;margin-top:.15rem;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d2223' stroke-width='4'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.r-steel .ticks li::before{background-color:#8cc1ff}
+.range .foot{margin-top:auto;display:flex;align-items:end;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.3rem}
+.price small{display:block;color:var(--mute);font-size:.78rem}
+.price b{font-family:var(--display);font-size:2.4rem;line-height:1}
+.price span{font-size:.85rem;color:var(--mute)}
+.range .links{display:flex;gap:.6rem;flex-wrap:wrap}
+.range .links .btn{padding:.8rem 1.1rem;font-size:.9rem}
+
+/* ------------------------------------------------------------
+   6. Category tiles (light section)
+   ------------------------------------------------------------ */
+.light{background:var(--paper);color:#0d2223}
+.light .lead-p{color:#4b5f5d}
+.light .eyebrow{color:#2c7a4b}
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;margin-top:2.4rem}
+.cat{background:#fff;border-radius:22px;padding:1rem 1rem 1.2rem;text-align:center;border:2px solid transparent;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;align-items:center}
+.cat:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:0 20px 40px rgba(13,34,35,.12)}
+.cat img{width:100%;aspect-ratio:1;object-fit:contain;border-radius:16px;background:var(--bg);margin-bottom:.8rem}
+.cat h3{font-family:var(--display);font-size:.98rem;line-height:1.15;letter-spacing:.01em}
+.cat .go{margin-top:.5rem;font-size:.78rem;font-weight:700;color:#2c7a4b}
+.cat:nth-child(1){--c:#9ccf2d;--bg:#eef8d4}.cat:nth-child(2){--c:var(--blue);--bg:#e5efff}.cat:nth-child(3){--c:var(--pink);--bg:#ffe6ef}
+.cat:nth-child(4){--c:var(--amber);--bg:#fff2dc}.cat:nth-child(5){--c:#8b6cff;--bg:#eeeaff}.cat:nth-child(6){--c:#1fbf9f;--bg:#ddf7f1}
+
+/* ------------------------------------------------------------
+   7. Stage planner – honest, live module calculator
+   ------------------------------------------------------------ */
+.planner{display:grid;grid-template-columns:1fr 1.05fr;border-radius:32px;overflow:hidden;border:1px solid var(--line);background:var(--ink2);margin-top:2.5rem}
+.p-ctrl{padding:2.2rem}
+.p-step{margin-bottom:1.6rem}
+.p-step>span{display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:.7rem}
+.p-step>span i{width:24px;height:24px;border-radius:8px;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-style:normal;font-size:.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{padding:.62rem .95rem;border-radius:12px;border:1.5px solid var(--line);font-weight:600;font-size:.9rem;transition:.2s}
+.chip:hover{border-color:rgba(255,255,255,.4)}
+.chip[aria-pressed="true"]{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.dims{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.stepper{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:14px;padding:.35rem}
+.stepper button{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);font-size:1.3rem;font-weight:700}
+.stepper button:hover{background:var(--lime);color:var(--ink)}
+.stepper output{font-family:var(--display);font-size:1.5rem;text-align:center;line-height:1}
+.stepper output small{display:block;font-family:Inter;font-size:.68rem;color:var(--mute);font-weight:600}
+.p-view{position:relative;background:radial-gradient(80% 70% at 50% 40%,#1d4747,#0b1d1e);padding:2rem;display:flex;flex-direction:column}
+.p-view svg{width:100%;height:auto;flex:1;min-height:260px}
+.p-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.p-stats div{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:14px;padding:.75rem;text-align:center}
+.p-stats b{display:block;font-family:var(--display);font-size:1.45rem;color:var(--lime);line-height:1.1}
+.p-stats small{font-size:.72rem;color:var(--mute)}
+.p-price{margin-top:.8rem;border-radius:16px;background:rgba(219,244,80,.08);border:1px solid rgba(219,244,80,.35);padding:1rem 1.1rem;font-size:.86rem;color:#d2dedc}
+.p-price b{color:#fff;font-family:var(--display);font-size:1.6rem;display:block;line-height:1.1;margin:.15rem 0}
+.p-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.p-actions .btn{flex:1;justify-content:center}
+.fund-tag{display:inline-block;margin-top:.5rem;background:var(--pink);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .6rem;border-radius:99px}
+
+/* ------------------------------------------------------------
+   8. Big statement – Made in Sheffield
+   ------------------------------------------------------------ */
+.statement{background:var(--lime);color:var(--ink);overflow:hidden}
+.statement .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center}
+.statement h2{font-size:clamp(1.9rem,3.6vw,3.1rem);line-height:1.08}
+.statement h2 em{font-style:normal;background:var(--ink);color:var(--lime);padding:0 .2em;border-radius:.15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.statement figure{border-radius:26px;overflow:hidden;background:var(--ink);transform:rotate(2deg);box-shadow:0 30px 60px rgba(13,34,35,.35)}
+.statement figcaption{color:#fff;font-size:.8rem;padding:.7rem 1rem}
+.finishes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
+.finishes span{border:2px solid var(--ink);border-radius:99px;padding:.4rem .9rem;font-weight:700;font-size:.86rem}
+
+/* ------------------------------------------------------------
+   9. Heights + magnetic risers
+   ------------------------------------------------------------ */
+.heights{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.heights h2{font-size:clamp(1.7rem,3vw,2.5rem)}
+.bars{display:flex;align-items:flex-end;gap:.7rem;height:260px;margin-top:2rem;padding:1rem;border-radius:22px;background:var(--ink2);border:1px solid var(--line)}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:.4rem;height:100%}
+.bar i{display:block;width:100%;border-radius:10px 10px 4px 4px;background:linear-gradient(180deg,var(--c),rgba(255,255,255,.05));height:0;transition:height 1s cubic-bezier(.2,.8,.2,1)}
+.bar small{font-size:.74rem;font-weight:700;color:var(--mute)}
+.bars.in .bar i{height:var(--h)}
+.risers{position:relative}
+.risers img{border-radius:26px;background:#fff}
+.risers .r2{position:absolute;width:46%;right:-1rem;bottom:-8%;border:6px solid var(--ink);border-radius:22px}
+
+/* ------------------------------------------------------------
+   10. Lifespan – locks vs magnets
+   ------------------------------------------------------------ */
+.life{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.4rem}
+.lcard{border-radius:26px;padding:2rem;border:1px solid var(--line)}
+.lcard.bad{background:#1a1f22}
+.lcard.good{background:linear-gradient(150deg,#26553b,#123c33);border-color:rgba(219,244,80,.4)}
+.lcard .num{font-family:var(--display);font-size:5rem;line-height:1}
+.bad .num{color:#ff8a8a}.good .num{color:var(--lime)}
+.lcard h3,.lcard h2{font-family:var(--display);font-size:1.5rem;margin:.4rem 0 .6rem;letter-spacing:-.01em}
+.lcard p{color:var(--mute);font-size:.95rem}
+.good p{color:#d6e7df}
+.locks{display:flex;gap:.4rem;margin:1rem 0}
+.locks i{width:28px;height:28px;border-radius:8px;border:2px dashed #ff8a8a;opacity:.8}
+.lcard .btn{margin-top:1.3rem}
+
+/* ------------------------------------------------------------
+   11. Video guide – click-to-play facade (YouTube only loads
+       when the visitor presses play = faster page)
+   ------------------------------------------------------------ */
+.video{display:grid;grid-template-columns:1.35fr .65fr;gap:2rem;margin-top:2.4rem;align-items:stretch}
+.player{position:relative;aspect-ratio:16/9;border-radius:26px;overflow:hidden;background:#000}
+.player img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.player:hover img{transform:scale(1.04)}
+.player .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6))}
+.player .play span{width:92px;height:92px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(219,244,80,.18);transition:transform .25s}
+.player:hover .play span{transform:scale(1.08)}
+.player .cap{position:absolute;left:1.3rem;bottom:1.1rem;font-weight:700;font-size:1.05rem;pointer-events:none}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vlist{display:flex;flex-direction:column;gap:.7rem}
+.vlist button{display:flex;gap:.8rem;align-items:center;text-align:left;padding:.7rem;border-radius:16px;border:1.5px solid var(--line);transition:.2s}
+.vlist button img{width:96px;aspect-ratio:16/9;object-fit:cover;border-radius:10px}
+.vlist button[aria-pressed="true"]{border-color:var(--lime);background:rgba(219,244,80,.07)}
+.vlist b{display:block;font-size:.92rem;line-height:1.3}
+.vlist small{color:var(--mute);font-size:.75rem}
+.yt{margin-top:auto;font-size:.88rem;color:var(--mute)}
+.yt a{color:var(--lime);font-weight:700}
+
+/* ------------------------------------------------------------
+   12. Top-rated packages, storage slider, resources
+   ------------------------------------------------------------ */
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.pkg{background:#fff;border-radius:24px;overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.pkg:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(13,34,35,.15)}
+.pkg img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.pkg div{padding:1.2rem 1.3rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.pkg b{font-family:var(--display);font-size:1.15rem;line-height:1.15}
+.pkg small{display:block;color:#5c6e6c;font-size:.8rem;font-weight:500;font-family:Inter}
+.pkg .arrow{flex:0 0 44px;height:44px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;transition:.25s}
+.pkg:hover .arrow{background:var(--lime);color:var(--ink)}
+.toprated h3{font-family:Inter;font-weight:500;font-size:1.05rem;line-height:1.6;color:#4b5f5d;max-width:52rem;letter-spacing:0}
+.toprated h3 strong{color:#0d2223}
+.storage{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;align-items:center;margin-top:4rem}
+.storage .big{font-family:var(--display);font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;font-weight:800}
+.storage .big span{color:#2c7a4b}
+.compare{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:1140/595;background:#ddd;user-select:none;touch-action:pan-y}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .after{clip-path:inset(0 0 0 var(--x,50%))}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--x,50%);width:4px;margin-left:-2px;background:var(--lime);pointer-events:none}
+.compare .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.compare .tag{position:absolute;top:1rem;padding:.3rem .7rem;border-radius:99px;background:rgba(13,34,35,.8);color:#fff;font-size:.75rem;font-weight:700;pointer-events:none}
+.compare .t1{left:1rem}.compare .t2{right:1rem}
+.res{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.5rem}
+.res a{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1.5px solid #dfe5d8;border-radius:12px;padding:.7rem 1rem;font-weight:600;font-size:.9rem;transition:.2s}
+.res a:hover{border-color:#2c7a4b;color:#2c7a4b}
+.res a::before{content:"↓";width:24px;height:24px;border-radius:7px;background:var(--lime);display:grid;place-items:center;font-weight:800;font-size:.8rem;color:var(--ink)}
+.res a.guide::before{content:"→"}
+
+/* ------------------------------------------------------------
+   13. Promos – ECAL funding + MiniStar
+   ------------------------------------------------------------ */
+.promos{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.promo{border-radius:28px;overflow:hidden;position:relative;display:flex;flex-direction:column;background:var(--ink2);border:1px solid var(--line);transition:transform .3s}
+.promo:hover{transform:translateY(-6px)}
+.promo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.promo div{padding:1.4rem 1.6rem 1.6rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.promo b{font-family:var(--display);font-size:1.35rem;line-height:1.15}
+.promo small{display:block;color:var(--mute);font-family:Inter;font-weight:500;font-size:.86rem;margin-top:.2rem}
+.promo .btn{padding:.75rem 1.1rem;font-size:.9rem}
+/* "In action" strip – real customer/use photos from the live site */
+.uses{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.2rem}
+.use{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:#000}
+.use img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .6s;filter:saturate(1.05)}
+.use:hover img{transform:scale(1.07)}
+.use::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(13,34,35,.92))}
+.use span{position:absolute;left:1rem;right:1rem;bottom:.9rem;z-index:1;font-family:var(--display);font-weight:800;font-size:1.05rem;line-height:1.15}
+.use span small{display:block;font-family:Inter;font-weight:600;font-size:.72rem;color:var(--c);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.2rem}
+.use:nth-child(1){--c:var(--lime)}.use:nth-child(2){--c:var(--amber)}.use:nth-child(3){--c:var(--pink)}.use:nth-child(4){--c:#8cc1ff}.use:nth-child(5){--c:#b07bff}
+
+/* ------------------------------------------------------------
+   14. Testimonials (verbatim from the live site)
+   ------------------------------------------------------------ */
+.tst-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end}
+.tst-head h2.cog{font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.3;color:var(--pink);margin:0}
+.teacher{margin-top:1rem;color:var(--mute);font-size:.95rem}
+.teacher q{color:#fff;font-weight:600}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.6rem}
+.q{border-radius:24px;padding:1.8rem;background:var(--ink2);border:1px solid var(--line);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.q::before{content:"“";position:absolute;right:1rem;top:-1.4rem;font-family:var(--display);font-size:8rem;color:var(--c);opacity:.25;line-height:1}
+.q:nth-child(1){--c:var(--lime)}.q:nth-child(2){--c:var(--pink)}.q:nth-child(3){--c:var(--blue)}
+.q blockquote{font-size:.96rem;color:#d7e3e1;margin-bottom:1.4rem}
+.q figcaption{margin-top:auto;display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.92rem}
+.q figcaption i{width:40px;height:40px;border-radius:50%;background:var(--c);color:var(--ink);display:grid;place-items:center;font-style:normal;font-family:var(--display)}
+.q figcaption small{display:block;color:var(--mute);font-weight:500;font-size:.8rem}
+.src{margin-top:1rem;font-size:.78rem;color:var(--mute)}
+
+/* ------------------------------------------------------------
+   15. FAQ (facts taken from the current site only)
+   ------------------------------------------------------------ */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem}
+.faq details{background:#fff;border-radius:18px;margin-bottom:.7rem;border:1.5px solid #e1e7da;transition:border-color .2s}
+.faq details[open]{border-color:#9ccf2d}
+.faq summary{list-style:none;cursor:pointer;padding:1.1rem 1.3rem;font-weight:700;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:0 0 30px;height:30px;border-radius:9px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:1.2rem;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 1.3rem 1.2rem;color:#4b5f5d;font-size:.95rem}
+
+/* ------------------------------------------------------------
+   16. Final CTA, contact strip, footer, mobile action bar
+   ------------------------------------------------------------ */
+.cta{border-radius:34px;padding:3.5rem;background:linear-gradient(120deg,var(--pink),#ff7a59 35%,var(--amber));color:#1a0b10;display:grid;grid-template-columns:1.3fr .7fr;gap:2rem;align-items:center;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;right:-80px;bottom:-120px;width:340px;height:340px;border-radius:50%;border:40px solid rgba(255,255,255,.18)}
+.cta .h2{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 .6rem}
+.cta p{font-weight:500;max-width:36rem}
+.cta .btns{display:flex;flex-direction:column;gap:.7rem;position:relative;z-index:1}
+.cta .btns .btn{justify-content:center}
+.cta .btn-ghost{border-color:rgba(26,11,16,.5)}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+.contact a,.contact div{display:flex;gap:1rem;align-items:center;padding:1.2rem 1.3rem;border-radius:18px;background:var(--ink2);border:1px solid var(--line)}
+.contact i{flex:0 0 46px;height:46px;border-radius:14px;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-style:normal;font-size:1.2rem}
+.contact h3{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.contact span{font-weight:600;font-size:.95rem}
+footer{padding:4rem 0 6rem;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line);margin-top:5rem}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}
+footer h2{font-family:var(--display);font-size:1.05rem;color:#fff;margin:0 0 1rem;letter-spacing:0}
+footer ul{list-style:none;display:grid;gap:.45rem}
+footer a:hover{color:var(--lime)}
+.social{display:flex;gap:.5rem;margin-top:1.2rem}
+.social a{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;font-weight:700;font-size:.8rem}
+.legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem}
+.legal h2{display:inline;font-family:Inter;font-size:.8rem;font-weight:600;color:var(--mute);margin:0}
+.mbar{display:none}
+
+/* ------------------------------------------------------------
+   17. Responsive
+   ------------------------------------------------------------ */
+@media (max-width:1080px){
+  .menu{display:none}
+  .burger{display:grid}
+  .open .menu{display:flex;flex-direction:column;position:absolute;top:74px;left:0;right:0;background:var(--ink);padding:1rem 1.25rem 1.5rem;border-bottom:1px solid var(--line);gap:.2rem}
+  .open .menu a{display:block;padding:.8rem 0;font-size:1.05rem;border-bottom:1px solid var(--line)}
+  .hdr-cta .btn{display:none}
+  .hdr-cta{margin-left:auto}
+  .cats{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  section{padding:4.5rem 0}
+  .hero{padding-top:2.5rem}
+  .hero .wrap,.ranges,.planner,.statement .wrap,.heights,.life,.video,.storage,.promos,.tst-head,.faq,.cta{grid-template-columns:1fr}
+  .stagecard{max-width:520px;width:100%;margin:auto}
+  .quotes,.pkgs{grid-template-columns:1fr 1fr}
+  .uses{grid-template-columns:repeat(3,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .contact{grid-template-columns:1fr}
+  .topbar nav{display:none}
+  .risers .r2{right:2%}
+}
+@media (max-width:600px){
+  .facts{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:2.45rem}
+  .range{padding:1.4rem}
+  .range .top{flex-direction:column;align-items:flex-start}
+  .range .pic{width:70%}
+  .ticks{grid-template-columns:1fr}
+  .cats{grid-template-columns:1fr 1fr}
+  .quotes,.pkgs{grid-template-columns:1fr}
+  .uses{grid-template-columns:1fr 1fr}.use:nth-child(5){grid-column:span 2;aspect-ratio:2/1.2}
+  .p-ctrl,.p-view{padding:1.4rem}
+  .cta{padding:2.2rem 1.5rem}
+  .fgrid{grid-template-columns:1fr}
+  .bars{gap:.4rem;height:220px}
+  .topbar{display:none}
+  .fund a{display:none}
+  /* sticky thumb-zone actions on phones */
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(13,34,35,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .mbar .btn{justify-content:center;padding:.85rem;font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
-<div class="note">Contest concept by Mohammad Saleh Alahmad · homepage only · existing title, meta description, H1/H2 wording kept for SEO · product photos from portablestage.co.uk</div>
-<div class="fund">PORTABLE STAGE FUNDING: Education, Charity, Arts &amp; Leisure orgs receive 10–20% off · <a href="#">Get code</a></div>
-<header><nav class="nav"><a class="logo" href="#">NexGen<b>.</b>Staging</a>
-<ul><li><a href="#ranges">Shop</a></li><li><a href="#">Stage Quote</a></li><li><a href="#">Stage Design Tool</a></li><li><a href="#video">Videos</a></li><li><a href="#">Gallery</a></li><li><a href="#">Blog</a></li></ul>
-<a class="call" href="tel:01143992978">☎ 0114 399 2978</a></nav></header>
 
-<div class="hero"><div class="in"><div>
-<span class="kicker"><i></i>Handcrafted in Sheffield · Totally magnetic</span>
-<h1>Premium Eco-Friendly <span class="hl">Magnetic</span> Portable Staging Systems</h1>
-<h2 class="lead">NexGen Portable Staging. Experience lightspeed modular stage assembly. Fast, Eco-Friendly, UK-Made Magnetic Portable Stage</h2>
-<p>No locks, no keys, child-safe corners and a lifespan of up to 15 years.</p>
-<div class="btns"><a class="btn a" href="#ranges">Shop staging</a><a class="btn b" href="#">Get a stage quote</a></div></div>
-<div class="timer"><span class="mag">MAGNETIC</span><div class="deck d1"></div><div class="deck d2"></div><div class="deck d3"></div>
-<div class="count"><div><b>60s</b><br><small style="color:#fff">your stage, built</small></div><small>Platform 7.8 kg<br>Load 1500 kg</small></div></div>
+<!-- Concept label (remove on integration) -->
+<div class="note">Homepage redesign concept for portablestage.co.uk · title, meta, H1–H3, alt texts &amp; links kept · photos, logos &amp; testimonials from portablestage.co.uk</div>
+
+<!-- Funding bar (same offer + link as live site) -->
+<div class="fund"><strong>PORTABLE STAGE FUNDING</strong> · Education, Charity, Arts &amp; Leisure Orgs receive <strong>FUNDING</strong> of 10% to 20% discount. <a href="https://www.portablestage.co.uk/quote-me/">Get Code</a></div>
+
+<!-- Top bar -->
+<div class="topbar"><div class="wrap">
+  <nav aria-label="Quick links">
+    <a href="https://www.portablestage.co.uk/videos/"><h3>Videos</h3></a>
+    <a href="https://www.portablestage.co.uk/staging-layout-gallery/"><h3>Gallery</h3></a>
+    <a href="https://www.portablestage.co.uk/platinum/designer/">Stage Design Tool</a>
+  </nav>
+  <a class="call" href="tel:01143992978"><h3>CALL US NOW</h3> · <b>0114 399 2978</b></a>
 </div></div>
 
-<div class="ticker"><div><span>MADE IN SHEFFIELD</span><span>★</span><span>TOTALLY MAGNETIC</span><span>★</span><span>15 YR LIFESPAN</span><span>★</span><span>ECO-FRIENDLY</span><span>★</span><span>UK'S FASTEST ASSEMBLY</span><span>★</span><span>MADE IN SHEFFIELD</span><span>★</span><span>TOTALLY MAGNETIC</span><span>★</span><span>15 YR LIFESPAN</span><span>★</span><span>ECO-FRIENDLY</span><span>★</span><span>UK'S FASTEST ASSEMBLY</span><span>★</span></div></div>
+<!-- Header / main navigation -->
+<header class="site" id="hdr"><div class="wrap">
+  <a class="brand" href="https://www.portablestage.co.uk/"><img src="img/logo-steelcity.webp" width="46" height="46" alt="NexGen Portable Staging &amp; Dancefloors"><span>NexGen<small>PORTABLE STAGING</small></span></a>
+  <ul class="menu" id="menu">
+    <li><a href="https://www.portablestage.co.uk/">Home</a></li>
+    <li><a href="https://www.portablestage.co.uk/shop/">Shop</a></li>
+    <li><a href="https://www.portablestage.co.uk/quote-me/">Stage Quote</a></li>
+    <li><a href="https://www.portablestage.co.uk/get-started-building-your-stage/">Get Started</a></li>
+    <li><a href="https://www.portablestage.co.uk/blog/">Blog</a></li>
+    <li><a href="https://www.portablestage.co.uk/contact/">Contact</a></li>
+    <li><a href="https://www.portablestage.co.uk/my-account/">Login</a></li>
+  </ul>
+  <div class="hdr-cta">
+    <a class="btn btn-lime" href="#planner">Plan my stage</a>
+    <a class="basket" href="https://www.portablestage.co.uk/shop/" aria-label="Shop"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</div></header>
 
-<section id="ranges"><div class="wrap">
-<h2>Two ranges. Totally magnetic.</h2><p class="sub">PLATINUM and STEELCITY – two ranges, one promise: lighter, faster, safer and longer lasting.</p>
-<div class="ranges">
-<div class="range plat"><img class="rimg" src="img/3mx2m_600high200400mmstephandrail_side-367x367.png" alt="NexGen Platinum 3m x 2m portable stage with steps and handrail"><span class="tag">PLATINUM RANGE</span><h3>Totally magnetic, environmentally friendly deck</h3><p>Recycled core material, sustainably sourced plywood, recycled carpet and less hazardous adhesives.</p>
-<div class="spec"><div><b>7.8kg</b><small>platform</small></div><div><b>1500kg</b><small>load</small></div><div><b>15yr</b><small>lifespan</small></div></div>
-<div class="price"><div><small>from</small><br><b>£269</b> <small>+ VAT</small></div><a class="btn a" href="#">Shop Platinum</a></div></div>
-<div class="range steel"><img class="rimg" src="img/portable-staging-nexgen-steelcity-stage-module-blocks2026.jpg" alt="NexGen SteelCity stage module"><span class="tag">STEELCITY RANGE</span><h3>Durable, value-driven modular platforms</h3><p>The same trusted NexGen quality with a robust Sheffield heritage – sold in modules (deck &amp; riser).</p>
-<div class="spec"><div><b>8.5kg</b><small>module</small></div><div><b>1500kg</b><small>load</small></div><div><b>15yr</b><small>lifespan</small></div></div>
-<div class="price"><div><small>from</small><br><b>£219</b> <small>+ VAT</small></div><a class="btn a" href="#">Shop SteelCity</a></div></div>
-</div></div></section>
+<main>
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker"><i>★</i>Portable Staging, handcrafted in Sheffield</span>
+      <!-- H1 unchanged from live site -->
+      <h1>Premium Eco-Friendly <span class="mag">Magnetic</span> Portable Staging Systems</h1>
+      <!-- H2 wording unchanged from live site -->
+      <h2 class="sub"><b>NexGen Portable Staging.</b> Experience lightspeed modular stage assembly. Fast, Eco-Friendly, UK-Made Magnetic Portable Stage</h2>
+      <div class="btns">
+        <a class="btn btn-lime" href="https://www.portablestage.co.uk/shop/">Shop staging <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#planner">Plan &amp; quote my stage</a>
+      </div>
+      <!-- Real product facts from the live site -->
+      <div class="facts">
+        <div class="fact"><b data-count="7.8" data-dec="1">7.8</b><small>kg per 1×1m platform</small></div>
+        <div class="fact"><b data-count="1500">1500</b><small>kg load weight</small></div>
+        <div class="fact"><b><span data-count="15">15</span> yr</b><small>lifespan, no locks to replace</small></div>
+        <div class="fact"><b><span data-count="60">60</span>s</b><small>your stage, built for speed</small></div>
+      </div>
+    </div>
 
-<section class="cats"><div class="wrap"><h2>UK's fastest portable stage assembly</h2><p class="sub">Build your own perfect-sized stage or dancefloor from decks, risers and accessories.</p>
-<div class="cgrid">
-<a class="cat c1" href="#"><img class="ph" src="img/1P.png" alt="NexGen stage deck platform" width="300" height="300">Stage Deck Platform</a><a class="cat c2" href="#"><img class="ph" src="img/2P.png" alt="NexGen folding stage riser legs" width="300" height="300">Stage Riser Legs</a><a class="cat c3" href="#"><img class="ph" src="img/NexGen-Staging-DanceFloor-Platforms-367x367.jpg" alt="NexGen dancefloor platforms" width="300" height="300">Dancefloor</a><a class="cat c4" href="#"><img class="ph" src="img/4P.png" alt="NexGen staging parts and fixings" width="300" height="300">Parts</a><a class="cat c5" href="#"><img class="ph" src="img/1mx1m_trolley-1140x595.png" alt="NexGen staging storage trolley" width="300" height="300">Storage</a><a class="cat c6" href="#"><img class="ph" src="img/P-9-768x735.png" alt="NexGen display staging" width="300" height="300">Display</a>
-</div></div></section>
+    <!-- Animated stage: decks drop in and snap together magnetically -->
+    <div class="stagecard">
+      <div class="beam b1"></div><div class="beam b2"></div><div class="beam b3"></div>
+      <svg id="heroStage" viewBox="0 0 520 440" aria-hidden="true"></svg>
+      <div class="badge badge-mag"><span class="dot"></span><span><b>0</b> locks · 0 keys<br>Totally magnetic</span></div>
+      <div class="badge badge-timer"><b id="timer">0</b><span>seconds<br>to stage-ready</span></div>
+      <figure class="photo-chip"><img src="img/platinum-3x2-steps-handrail.webp" width="367" height="367" alt="SteelCity 3x2m @ 600mm high with 2 steps. Grey Carpet"><span>Real kit: 3×2m @ 600mm</span></figure>
+    </div>
+  </div>
+</section>
 
-<section><div class="wrap"><div class="usp">
-<div class="u"><b>60s</b>Built for speed – your stage in 60 seconds</div><div class="u"><b>0</b>Locks or keys – magnetic connections</div><div class="u"><b>15yr</b>Unrivalled lifespan</div><div class="u"><b>UK</b>Made in Sheffield, best UK prices</div>
-</div></div></section>
-
-<section id="video" style="padding-top:0"><div class="wrap video"><div class="vid" title="Video guide" style="background:linear-gradient(rgba(12,13,15,.35),rgba(12,13,15,.35)),url(img/experience-incredible-storage-for-staging-1140x595.png) center/cover"></div><div><h2>Watch the video guide</h2><p class="sub">Super fast assembly staging riser system. Magnetic connections mean no locks. Concertina storage.</p><a class="btn b" href="#">All videos</a></div></div></section>
-
-<!-- Customer testimonials: quoted verbatim from the current portablestage.co.uk homepage -->
-<section style="padding-top:0"><div class="wrap"><h2>Customer testimonials</h2><p class="sub">Don't just take our word for it. Read some of our happy customers comments:</p>
-<div class="quotes">
-<figure class="q"><div class="s">“</div><blockquote>Our school bought a set of stage equipment from you last year and we couldn't be happier with the results. The students love using it for their drama classes and performances. They have become more confident, expressive, and collaborative. The parents and teachers are also impressed by the quality and durability of the equipment</blockquote><figcaption>— Mrs. Jones, Drama Teacher</figcaption></figure>
-<figure class="q"><div class="s">“</div><blockquote>Thank you for your speedy supply. We are so grateful you managed to help us out with a very urgent delivery. The staging is brilliant. Its so light &amp; easy to assemble. We set it out in under 10 minutes. WOW! The event went perfectly, and the office staff were very impressed. I would highly recommend NexGen equipment to anyone.</blockquote><figcaption>— Paula Frank, Facilities Team</figcaption></figure>
-<figure class="q"><div class="s">“</div><blockquote>We ordered a NexGen staging package from you for our daughter's birthday party, and it was a huge hit. The kids had a blast playing with the props, costumes, lights, and sound effects. They put on a fantastic show for us and their friends. It was a memorable &amp; educational experience for everyone.</blockquote><figcaption>— Mr. Smithe, Parent</figcaption></figure>
+<!-- ===================== CLIENT LOGOS (from the live site) ===================== -->
+<div class="clients">
+  <p>NexGen staging has been used by</p>
+  <div class="marquee"><div class="track">
+    <img src="img/client-bafta.webp" width="141" height="58" alt="NexGen staging used in Bafta">
+    <img src="img/client-bbc.webp" width="190" height="58" alt="Customer Staging Photos">
+    <img src="img/client-itv.webp" width="167" height="58" alt="Customer Staging Photos">
+    <img src="img/client-rolls.webp" width="190" height="58" alt="Customer Staging Photos">
+    <img src="img/client-lloyds.webp" width="167" height="58" alt="Customer Staging Photos">
+    <img src="img/client-british.webp" width="167" height="58" alt="Customer Staging Photos">
+    <img src="img/client-chivas.webp" width="167" height="58" alt="Customer Staging Photos">
+    <img src="img/client-marlborough.webp" width="167" height="58" alt="Customer Staging Photos">
+    <img src="img/client-uk.webp" width="167" height="58" alt="uk">
+    <!-- duplicated set for a seamless loop (hidden from screen readers) -->
+    <img src="img/client-bafta.webp" width="141" height="58" alt="" aria-hidden="true">
+    <img src="img/client-bbc.webp" width="190" height="58" alt="" aria-hidden="true">
+    <img src="img/client-itv.webp" width="167" height="58" alt="" aria-hidden="true">
+    <img src="img/client-rolls.webp" width="190" height="58" alt="" aria-hidden="true">
+    <img src="img/client-lloyds.webp" width="167" height="58" alt="" aria-hidden="true">
+    <img src="img/client-british.webp" width="167" height="58" alt="" aria-hidden="true">
+    <img src="img/client-chivas.webp" width="167" height="58" alt="" aria-hidden="true">
+    <img src="img/client-marlborough.webp" width="167" height="58" alt="" aria-hidden="true">
+    <img src="img/client-uk.webp" width="167" height="58" alt="" aria-hidden="true">
+  </div></div>
 </div>
-<div class="revslot"><b>Trustpilot / Google reviews</b><span>Space reserved for your live review widget or star rating. Not filled in for the concept.</span></div>
-<p class="credit">Testimonials quoted verbatim from portablestage.co.uk.</p></div></section>
 
-<section style="padding-top:0"><div class="wrap cta"><h2>Design your stage in minutes</h2><p>Use the Stage Design Tool or ask for a quote – education, charity, arts &amp; leisure organisations get 10–20% funding.</p><div class="btns" style="justify-content:center"><a class="btn a" href="#">Open Stage Design Tool</a><a class="btn b" href="tel:01143992978">Call 0114 399 2978</a></div></div></section>
+<!-- ===================== RANGES ===================== -->
+<section id="ranges">
+  <div class="wrap">
+    <span class="eyebrow rv">Choose your range</span>
+    <p class="h2 rv">Two ranges. <span class="glow">Totally magnetic.</span></p>
+    <p class="lead-p rv">Same 1500 kg load, same child-safe corners, same 15-year lifespan. Pick the finish and budget that suits your venue.</p>
+    <div class="ranges">
+      <article class="range r-plat rv">
+        <div class="top">
+          <div class="pic"><a href="https://www.portablestage.co.uk/platinum/buy-portable-staging/"><img src="img/buy-stage-system.webp" width="367" height="367" alt="buy a stage system" loading="lazy"></a></div>
+          <div>
+            <span class="lbl">Premium Eco-Friendly Magnetic Portable Staging Systems</span>
+            <h2>PLATINUM RANGE</h2>
+            <p>A TOTALLY MAGNETIC environmentally friendly staging deck platform. Recycled core material, sustainably sourced plywood, recycled carpet, and less hazardous adhesives!</p>
+          </div>
+        </div>
+        <ul class="ticks">
+          <li>Lighter, Faster, Safer &amp; Longer Lasting</li><li>Platform Weight: 7.8kg</li>
+          <li>Load Weight: 1500 Kg</li><li>Child-Safe Corners. No Locks. No Keys.</li>
+          <li>Lifespan Up to 15 Years</li><li><a href="https://www.portablestage.co.uk/wp-content/uploads/2024/10/Quick-Guide-Assembly_compressed.pdf"><u>Quick Assembly Guide PDF</u></a></li>
+        </ul>
+        <div class="foot">
+          <div class="price"><small>from</small><b>£269</b> <span>+ VAT</span></div>
+          <div class="links"><a class="btn btn-lime" href="https://www.portablestage.co.uk/platinum/buy-portable-staging/">Shop Platinum</a></div>
+        </div>
+      </article>
+      <article class="range r-steel rv">
+        <div class="top">
+          <div class="pic"><a href="https://www.portablestage.co.uk/product/staging-module-1x1m-deck-riser/"><img src="img/steelcity-module-offer.webp" width="420" height="396" alt="1 metre stage modules. Portable staging modules from NexGen - SteelCity modules £219" loading="lazy"></a></div>
+          <div>
+            <h2 class="lbl" style="font-family:Inter;font-size:.8rem;letter-spacing:0;line-height:1.4;margin:0;color:var(--mute)">Durable, Value-Driven Modular Portable Staging Platforms</h2>
+            <h2>STEELCITY RANGE</h2>
+            <p>NexGen SteelCity Staging Modules (8.5kg) deliver the same trusted NexGen quality with a robust Sheffield heritage. Sold in Modules (Deck &amp; Riser).</p>
+          </div>
+        </div>
+        <ul class="ticks">
+          <li>Light, Faster, Safe &amp; Long Lasting</li><li>Platform Weight: 8.5kg</li>
+          <li>Load Weight: 1500 Kg</li><li>Child-Safe Corners. No Locks. No Keys.</li>
+          <li>Lifespan Up to 15 Years</li><li><a href="https://www.portablestage.co.uk/wp-content/uploads/2024/10/Quick-Guide-Assembly_compressed.pdf"><u>Quick Assembly</u></a></li>
+        </ul>
+        <div class="foot">
+          <div class="price"><small>per module</small><b>£219</b> <span>+ VAT</span></div>
+          <div class="links"><a class="btn btn-lime" href="https://www.portablestage.co.uk/product/staging-module-1x1m-deck-riser/">Shop SteelCity</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-<footer><div class="wrap"><div><b>UK Manufactured Portable Staging</b>NexGen Staging Limited, Sheffield S4 7WB<br><small>Concept mock-up. Product photos and testimonials from portablestage.co.uk.</small></div><div><b>Shop</b>Platforms<br>Riser legs<br>Accessories</div><div><b>Help</b>Get started<br>Downloads<br>Contact</div><div><b>About</b>About us<br>Our services<br>Opening hours</div></div></footer>
-</body></html>
+<!-- ===================== CATEGORIES ===================== -->
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow rv">NexGen Platinum Staging</span>
+    <h2 class="rv">UK's FASTEST PORTABLE STAGE ASSEMBLY</h2>
+    <p class="lead-p rv">Build your own perfect-sized stage or dancefloor from decks, risers and accessories – all in stock in Sheffield.</p>
+    <div class="cats">
+      <a class="cat rv" href="https://www.portablestage.co.uk/shop"><img src="img/cat-deck.webp" width="300" height="300" alt="Magnetic Portable Stage deck platform" loading="lazy"><h3>STAGE DECK PLATFORM</h3><span class="go">Shop now →</span></a>
+      <a class="cat rv" href="https://www.portablestage.co.uk/service/riser-legs/"><img src="img/cat-riser.webp" width="300" height="300" alt="Spider riser leg system for portable stages" loading="lazy"><h3>STAGE RISER LEGS</h3><span class="go">Shop now →</span></a>
+      <a class="cat rv" href="https://www.portablestage.co.uk/product/nexgen-eco-1x1m-dance-platform/"><img src="img/cat-dancefloor.webp" width="300" height="300" alt="Portable Dance Floors by NexGen - Sheffield UK" loading="lazy"><h3>DANCEFLOOR</h3><span class="go">Shop now →</span></a>
+      <a class="cat rv" href="https://www.portablestage.co.uk/product-category/spare-parts/"><img src="img/cat-parts.webp" width="300" height="300" alt="parts and spares for staging and portable stages" loading="lazy"><h3>PARTS</h3><span class="go">Shop now →</span></a>
+      <a class="cat rv" href="https://www.portablestage.co.uk/service/storage-accessories/"><img src="img/cat-storage.webp" width="300" height="300" alt="Storage Cases and Trolleys for NexGen staging" loading="lazy"><h3>STORAGE</h3><span class="go">Shop now →</span></a>
+      <a class="cat rv" href="https://www.portablestage.co.uk/shop"><img src="img/cat-display.webp" width="300" height="300" alt="Backdrop drapes and Pipe systems for staging backdrop events" loading="lazy"><h3>DISPLAY</h3><span class="go">Shop now →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE PLANNER ===================== -->
+<section id="planner">
+  <div class="wrap">
+    <span class="eyebrow rv">Plan in 30 seconds</span>
+    <p class="h2 rv">Plan your stage. <span class="glow">See it build.</span></p>
+    <p class="lead-p rv">Pick a size and height and watch your stage snap together. We count the 1×1m modules for you, then send it straight to a quote – with ECAL funding applied if you qualify.</p>
+    <div class="planner rv">
+      <div class="p-ctrl">
+        <div class="p-step"><span><i>1</i>Popular sizes</span>
+          <div class="chips" id="presets">
+            <button class="chip" data-w="3" data-d="2" data-h="400">3 × 2m</button>
+            <button class="chip" data-w="4" data-d="3" data-h="400">4 × 3m</button>
+            <button class="chip" data-w="5" data-d="3" data-h="200">5 × 3m</button>
+            <button class="chip" data-w="6" data-d="3" data-h="600">6 × 3m</button>
+          </div>
+        </div>
+        <div class="p-step"><span><i>2</i>Or set your own size</span>
+          <div class="dims">
+            <div class="stepper"><button data-dim="w" data-step="-1" aria-label="Narrower">−</button><output id="oW">3<small>metres wide</small></output><button data-dim="w" data-step="1" aria-label="Wider">+</button></div>
+            <div class="stepper"><button data-dim="d" data-step="-1" aria-label="Shallower">−</button><output id="oD">2<small>metres deep</small></output><button data-dim="d" data-step="1" aria-label="Deeper">+</button></div>
+          </div>
+        </div>
+        <div class="p-step"><span><i>3</i>Stage height</span>
+          <div class="chips" id="heightsChips">
+            <button class="chip" data-h="200">200mm</button><button class="chip" data-h="300">300mm</button><button class="chip" data-h="400">400mm</button>
+            <button class="chip" data-h="600">600mm</button><button class="chip" data-h="800">800mm</button><button class="chip" data-h="1000">1000mm</button>
+          </div>
+        </div>
+        <div class="p-step" style="margin-bottom:0"><span><i>4</i>Who is it for?</span>
+          <div class="chips" id="orgChips">
+            <button class="chip" data-org="1">School / charity / arts</button>
+            <button class="chip" data-org="0">Business / venue / private</button>
+          </div>
+        </div>
+      </div>
+      <div class="p-view">
+        <svg id="planStage" viewBox="0 0 520 380" role="img" aria-label="Live preview of your stage layout"></svg>
+        <div class="p-stats">
+          <div><b id="sMod">6</b><small>1×1m modules</small></div>
+          <div><b id="sArea">6 m²</b><small>stage area</small></div>
+          <div><b id="sH">400</b><small>mm high</small></div>
+        </div>
+        <div class="p-price" id="pPrice"></div>
+        <div class="p-actions">
+          <a class="btn btn-lime" id="quoteBtn" href="https://www.portablestage.co.uk/quote-me/">Get my quote →</a>
+          <a class="btn btn-ghost" href="https://www.portablestage.co.uk/platinum/designer/">Open Stage Design Tool</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATEMENT ===================== -->
+<section class="statement">
+  <div class="wrap">
+    <div>
+      <h2 class="rv">Made in <em>SHEFFIELD</em>. <em>TOTALLY MAGNETIC</em>. The Best UK Prices. Highest Quality Materials and finish. Safety corners. Magnetic connections. Sustainable ECO friendly product.</h2>
+      <div class="finishes rv"><span>Available in Carpet or ABS Tough black finish</span><span>7.8 kg per 1×1m platform</span><span>4.2 kg per 1×520mm platform</span></div>
+    </div>
+    <figure class="rv"><img src="img/rolls-royce-ldc.webp" width="560" height="560" alt="cloth valance skirting for stages" loading="lazy"><figcaption>NexGen Staging @ Rolls Royce LDC Derby</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===================== HEIGHTS / RISERS ===================== -->
+<section>
+  <div class="wrap heights">
+    <div>
+      <span class="eyebrow rv">Riser system</span>
+      <h2 class="rv">Super Fast Assembly staging riser system. Magnetic Connections, means no locks! Concertina Storage. Stage heights: 200mm, 300mm, 400mm, 600mm; 800mm &amp; 1000mm.</h2>
+      <div class="bars" id="bars" role="img" aria-label="Available stage heights from 200mm to 1000mm">
+        <div class="bar" style="--h:20%;--c:var(--lime)"><i></i><small>200</small></div>
+        <div class="bar" style="--h:30%;--c:#a8f06b"><i></i><small>300</small></div>
+        <div class="bar" style="--h:40%;--c:#6fe3a5"><i></i><small>400</small></div>
+        <div class="bar" style="--h:60%;--c:var(--blue)"><i></i><small>600</small></div>
+        <div class="bar" style="--h:80%;--c:#b07bff"><i></i><small>800</small></div>
+        <div class="bar" style="--h:100%;--c:var(--pink)"><i></i><small>1000</small></div>
+      </div>
+    </div>
+    <div class="risers rv">
+      <img src="img/riser-legs.webp" width="520" height="495" alt="NexGen Riser Legs for Platinum staging range" loading="lazy">
+      <img class="r2" src="img/magnetic-parts.webp" width="520" height="496" alt="Portable Stage parts are available for many staging systems at NexGen Staging" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIFESPAN ===================== -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <span class="eyebrow rv">It pays to switch to Magnetic Staging</span>
+    <h2 class="rv">UNRIVALLED 15 YR LIFESPAN</h2>
+    <p class="lead-p rv">It's no locks &amp; hassle FREE. Faster assembly, safer lifespan, no ongoing maintenance costs for platforms.</p>
+    <div class="life">
+      <div class="lcard bad rv">
+        <div class="num">8</div>
+        <div class="locks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p style="color:#fff;font-weight:700;font-size:1.2rem;margin-bottom:.5rem">Locks on other branded platforms</p>
+        <p>Replacing stage locks can be expensive. There are up to 8 locks on all other branded stage platforms, and these will need replacing – pay to replace them, or leave platforms unfixed, unsafe or unused.</p>
+      </div>
+      <div class="lcard good rv">
+        <div class="num">0</div>
+        <h2>UNRIVALLED LIFESPAN</h2>
+        <p>NexGen PLATINUM Platforms last up to 15 years, keeping your staging 100% functional throughout its lifespan. Stuck or jammed locks are no longer an issue because there is nothing to replace.</p>
+        <a class="btn btn-lime" href="https://www.portablestage.co.uk/wp-content/uploads/2024/03/NexGen-Staging-Platinum-Features.pdf">PDF download – features</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VIDEO ===================== -->
+<section id="video" style="padding-top:2rem">
+  <div class="wrap">
+    <span class="eyebrow rv">NexGen Staging</span>
+    <h2 class="rv">VIDEO GUIDE</h2>
+    <h2 class="rv" style="font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--lime);margin-top:0">Built for SPEED! Your stage in 60 seconds!</h2>
+    <div class="video">
+      <div class="player rv" id="player" data-id="Zj8cUR6HP0s">
+        <img id="pThumb" src="img/video-height-adjustable.webp" width="960" height="540" alt="NexGen Portable Staging video" loading="lazy">
+        <button class="play" id="playBtn" aria-label="Play video"><span><svg width="34" height="34" viewBox="0 0 24 24" fill="#0d2223"><path d="M8 5v14l11-7z"/></svg></span></button>
+        <span class="cap" id="pCap">NexGen Portable Staging</span>
+      </div>
+      <div class="vlist rv" id="vlist">
+        <button aria-pressed="true" data-id="Zj8cUR6HP0s" data-img="img/video-height-adjustable.webp" data-t="NexGen Portable Staging"><img src="img/video-height-adjustable.webp" width="96" height="54" alt="" loading="lazy"><span><b>NexGen Portable Staging</b><small>Height adjustable decks</small></span></button>
+        <button aria-pressed="false" data-id="o94G3BRJB4Q" data-img="img/video-magnetic-staging.webp" data-t="Nexgen magnetic staging"><img src="img/video-magnetic-staging.webp" width="96" height="54" alt="" loading="lazy"><span><b>Nexgen magnetic staging</b><small>Recital stage with steps</small></span></button>
+        <button aria-pressed="false" data-id="g9J6X3h8lI4" data-img="img/video-choir-tiers.webp" data-t="NextGen Portable Stage Choir Staging Tiers"><img src="img/video-choir-tiers.webp" width="96" height="54" alt="" loading="lazy"><span><b>Choir Staging Tiers</b><small>Funded pricing available</small></span></button>
+        <p class="yt">Watch our staging video gallery to see how fast and easy it is to assemble NexGen Staging. More tutorials on our <a href="https://www.youtube.com/channel/UCHeQ91I5-S7ZsIwEAJWZE8w" rel="noopener">YouTube Channel</a> · <a href="https://www.portablestage.co.uk/videos/">All videos</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOP-RATED + STORAGE ===================== -->
+<section class="light toprated">
+  <div class="wrap">
+    <span class="eyebrow rv">NexGen Portable Staging</span>
+    <h2 class="rv">Top-Rated Platforms</h2>
+    <a href="https://www.portablestage.co.uk/quote-me/"><h3 class="rv">You can build your own perfect sized portable stage or Dancefloor using our deck platforms and riser legs. Storage trolleys, handrails, ramps, backdrops and a full range of parts in stock in Sheffield too. <strong>“Need help choosing? Get a quick quote with ECAL discount”.</strong></h3></a>
+    <div class="pkgs">
+      <a class="pkg rv" href="https://www.portablestage.co.uk/product/nexgen-portable-staging-package-3x2m/"><img src="img/pkg-3x2.webp" width="367" height="367" alt="3m x 2m Staging Package" loading="lazy"><div><b>3m × 2m Staging Package<small>400mm high with 200mm step</small></b><span class="arrow">→</span></div></a>
+      <a class="pkg rv" href="https://www.portablestage.co.uk/product/3-tier-choir-portable-staging-package/"><img src="img/pkg-choir.webp" width="367" height="367" alt="Portable Staging, handcrafted in Sheffield NexGen Portable Staging. Experience lightspeed modular stage assembly. Fast, Eco-Friendly, UK-Made Magnetic Portable Stage" loading="lazy"><div><b>3-Tier Choir Staging Package<small>4m wide · 200 / 300 / 400mm tiers</small></b><span class="arrow">→</span></div></a>
+      <a class="pkg rv" href="https://www.portablestage.co.uk/product/nexgen-portable-staging-package-5x3m/"><img src="img/pkg-5x3.webp" width="367" height="367" alt="5x3m stage Any Surface + Any Height 230mm high - Consists of 15x Super fast Magnetic Platforms &amp; Risers" loading="lazy"><div><b>5m × 3m Staging Package<small>15 magnetic platforms &amp; risers</small></b><span class="arrow">→</span></div></a>
+    </div>
+
+    <!-- Storage before/after slider -->
+    <div class="storage">
+      <div class="rv">
+        <p class="big">6×3m stage.<br><span>One trolley.</span></p>
+        <p class="lead-p" style="margin-top:1rem">6x3m (18 modules) staging stored on ONE trolley. Concertina storage means your whole stage rolls away into a cupboard. Drag the slider to see it.</p>
+        <a class="btn btn-dark" style="margin-top:1.5rem" href="https://www.portablestage.co.uk/product/nexgen-panel-trolley/">See the panel trolley</a>
+      </div>
+      <div class="compare rv" id="compare">
+        <img src="img/storage-6x3-stage.webp" width="1140" height="595" alt="showing a 6m x 3m stage - experience-incredible-storage-for-staging" loading="lazy">
+        <img class="after" src="img/storage-trolley.webp" width="1140" height="595" alt="staging storage" loading="lazy">
+        <span class="tag t1">6m × 3m stage</span><span class="tag t2">…stored on one trolley</span>
+        <div class="handle"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Compare stage and stored trolley">
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <div class="res rv">
+      <a class="guide" href="https://www.portablestage.co.uk/portable-stage-size-guide-uk/">Portable Stage Size Guide</a>
+      <a class="guide" href="https://www.portablestage.co.uk/portable-stage-height-guide-uk/">Portable Stage Height Guide</a>
+      <a href="https://www.portablestage.co.uk/wp-content/uploads/2024/10/Quick-Guide-Assembly_compressed.pdf">Quick Assembly Guide PDF</a>
+      <a href="https://www.portablestage.co.uk/wp-content/uploads/2026/01/USEFUL-Links-NexGen-Staging.pdf">USEFUL LINKS – PDF</a>
+      <a class="guide" href="https://www.portablestage.co.uk/downloads/">Downloads</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROMOS ===================== -->
+<section>
+  <div class="wrap promos">
+    <a class="promo rv" href="https://www.portablestage.co.uk/quote-me/"><img src="img/ecal-funding.webp" width="900" height="600" alt="Staging equipment with ECAL funding for UK schools and charities." loading="lazy"><div><b>Save 10–20% with ECAL funding<small>Education, Charity, Arts &amp; Leisure organisations</small></b><span class="btn btn-lime">Get Code</span></div></a>
+    <a class="promo rv" href="https://www.portablestage.co.uk/ministar-stage/"><img src="img/ministar.webp" width="800" height="534" alt="Child on a blue mini stage with a microphone, pointing upward, in front of a promotional banner reading 'Give Them Their First Stage' and '£149'." loading="lazy"><div><b>MiniStar Stage – £149<small>Give them their first stage</small></b><span class="btn btn-lime">Discover</span></div></a>
+  </div>
+</section>
+
+<!-- ===================== IN ACTION (real photos) ===================== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv">Our work in images</span>
+    <p class="h2 rv">One system. <span class="glow">Every kind of stage.</span></p>
+    <div class="uses">
+      <a class="use rv" href="https://www.portablestage.co.uk/product/3-tier-choir-portable-staging-package/"><img src="img/use-choir.webp" width="367" height="367" alt="Portable Stage - How to" loading="lazy"><span><small>Choirs</small>Tiered choir staging</span></a>
+      <a class="use rv" href="https://www.portablestage.co.uk/staging-layout-gallery/"><img src="img/use-podium.webp" width="367" height="367" alt="strong winners podiums. fast setup" loading="lazy"><span><small>Sport</small>Winners podiums</span></a>
+      <a class="use rv" href="https://www.portablestage.co.uk/staging-layout-gallery/"><img src="img/use-music.webp" width="367" height="367" alt="musical performances - gear for music. Staging giveaways" loading="lazy"><span><small>Music</small>Drum risers &amp; bands</span></a>
+      <a class="use rv" href="https://www.portablestage.co.uk/staging-layout-gallery/"><img src="img/use-presentation.webp" width="367" height="367" alt="staging for presentations and exhibitions Temporary portable mobile stage" loading="lazy"><span><small>Business</small>Presentations &amp; conferences</span></a>
+      <a class="use rv" href="https://www.portablestage.co.uk/service/display-accessories/"><img src="img/exhibition.webp" width="520" height="498" alt="portable staging accessories. Raise your event with NexGen Stages" loading="lazy"><span><small>Events</small>Exhibitions &amp; display</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section style="padding-top:1rem">
+  <div class="wrap">
+    <div class="tst-head">
+      <div>
+        <span class="eyebrow rv">NexGen Staging</span>
+        <h2 class="rv">Customer Testimonials</h2>
+        <p class="lead-p rv">Don't just take our word for it. Read some of our happy customers comments:</p>
+      </div>
+      <div class="rv">
+        <h2 class="cog">NexGen Portable Staging boosts cognitive skills, such as creativity, problem-solving, memory, and concentration</h2>
+        <p class="teacher">It increases engagement and motivation in learning by making it more interactive and enjoyable during rehearsals and performances. Teacher – <q>Afternoon theatre, evening disco—all using the same stage panels. Brilliant solution.</q></p>
+      </div>
+    </div>
+    <div class="quotes">
+      <figure class="q rv"><blockquote>Our school bought a set of stage equipment from you last year and we couldn't be happier with the results. The students love using it for their drama classes and performances. They have become more confident, expressive, and collaborative. The parents and teachers are also impressed by the quality and durability of the equipment</blockquote><figcaption><i>J</i><span>Mrs. Jones<small>Drama Teacher</small></span></figcaption></figure>
+      <figure class="q rv"><blockquote>Thank you for your speedy supply. We are so grateful you managed to help us out with a very urgent delivery. The staging is brilliant. Its so light &amp; easy to assemble. We set it out in under 10 minutes. WOW! The event went perfectly, and the office staff were very impressed. I would highly recommend NexGen equipment to anyone.</blockquote><figcaption><i>P</i><span>Paula Frank<small>Facilities Team</small></span></figcaption></figure>
+      <figure class="q rv"><blockquote>We ordered a NexGen staging package from you for our daughter's birthday party, and it was a huge hit. The kids had a blast playing with the props, costumes, lights, and sound effects. They put on a fantastic show for us and their friends. It was a memorable &amp; educational experience for everyone.</blockquote><figcaption><i>S</i><span>Mr. Smithe<small>Parent</small></span></figcaption></figure>
+    </div>
+    <p class="src">Testimonials quoted word for word from the current portablestage.co.uk homepage.</p>
+  </div>
+</section>
+
+<!-- ===================== FAQ (facts from the live site only) ===================== -->
+<section class="light">
+  <div class="wrap faq">
+    <div>
+      <span class="eyebrow rv">Good to know</span>
+      <p class="h2 rv">Quick answers</p>
+      <p class="lead-p rv">Still not sure? Call us on 0114 399 2978 or email enquiries@portablestage.co.uk.</p>
+    </div>
+    <div class="rv">
+      <details open><summary>How heavy are the platforms?</summary><p>A PLATINUM 1×1m platform weighs 7.8 kg and a 1×520mm platform 4.2 kg. SteelCity modules weigh 8.5 kg. Every platform takes a load weight of 1500 kg.</p></details>
+      <details><summary>Which stage heights are available?</summary><p>200mm, 300mm, 400mm, 600mm, 800mm and 1000mm, using our concertina riser legs with magnetic connections.</p></details>
+      <details><summary>Why magnetic instead of locks?</summary><p>Other branded platforms have up to 8 locks each that wear out and need replacing. NexGen PLATINUM has no locks or keys, so there is nothing to replace – and platforms last up to 15 years.</p></details>
+      <details><summary>Do schools and charities get a discount?</summary><p>Yes. Education, Charity, Arts &amp; Leisure organisations receive ECAL funding of 10% to 20% discount. Ask for your code when you request a quote.</p></details>
+      <details><summary>How much space does storage take?</summary><p>A 6×3m stage (18 modules) stores on ONE trolley thanks to concertina storage.</p></details>
+      <details><summary>Which finishes can I choose?</summary><p>Platforms are available in carpet or ABS tough black finish, with valance skirting, steps, handrails, ramps and backdrops available as accessories.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA + CONTACT ===================== -->
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="cta rv">
+      <div>
+        <p class="h2">Ready to raise your stage?</p>
+        <p>Tell us your size and venue and we'll send a quote – with ECAL funding of 10–20% applied for schools, charities, arts &amp; leisure organisations.</p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-dark" href="https://www.portablestage.co.uk/quote-me">BUILD QUOTATION →</a>
+        <a class="btn btn-ghost" href="https://www.portablestage.co.uk/platinum/designer/">Stage Design Tool</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div><i>⌂</i><span><h3>Address</h3>NexGen Staging Limited, SolPro Estate, Unit 12, Royds Mills, Windsor Street, Sheffield S4 7WB</span></div>
+      <a href="tel:01143992978"><i>☎</i><span><h3>Call Us Now</h3>0114 399 2978</span></a>
+      <a href="mailto:enquiries@portablestage.co.uk"><i>@</i><span><h3>Email Us</h3>enquiries@portablestage.co.uk</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h2>UK Manufactured Portable Staging</h2>
+        <a href="https://www.portablestage.co.uk"><img src="img/logo-nexgen-platinum.webp" width="180" height="60" alt="NexGen Staging Logo" loading="lazy" style="margin-bottom:1rem"></a>
+        <p>NexGen Staging Limited, Unit 12, Royds Mills, Windsor Street, Sheffield S4 7WB<br>Sales: 0114 399 2978 · enquiries@portablestage.co.uk</p>
+        <div class="social">
+          <a href="https://www.facebook.com/nexgenstaging" aria-label="Facebook" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a>
+          <a href="https://twitter.com/portablestaging" aria-label="Twitter" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h3.3l-7.2 8.3L22.6 22h-6.7l-5.2-6.8L4.8 22H1.5l7.7-8.9L1 2h6.8l4.7 6.2zm-1.2 18h1.8L6.3 3.9H4.4z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCHeQ91I5-S7ZsIwEAJWZE8w" aria-label="YouTube" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg></a>
+          <a href="https://www.instagram.com/nexgenportable/" aria-label="Instagram" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div><h2>About Us</h2><ul>
+        <li><a href="https://www.portablestage.co.uk/">Home</a></li><li><a href="https://www.portablestage.co.uk/about/">About</a></li>
+        <li><a href="https://www.portablestage.co.uk/shop/">Shop</a></li><li><a href="https://www.portablestage.co.uk/contact/">Contact</a></li>
+        <li><a href="https://www.portablestage.co.uk/?porto_builder=gallery">Our work in Images</a></li><li><a href="https://www.portablestage.co.uk/privacy-policy/">Privacy Policy</a></li></ul></div>
+      <div><h2>Our Services</h2><ul>
+        <li><a href="https://www.portablestage.co.uk/staging-layout-gallery/">Gallery &amp; User Guide</a></li><li><a href="https://www.portablestage.co.uk/service/stage-design-tool/">Staging Planner Tool</a></li>
+        <li><a href="https://www.portablestage.co.uk/service/staging-platforms/">Staging Platforms</a></li><li><a href="https://www.portablestage.co.uk/product/nexgen-platinum-riser-leg-spider-1000mm/">Riser Legs</a></li>
+        <li><a href="https://www.portablestage.co.uk/service/fascia-valance/">Fascia &amp; Valance</a></li><li><a href="https://www.portablestage.co.uk/service/safety-accessories/">Safety Accessories</a></li>
+        <li><a href="https://www.portablestage.co.uk/service/storage-accessories/">Storage Accessories</a></li><li><a href="https://www.portablestage.co.uk/service/display-accessories/">Display Accessories</a></li>
+        <li><a href="https://www.portablestage.co.uk/service/parts-maintenance/">Parts &amp; Maintenance</a></li><li><a href="https://www.portablestage.co.uk/blog">Staging Blog</a></li></ul></div>
+      <div><h2>Opening Hours</h2><ul><li>Mon – Fri: 9:00 am to 5:00 pm</li><li>Saturday: Closed</li><li>Sunday: Closed</li></ul>
+        <p style="margin-top:1.2rem"><a href="https://www.portablestage.co.uk/my-account/">My Account LOGIN</a></p></div>
+    </div>
+    <div class="legal">
+      <span><h2><a href="https://www.portablestage.co.uk/">Home</a></h2> · © NexGen Staging Limited · Co Reg No. 13596341 · VAT Reg. No. 446206015</span>
+      <a href="https://www.portablestage.co.uk/privacy-policy/">Terms of Sale &amp; Policies</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile thumb-zone action bar -->
+<div class="mbar"><a class="btn btn-lime" href="#planner">Plan &amp; quote</a><a class="btn btn-ghost" href="tel:01143992978">Call us</a></div>
+
+<script>
+/* ============================================================
+   Small, dependency-free enhancements
+   ============================================================ */
+(function(){
+  var doc=document.documentElement, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  doc.classList.add('js');
+
+  /* Mobile menu */
+  var hdr=document.getElementById('hdr'), burger=document.getElementById('burger');
+  burger.addEventListener('click',function(){var o=hdr.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+
+  /* Isometric stage renderer – shared by the hero and the planner.
+     cols x rows of 1x1m decks, hmm = stage height in mm */
+  var NS='http://www.w3.org/2000/svg';
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e}
+  function drawStage(svg,cols,rows,hmm,opt){
+    opt=opt||{};
+    while(svg.firstChild)svg.removeChild(svg.firstChild);
+    var vb=svg.viewBox.baseVal, W=vb.width, H=vb.height;
+    var a=Math.min(W*0.84/(cols+rows), 72), legH=a*(0.25+hmm/1000*1.1), t=a*0.18;
+    var ox=W/2+(rows-cols)*a/2, oy=(H-(cols+rows)*a/2+legH+t)/2;
+    function P(i,j,z){return [ox+(i-j)*a, oy+(i+j)*a/2 - z]}
+    function pts(l){return l.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1)}).join(' ')}
+    /* floor shadow */
+    svg.appendChild(el('polygon',{points:pts([P(0,0,0),P(cols,0,0),P(cols,rows,0),P(0,rows,0)]),fill:'rgba(0,0,0,.35)'}));
+    var order=[];for(var i=0;i<cols;i++)for(var j=0;j<rows;j++)order.push([i,j]);
+    order.sort(function(p,q){return (p[0]+p[1])-(q[0]+q[1])||p[0]-q[0]});
+    order.forEach(function(c,n){
+      var i=c[0],j=c[1],z=legH+t, g=el('g',{});
+      if(opt.animate){g.setAttribute('class','deck');g.style.animationDelay=(n*opt.step)+'ms'}
+      /* concertina riser legs (front edges only) */
+      var legs=el('g',{stroke:'#a9bcb9','stroke-width':1.5,fill:'none'});
+      [[i+1,j+1],[i+1,j],[i,j+1]].forEach(function(q){var tp=P(q[0],q[1],legH),bt=P(q[0],q[1],0);legs.appendChild(el('line',{x1:tp[0],y1:tp[1],x2:bt[0],y2:bt[1]}))});
+      legs.appendChild(el('polyline',{points:pts([P(i+1,j,0),P(i+1,j+.5,legH),P(i+1,j+1,0)]),opacity:.6}));
+      legs.appendChild(el('polyline',{points:pts([P(i,j+1,0),P(i+.5,j+1,legH),P(i+1,j+1,0)]),opacity:.6}));
+      g.appendChild(legs);
+      /* deck sides + top */
+      g.appendChild(el('polygon',{points:pts([P(i,j+1,z),P(i+1,j+1,z),P(i+1,j+1,legH),P(i,j+1,legH)]),fill:'#3a4447'}));
+      g.appendChild(el('polygon',{points:pts([P(i+1,j,z),P(i+1,j+1,z),P(i+1,j+1,legH),P(i+1,j,legH)]),fill:'#262d30'}));
+      var top=[P(i,j,z),P(i+1,j,z),P(i+1,j+1,z),P(i,j+1,z)];
+      g.appendChild(el('polygon',{points:pts(top),fill:(i+j)%2?'#4a5357':'#535d61',stroke:'#dbf450','stroke-opacity':.7,'stroke-width':1.2}));
+      /* magnetic "snap" flash */
+      if(opt.animate){var f=el('polygon',{points:pts(top),fill:'#dbf450','class':'snap'});f.style.animationDelay=(n*opt.step+450)+'ms';g.appendChild(f)}
+      svg.appendChild(g);
+    });
+    /* height marker (planner only) */
+    if(opt.marker===false)return;
+    var e=P(cols,rows,0), e2=P(cols,rows,legH+t);
+    svg.appendChild(el('line',{x1:e[0]+14,y1:e[1],x2:e2[0]+14,y2:e2[1],stroke:'#ff4d8d','stroke-width':2.5}));
+    var tx=el('text',{x:e[0]+21,y:(e[1]+e2[1])/2+5,fill:'#ff4d8d','font-size':14,'font-weight':700,'font-family':'Inter,sans-serif'});
+    tx.textContent=hmm+'mm';svg.appendChild(tx);
+  }
+
+  /* Hero: a 4x3 stage builds itself, the timer counts to 60 */
+  var hero=document.getElementById('heroStage'), timer=document.getElementById('timer');
+  function heroRun(){
+    drawStage(hero,4,3,400,{animate:!reduce,step:260,marker:false});
+    if(reduce){timer.textContent='60';return}
+    var t0=performance.now(),dur=12*260+900;
+    (function tick(now){var p=Math.min(1,Math.max(0,(now-t0)/dur));timer.textContent=Math.round(p*60);if(p<1)requestAnimationFrame(tick)})(t0);
+  }
+  heroRun(); if(!reduce) setInterval(heroRun,9000);
+
+  /* Stage planner */
+  var st={w:3,d:2,h:400,org:1}, plan=document.getElementById('planStage');
+  var gP=document.getElementById('presets'),gH=document.getElementById('heightsChips'),gO=document.getElementById('orgChips');
+  function press(group,match){group.querySelectorAll('.chip').forEach(function(b){b.setAttribute('aria-pressed',match(b)?'true':'false')})}
+  function render(anim){
+    st.w=Math.max(1,Math.min(8,st.w)); st.d=Math.max(1,Math.min(6,st.d));
+    var n=st.w*st.d;
+    document.getElementById('oW').firstChild.nodeValue=st.w;
+    document.getElementById('oD').firstChild.nodeValue=st.d;
+    document.getElementById('sMod').textContent=n;
+    document.getElementById('sArea').textContent=n+' m²';
+    document.getElementById('sH').textContent=st.h;
+    press(gP,function(b){return +b.dataset.w===st.w&&+b.dataset.d===st.d&&+b.dataset.h===st.h});
+    press(gH,function(b){return +b.dataset.h===st.h});
+    press(gO,function(b){return +b.dataset.org===st.org});
+    /* Indicative figure uses only the published SteelCity price: £219 + VAT per 1x1m module (deck & riser) */
+    document.getElementById('pPrice').innerHTML='Modules only, SteelCity range at the published £219 + VAT each:<b>£'+(n*219).toLocaleString('en-GB')+' + VAT</b>Steps, handrails, valance &amp; delivery are added on your quote.'+(st.org?'<br><span class="fund-tag">ECAL funding: 10–20% off, applied on your quote</span>':'');
+    document.getElementById('quoteBtn').href='https://www.portablestage.co.uk/quote-me/?size='+st.w+'x'+st.d+'m&height='+st.h+'mm';
+    drawStage(plan,st.w,st.d,st.h,{animate:anim&&!reduce,step:Math.max(25,400/n)});
+  }
+  gP.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;st.w=+b.dataset.w;st.d=+b.dataset.d;st.h=+b.dataset.h;render(true)});
+  gH.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;st.h=+b.dataset.h;render(false)});
+  gO.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;st.org=+b.dataset.org;render(false)});
+  document.querySelectorAll('.stepper button').forEach(function(b){b.addEventListener('click',function(){st[b.dataset.dim]+=+b.dataset.step;render(true)})});
+  render(false);
+
+  /* Storage before/after slider */
+  var cmp=document.getElementById('compare');
+  cmp.querySelector('input').addEventListener('input',function(e){cmp.style.setProperty('--x',e.target.value+'%')});
+
+  /* Video: YouTube (privacy-enhanced) only loads after a click */
+  var player=document.getElementById('player'),thumb=document.getElementById('pThumb'),cap=document.getElementById('pCap');
+  document.getElementById('playBtn').addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+player.dataset.id+'?autoplay=1&rel=0';
+    f.title='NexGen video guide';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;
+    player.appendChild(f);
+  });
+  document.getElementById('vlist').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    var old=player.querySelector('iframe');if(old)old.remove();
+    player.dataset.id=b.dataset.id;thumb.src=b.dataset.img;cap.textContent=b.dataset.t;
+    this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  });
+
+  /* Scroll reveal, height bars and number counters */
+  function count(elm){
+    var end=parseFloat(elm.dataset.count),dec=+(elm.dataset.dec||0),t0=performance.now();
+    (function f(now){var p=Math.min(1,Math.max(0,(now-t0)/1400)),v=end*(1-Math.pow(1-p,3));elm.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv,#bars').forEach(function(x){io.observe(x)});
+    document.querySelectorAll('[data-count]').forEach(count);
+  }else{
+    document.querySelectorAll('.rv,#bars').forEach(function(x){x.classList.add('in')});
+  }
+})();
+</script>
+</body>
+</html>
