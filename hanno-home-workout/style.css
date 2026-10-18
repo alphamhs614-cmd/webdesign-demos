@@ -60,7 +60,7 @@ h2::after{content:"";display:block;width:60px;height:4px;border-radius:2px;backg
 button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .count{color:var(--mut);margin:14px 0}
 .count span{color:var(--f3);font-weight:900}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 .card{background:linear-gradient(180deg,var(--card),#1a0914);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;position:relative;content-visibility:auto;contain-intrinsic-size:320px}
 .card:hover{border-color:var(--f1)}
 .card .num{position:absolute;top:12px;left:14px;color:var(--f3);font-weight:900;opacity:.8}
@@ -92,4 +92,32 @@ button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .foot{border-top:1px solid var(--line);padding:24px 0 0;text-align:center;overflow:hidden}
 .foot-in p{margin:4px 0}
 .small{color:var(--mut);font-size:.8rem}
-.peek{width:120px;display:block;margin:10px auto 0}
+.foot-cat{width:90px;margin:10px auto 0}.foot-cat .cat{width:100%;display:block}
+/* animated trainer */
+.ch g{transform-box:view-box;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.ch .root,.ch .tor,.ch .thF,.ch .thB{transform-origin:50px 55px}
+.ch .head{transform-origin:50px 30px}
+.ch .uaF,.ch .uaB{transform-origin:50px 33px}
+.ch .faF,.ch .faB{transform-origin:50px 46px}
+.ch .shF,.ch .shB{transform-origin:50px 75px}
+.ch .pony{transform-origin:45px 17px;animation:pony 1.2s ease-in-out infinite}
+@keyframes pony{50%{transform:rotate(12deg)}}
+.ch .eye{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
+.hair{fill:#2a0f22}
+/* cat */
+.cat .ctail{transform-box:view-box;transform-origin:30px 38px;animation:cwag 1.8s ease-in-out infinite}
+@keyframes cwag{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(16deg)}}
+/* hero stage */
+.stage{position:relative;max-width:480px;margin:40px auto 0}
+.stage .glowbg{position:absolute;inset:8% 5% 0;background:radial-gradient(closest-side,rgba(255,45,149,.38),transparent);border-radius:50%}
+.stage .ch{position:relative;width:100%;height:auto;display:block}
+.stage .mat{position:relative;height:12px;border-radius:6px;background:linear-gradient(90deg,#c2185b,#ff2d95);margin:-18px 6% 0;box-shadow:0 0 22px rgba(255,45,149,.5)}
+.stage .cat.big{position:absolute;width:24%;left:-2%;bottom:6px}
+.move-name{display:inline-block;margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-weight:700;color:var(--f3)}
+/* cards */
+.vis{display:flex;align-items:flex-end;gap:6px;background:radial-gradient(closest-side,rgba(216,27,96,.16),transparent);border-radius:14px}
+.vis .ch{flex:1 1 55%;min-width:0;height:auto;border-bottom:3px solid rgba(255,45,149,.55);border-radius:2px}
+.dia{position:relative;flex:0 0 38%;display:flex;align-items:flex-end}
+.dia svg:not(.cat){width:100%;height:auto}
+.cat.mini{position:absolute;width:40px;left:-6px;bottom:0}
+.dia{padding-left:30px}
