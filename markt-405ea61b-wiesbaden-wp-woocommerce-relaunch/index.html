@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WordPress-Relaunch mit WooCommerce-Shop – Demo</title><meta name="robots" content="noindex">
+<style>
+:root{--p:#1f2a44;--a:#7f54b3;--g:#e8f5ee;--t:#222}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t);line-height:1.6;background:#fafafa}a{color:inherit;text-decoration:none}
+.note{background:#efe7fa;font-size:.8rem;text-align:center;padding:.4rem}
+header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:5}.nav{max-width:1140px;margin:auto;padding:1rem 1.2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:1.25rem}.logo span{color:var(--a)}.nav ul{display:flex;gap:1.4rem;list-style:none}.cart{background:var(--p);color:#fff;padding:.5rem .9rem;border-radius:99px;font-weight:600;font-size:.9rem}
+.hero{max-width:1140px;margin:auto;padding:4rem 1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+h1{font-size:clamp(2rem,4.4vw,3rem);line-height:1.1;margin-bottom:1rem}.hero p{color:#555;font-size:1.08rem;margin-bottom:1.6rem}
+.btn{display:inline-block;padding:.85rem 1.4rem;border-radius:10px;font-weight:700}.btn.p{background:var(--a);color:#fff}.btn.o{border:2px solid var(--p)}
+.mock{background:linear-gradient(135deg,var(--a),#3c2a6e);border-radius:22px;aspect-ratio:4/3;position:relative;overflow:hidden}
+.mock .card{position:absolute;background:#fff;border-radius:14px;padding:1rem;box-shadow:0 10px 30px rgba(0,0,0,.2);font-size:.85rem}
+.mock .c1{top:12%;left:8%;width:46%}.mock .c2{bottom:10%;right:8%;width:48%}.mock .c3{top:18%;right:10%;width:30%;text-align:center}
+.mock b{display:block}.bar{height:8px;background:#eee;border-radius:4px;margin:.4rem 0}.bar i{display:block;height:100%;width:70%;background:var(--a);border-radius:4px}
+section{padding:4rem 1.2rem}.wrap{max-width:1140px;margin:auto}h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:.4rem}.sub{color:#666;margin-bottom:2rem}
+.shop{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}.prod{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eee}.prod .img{aspect-ratio:1;display:grid;place-items:center;font-size:2.4rem;color:#fff}.prod .c{padding:1rem}.prod h3{font-size:1rem}.prod .pr{color:var(--a);font-weight:800;margin:.3rem 0 .7rem}.prod button{width:100%;padding:.6rem;border:0;border-radius:8px;background:var(--p);color:#fff;font-weight:600;cursor:pointer}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.steps div{background:#fff;border-radius:14px;padding:1.3rem;border:1px solid #eee}.steps b{display:block;color:var(--a);font-size:1.5rem}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.feat div{background:var(--g);border-radius:14px;padding:1.2rem}
+.cta{background:var(--p);color:#fff;border-radius:20px;padding:3rem 2rem;text-align:center}.cta p{opacity:.85;margin-bottom:1.4rem}
+footer{text-align:center;color:#777;font-size:.85rem;padding:2rem}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.shop,.steps{grid-template-columns:1fr 1fr}.feat{grid-template-columns:1fr}.nav ul{display:none}}
+@media(max-width:480px){.shop,.steps{grid-template-columns:1fr}}
+</style></head><body>
+<div class="note">Demo von Mohammad Saleh Alahmad – Beispiel für Relaunch + WooCommerce-Shop. Inhalte, Produkte und Design werden an Ihre bestehende Seite angepasst.</div>
+<header><nav class="nav"><a class="logo" href="#">Ihre<span>Marke</span></a><ul><li><a href="#">Start</a></li><li><a href="#shop">Shop</a></li><li><a href="#">Über uns</a></li><li><a href="#">Kontakt</a></li></ul><a class="cart" href="#">🛒 Warenkorb (0)</a></nav></header>
+<div class="hero"><div><h1>Ihre bestehende WordPress-Seite – modern, schnell und mit eigenem Shop.</h1><p>Frisches Design, saubere Struktur, mobil optimiert – und ein WooCommerce-Shop, den Sie selbst pflegen: Produkte, Preise, Versand und Zahlungen.</p><a class="btn p" href="#shop">Shop ansehen</a> <a class="btn o" href="#ablauf">Ablauf</a></div>
+<div class="mock"><div class="card c1"><b>Bestellung #1042</b>2 Artikel · bezahlt mit PayPal<div class="bar"><i></i></div>Versand vorbereitet</div><div class="card c3"><b>+38 %</b>mobile Besucher</div><div class="card c2"><b>Neues Produkt</b>Bild, Preis, Varianten – in 2 Minuten angelegt</div></div></div>
+
+<section id="shop" style="background:#fff"><div class="wrap"><h2>Shop-Bereich (WooCommerce)</h2><p class="sub">Beispielprodukte – Kategorien, Filter, Warenkorb und Checkout.</p>
+<div class="shop">
+<div class="prod"><div class="img" style="background:#7f54b3">◆</div><div class="c"><h3>Produkt A</h3><div class="pr">29,90 €</div><button>In den Warenkorb</button></div></div>
+<div class="prod"><div class="img" style="background:#1f2a44">●</div><div class="c"><h3>Produkt B</h3><div class="pr">49,00 €</div><button>In den Warenkorb</button></div></div>
+<div class="prod"><div class="img" style="background:#2e8b57">▲</div><div class="c"><h3>Produkt C</h3><div class="pr">19,50 €</div><button>In den Warenkorb</button></div></div>
+<div class="prod"><div class="img" style="background:#d35400">■</div><div class="c"><h3>Gutschein</h3><div class="pr">ab 10 €</div><button>Auswählen</button></div></div>
+</div></div></section>
+
+<section><div class="wrap"><h2>Was im Relaunch enthalten sein kann</h2><p class="sub">Je nach Umfang und Budget.</p><div class="feat">
+<div><b>Design &amp; Struktur</b><br>Neues Theme bzw. Überarbeitung, klare Navigation, mobil zuerst.</div>
+<div><b>WooCommerce</b><br>Produkte, Varianten, Versandzonen, PayPal/Stripe/Überweisung.</div>
+<div><b>Rechtliches</b><br>Impressum, Datenschutz, AGB/Widerruf-Seiten, Cookie-Hinweis (Texte vom Anbieter/Anwalt).</div>
+<div><b>Inhalte übernehmen</b><br>Bestehende Seiten, Bilder und URLs bleiben erhalten (Weiterleitungen).</div>
+<div><b>Tempo &amp; SEO</b><br>Bildoptimierung, Caching, Grund-SEO.</div>
+<div><b>Einweisung</b><br>Kurze Schulung – gern persönlich nach Absprache.</div>
+</div></div></section>
+
+<section id="ablauf" style="padding-top:0"><div class="wrap"><h2>Ablauf</h2><p class="sub">Transparent und Schritt für Schritt.</p><div class="steps"><div><b>1</b>Kurzes Gespräch &amp; Analyse der aktuellen Seite</div><div><b>2</b>Design-Entwurf zur Freigabe</div><div><b>3</b>Umsetzung auf Testumgebung</div><div><b>4</b>Livegang &amp; Einweisung</div></div></div></section>
+<section style="padding-top:0"><div class="wrap cta"><h2>Bereit für den Relaunch?</h2><p>Erst die bestehende Seite ansehen, dann gemeinsam den Umfang festlegen.</p><a class="btn p" href="#">Kontakt</a></div></section>
+<footer>Demo · Impressum · Datenschutz · AGB</footer>
+</body></html>

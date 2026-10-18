@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Musterfirma – Startseite mit Newsbereich „Aktionen &amp; Angebote“ (Demo)</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--p:#0f4c81;--a:#f2a900;--bg:#f5f7fa;--t:#1d2733}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t);background:#fff;line-height:1.6}a{color:inherit;text-decoration:none}
+.note{background:#fff4d1;font-size:.8rem;text-align:center;padding:.4rem}
+header{border-bottom:1px solid #e3e8ef;background:#fff;position:sticky;top:0;z-index:5}
+.nav{max-width:1140px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.2rem}.logo i{width:38px;height:38px;border-radius:10px;background:var(--p);display:grid;place-items:center;color:#fff;font-style:normal}
+.nav ul{display:flex;gap:1.6rem;list-style:none;font-weight:500}.nav ul a:hover{color:var(--p)}
+.btn{display:inline-block;padding:.85rem 1.4rem;border-radius:10px;font-weight:700}.btn.p{background:var(--a);color:#000}.btn.o{border:2px solid #fff;color:#fff}
+.hero{background:linear-gradient(120deg,var(--p),#1b6fb5);color:#fff;padding:5rem 1.2rem}
+.hero .in{max-width:1140px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:center}
+h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:1rem}.hero p{font-size:1.1rem;opacity:.9;margin-bottom:1.8rem;max-width:34rem}
+.box{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:1.5rem}.box b{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--a);margin-bottom:.6rem}.box li{list-style:none;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.15)}
+section{padding:4.5rem 1.2rem}.wrap{max-width:1140px;margin:auto}h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.5rem}.sub{color:#5b6775;margin-bottom:2rem}
+.news{background:var(--bg)}
+.filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.8rem}.filter button{border:1px solid #cdd6e1;background:#fff;padding:.5rem 1rem;border-radius:99px;cursor:pointer;font:inherit;font-weight:600}.filter button.on{background:var(--p);color:#fff;border-color:var(--p)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.post{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(15,76,129,.07);display:flex;flex-direction:column}
+.post .img{height:150px;display:grid;place-items:center;font-size:2.5rem;color:#fff}
+.post .c{padding:1.2rem;flex:1;display:flex;flex-direction:column}.meta{font-size:.8rem;color:#5b6775;display:flex;gap:.6rem;margin-bottom:.4rem}.cat{background:#e7f0f9;color:var(--p);padding:.1rem .55rem;border-radius:6px;font-weight:700}
+.post h3{font-size:1.1rem;margin-bottom:.4rem}.post p{font-size:.93rem;color:#5b6775;flex:1}.post a.more{margin-top:.8rem;color:var(--p);font-weight:700}
+.sched{border:2px dashed #cdd6e1;box-shadow:none;background:transparent}.sched .img{background:#e3e8ef;color:#5b6775}
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}.how div{border:1px solid #e3e8ef;border-radius:14px;padding:1.3rem}.how b{display:block;color:var(--p);font-size:1.6rem}
+.cta{background:var(--t);color:#fff;border-radius:20px;padding:3rem 2rem;text-align:center}.cta p{opacity:.85;margin-bottom:1.5rem}
+footer{padding:2rem 1.2rem;text-align:center;color:#5b6775;font-size:.85rem;border-top:1px solid #e3e8ef}
+@media(max-width:900px){.hero .in{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.how{grid-template-columns:1fr 1fr}.nav ul{display:none}}
+@media(max-width:560px){.grid,.how{grid-template-columns:1fr}}
+</style></head><body>
+<div class="note">Demo von Mohammad Saleh Alahmad – so könnte die WordPress-Startseite mit Newsbereich aussehen. Logo, Texte und Farben werden ersetzt.</div>
+<header><nav class="nav"><a class="logo" href="#"><i>M</i>Musterfirma</a><ul><li><a href="#">Start</a></li><li><a href="#news">Aktionen &amp; Angebote</a></li><li><a href="#">Leistungen</a></li><li><a href="#kontakt">Kontakt</a></li></ul><a class="btn p" href="#kontakt">Anfrage</a></nav></header>
+<div class="hero"><div class="in"><div><h1>Ihr Partner vor Ort – zuverlässig, schnell, persönlich.</h1><p>Kurzer Einleitungstext über das Unternehmen: wer Sie sind, was Sie anbieten und warum Kunden Ihnen vertrauen.</p><a class="btn p" href="#kontakt">Jetzt anfragen</a> <a class="btn o" href="#news">Aktuelle Angebote</a></div>
+<div class="box"><b>Neu im Newsbereich</b><ul><li>Herbstaktion: 15 % auf Service</li><li>Neues Produkt ab November</li><li>Geänderte Öffnungszeiten</li></ul></div></div></div>
+
+<section class="news" id="news"><div class="wrap"><h2>Aktionen &amp; Angebote</h2><p class="sub">Beiträge legen Sie selbst in WordPress an – mit Kategorie, Bild und geplantem Veröffentlichungsdatum.</p>
+<div class="filter"><button class="on" data-f="all">Alle</button><button data-f="Aktion">Aktionen</button><button data-f="Angebot">Angebote</button><button data-f="News">News</button></div>
+<div class="grid">
+<article class="post" data-c="Aktion"><div class="img" style="background:#f2a900">%</div><div class="c"><div class="meta"><span class="cat">Aktion</span><span>15.10.2026</span></div><h3>Herbstaktion: 15 % Rabatt</h3><p>Nur bis Ende Oktober – Beispieltext für eine zeitlich begrenzte Aktion.</p><a class="more" href="#">Weiterlesen →</a></div></article>
+<article class="post" data-c="Angebot"><div class="img" style="background:#0f4c81">★</div><div class="c"><div class="meta"><span class="cat">Angebot</span><span>10.10.2026</span></div><h3>Paketangebot für Neukunden</h3><p>Beispielbeitrag mit Bild, Auszug und eigener Detailseite.</p><a class="more" href="#">Weiterlesen →</a></div></article>
+<article class="post" data-c="News"><div class="img" style="background:#2e8b57">i</div><div class="c"><div class="meta"><span class="cat">News</span><span>02.10.2026</span></div><h3>Neue Öffnungszeiten</h3><p>Kurze Mitteilung – genauso einfach zu pflegen wie ein Angebot.</p><a class="more" href="#">Weiterlesen →</a></div></article>
+<article class="post" data-c="Aktion"><div class="img" style="background:#c0392b">!</div><div class="c"><div class="meta"><span class="cat">Aktion</span><span>28.09.2026</span></div><h3>Wochenendaktion</h3><p>Ältere Beiträge bleiben im Archiv erhalten (mit Seitennavigation).</p><a class="more" href="#">Weiterlesen →</a></div></article>
+<article class="post sched" data-c="Angebot"><div class="img">⏱</div><div class="c"><div class="meta"><span class="cat">Angebot</span><span>geplant: 01.11.2026</span></div><h3>Geplanter Beitrag</h3><p>Erscheint automatisch am eingestellten Datum – im Backend vorbereitet.</p></div></article>
+<article class="post" data-c="News"><div class="img" style="background:#6c5ce7">✉</div><div class="c"><div class="meta"><span class="cat">News</span><span>20.09.2026</span></div><h3>Team-Verstärkung</h3><p>Beispiel für eine allgemeine Neuigkeit.</p><a class="more" href="#">Weiterlesen →</a></div></article>
+</div></div></section>
+
+<section><div class="wrap"><h2>So pflegen Sie Beiträge selbst</h2><p class="sub">Inklusive kurzer Anleitung bzw. Loom-Video.</p><div class="how"><div><b>1</b>„Beiträge → Erstellen“ in WordPress öffnen</div><div><b>2</b>Titel, Text und Beitragsbild einfügen</div><div><b>3</b>Kategorie wählen: Aktion, Angebot oder News</div><div><b>4</b>Sofort veröffentlichen oder Datum planen</div></div></div></section>
+
+<section id="kontakt" style="padding-top:0"><div class="wrap cta"><h2>Fragen oder Anfrage?</h2><p>Kontaktformular, Telefon und Anfahrt – DSGVO-konform eingebunden.</p><a class="btn p" href="#">Kontakt aufnehmen</a></div></section>
+<footer>© 2026 Musterfirma · Impressum · Datenschutz</footer>
+<script>document.querySelectorAll('.filter button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.post').forEach(p=>p.style.display=(b.dataset.f==='all'||p.dataset.c===b.dataset.f)?'':'none')})</script>
+</body></html>
