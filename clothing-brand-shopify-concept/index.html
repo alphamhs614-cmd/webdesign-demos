@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Clothing Label – Shopify Storefront Concept</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--muted:#6b6b6b;--bg:#faf8f5;--line:#e6e2dc;--acc:#c8553d;--soft:#efe9e1}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Archivo,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.note{background:var(--ink);color:#fff;text-align:center;font-size:.78rem;letter-spacing:.08em;padding:.5rem 1rem}
+header{position:sticky;top:0;z-index:9;background:rgba(250,248,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem}
+.logo{font-weight:800;font-size:1.35rem;letter-spacing:.32em}
+.nav ul{display:flex;gap:1.8rem;list-style:none;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+.icons{display:flex;gap:1rem;align-items:center;font-size:.85rem}.bag{border:1px solid var(--ink);background:none;padding:.4rem .9rem;border-radius:99px}
+.bag b{background:var(--acc);color:#fff;border-radius:99px;padding:0 .4rem;margin-left:.3rem}
+.hero{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;min-height:78vh}
+.hero .txt{padding:5rem 2rem 4rem 1.2rem;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);font-weight:700;margin-bottom:1.2rem}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;margin-bottom:1.4rem;font-weight:600}
+h1 em{font-style:italic;font-weight:500}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:30rem;margin-bottom:2rem}
+.btn{display:inline-block;padding:1rem 2rem;background:var(--ink);color:#fff;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:700;transition:.2s}.btn:hover{background:var(--acc)}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--ink);margin-left:.6rem}.btn.o:hover{background:var(--ink);color:#fff}
+.img{background:linear-gradient(160deg,#d9cfc3,#b9a993 55%,#8c7a66);position:relative;overflow:hidden}
+.img::after{content:"";position:absolute;inset:12% 22% 0;background:linear-gradient(#2a2622,#4a423b);border-radius:48% 48% 0 0/30% 30% 0 0;opacity:.85}
+.img span{position:absolute;bottom:1.2rem;left:1.2rem;z-index:2;background:#fff;padding:.5rem .9rem;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+.marquee{border-block:1px solid var(--line);padding:.9rem 0;text-align:center;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+section{padding:4.5rem 1.2rem}.wrap{max-width:1200px;margin:auto}
+.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:2rem;gap:1rem;flex-wrap:wrap}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:600}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap}.filters button{border:1px solid var(--line);background:#fff;padding:.45rem .9rem;border-radius:99px;font-size:.8rem}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.p .ph{aspect-ratio:3/4;position:relative;overflow:hidden;margin-bottom:.8rem}
+.p .ph i{position:absolute;inset:18% 26% 0;border-radius:45% 45% 0 0/25% 25% 0 0}
+.c1{background:#e7ddd2}.c1 i{background:#3b3631}.c2{background:#dfe3dc}.c2 i{background:#6f7d68}.c3{background:#efe1d6}.c3 i{background:#c8553d}.c4{background:#e2e0e6}.c4 i{background:#23263a}
+.tag{position:absolute;top:.7rem;left:.7rem;background:#fff;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .5rem}
+.tag.low{background:var(--acc);color:#fff}
+.p h3{font-size:.95rem;font-weight:500}.p .row{display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem;margin-top:.2rem}
+.stars{color:#d49a2a;font-size:.8rem;letter-spacing:.05em}
+.sizes{display:flex;gap:.35rem;margin-top:.6rem}.sizes button{width:2.1rem;height:2.1rem;border:1px solid var(--line);background:#fff;font-size:.75rem}
+.sizes button.x{color:#bbb;text-decoration:line-through}.sizes button:hover:not(.x){border-color:var(--ink)}
+.pdp{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.gal div{aspect-ratio:3/4}
+.info h3{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600}.price{font-size:1.3rem;margin:.4rem 0 1rem}
+.swatch{display:flex;gap:.5rem;margin:.6rem 0 1.2rem}.swatch span{width:1.8rem;height:1.8rem;border-radius:50%;border:2px solid #fff;outline:1px solid var(--line)}
+.stock{font-size:.85rem;color:var(--acc);margin:.6rem 0 1.2rem}
+.pay{display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap}.pay span{border:1px solid var(--line);background:#fff;padding:.35rem .7rem;font-size:.75rem;font-weight:700}
+.rev{margin-top:2rem;border-top:1px solid var(--line);padding-top:1.4rem}.rev blockquote{font-size:.92rem;color:var(--muted);margin:.7rem 0}
+.admin{background:var(--ink);color:#fff}.admin h2{color:#fff}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.card{border:1px solid #333;padding:1.5rem}.card h4{font-size:1rem;margin-bottom:.5rem;letter-spacing:.04em}.card p{color:#bbb;font-size:.9rem}
+footer{padding:2.5rem 1.2rem;text-align:center;color:var(--muted);font-size:.82rem}
+@media(max-width:860px){.hero,.pdp{grid-template-columns:1fr}.img{min-height:55vh}.grid{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.nav ul{display:none}}
+</style>
+</head>
+<body>
+<div class="note">CONCEPT DEMO – placeholder brand &amp; visuals, built to show the storefront structure</div>
+<header><div class="nav"><div class="logo">NOVÉ</div><ul><li>New In</li><li>Women</li><li>Men</li><li>Lookbook</li></ul><div class="icons"><span>Search</span><button class="bag" id="bag">Bag<b id="n">0</b></button></div></div></header>
+
+<div class="hero">
+ <div class="txt">
+  <div class="eyebrow">Drop 01 · Autumn Collection</div>
+  <h1>Made to be <em>worn</em>, not just seen.</h1>
+  <p>A fast, mobile-first Shopify storefront for a new clothing label: clean editorial layout, size &amp; colour variants, reviews on every product and a checkout that works on day one.</p>
+  <div><a class="btn" href="#shop">Shop the drop</a><a class="btn o" href="#admin">How you manage it</a></div>
+ </div>
+ <div class="img"><span>Lookbook · 12 looks</span></div>
+</div>
+<div class="marquee">Free shipping over $75 · Easy 30-day returns · Secure checkout with Stripe &amp; PayPal</div>
+
+<section id="shop"><div class="wrap">
+ <div class="head"><h2>New In</h2><div class="filters"><button class="on">All</button><button>Tops</button><button>Outerwear</button><button>Bottoms</button><button>Size: M</button></div></div>
+ <div class="grid">
+  <div class="p"><div class="ph c1"><span class="tag">New</span><i></i></div><h3>Oversized Wool Coat</h3><div class="row"><span>$189</span><span class="stars">★★★★★ (24)</span></div><div class="sizes"><button>S</button><button>M</button><button class="x">L</button><button>XL</button></div></div>
+  <div class="p"><div class="ph c2"><span class="tag low">Only 3 left</span><i></i></div><h3>Relaxed Linen Shirt</h3><div class="row"><span>$69</span><span class="stars">★★★★☆ (11)</span></div><div class="sizes"><button>S</button><button class="x">M</button><button>L</button><button>XL</button></div></div>
+  <div class="p"><div class="ph c3"><span class="tag">Bestseller</span><i></i></div><h3>Rust Knit Sweater</h3><div class="row"><span>$95</span><span class="stars">★★★★★ (38)</span></div><div class="sizes"><button>S</button><button>M</button><button>L</button><button>XL</button></div></div>
+  <div class="p"><div class="ph c4"><i></i></div><h3>Wide-Leg Trousers</h3><div class="row"><span>$85</span><span class="stars">★★★★★ (9)</span></div><div class="sizes"><button>S</button><button>M</button><button>L</button><button class="x">XL</button></div></div>
+ </div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap pdp">
+ <div class="gal"><div class="c3" style="position:relative"><i style="position:absolute;inset:18% 26% 0;border-radius:45% 45% 0 0/25% 25% 0 0;background:#c8553d"></i></div><div class="c1"></div><div class="c2"></div><div class="c4"></div></div>
+ <div class="info">
+  <div class="eyebrow">Product page</div>
+  <h3>Rust Knit Sweater</h3><div class="price">$95.00 <span class="stars">★★★★★ 4.9 · 38 reviews</span></div>
+  <div>Colour: <b>Rust</b></div><div class="swatch"><span style="background:#c8553d"></span><span style="background:#3b3631"></span><span style="background:#dcd3c6"></span></div>
+  <div>Size</div><div class="sizes"><button>XS</button><button>S</button><button>M</button><button>L</button><button class="x">XL</button></div>
+  <div class="stock">● Low stock in size M – only 4 left</div>
+  <a class="btn" href="#" id="add">Add to bag</a>
+  <div class="pay"><span>Stripe</span><span>PayPal</span><span>Apple Pay</span><span>Visa</span><span>Mastercard</span></div>
+  <div class="rev"><b>Customer reviews</b>
+   <blockquote>“Soft, heavy knit and true to size. Ordered a second colour.” – Sarah K. ★★★★★</blockquote>
+   <blockquote>“Fast delivery and the colour is even better in person.” – Daniel M. ★★★★★</blockquote>
+  </div>
+ </div>
+</div></section>
+
+<section class="admin" id="admin"><div class="wrap">
+ <h2>Built so you never touch code</h2>
+ <p style="color:#bbb;max-width:40rem">Everything below is managed from the normal Shopify admin, and the hand-over includes a short video walkthrough plus documented theme files.</p>
+ <div class="cards">
+  <div class="card"><h4>Products &amp; variants</h4><p>Add a product, set sizes and colours, upload photos. Stock is tracked per variant with low-stock alerts by email.</p></div>
+  <div class="card"><h4>Payments tested end-to-end</h4><p>Stripe and PayPal connected, test orders placed and refunded before launch, then your own domain linked.</p></div>
+  <div class="card"><h4>Banners &amp; reviews</h4><p>Change the hero image and announcement bar in the theme editor; reviews are collected and shown on each product page.</p></div>
+ </div>
+</div></section>
+<footer>Concept demo by Mohammad · not a real shop</footer>
+<script>let n=0;const b=document.getElementById('n');document.getElementById('add').onclick=e=>{e.preventDefault();b.textContent=++n};document.querySelectorAll('.filters button').forEach(x=>x.onclick=()=>{document.querySelectorAll('.filters button').forEach(y=>y.classList.remove('on'));x.classList.add('on')});</script>
+</body></html>
